@@ -8,7 +8,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>84376d62-74ce-44ba-94e6-d46b7b11d1ee</ProjectGuid>
     <RootNamespace>Lib.AspNetCore.Mvc.JqGrid.Core</RootNamespace>
-    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">..\..\artifacts\bin\$(MSBuildProjectName)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
