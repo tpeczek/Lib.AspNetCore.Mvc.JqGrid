@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0-alpha-1",
+  "description": "Core server side support for jqGrid in ASP.NET Core.",
+  "authors": [ "Tomasz Pêczek" ],
+  "tags": [ "AspNetCore", "jqGrid" ],
+  "projectUrl": "https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid",
+  "licenseUrl": "https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid/blob/master/LICENSE.md",
+  "frameworks": {
+    "net451": { },
+    "dotnet5.4": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  },
+  "dependencies": {
+    "Lib.AspNetCore.Mvc.JqGrid.Infrastructure": "1.0.0-*",
+    "Microsoft.AspNet.Mvc.Formatters.Json": "6.0.0-rc1-final"
+  }
+}
