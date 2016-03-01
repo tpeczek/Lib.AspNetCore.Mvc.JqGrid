@@ -1,5 +1,7 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+﻿using Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Microsoft.AspNet.Mvc.ModelBinding;
+using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 
@@ -118,7 +120,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 ValueProviderResult searchingFiltersValueResult = bindingContext.ValueProvider.GetValue("filters");
                 if ((searchingFiltersValueResult.Length == 1) && !String.IsNullOrWhiteSpace(searchingFiltersValueResult.FirstValue))
                 {
-                    // TODO: 
+                    JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings();
+                    jsonSerializerSettings.Converters.Add(new JqGridRequestSearchingFiltersJsonConverter());
+
+                    model.SearchingFilters = JsonConvert.DeserializeObject<JqGridRequestSearchingFilters>((string)searchingFiltersValueResult.ConvertTo(typeof(String)), jsonSerializerSettings);
                 }
                 else
                 {
