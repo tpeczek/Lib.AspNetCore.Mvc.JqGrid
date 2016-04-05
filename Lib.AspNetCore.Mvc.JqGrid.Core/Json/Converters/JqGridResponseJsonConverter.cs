@@ -166,10 +166,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
             {
                 recordValues.Add(record.Id);
             }
-
-            record.Values.ForEach(value => recordValues.Add(value));
-
-            return recordValues;
+            
+            return AppendValuesToValuesList(recordValues, record, isSubgridResponse);
         }
 
         private static IDictionary<string, object> SerializeValuesRecordAsDictionary(JqGridJsonReader jsonReader, JqGridRecord record, bool isRecordIndexInt, int recordIdIndex, bool isSubgridResponse)
@@ -181,9 +179,48 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
                 recordValues.Add(jsonReader.RecordId, record.Id);
             }
 
-            recordValues.Add(isSubgridResponse ? jsonReader.SubgridReader.RecordValues : jsonReader.RecordValues, record.Values);
+            recordValues.Add(isSubgridResponse ? jsonReader.SubgridReader.RecordValues : jsonReader.RecordValues, AppendValuesToValuesList(new List<object>(), record, isSubgridResponse));
 
             return recordValues;
+        }
+
+        private static IList<object> AppendValuesToValuesList(IList<object> valuesList, JqGridRecord record, bool isSubgridResponse)
+        {
+            foreach (object value in record.Values)
+            {
+                valuesList.Add(value);
+            }
+
+            if (!isSubgridResponse)
+            {
+                valuesList = AppendTreeGridValuesToValuesList(valuesList, record);
+            }
+
+            return valuesList;
+        }
+
+        private static IList<object> AppendTreeGridValuesToValuesList(IList<object> valuesList, JqGridRecord record)
+        {
+            JqGridAdjacencyTreeRecord adjacencyTreeRecord = record as JqGridAdjacencyTreeRecord;
+            JqGridNestedSetTreeRecord nestedSetTreeRecord = record as JqGridNestedSetTreeRecord;
+
+            if (adjacencyTreeRecord != null)
+            {
+                valuesList.Add(adjacencyTreeRecord.Level);
+                valuesList.Add(adjacencyTreeRecord.ParentId);
+                valuesList.Add(adjacencyTreeRecord.Leaf);
+                valuesList.Add(adjacencyTreeRecord.Expanded);
+            }
+            else if (nestedSetTreeRecord != null)
+            {
+                valuesList.Add(nestedSetTreeRecord.Level);
+                valuesList.Add(nestedSetTreeRecord.LeftField);
+                valuesList.Add(nestedSetTreeRecord.RightField);
+                valuesList.Add(nestedSetTreeRecord.Leaf);
+                valuesList.Add(nestedSetTreeRecord.Expanded);
+            }
+
+            return valuesList;
         }
 
         private static IDictionary<string, object> SerializeValueRecordAsDictionary(JqGridJsonReader jsonReader, JqGridRecord record, bool isRecordIndexInt, int recordIdIndex, bool isSubgridResponse)
@@ -200,7 +237,36 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
                 recordValues.Add(jsonReader.RecordId, record.Id);
             }
 
+            if (!isSubgridResponse)
+            {
+                recordValues = AppendTreeGridValuesToValuesDictionary(recordValues, record);
+            }
+
             return recordValues;
+        }
+
+        private static IDictionary<string, object> AppendTreeGridValuesToValuesDictionary(IDictionary<string, object> valuesDictionary, JqGridRecord record)
+        {
+            JqGridAdjacencyTreeRecord adjacencyTreeRecord = record as JqGridAdjacencyTreeRecord;
+            JqGridNestedSetTreeRecord nestedSetTreeRecord = record as JqGridNestedSetTreeRecord;
+
+            if (adjacencyTreeRecord != null)
+            {
+                valuesDictionary.Add("level", adjacencyTreeRecord.Level);
+                valuesDictionary.Add("parent", adjacencyTreeRecord.ParentId);
+                valuesDictionary.Add("isLeaf", adjacencyTreeRecord.Leaf);
+                valuesDictionary.Add("expanded", adjacencyTreeRecord.Expanded);
+            }
+            else if (nestedSetTreeRecord != null)
+            {
+                valuesDictionary.Add("level", nestedSetTreeRecord.Level);
+                valuesDictionary.Add("lft", nestedSetTreeRecord.LeftField);
+                valuesDictionary.Add("rgt", nestedSetTreeRecord.RightField);
+                valuesDictionary.Add("isLeaf", nestedSetTreeRecord.Leaf);
+                valuesDictionary.Add("expanded", nestedSetTreeRecord.Expanded);
+            }
+
+            return valuesDictionary;
         }
         #endregion
     }

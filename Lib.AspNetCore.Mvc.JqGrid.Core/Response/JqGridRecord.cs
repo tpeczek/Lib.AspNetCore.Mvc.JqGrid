@@ -13,7 +13,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
         /// <summary>
         /// Gets the record cells values.
         /// </summary>
-        public List<object> Values { get; private set; }
+        public IList<object> Values { get; private set; }
 
         /// <summary>
         /// Gets the record value.
@@ -32,7 +32,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
         /// </summary>
         /// <param name="id">The record identifier.</param>
         /// <param name="values">The record cells values.</param>
-        public JqGridRecord(string id, List<object> values)
+        public JqGridRecord(string id, IList<object> values)
         {
             Id = id;
             Values = values;
