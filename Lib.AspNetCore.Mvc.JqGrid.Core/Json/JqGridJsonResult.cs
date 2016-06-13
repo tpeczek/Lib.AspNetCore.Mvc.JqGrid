@@ -1,5 +1,5 @@
 ﻿using Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json

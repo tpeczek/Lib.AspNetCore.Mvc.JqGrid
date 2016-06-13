@@ -1,6 +1,6 @@
 ﻿using Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
-using Microsoft.AspNet.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
@@ -10,9 +10,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
     /// <summary>
     /// An IModelBinder which binds JqGridRequest
     /// </summary>
-    internal sealed class JqGridRequestModelBinder : IModelBinder
+    // TODO: Revert to internal after fix to ASP.NET Core 1.0 RC2 bug (https://github.com/aspnet/Mvc/issues/4652)
+    public sealed class JqGridRequestModelBinder : IModelBinder
     {
-        #region 
+        #region Fields
         private const string SEARCH_FILTERS_BINDING_KEY = "filters";
         private const string SEARCH_NAME_BINDING_KEY = "searchField";
         private const string SEARCH_VALUE_BINDING_KEY = "searchString";
@@ -25,7 +26,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
         /// </summary>
         /// <param name="bindingContext">The binding context.</param>
         /// <returns>The result of the model binding process.</returns>
-        public Task<ModelBindingResult> BindModelAsync(ModelBindingContext bindingContext)
+        public Task BindModelAsync(ModelBindingContext bindingContext)
         {
             if (bindingContext == null)
             {
@@ -34,7 +35,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
 
             string key = (bindingContext.IsTopLevelObject) ? (bindingContext.BinderModelName ?? String.Empty) : bindingContext.ModelName;
 
-            Task<ModelBindingResult> jqGridRequestModelBindingResult;
             if (bindingContext.ModelType == typeof(JqGridRequest))
             {
                 JqGridRequest model = new JqGridRequest();
@@ -42,14 +42,14 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 model = BindSortingProperties(model, bindingContext);
                 model = BindSearchingProperties(model, bindingContext);
 
-                jqGridRequestModelBindingResult = ModelBindingResult.SuccessAsync(key, model);
+                bindingContext.Result = ModelBindingResult.Success(key, model);
             }
             else
             {
-                jqGridRequestModelBindingResult = ModelBindingResult.FailedAsync(key);
+                bindingContext.Result = ModelBindingResult.Failed(key);
             }
 
-            return jqGridRequestModelBindingResult;
+            return Task.FromResult(0);
         }
 
         private JqGridRequest BindPagingProperties(JqGridRequest model, ModelBindingContext bindingContext)

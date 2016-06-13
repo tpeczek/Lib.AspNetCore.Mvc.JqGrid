@@ -1,6 +1,6 @@
 ﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request

@@ -2,18 +2,24 @@
   "version": "1.0.0-alpha-1",
   "description": "Common infrastructure for jqGrid support in ASP.NET Core.",
   "authors": [ "Tomasz Pęczek" ],
-  "tags": [ "AspNetCore", "jqGrid" ],
-  "projectUrl": "https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid",
-  "licenseUrl": "https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid/blob/master/LICENSE.md",
+  "copyright": "Copyright © 2016 Tomasz Pęczek",
+  "packOptions": {
+    "tags": [ "aspnetcore", "aspnetcoremvc", "jqgrid" ],
+    "projectUrl": "https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid",
+    "licenseUrl": "https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid/blob/master/LICENSE.md",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid"
+    }
+  },
+  "buildOptions": {
+    "xmlDoc": true
+  },
   "frameworks": {
     "net451": { },
-    "dotnet5.4": {
+    "netstandard1.5": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.1-beta-23516",
-        "System.Collections": "4.0.11-beta-23516",
-        "System.Linq": "4.0.1-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516",
-        "System.Threading": "4.0.11-beta-23516"
+        "System.Runtime": "4.1.0-*"
       }
     }
   }

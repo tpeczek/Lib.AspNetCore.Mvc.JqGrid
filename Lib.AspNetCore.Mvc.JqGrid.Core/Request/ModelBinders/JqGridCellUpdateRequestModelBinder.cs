@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Mvc.ModelBinding;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -23,7 +23,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
         /// </summary>
         /// <param name="bindingContext">The binding context.</param>
         /// <returns>The result of the model binding process.</returns>
-        public Task<ModelBindingResult> BindModelAsync(ModelBindingContext bindingContext)
+        public Task BindModelAsync(ModelBindingContext bindingContext)
         {
             if (bindingContext == null)
             {
@@ -32,7 +32,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
 
             string key = (bindingContext.IsTopLevelObject) ? (bindingContext.BinderModelName ?? String.Empty) : bindingContext.ModelName;
 
-            Task<ModelBindingResult> jqGridCellUpdateRequestModelBindingResult;
             if (bindingContext.ModelType == typeof(JqGridCellUpdateRequest))
             {
                 JqGridCellUpdateRequest model = new JqGridCellUpdateRequest
@@ -48,14 +47,14 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                     }
                 }
 
-                jqGridCellUpdateRequestModelBindingResult = ModelBindingResult.SuccessAsync(key, model);
+                bindingContext.Result = ModelBindingResult.Success(key, model);
             }
             else
             {
-                jqGridCellUpdateRequestModelBindingResult = ModelBindingResult.FailedAsync(key);
+                bindingContext.Result = ModelBindingResult.Failed(key);
             }
 
-            return jqGridCellUpdateRequestModelBindingResult;
+            return Task.FromResult(0);
         }
 
         private bool BindCellProperties(JqGridCellUpdateRequest model, ModelBindingContext bindingContext, string cellName, Type cellType)
