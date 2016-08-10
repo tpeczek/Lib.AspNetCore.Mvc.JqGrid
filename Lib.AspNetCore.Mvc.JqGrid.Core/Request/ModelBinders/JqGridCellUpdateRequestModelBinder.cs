@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using Microsoft.AspNetCore.Mvc.Internal;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -30,8 +31,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 throw new ArgumentNullException(nameof(bindingContext));
             }
 
-            string key = (bindingContext.IsTopLevelObject) ? (bindingContext.BinderModelName ?? String.Empty) : bindingContext.ModelName;
-
             if (bindingContext.ModelType == typeof(JqGridCellUpdateRequest))
             {
                 JqGridCellUpdateRequest model = new JqGridCellUpdateRequest
@@ -47,14 +46,14 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                     }
                 }
 
-                bindingContext.Result = ModelBindingResult.Success(key, model);
+                bindingContext.Result = ModelBindingResult.Success(model);
             }
             else
             {
-                bindingContext.Result = ModelBindingResult.Failed(key);
+                bindingContext.Result = ModelBindingResult.Failed();
             }
 
-            return Task.FromResult(0);
+            return TaskCache.CompletedTask;
         }
 
         private bool BindCellProperties(JqGridCellUpdateRequest model, ModelBindingContext bindingContext, string cellName, Type cellType)

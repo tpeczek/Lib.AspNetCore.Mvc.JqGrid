@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-alpha-1",
+  "version": "1.0.0-alpha-2",
   "description": "Core server side support for jqGrid in ASP.NET Core.",
   "authors": [ "Tomasz Pêczek" ],
   "copyright": "Copyright © 2016 Tomasz Pêczek",
@@ -17,7 +17,7 @@
   },
   "frameworks": {
     "net451": { },
-    "netstandard1.5": {
+    "netstandard1.6": {
       "imports": [
         "portable-net451+win8"
       ]
@@ -25,6 +25,6 @@
   },
   "dependencies": {
     "Lib.AspNetCore.Mvc.JqGrid.Infrastructure": "1.0.0-*",
-    "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0-rc2-final"
+    "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0"
   }
 }

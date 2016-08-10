@@ -1,5 +1,6 @@
 ﻿using Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+using Microsoft.AspNetCore.Mvc.Internal;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 using System;
@@ -10,8 +11,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
     /// <summary>
     /// An IModelBinder which binds JqGridRequest
     /// </summary>
-    // TODO: Revert to internal after fix to ASP.NET Core 1.0 RC2 bug (https://github.com/aspnet/Mvc/issues/4652)
-    public sealed class JqGridRequestModelBinder : IModelBinder
+    internal sealed class JqGridRequestModelBinder : IModelBinder
     {
         #region Fields
         private const string SEARCH_FILTERS_BINDING_KEY = "filters";
@@ -42,14 +42,14 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 model = BindSortingProperties(model, bindingContext);
                 model = BindSearchingProperties(model, bindingContext);
 
-                bindingContext.Result = ModelBindingResult.Success(key, model);
+                bindingContext.Result = ModelBindingResult.Success(model);
             }
             else
             {
-                bindingContext.Result = ModelBindingResult.Failed(key);
+                bindingContext.Result = ModelBindingResult.Failed();
             }
 
-            return Task.FromResult(0);
+            return TaskCache.CompletedTask;
         }
 
         private JqGridRequest BindPagingProperties(JqGridRequest model, ModelBindingContext bindingContext)
