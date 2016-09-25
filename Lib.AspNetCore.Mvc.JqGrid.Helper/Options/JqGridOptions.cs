@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
+using Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.Options
 {
@@ -14,6 +15,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.Options
         /// Gets the grid identifier which will be used for table (id='{0}'), pager div (id='{0}Pager') and in JavaScript.
         /// </summary>
         public string Id { get; private set; }
+
+        /// <summary>
+        /// Gets the list of columns parameters descriptions.
+        /// </summary>
+        public IList<JqGridColumnModel> ColumnsModels { get; } = new List<JqGridColumnModel>();
 
         /// <summary>
         /// Gets the list of columns names.
@@ -67,6 +73,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.Options
                 {
                     if (columnMetadata.IsValidForColumn())
                     {
+                        ColumnsModels.Add(new JqGridColumnModel(columnMetadata));
                         ColumnsNames.Add(columnMetadata.GetDisplayName());
                     }
                 }

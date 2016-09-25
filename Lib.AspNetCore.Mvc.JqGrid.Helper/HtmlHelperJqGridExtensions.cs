@@ -3,6 +3,7 @@ using System.Text;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Options;
+using Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper
@@ -55,6 +56,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 
             javaScriptBuilder.AppendFormat("$({0}).jqGrid({{", GetJqGridGridSelector(options, false)).AppendLine()
                 .AppendColumnsNames(options)
+                .AppendColumnsModels(options)
                 .Append("})");
 
             javaScriptBuilder.AppendLine(";");
@@ -81,7 +83,26 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                 javaScriptBuilder.AppendJavaScriptArrayStringValue(columnName);
             }
 
-            javaScriptBuilder.AppendJavaScriptArrayFieldClosing().AppendLine();
+            javaScriptBuilder.AppendJavaScriptArrayFieldClosing()
+                .AppendLine();
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendColumnsModels(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridJavaScriptRenderingHelper.COLUMNS_MODEL_FIELD);
+
+            foreach(JqGridColumnModel columnModel in options.ColumnsModels)
+            {
+                javaScriptBuilder.AppendJavaScriptObjectOpening()
+                    .AppendJavaScriptObjectStringField(JqGridJavaScriptRenderingHelper.COLUMNS_MODEL_NAME_FIELD, columnModel.Name);
+
+                javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
+            }
+
+            javaScriptBuilder.AppendJavaScriptArrayFieldClosing()
+                .AppendLine();
 
             return javaScriptBuilder;
         }
