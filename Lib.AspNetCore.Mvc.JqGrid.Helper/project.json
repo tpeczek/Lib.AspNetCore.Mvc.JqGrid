@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.0-alpha-2",
   "description": "Strongly typed jqGrid helper for ASP.NET Core.",
   "authors": [ "Tomasz Pęczek" ],
   "copyright": "Copyright © 2016 Tomasz Pęczek",
@@ -16,11 +16,22 @@
     "xmlDoc": true
   },
   "frameworks": {
-    "net451": { },
+    "net451": {
+      "frameworkAssemblies": {
+        "System": "",
+        "System.Core": "",
+        "System.Runtime": ""
+      }
+    },
     "netstandard1.6": {
       "dependencies": {
         "System.Runtime": "4.1.0-*"
       }
     }
+  },
+  "dependencies": {
+    "Lib.AspNetCore.Mvc.JqGrid.Infrastructure": "1.0.0-alpha-2",
+    "Microsoft.AspNetCore.Html.Abstractions": "1.0.0",
+    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0"
   }
 }
