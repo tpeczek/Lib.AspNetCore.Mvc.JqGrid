@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "Lib.AspNetCore.Mvc.JqGrid.Infrastructure": "1.0.0-alpha-2",
+    "Lib.AspNetCore.Mvc.JqGrid.DataAnnotations": "1.0.0-alpha-2",
     "Microsoft.AspNetCore.Html.Abstractions": "1.0.0",
     "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0"
   }

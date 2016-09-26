@@ -1,4 +1,6 @@
-﻿namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
+﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+
+namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
 {
     /// <summary>
     /// Contains default values for jqGrid options
@@ -174,5 +176,20 @@
         /// The information to be displayed when the returned (or the current) number of records is zero.
         /// </summary>
         public const string EmptyRecords = "No records to view";
+
+        /// <summary>
+        /// The flag indicating if column is sortable.
+        /// </summary>
+        public const bool Sortable = true;
+
+        /// <summary>
+        /// The sorting order for first column sorting
+        /// </summary>
+        public const JqGridSortingOrders InitialSortingOrder = JqGridSortingOrders.Asc;
+
+        /// <summary>
+        /// The the type of the column for appropriate sorting when datatype is local.
+        /// </summary>
+        public const JqGridSortTypes SortType = JqGridSortTypes.Text;
     }
 }
