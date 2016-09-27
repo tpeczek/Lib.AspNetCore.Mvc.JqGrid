@@ -74,6 +74,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder;
         }
 
+        internal static StringBuilder AppendJavaScriptObjectFunctionField(this StringBuilder javaScriptBuilder, string fieldName, string fieldValue)
+        {
+            if (!String.IsNullOrWhiteSpace(fieldValue))
+            {
+                javaScriptBuilder.AppendFormat("{0}:{1},", fieldName, fieldValue);
+            }
+
+            return javaScriptBuilder;
+        }
+
         private static StringBuilder RemoveTrailingComma(this StringBuilder javaScriptBuilder)
         {
             if (javaScriptBuilder[javaScriptBuilder.Length - 1] == ',')

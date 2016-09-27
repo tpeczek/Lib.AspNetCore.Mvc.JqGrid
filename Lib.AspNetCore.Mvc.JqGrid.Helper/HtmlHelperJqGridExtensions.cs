@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
-using Lib.AspNetCore.Mvc.JqGrid.Helper.Options;
-using Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper
@@ -52,7 +52,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         {
             ValidateJqGridConstraints(options);
 
-            options.EnsureColumnsMetadata(htmlHelper.MetadataProvider);
+            options.ApplyModelMetadata(htmlHelper.MetadataProvider);
 
             StringBuilder javaScriptBuilder = new StringBuilder();
 
@@ -123,7 +123,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             {
                 if (columnModel.SortType == JqGridSortTypes.Function)
                 {
-                    javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridJavaScriptRenderingHelper.COLUMNS_MODEL_SORT_TYPE_FIELD, columnModel.SortFunction);
+                    javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridJavaScriptRenderingHelper.COLUMNS_MODEL_SORT_TYPE_FIELD, columnModel.SortFunction);
                 }
                 else
                 {

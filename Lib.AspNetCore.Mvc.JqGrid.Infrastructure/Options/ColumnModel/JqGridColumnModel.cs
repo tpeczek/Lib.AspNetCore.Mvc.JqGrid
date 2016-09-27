@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Reflection;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Lib.AspNetCore.Mvc.JqGrid.DataAnnotations;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 
-namespace Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel
+namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
 {
     /// <summary>
     /// jqGrid column parameters description.
@@ -59,40 +55,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel
             SortType = JqGridOptionsDefaults.SortType;
             SortFunction = String.Empty;
             Index = String.Empty;
-        }
-
-        internal JqGridColumnModel(ModelMetadata propertyMetadata)
-            : this(propertyMetadata.PropertyName)
-        {
-            TimestampAttribute timeStampAttribute = null;
-            JqGridColumnSortableAttribute jqGridColumnSortableAttribute = null;
-
-            foreach (Attribute customAttribute in propertyMetadata.ContainerType.GetProperty(propertyMetadata.PropertyName).GetCustomAttributes(true))
-            {
-                timeStampAttribute = (customAttribute as TimestampAttribute) ?? timeStampAttribute;
-                jqGridColumnSortableAttribute = (customAttribute as JqGridColumnSortableAttribute) ?? jqGridColumnSortableAttribute;
-            }
-
-            if (timeStampAttribute != null)
-            { }
-            else
-            {
-                SetSortOptions(jqGridColumnSortableAttribute);
-            }
-        }
-        #endregion
-
-        #region Methods
-        private void SetSortOptions(JqGridColumnSortableAttribute jqGridColumnSortableAttribute)
-        {
-            if (jqGridColumnSortableAttribute != null)
-            {
-                Index = jqGridColumnSortableAttribute.Index;
-                InitialSortingOrder = jqGridColumnSortableAttribute.InitialSortingOrder;
-                Sortable = jqGridColumnSortableAttribute.Sortable;
-                SortType = jqGridColumnSortableAttribute.SortType;
-                SortFunction = jqGridColumnSortableAttribute.SortFunction;
-            }
         }
         #endregion
     }

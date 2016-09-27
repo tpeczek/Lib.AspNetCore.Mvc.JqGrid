@@ -19,7 +19,7 @@
     "net451": {},
     "netstandard1.6": {
       "dependencies": {
-        "System.Runtime": "4.1.0-*"
+        "System.Runtime": "4.1.0"
       }
     }
   },
