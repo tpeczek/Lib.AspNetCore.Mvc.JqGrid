@@ -17,15 +17,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             Type jqGridOptionsType = options.GetType();
             if (jqGridOptionsType.IsConstructedGenericType && jqGridOptionsType.GetGenericTypeDefinition() == typeof(JqGridOptions<>))
             {
-                options.ColumnsModels.Clear();
-                options.ColumnsNames.Clear();
-
                 foreach (ModelMetadata columnMetadata in metadataProvider.GetMetadataForProperties(jqGridOptionsType.GenericTypeArguments[0]))
                 {
                     if (IsValidForColumn(columnMetadata))
                     {
-                        options.ColumnsModels.Add(CreateJqGridColumnModel(columnMetadata));
-                        options.ColumnsNames.Add(columnMetadata.GetDisplayName());
+                        options.AddColumn(columnMetadata.GetDisplayName(), CreateJqGridColumnModel(columnMetadata));
                     }
                 }
             }
