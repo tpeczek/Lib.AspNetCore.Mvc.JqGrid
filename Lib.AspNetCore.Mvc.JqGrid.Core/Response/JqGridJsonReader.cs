@@ -52,7 +52,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
         /// </summary>
         public virtual bool IsDefault
         {
-            get { return ((Records == JqGridOptionsDefaults.ResponseRecords) && (RecordValues == JqGridOptionsDefaults.ResponseRecordValues) && RepeatItems); }
+            get { return ((Records == JqGridOptionsDefaults.Response.Records) && (RecordValues == JqGridOptionsDefaults.Response.RecordValues) && RepeatItems); }
         }
         #endregion
 
@@ -62,8 +62,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
         /// </summary>
         public JqGridJsonRecordsReader()
         {
-            Records = JqGridOptionsDefaults.ResponseRecords;
-            RecordValues = JqGridOptionsDefaults.ResponseRecordValues;
+            Records = JqGridOptionsDefaults.Response.Records;
+            RecordValues = JqGridOptionsDefaults.Response.RecordValues;
             RepeatItems = true;
         }
         #endregion
@@ -183,7 +183,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
         /// </summary>
         public new bool IsDefault
         {
-            get { return (base.IsDefault && (PageIndex == JqGridOptionsDefaults.ResponsePageIndex) && (RecordId == JqGridOptionsDefaults.ResponseRecordId) && (TotalPagesCount == JqGridOptionsDefaults.ResponseTotalPagesCount) && (TotalRecordsCount == JqGridOptionsDefaults.ResponseTotalRecordsCount) && (UserData == JqGridOptionsDefaults.ResponseUserData)); }
+            get { return (base.IsDefault && (PageIndex == JqGridOptionsDefaults.Response.PageIndex) && (RecordId == JqGridOptionsDefaults.Response.RecordId) && (TotalPagesCount == JqGridOptionsDefaults.Response.TotalPagesCount) && (TotalRecordsCount == JqGridOptionsDefaults.Response.TotalRecordsCount) && (UserData == JqGridOptionsDefaults.Response.UserData)); }
         }
         #endregion
 
@@ -193,12 +193,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
         /// </summary>
         public JqGridJsonReader() : base()
         {
-            PageIndex = JqGridOptionsDefaults.ResponsePageIndex;
-            RecordId = JqGridOptionsDefaults.ResponseRecordId;
+            PageIndex = JqGridOptionsDefaults.Response.PageIndex;
+            RecordId = JqGridOptionsDefaults.Response.RecordId;
             SubgridReader = new JqGridJsonRecordsReader();
-            TotalPagesCount = JqGridOptionsDefaults.ResponseTotalPagesCount;
-            TotalRecordsCount = JqGridOptionsDefaults.ResponseTotalRecordsCount;
-            UserData = JqGridOptionsDefaults.ResponseUserData;
+            TotalPagesCount = JqGridOptionsDefaults.Response.TotalPagesCount;
+            TotalRecordsCount = JqGridOptionsDefaults.Response.TotalRecordsCount;
+            UserData = JqGridOptionsDefaults.Response.UserData;
         }
         #endregion
 

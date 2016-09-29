@@ -11,6 +11,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
     {
         #region Properties
         /// <summary>
+        /// Gets or sets the predefined formatter type ('' delimited string) or custom JavaScript formatting function name.
+        /// </summary>
+        public string Formatter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the options for predefined formatter (every predefined formatter uses only a subset of all options), which are overwriting the defaults from the language file.
+        /// </summary>
+        public JqGridColumnFormatterOptions FormatterOptions { get; set; }
+
+        /// <summary>
         /// Gets or sets the index name for sorting and searching (default String.Empty)
         /// </summary>
         public string Index { get; set; }
@@ -39,6 +49,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         /// Gets or sets the type of the column for appropriate sorting when datatype is local.
         /// </summary>
         public JqGridSortTypes SortType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the custom function to "unformat" a value of the cell when used in editing or client-side sorting
+        /// </summary>
+        public string UnFormatter { get; set; }
         #endregion
 
         #region Constructor
@@ -49,12 +64,15 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         public JqGridColumnModel(string name)
         {
             Name = name;
-            
-            InitialSortingOrder = JqGridOptionsDefaults.InitialSortingOrder;
-            Sortable = JqGridOptionsDefaults.Sortable;
-            SortType = JqGridOptionsDefaults.SortType;
-            SortFunction = String.Empty;
+
+            Formatter = String.Empty;
+            FormatterOptions = null;
             Index = String.Empty;
+            InitialSortingOrder = JqGridOptionsDefaults.Sorting.InitialOrder;
+            Sortable = JqGridOptionsDefaults.Sorting.Sortable;
+            SortFunction = String.Empty;
+            SortType = JqGridOptionsDefaults.Sorting.Type;
+            UnFormatter = String.Empty;
         }
         #endregion
     }

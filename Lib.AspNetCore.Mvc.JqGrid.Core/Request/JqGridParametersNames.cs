@@ -1,5 +1,5 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
-using System;
+﻿using System;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
 {
@@ -81,26 +81,26 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
         /// </summary>
         public JqGridParametersNames()
         {
-            PageIndex = JqGridOptionsDefaults.RequestPageIndex;
-            RecordsCount = JqGridOptionsDefaults.RequestRecordsCount;
-            SortingName = JqGridOptionsDefaults.RequestSortingName;
-            SortingOrder = JqGridOptionsDefaults.RequestSortingOrder;
-            Searching = JqGridOptionsDefaults.RequestSearching;
-            Id = JqGridOptionsDefaults.RequestId;
-            Operator = JqGridOptionsDefaults.RequestOperator;
-            EditOperator = JqGridOptionsDefaults.RequestEditOperator;
-            AddOperator = JqGridOptionsDefaults.RequestAddOperator;
-            DeleteOperator = JqGridOptionsDefaults.RequestDeleteOperator;
-            SubgridId = JqGridOptionsDefaults.RequestSubgridId;
+            PageIndex = JqGridOptionsDefaults.Request.PageIndex;
+            RecordsCount = JqGridOptionsDefaults.Request.RecordsCount;
+            SortingName = JqGridOptionsDefaults.Request.SortingName;
+            SortingOrder = JqGridOptionsDefaults.Request.SortingOrder;
+            Searching = JqGridOptionsDefaults.Request.Searching;
+            Id = JqGridOptionsDefaults.Request.Id;
+            Operator = JqGridOptionsDefaults.Request.Operator;
+            EditOperator = JqGridOptionsDefaults.Request.EditOperator;
+            AddOperator = JqGridOptionsDefaults.Request.AddOperator;
+            DeleteOperator = JqGridOptionsDefaults.Request.DeleteOperator;
+            SubgridId = JqGridOptionsDefaults.Request.SubgridId;
             PagesCount = null;
-            TotalRows = JqGridOptionsDefaults.RequestTotalRows;
+            TotalRows = JqGridOptionsDefaults.Request.TotalRows;
         }
         #endregion
 
         #region Methods
         internal bool IsDefault()
         {
-            return ((PageIndex == JqGridOptionsDefaults.RequestPageIndex) && (RecordsCount == JqGridOptionsDefaults.RequestRecordsCount) && (SortingName == JqGridOptionsDefaults.RequestSortingName) && (SortingOrder == JqGridOptionsDefaults.RequestSortingOrder) && (Searching == JqGridOptionsDefaults.RequestSearching) && (Id == JqGridOptionsDefaults.RequestId) && (Operator == JqGridOptionsDefaults.RequestOperator) && (EditOperator == JqGridOptionsDefaults.RequestEditOperator) && (AddOperator == JqGridOptionsDefaults.RequestAddOperator) && (DeleteOperator == JqGridOptionsDefaults.RequestDeleteOperator) && (SubgridId == JqGridOptionsDefaults.RequestSubgridId) && String.IsNullOrWhiteSpace(PagesCount) && (TotalRows == JqGridOptionsDefaults.RequestTotalRows));
+            return ((PageIndex == JqGridOptionsDefaults.Request.PageIndex) && (RecordsCount == JqGridOptionsDefaults.Request.RecordsCount) && (SortingName == JqGridOptionsDefaults.Request.SortingName) && (SortingOrder == JqGridOptionsDefaults.Request.SortingOrder) && (Searching == JqGridOptionsDefaults.Request.Searching) && (Id == JqGridOptionsDefaults.Request.Id) && (Operator == JqGridOptionsDefaults.Request.Operator) && (EditOperator == JqGridOptionsDefaults.Request.EditOperator) && (AddOperator == JqGridOptionsDefaults.Request.AddOperator) && (DeleteOperator == JqGridOptionsDefaults.Request.DeleteOperator) && (SubgridId == JqGridOptionsDefaults.Request.SubgridId) && String.IsNullOrWhiteSpace(PagesCount) && (TotalRows == JqGridOptionsDefaults.Request.TotalRows));
         }
         #endregion
     }

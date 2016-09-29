@@ -45,9 +45,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         public JqGridColumnSortableAttribute(bool sortable)
         {
             Sortable = sortable;
-            SortType = JqGridOptionsDefaults.SortType;
+            SortType = JqGridOptionsDefaults.Sorting.Type;
             SortFunction = String.Empty;
-            InitialSortingOrder = JqGridOptionsDefaults.InitialSortingOrder;
+            InitialSortingOrder = JqGridOptionsDefaults.Sorting.InitialOrder;
         }
         #endregion
     }

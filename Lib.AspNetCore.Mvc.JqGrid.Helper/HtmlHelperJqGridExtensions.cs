@@ -113,9 +113,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         private static StringBuilder AppendColumnModelSortOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel)
         {
             javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridJavaScriptRenderingHelper.COLUMNS_MODEL_INDEX_FIELD, columnModel.Index)
-                .AppendJavaScriptObjectEnumField(JqGridJavaScriptRenderingHelper.COLUMNS_MODEL_INITIAL_SORTING_ORDER_FIELD, columnModel.InitialSortingOrder, JqGridOptionsDefaults.InitialSortingOrder);
+                .AppendJavaScriptObjectEnumField(JqGridJavaScriptRenderingHelper.COLUMNS_MODEL_INITIAL_SORTING_ORDER_FIELD, columnModel.InitialSortingOrder, JqGridOptionsDefaults.Sorting.InitialOrder);
 
-            if (columnModel.Sortable != JqGridOptionsDefaults.Sortable)
+            if (columnModel.Sortable != JqGridOptionsDefaults.Sorting.Sortable)
             {
                 javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridJavaScriptRenderingHelper.COLUMNS_MODEL_SORTABLE_FIELD, columnModel.Sortable);
             }
@@ -127,7 +127,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                 }
                 else
                 {
-                    javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridJavaScriptRenderingHelper.COLUMNS_MODEL_SORT_TYPE_FIELD, columnModel.SortType, JqGridOptionsDefaults.SortType);
+                    javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridJavaScriptRenderingHelper.COLUMNS_MODEL_SORT_TYPE_FIELD, columnModel.SortType, JqGridOptionsDefaults.Sorting.Type);
                 }
             }
 
