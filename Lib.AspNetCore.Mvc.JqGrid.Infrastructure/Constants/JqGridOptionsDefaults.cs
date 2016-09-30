@@ -183,6 +183,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// The value indicating if form editing should be used instead of inline editing for actions formatter
             /// </summary>
             public const bool UseFormEditing = false;
+
+            /// <summary>
+            /// The value indicating whether to show the label in jQuery UI Button widget.
+            /// </summary>
+            public const bool Text = true;
         }
 
         /// <summary>
