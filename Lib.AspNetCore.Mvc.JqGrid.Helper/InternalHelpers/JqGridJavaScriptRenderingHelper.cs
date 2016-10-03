@@ -1,25 +1,15 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
     internal static class JqGridJavaScriptRenderingHelper
     {
-        #region Constants
-        internal const string COLUMNS_NAMES_FIELD = "colNames";
-
-        internal const string COLUMNS_MODEL_FIELD = "colModel";
-        internal const string COLUMNS_MODEL_NAME_FIELD = "name";
-        internal const string COLUMNS_MODEL_INDEX_FIELD = "index";
-        internal const string COLUMNS_MODEL_INITIAL_SORTING_ORDER_FIELD = "firstsortorder";
-        internal const string COLUMNS_MODEL_SORTABLE_FIELD = "sortable";
-        internal const string COLUMNS_MODEL_SORT_TYPE_FIELD = "sorttype";
-        #endregion
-
         #region Extension Methods
         internal static StringBuilder AppendJavaScriptArrayFieldOpening(this StringBuilder javaScriptBuilder, string fieldName)
         {
-            return javaScriptBuilder.AppendFormat("{0}: [", fieldName);
+            return javaScriptBuilder.AppendFormat("{0}:[", fieldName);
         }
 
         internal static StringBuilder AppendJavaScriptArrayFieldClosing(this StringBuilder javaScriptBuilder)
@@ -38,15 +28,20 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder.Append("{");
         }
 
+        internal static StringBuilder AppendJavaScriptObjectFieldOpening(this StringBuilder javaScriptBuilder, string fieldName)
+        {
+            return javaScriptBuilder.Append("{0}:{");
+        }
+
         internal static StringBuilder AppendJavaScriptObjectFieldClosing(this StringBuilder javaScriptBuilder)
         {
             javaScriptBuilder.RemoveTrailingComma();
             return javaScriptBuilder.Append("},");
         }
 
-        internal static StringBuilder AppendJavaScriptObjectStringField(this StringBuilder javaScriptBuilder, string fieldName, string fieldValue)
+        internal static StringBuilder AppendJavaScriptObjectStringField(this StringBuilder javaScriptBuilder, string fieldName, string fieldValue, string defaultFieldValue = null)
         {
-            if (!String.IsNullOrWhiteSpace(fieldValue))
+            if (!String.IsNullOrEmpty(defaultFieldValue) ? (fieldValue != defaultFieldValue) : !String.IsNullOrEmpty(fieldValue))
             {
                 javaScriptBuilder.AppendFormat("{0}:'{1}',", fieldName, fieldValue);
             }
@@ -69,6 +64,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             if (!defaultFieldValue.HasValue || (fieldValue != defaultFieldValue.Value))
             {
                 javaScriptBuilder.AppendFormat("{0}:{1},", fieldName, fieldValue.ToString().ToLower());
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendJavaScriptObjectIntegerField(this StringBuilder javaScriptBuilder, string fieldName, int fieldValue, int? defaultFieldValue = null)
+        {
+            if (!defaultFieldValue.HasValue || !(fieldValue.Equals(defaultFieldValue.Value)))
+            {
+                javaScriptBuilder.AppendFormat("{0}:{1},", fieldName, fieldValue.ToString(CultureInfo.InvariantCulture));
             }
 
             return javaScriptBuilder;

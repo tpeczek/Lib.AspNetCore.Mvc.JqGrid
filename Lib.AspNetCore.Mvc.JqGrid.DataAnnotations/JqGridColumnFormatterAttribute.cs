@@ -1,5 +1,4 @@
 ﻿using System;
-using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
@@ -17,9 +16,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         public string Formatter { get; private set; }
 
         /// <summary>
-        /// Gets or sets the options for predefined formatter (every predefined formatter uses only a subset of all options), which are overwriting the defaults from the language file.
+        /// Gets the options for predefined formatter (every predefined formatter uses only a subset of all options), which are overwriting the defaults from the language file.
         /// </summary>
-        private JqGridColumnFormatterOptions Options { get; set; }
+        public JqGridColumnFormatterOptions FormatterOptions { get; private set; }
 
         /// <summary>
         /// Gets or sets the custom function to "unformat" a value of the cell when used in editing or client-side sorting
@@ -31,8 +30,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public int DecimalPlaces
         {
-            get { return Options.DecimalPlaces; }
-            set { Options.DecimalPlaces = value; }
+            get { return FormatterOptions.DecimalPlaces; }
+            set { FormatterOptions.DecimalPlaces = value; }
         }
 
         /// <summary>
@@ -40,8 +39,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string DecimalSeparator
         {
-            get { return Options.DecimalSeparator; }
-            set { Options.DecimalSeparator = value; }
+            get { return FormatterOptions.DecimalSeparator; }
+            set { FormatterOptions.DecimalSeparator = value; }
         }
 
         /// <summary>
@@ -49,8 +48,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string DefaultValue
         {
-            get { return Options.DefaultValue; }
-            set { Options.DefaultValue = value; }
+            get { return FormatterOptions.DefaultValue; }
+            set { FormatterOptions.DefaultValue = value; }
         }
 
         /// <summary>
@@ -58,8 +57,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public bool Disabled
         {
-            get { return Options.Disabled; }
-            set { Options.Disabled = value; }
+            get { return FormatterOptions.Disabled; }
+            set { FormatterOptions.Disabled = value; }
         }
 
         /// <summary>
@@ -67,8 +66,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string Prefix
         {
-            get { return Options.Prefix; }
-            set { Options.Prefix = value; }
+            get { return FormatterOptions.Prefix; }
+            set { FormatterOptions.Prefix = value; }
         }
 
         /// <summary>
@@ -76,8 +75,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string Suffix
         {
-            get { return Options.Suffix; }
-            set { Options.Suffix = value; }
+            get { return FormatterOptions.Suffix; }
+            set { FormatterOptions.Suffix = value; }
         }
 
         /// <summary>
@@ -85,8 +84,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string SourceFormat
         {
-            get { return Options.SourceFormat; }
-            set { Options.SourceFormat = value; }
+            get { return FormatterOptions.SourceFormat; }
+            set { FormatterOptions.SourceFormat = value; }
         }
 
         /// <summary>
@@ -94,8 +93,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string OutputFormat
         {
-            get { return Options.OutputFormat; }
-            set { Options.OutputFormat = value; }
+            get { return FormatterOptions.OutputFormat; }
+            set { FormatterOptions.OutputFormat = value; }
         }
 
         /// <summary>
@@ -103,8 +102,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string BaseLinkUrl
         {
-            get { return Options.BaseLinkUrl; }
-            set { Options.BaseLinkUrl = value; }
+            get { return FormatterOptions.BaseLinkUrl; }
+            set { FormatterOptions.BaseLinkUrl = value; }
         }
 
         /// <summary>
@@ -112,8 +111,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string ShowAction
         {
-            get { return Options.ShowAction; }
-            set { Options.ShowAction = value; }
+            get { return FormatterOptions.ShowAction; }
+            set { FormatterOptions.ShowAction = value; }
         }
 
         /// <summary>
@@ -121,8 +120,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string AddParam
         {
-            get { return Options.AddParam; }
-            set { Options.AddParam = value; }
+            get { return FormatterOptions.AddParam; }
+            set { FormatterOptions.AddParam = value; }
         }
 
         /// <summary>
@@ -130,8 +129,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string Target
         {
-            get { return Options.Target; }
-            set { Options.Target = value; }
+            get { return FormatterOptions.Target; }
+            set { FormatterOptions.Target = value; }
         }
 
         /// <summary>
@@ -139,8 +138,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string IdName
         {
-            get { return Options.IdName; }
-            set { Options.IdName = value; }
+            get { return FormatterOptions.IdName; }
+            set { FormatterOptions.IdName = value; }
         }
 
         /// <summary>
@@ -148,34 +147,54 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
         /// </summary>
         public string ThousandsSeparator
         {
-            get { return Options.ThousandsSeparator; }
-            set { Options.ThousandsSeparator = value; }
+            get { return FormatterOptions.ThousandsSeparator; }
+            set { FormatterOptions.ThousandsSeparator = value; }
         }
 
         /// <summary>
         /// Gets or sets the primary icon class (form UI theme icons) for jQuery UI Button widget.
         /// </summary>
-        public string PrimaryIcon { get; set; }
+        public string PrimaryIcon
+        {
+            get { return FormatterOptions.PrimaryIcon; }
+            set { FormatterOptions.PrimaryIcon = value; }
+        }
 
         /// <summary>
         /// Gets or sets the secondary icon class (form UI theme icons) for jQuery UI Button widget.
         /// </summary>
-        public string SecondaryIcon { get; set; }
+        public string SecondaryIcon
+        {
+            get { return FormatterOptions.SecondaryIcon; }
+            set { FormatterOptions.SecondaryIcon = value; }
+        }
 
         /// <summary>
         /// Gets or sets the text to show in the button for jQuery UI Button widget.
         /// </summary>
-        public string Label { get; set; }
+        public string Label
+        {
+            get { return FormatterOptions.Label; }
+            set { FormatterOptions.Label = value; }
+        }
 
         /// <summary>
         /// Gets or sets the value whether to show the label in jQuery UI Button widget.
         /// </summary>
-        public bool Text { get; set; }
+        public bool Text
+        {
+            get { return FormatterOptions.Text; }
+            set { FormatterOptions.Text = value; }
+        }
 
         /// <summary>
         /// Gets or sets the click handler (JavaScript) for jQuery UI Button widget.
         /// </summary>
-        public string OnClick { get; set; }
+        public string OnClick
+        {
+            get { return FormatterOptions.OnClick; }
+            set { FormatterOptions.OnClick = value; }
+        }
         #endregion
 
         #region Constructor
@@ -191,11 +210,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
             }
 
             Formatter = formatter;
-            Options = new JqGridColumnFormatterOptions(formatter);
-            PrimaryIcon = String.Empty;
-            SecondaryIcon = String.Empty;
-            Label = String.Empty;
-            Text = JqGridOptionsDefaults.Formatter.Text;
+            FormatterOptions = new JqGridColumnFormatterOptions(formatter);
         }
         #endregion
     }

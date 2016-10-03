@@ -113,102 +113,108 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// </summary>
             public const string TotalRows = "totalrows";
         }
-        
-        /// <summary>
-        /// Formatter options.
-        /// </summary>
-        public static class Formatter
-        {
-            /// <summary>
-            /// The decimal places for formatter.
-            /// </summary>
-            public const int DecimalPlaces = 2;
-
-            /// <summary>
-            /// The decimal separator for formatter.
-            /// </summary>
-            public const string DecimalSeparator = ".";
-
-            /// <summary>
-            /// The date source format for formatter.
-            /// </summary>
-            public const string SourceFormat = "Y-m-d";
-
-            /// <summary>
-            /// The date output format for formatter.
-            /// </summary>
-            public const string OutputFormat = "n/j/Y";
-
-            /// <summary>
-            /// The thousands separator for formatter.
-            /// </summary>
-            public const string ThousandsSeparator = " ";
-
-            /// <summary>
-            /// The checkbox disabled property for formatter.
-            /// </summary>
-            public const bool Disabled = true;
-
-            /// <summary>
-            /// The first parameter that is added after the ShowAction.
-            /// </summary>
-            public const string IdName = "id";
-
-            /// <summary>
-            /// The default value for integer formatter.
-            /// </summary>
-            public const string IntegerDefaultValue = "0";
-
-            /// <summary>
-            /// The default value for number formatter.
-            /// </summary>
-            public const string NumberDefaultValue = "0.00";
-
-            /// <summary>
-            /// The default value for currency formatter.
-            /// </summary>
-            public const string CurrencyDefaultValue = "0.00";
-
-            /// <summary>
-            /// The value indicating if edit button is enabled for actions formatter.
-            /// </summary>
-            public const bool EditButton = true;
-
-            /// <summary>
-            /// The value indicating if delete button is enabled for actions formatter.
-            /// </summary>
-            public const bool DeleteButton = true;
-
-            /// <summary>
-            /// The value indicating if form editing should be used instead of inline editing for actions formatter
-            /// </summary>
-            public const bool UseFormEditing = false;
-
-            /// <summary>
-            /// The value indicating whether to show the label in jQuery UI Button widget.
-            /// </summary>
-            public const bool Text = true;
-        }
 
         /// <summary>
-        /// Sorting options.
+        /// Column model options.
         /// </summary>
-        public static class Sorting
+        public static class ColumnModel
         {
             /// <summary>
-            /// The flag indicating if column is sortable.
+            /// Formatter options.
             /// </summary>
-            public const bool Sortable = true;
+            public static class Formatter
+            {
+                /// <summary>
+                /// The decimal places for formatter.
+                /// </summary>
+                public const int DecimalPlaces = 2;
+
+                /// <summary>
+                /// The decimal separator for formatter.
+                /// </summary>
+                public const string DecimalSeparator = ".";
+
+                /// <summary>
+                /// The date source format for formatter.
+                /// </summary>
+                public const string SourceFormat = "Y-m-d";
+
+                /// <summary>
+                /// The date output format for formatter.
+                /// </summary>
+                public const string OutputFormat = "n/j/Y";
+
+                /// <summary>
+                /// The thousands separator for formatter.
+                /// </summary>
+                public const string ThousandsSeparator = " ";
+
+                /// <summary>
+                /// The checkbox disabled property for formatter.
+                /// </summary>
+                public const bool Disabled = true;
+
+                /// <summary>
+                /// The first parameter that is added after the ShowAction.
+                /// </summary>
+                public const string IdName = "id";
+
+                /// <summary>
+                /// The default value for integer formatter.
+                /// </summary>
+                public const string IntegerDefaultValue = "0";
+
+                /// <summary>
+                /// The default value for number formatter.
+                /// </summary>
+                public const string NumberDefaultValue = "0.00";
+
+                /// <summary>
+                /// The default value for currency formatter.
+                /// </summary>
+                public const string CurrencyDefaultValue = "0.00";
+
+                /// <summary>
+                /// The value indicating if edit button is enabled for actions formatter.
+                /// </summary>
+                public const bool EditButton = true;
+
+                /// <summary>
+                /// The value indicating if delete button is enabled for actions formatter.
+                /// </summary>
+                public const bool DeleteButton = true;
+
+                /// <summary>
+                /// The value indicating if form editing should be used instead of inline editing for actions formatter
+                /// </summary>
+                public const bool UseFormEditing = false;
+
+                /// <summary>
+                /// The value indicating whether to show the label in jQuery UI Button widget.
+                /// </summary>
+                public const bool Text = true;
+            }
 
             /// <summary>
-            /// The sorting order for first column sorting
+            /// Sorting options.
             /// </summary>
-            public const JqGridSortingOrders InitialOrder = JqGridSortingOrders.Asc;
+            public static class Sorting
+            {
+                /// <summary>
+                /// The flag indicating if column is sortable.
+                /// </summary>
+                public const bool Sortable = true;
 
-            /// <summary>
-            /// The the type of the column for appropriate sorting when datatype is local.
-            /// </summary>
-            public const JqGridSortTypes Type = JqGridSortTypes.Text;
+                /// <summary>
+                /// The sorting order for first column sorting
+                /// </summary>
+                public const JqGridSortingOrders InitialOrder = JqGridSortingOrders.Asc;
+
+                /// <summary>
+                /// The the type of the column for appropriate sorting when datatype is local.
+                /// </summary>
+                public const JqGridSortTypes Type = JqGridSortTypes.Text;
+            }
         }
 
         /// <summary>

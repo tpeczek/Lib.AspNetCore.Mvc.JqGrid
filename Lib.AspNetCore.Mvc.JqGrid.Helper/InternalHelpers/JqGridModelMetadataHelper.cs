@@ -40,11 +40,13 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
             TimestampAttribute timeStampAttribute = null;
             JqGridColumnSortableAttribute jqGridColumnSortableAttribute = null;
+            JqGridColumnFormatterAttribute jqGridColumnFormatterAttribute = null;
 
             foreach (Attribute customAttribute in columnMetadata.ContainerType.GetProperty(columnMetadata.PropertyName).GetCustomAttributes(true))
             {
                 timeStampAttribute = (customAttribute as TimestampAttribute) ?? timeStampAttribute;
                 jqGridColumnSortableAttribute = (customAttribute as JqGridColumnSortableAttribute) ?? jqGridColumnSortableAttribute;
+                jqGridColumnFormatterAttribute = (customAttribute as JqGridColumnFormatterAttribute) ?? jqGridColumnFormatterAttribute;
             }
 
             if (timeStampAttribute != null)
@@ -52,6 +54,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             else
             {
                 columnModel = SetSortOptions(columnModel, jqGridColumnSortableAttribute);
+                columnModel = SetFormatterOptions(columnModel, jqGridColumnFormatterAttribute);
             }
 
             return columnModel;
@@ -66,6 +69,18 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel.Sortable = jqGridColumnSortableAttribute.Sortable;
                 columnModel.SortType = jqGridColumnSortableAttribute.SortType;
                 columnModel.SortFunction = jqGridColumnSortableAttribute.SortFunction;
+            }
+
+            return columnModel;
+        }
+
+        private static JqGridColumnModel SetFormatterOptions(JqGridColumnModel columnModel, JqGridColumnFormatterAttribute jqGridColumnFormatterAttribute)
+        {
+            if (jqGridColumnFormatterAttribute != null)
+            {
+                columnModel.Formatter = jqGridColumnFormatterAttribute.Formatter;
+                columnModel.FormatterOptions = jqGridColumnFormatterAttribute.FormatterOptions;
+                columnModel.UnFormatter = jqGridColumnFormatterAttribute.UnFormatter;
             }
 
             return columnModel;

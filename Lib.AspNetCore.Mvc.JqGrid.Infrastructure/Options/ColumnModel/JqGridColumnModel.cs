@@ -68,10 +68,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
             Formatter = String.Empty;
             FormatterOptions = null;
             Index = String.Empty;
-            InitialSortingOrder = JqGridOptionsDefaults.Sorting.InitialOrder;
-            Sortable = JqGridOptionsDefaults.Sorting.Sortable;
+            InitialSortingOrder = JqGridOptionsDefaults.ColumnModel.Sorting.InitialOrder;
+            Sortable = JqGridOptionsDefaults.ColumnModel.Sorting.Sortable;
             SortFunction = String.Empty;
-            SortType = JqGridOptionsDefaults.Sorting.Type;
+            SortType = JqGridOptionsDefaults.ColumnModel.Sorting.Type;
             UnFormatter = String.Empty;
         }
         #endregion

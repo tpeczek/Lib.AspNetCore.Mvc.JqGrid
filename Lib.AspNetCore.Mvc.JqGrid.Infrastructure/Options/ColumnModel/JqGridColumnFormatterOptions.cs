@@ -96,6 +96,31 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         public bool UseFormEditing { get; set; }
 
         /// <summary>
+        /// Gets or sets the primary icon class (form UI theme icons) for jQuery UI Button widget.
+        /// </summary>
+        public string PrimaryIcon { get; set; }
+
+        /// <summary>
+        /// Gets or sets the secondary icon class (form UI theme icons) for jQuery UI Button widget.
+        /// </summary>
+        public string SecondaryIcon { get; set; }
+
+        /// <summary>
+        /// Gets or sets the text to show in the button for jQuery UI Button widget.
+        /// </summary>
+        public string Label { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value whether to show the label in jQuery UI Button widget.
+        /// </summary>
+        public bool Text { get; set; }
+
+        /// <summary>
+        /// Gets or sets the click handler (JavaScript) for jQuery UI Button widget.
+        /// </summary>
+        public string OnClick { get; set; }
+
+        /// <summary>
         /// Gets or sets options for inline editing (RestoreAfterError and MethodType options are ignored in this context) for actions formatter.
         /// </summary>
         public JqGridInlineNavigatorActionOptions InlineEditingOptions { get; set; }
@@ -120,20 +145,24 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
             DecimalPlaces = 0;
             DecimalSeparator = String.Empty;
             DefaultValue = String.Empty;
-            Disabled = JqGridOptionsDefaults.Formatter.Disabled;
+            Disabled = JqGridOptionsDefaults.ColumnModel.Formatter.Disabled;
             ThousandsSeparator = String.Empty;
             Prefix = String.Empty;
             Suffix = String.Empty;
-            SourceFormat = JqGridOptionsDefaults.Formatter.SourceFormat;
-            OutputFormat = JqGridOptionsDefaults.Formatter.OutputFormat;
+            SourceFormat = JqGridOptionsDefaults.ColumnModel.Formatter.SourceFormat;
+            OutputFormat = JqGridOptionsDefaults.ColumnModel.Formatter.OutputFormat;
             BaseLinkUrl = String.Empty;
             ShowAction = String.Empty;
             AddParam = String.Empty;
             Target = String.Empty;
-            IdName = JqGridOptionsDefaults.Formatter.IdName;
-            EditButton = JqGridOptionsDefaults.Formatter.EditButton;
-            DeleteButton = JqGridOptionsDefaults.Formatter.DeleteButton;
-            UseFormEditing = JqGridOptionsDefaults.Formatter.UseFormEditing;
+            IdName = JqGridOptionsDefaults.ColumnModel.Formatter.IdName;
+            EditButton = JqGridOptionsDefaults.ColumnModel.Formatter.EditButton;
+            DeleteButton = JqGridOptionsDefaults.ColumnModel.Formatter.DeleteButton;
+            UseFormEditing = JqGridOptionsDefaults.ColumnModel.Formatter.UseFormEditing;
+            PrimaryIcon = String.Empty;
+            SecondaryIcon = String.Empty;
+            Label = String.Empty;
+            Text = JqGridOptionsDefaults.ColumnModel.Formatter.Text;
             InlineEditingOptions = null;
             FormEditingOptions = null;
             DeleteOptions = null;
@@ -149,48 +178,25 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
             switch (formatter)
             {
                 case JqGridPredefinedFormatters.Integer:
-                    DefaultValue = JqGridOptionsDefaults.Formatter.IntegerDefaultValue;
-                    ThousandsSeparator = JqGridOptionsDefaults.Formatter.ThousandsSeparator;
+                    DefaultValue = JqGridOptionsDefaults.ColumnModel.Formatter.IntegerDefaultValue;
+                    ThousandsSeparator = JqGridOptionsDefaults.ColumnModel.Formatter.ThousandsSeparator;
                     break;
                 case JqGridPredefinedFormatters.Number:
-                    DecimalPlaces = JqGridOptionsDefaults.Formatter.DecimalPlaces;
-                    DecimalSeparator = JqGridOptionsDefaults.Formatter.DecimalSeparator;
-                    DefaultValue = JqGridOptionsDefaults.Formatter.NumberDefaultValue;
-                    ThousandsSeparator = JqGridOptionsDefaults.Formatter.ThousandsSeparator;
+                    DecimalPlaces = JqGridOptionsDefaults.ColumnModel.Formatter.DecimalPlaces;
+                    DecimalSeparator = JqGridOptionsDefaults.ColumnModel.Formatter.DecimalSeparator;
+                    DefaultValue = JqGridOptionsDefaults.ColumnModel.Formatter.NumberDefaultValue;
+                    ThousandsSeparator = JqGridOptionsDefaults.ColumnModel.Formatter.ThousandsSeparator;
                     break;
                 case JqGridPredefinedFormatters.Currency:
-                    DecimalPlaces = JqGridOptionsDefaults.Formatter.DecimalPlaces;
-                    DecimalSeparator = JqGridOptionsDefaults.Formatter.DecimalSeparator;
-                    DefaultValue = JqGridOptionsDefaults.Formatter.CurrencyDefaultValue;
-                    ThousandsSeparator = JqGridOptionsDefaults.Formatter.ThousandsSeparator;
+                    DecimalPlaces = JqGridOptionsDefaults.ColumnModel.Formatter.DecimalPlaces;
+                    DecimalSeparator = JqGridOptionsDefaults.ColumnModel.Formatter.DecimalSeparator;
+                    DefaultValue = JqGridOptionsDefaults.ColumnModel.Formatter.CurrencyDefaultValue;
+                    ThousandsSeparator = JqGridOptionsDefaults.ColumnModel.Formatter.ThousandsSeparator;
                     break;
-            }
-        }
-        #endregion
-
-        #region Methods
-        internal bool IsDefault(string formatter)
-        {
-            switch (formatter)
-            {
-                case JqGridPredefinedFormatters.Integer:
-                    return ((DefaultValue == JqGridOptionsDefaults.Formatter.IntegerDefaultValue) && (ThousandsSeparator == JqGridOptionsDefaults.Formatter.ThousandsSeparator));
-                case JqGridPredefinedFormatters.Number:
-                    return ((DecimalPlaces == JqGridOptionsDefaults.Formatter.DecimalPlaces) && (DecimalSeparator == JqGridOptionsDefaults.Formatter.DecimalSeparator) && (DefaultValue == JqGridOptionsDefaults.Formatter.NumberDefaultValue) && (ThousandsSeparator == JqGridOptionsDefaults.Formatter.ThousandsSeparator));
-                case JqGridPredefinedFormatters.Currency:
-                    return ((DecimalPlaces == JqGridOptionsDefaults.Formatter.DecimalPlaces) && (DecimalSeparator == JqGridOptionsDefaults.Formatter.DecimalSeparator) && (DefaultValue == JqGridOptionsDefaults.Formatter.CurrencyDefaultValue) && String.IsNullOrWhiteSpace(Prefix) && String.IsNullOrWhiteSpace(Suffix) && (ThousandsSeparator == JqGridOptionsDefaults.Formatter.ThousandsSeparator));
-                case JqGridPredefinedFormatters.Date:
-                    return ((SourceFormat == JqGridOptionsDefaults.Formatter.SourceFormat) && (OutputFormat == JqGridOptionsDefaults.Formatter.OutputFormat));
-                case JqGridPredefinedFormatters.Link:
-                    return String.IsNullOrWhiteSpace(Target);
-                case JqGridPredefinedFormatters.ShowLink:
-                    return (String.IsNullOrWhiteSpace(BaseLinkUrl) && String.IsNullOrWhiteSpace(ShowAction) && String.IsNullOrWhiteSpace(AddParam) && String.IsNullOrWhiteSpace(Target) && (IdName == JqGridOptionsDefaults.Formatter.IdName));
-                case JqGridPredefinedFormatters.CheckBox:
-                    return (Disabled == JqGridOptionsDefaults.Formatter.Disabled);
                 case JqGridPredefinedFormatters.Actions:
-                    return ((EditButton == JqGridOptionsDefaults.Formatter.EditButton) && (DeleteButton == JqGridOptionsDefaults.Formatter.DeleteButton) && (UseFormEditing == JqGridOptionsDefaults.Formatter.UseFormEditing) && (InlineEditingOptions == null) && (FormEditingOptions == null) && (DeleteOptions == null));
-                default:
-                    return true;
+                    InlineEditingOptions = new JqGridInlineNavigatorActionOptions();
+                    DeleteOptions = new JqGridNavigatorDeleteActionOptions();
+                    break;
             }
         }
         #endregion

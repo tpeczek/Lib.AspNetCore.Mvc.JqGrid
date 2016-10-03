@@ -17,11 +17,7 @@
   },
   "frameworks": {
     "net451": { },
-    "netstandard1.6": {
-      "imports": [
-        "portable-net451+win8"
-      ]
-    }
+    "netstandard1.6": { }
   },
   "dependencies": {
     "Lib.AspNetCore.Mvc.JqGrid.Infrastructure": "1.0.0-*",
