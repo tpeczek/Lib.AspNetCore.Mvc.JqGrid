@@ -260,45 +260,51 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 
             if (formatterOptions.EditButton)
             {
-                if (!formatterOptions.UseFormEditing && (formatterOptions.InlineEditingOptions != null) && formatterOptions.InlineEditingOptions.AreDefault())
+                if (formatterOptions.UseFormEditing)
+                {
+                    //(formatterOptions.FormEditingOptions != null) && !formatterOptions.FormEditingOptions.AreDefault()
+                    //javaScriptBuilder.AppendNavigatorActionOptions("editOptions: ", formatterOptions.FormEditingOptions);
+                }
+                else
                 {
                     javaScriptBuilder.AppendInlineNavigatorActionOptions(formatterOptions.InlineEditingOptions);
                 }
-                else if (formatterOptions.UseFormEditing && (formatterOptions.FormEditingOptions != null) && formatterOptions.FormEditingOptions.AreDefault())
-                {
-                    //javaScriptBuilder.AppendNavigatorActionOptions("editOptions: ", formatterOptions.FormEditingOptions);
-                }
             }
 
-            if (formatterOptions.DeleteButton && (formatterOptions.DeleteOptions != null) && formatterOptions.DeleteOptions.AreDefault())
+            if (formatterOptions.DeleteButton)
             {
+                //(formatterOptions.DeleteOptions != null) && !formatterOptions.DeleteOptions.AreDefault()
                 //javaScriptBuilder.AppendNavigatorActionOptions("delOptions: ", formatterOptions.DeleteOptions);
             }
-
-
+            
             return javaScriptBuilder;
         }
 
         private static StringBuilder AppendInlineNavigatorActionOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorActionOptions inlineNavigatorActionOptions)
         {
-            if (!String.IsNullOrWhiteSpace(inlineNavigatorActionOptions.ExtraParamScript))
+            if ((inlineNavigatorActionOptions != null) && !inlineNavigatorActionOptions.AreDefault())
             {
-                javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.EXTRA_PARAM, inlineNavigatorActionOptions.ExtraParamScript);
-            }
-            else if (inlineNavigatorActionOptions.ExtraParam != null)
-            {
-                javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.EXTRA_PARAM, JsonConvert.SerializeObject(inlineNavigatorActionOptions.ExtraParam, Formatting.None));
+                if (!String.IsNullOrWhiteSpace(inlineNavigatorActionOptions.ExtraParamScript))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.EXTRA_PARAM, inlineNavigatorActionOptions.ExtraParamScript);
+                }
+                else if (inlineNavigatorActionOptions.ExtraParam != null)
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.EXTRA_PARAM, JsonConvert.SerializeObject(inlineNavigatorActionOptions.ExtraParam, Formatting.None));
+                }
+
+                javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.InlineNavigator.KEYS, inlineNavigatorActionOptions.Keys, JqGridOptionsDefaults.Navigator.InlineActionKeys)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.ON_EDIT_FUNCTION, inlineNavigatorActionOptions.OnEditFunction)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.SUCCESS_FUNCTION, inlineNavigatorActionOptions.SuccessFunction)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.InlineNavigator.URL, inlineNavigatorActionOptions.Url)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.AFTER_SAVE_FUNCTION, inlineNavigatorActionOptions.AfterSaveFunction)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.ERROR_FUNCTION, inlineNavigatorActionOptions.ErrorFunction)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.AFTER_RESTORE_FUNCTION, inlineNavigatorActionOptions.AfterRestoreFunction)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.InlineNavigator.RESTORE_AFTER_ERROR, inlineNavigatorActionOptions.RestoreAfterError, JqGridOptionsDefaults.Navigator.InlineActionRestoreAfterError)
+                    .AppendJavaScriptObjectEnumField(JqGridOptionsNames.InlineNavigator.METHOD_TYPE, inlineNavigatorActionOptions.MethodType, JqGridOptionsDefaults.Navigator.InlineActionMethodType);
             }
 
-            return javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.InlineNavigator.KEYS, inlineNavigatorActionOptions.Keys, JqGridOptionsDefaults.Navigator.InlineActionKeys)
-                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.ON_EDIT_FUNCTION, inlineNavigatorActionOptions.OnEditFunction)
-                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.SUCCESS_FUNCTION, inlineNavigatorActionOptions.SuccessFunction)
-                .AppendJavaScriptObjectStringField(JqGridOptionsNames.InlineNavigator.URL, inlineNavigatorActionOptions.Url)
-                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.AFTER_SAVE_FUNCTION, inlineNavigatorActionOptions.AfterSaveFunction)
-                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.ERROR_FUNCTION, inlineNavigatorActionOptions.ErrorFunction)
-                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.AFTER_RESTORE_FUNCTION, inlineNavigatorActionOptions.AfterRestoreFunction)
-                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.InlineNavigator.RESTORE_AFTER_ERROR, inlineNavigatorActionOptions.RestoreAfterError, JqGridOptionsDefaults.Navigator.InlineActionRestoreAfterError)
-                .AppendJavaScriptObjectEnumField(JqGridOptionsNames.InlineNavigator.METHOD_TYPE, inlineNavigatorActionOptions.MethodType, JqGridOptionsDefaults.Navigator.InlineActionMethodType);
+            return javaScriptBuilder;
         }
         #endregion
     }

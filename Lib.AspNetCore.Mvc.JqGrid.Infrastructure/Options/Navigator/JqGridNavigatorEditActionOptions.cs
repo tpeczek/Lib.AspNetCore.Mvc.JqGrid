@@ -143,7 +143,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
             AfterComplete = null;
             BeforeCheckValues = null;
             OnClickPgButtons = null;
-            OnClose = null;
             OnInitializeForm = null;
             ErrorTextFormat = null;
         }
