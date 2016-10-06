@@ -35,6 +35,8 @@
                 internal const string EDIT_BUTTON = "editbutton";
                 internal const string DELETE_BUTTON = "delbutton";
                 internal const string USE_FORM_EDITING = "editformbutton";
+                internal const string EDIT_OPTIONS = "editOptions";
+                internal const string DELETE_OPTIONS = "delOptions";
             }
         };
 
@@ -50,6 +52,24 @@
             internal const string RESTORE_AFTER_ERROR = "restoreAfterError";
             internal const string METHOD_TYPE = "mtype";
             internal const string EXTRA_PARAM = "extraparam";
+        }
+
+        internal static class Navigator
+        {
+            internal const string BEFORE_INIT_DATA = "beforeInitData";
+            internal const string BEFORE_SHOW_FORM = "beforeShowForm";
+            internal const string CLOSE_ON_ESCAPE = "closeOnEscape";
+            internal const string DATA_HEIGHT = "dataheight";
+            internal const string DATA_WIDTH = "datawidth";
+            internal const string DRAGABLE = "drag";
+            internal const string HEIGHT = "height";
+            internal const string LEFT = "left";
+            internal const string MODAL = "modal";
+            internal const string ON_CLOSE = "onClose";
+            internal const string OVERLAY = "overlay";
+            internal const string RESIZE = "resize";
+            internal const string TOP = "top";
+            internal const string USE_JQ_MODAL = "jqModal";
         }
     }
 }

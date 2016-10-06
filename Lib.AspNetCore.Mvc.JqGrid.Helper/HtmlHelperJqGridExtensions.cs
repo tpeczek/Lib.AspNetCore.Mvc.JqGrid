@@ -262,8 +262,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             {
                 if (formatterOptions.UseFormEditing)
                 {
-                    //(formatterOptions.FormEditingOptions != null) && !formatterOptions.FormEditingOptions.AreDefault()
-                    //javaScriptBuilder.AppendNavigatorActionOptions("editOptions: ", formatterOptions.FormEditingOptions);
+                    javaScriptBuilder.AppendNavigatorEditActionOptions(JqGridOptionsNames.ColumnModel.Formatter.EDIT_OPTIONS, formatterOptions.FormEditingOptions);
                 }
                 else
                 {
@@ -273,8 +272,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 
             if (formatterOptions.DeleteButton)
             {
-                //(formatterOptions.DeleteOptions != null) && !formatterOptions.DeleteOptions.AreDefault()
-                //javaScriptBuilder.AppendNavigatorActionOptions("delOptions: ", formatterOptions.DeleteOptions);
+                javaScriptBuilder.AppendNavigatorDeleteActionOptions(JqGridOptionsNames.ColumnModel.Formatter.DELETE_OPTIONS, formatterOptions.DeleteOptions);
             }
             
             return javaScriptBuilder;
@@ -305,6 +303,72 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             }
 
             return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendNavigatorEditActionOptions(this StringBuilder javaScriptBuilder, string fieldName, JqGridNavigatorEditActionOptions navigatorEditActionOptions)
+        {
+            if ((navigatorEditActionOptions != null) && !navigatorEditActionOptions.AreDefault())
+            {
+                if (String.IsNullOrWhiteSpace(fieldName))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectOpening();
+                }
+                else
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectFieldOpening(fieldName);
+                }
+
+                // TODO
+
+                javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendNavigatorDeleteActionOptions(this StringBuilder javaScriptBuilder, string fieldName, JqGridNavigatorDeleteActionOptions navigatorDeleteActionOptions)
+        {
+            if ((navigatorDeleteActionOptions != null) && !navigatorDeleteActionOptions.AreDefault())
+            {
+                if (String.IsNullOrWhiteSpace(fieldName))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectOpening();
+                }
+                else
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectFieldOpening(fieldName);
+                }
+
+                // TODO
+
+                javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendNavigatorFormActionOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorFormActionOptions navigatorFormActionOptions)
+        {
+            javaScriptBuilder.AppendNavigatorActionOptions(navigatorFormActionOptions);
+
+            return javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.BEFORE_INIT_DATA, navigatorFormActionOptions.BeforeInitData)
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.BEFORE_SHOW_FORM, navigatorFormActionOptions.BeforeShowForm);
+        }
+
+        private static StringBuilder AppendNavigatorActionOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorActionOptions navigatorActionOptions)
+        {
+            return javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLOSE_ON_ESCAPE, navigatorActionOptions.CloseOnEscape, JqGridOptionsDefaults.Navigator.CloseOnEscape)
+                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.DATA_HEIGHT, navigatorActionOptions.DataHeight)
+                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.DATA_WIDTH, navigatorActionOptions.DataWidth)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.DRAGABLE, navigatorActionOptions.Dragable, JqGridOptionsDefaults.Navigator.Dragable)
+                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.HEIGHT, navigatorActionOptions.Height)
+                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.LEFT, navigatorActionOptions.Left, JqGridOptionsDefaults.Navigator.Left)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.MODAL, navigatorActionOptions.Modal, JqGridOptionsDefaults.Navigator.Modal)
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ON_CLOSE, navigatorActionOptions.OnClose)
+                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.OVERLAY, navigatorActionOptions.Overlay, JqGridOptionsDefaults.Navigator.Overlay)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.RESIZE, navigatorActionOptions.Resizable, JqGridOptionsDefaults.Navigator.Resizable)
+                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.TOP, navigatorActionOptions.Top, JqGridOptionsDefaults.Navigator.Top)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.USE_JQ_MODAL, navigatorActionOptions.UseJqModal, JqGridOptionsDefaults.Navigator.UseJqModal);
         }
         #endregion
     }
