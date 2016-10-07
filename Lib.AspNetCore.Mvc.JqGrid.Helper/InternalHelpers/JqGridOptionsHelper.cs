@@ -95,8 +95,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
         internal static bool AreDefault(this JqGridNavigatorDeleteActionOptions navigatorDeleteActionOptions)
         {
-            return (navigatorDeleteActionOptions.CancelButtonIcon == JqGridFormButtonIcon.CancelIcon)
-                && (navigatorDeleteActionOptions.DeleteButtonIcon == JqGridFormButtonIcon.DeleteIcon)
+            return ((navigatorDeleteActionOptions.CancelButtonIcon == null) || navigatorDeleteActionOptions.CancelButtonIcon.Equals(JqGridFormButtonIcon.CancelIcon))
+                && ((navigatorDeleteActionOptions.DeleteButtonIcon == null) || navigatorDeleteActionOptions.DeleteButtonIcon.Equals(JqGridFormButtonIcon.DeleteIcon))
                 && (navigatorDeleteActionOptions.Width == JqGridOptionsDefaults.Navigator.DeleteActionWidth)
                 && (navigatorDeleteActionOptions as JqGridNavigatorModifyActionOptions).AreDefault();
         }

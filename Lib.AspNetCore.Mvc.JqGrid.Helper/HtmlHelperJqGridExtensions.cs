@@ -282,16 +282,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         {
             if ((inlineNavigatorActionOptions != null) && !inlineNavigatorActionOptions.AreDefault())
             {
-                if (!String.IsNullOrWhiteSpace(inlineNavigatorActionOptions.ExtraParamScript))
-                {
-                    javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.EXTRA_PARAM, inlineNavigatorActionOptions.ExtraParamScript);
-                }
-                else if (inlineNavigatorActionOptions.ExtraParam != null)
-                {
-                    javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.EXTRA_PARAM, JsonConvert.SerializeObject(inlineNavigatorActionOptions.ExtraParam, Formatting.None));
-                }
-
-                javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.InlineNavigator.KEYS, inlineNavigatorActionOptions.Keys, JqGridOptionsDefaults.Navigator.InlineActionKeys)
+                javaScriptBuilder.AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.InlineNavigator.EXTRA_PARAM, inlineNavigatorActionOptions.ExtraParamScript, inlineNavigatorActionOptions.ExtraParam)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.InlineNavigator.KEYS, inlineNavigatorActionOptions.Keys, JqGridOptionsDefaults.Navigator.InlineActionKeys)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.ON_EDIT_FUNCTION, inlineNavigatorActionOptions.OnEditFunction)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.SUCCESS_FUNCTION, inlineNavigatorActionOptions.SuccessFunction)
                     .AppendJavaScriptObjectStringField(JqGridOptionsNames.InlineNavigator.URL, inlineNavigatorActionOptions.Url)
@@ -339,12 +331,44 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                     javaScriptBuilder.AppendJavaScriptObjectFieldOpening(fieldName);
                 }
 
-                // TODO
-
-                javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
+                javaScriptBuilder.AppendNavigatorModifyActionOptions(navigatorDeleteActionOptions)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.WIDTH, navigatorDeleteActionOptions.Width, JqGridOptionsDefaults.Navigator.DeleteActionWidth)
+                    .AppendJavaScriptObjectObjectField(JqGridOptionsNames.Navigator.AJAX_DELETE_OPTIONS, navigatorDeleteActionOptions.AjaxOptions)
+                    .AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.Navigator.DELETE_EXTRA_DATA, navigatorDeleteActionOptions.ExtraDataScript, navigatorDeleteActionOptions.ExtraData)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.SERIALIZE_DELETE_DATA, navigatorDeleteActionOptions.SerializeData)
+                    .AppendFormButtonIcon(JqGridOptionsNames.Navigator.DELETE_ICON, navigatorDeleteActionOptions.DeleteButtonIcon, JqGridFormButtonIcon.DeleteIcon)
+                    .AppendFormButtonIcon(JqGridOptionsNames.Navigator.CANCEL_ICON, navigatorDeleteActionOptions.CancelButtonIcon, JqGridFormButtonIcon.CancelIcon)
+                    .AppendJavaScriptObjectFieldClosing();
             }
 
             return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendFormButtonIcon(this StringBuilder javaScriptBuilder, string formButtonIconName, JqGridFormButtonIcon formButtonIcon, JqGridFormButtonIcon defaultFormButtonIcon)
+        {
+            if ((formButtonIcon != null) && !formButtonIcon.Equals(defaultFormButtonIcon))
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFieldOpening(formButtonIconName)
+                    .AppendJavaScriptArrayBooleanValue(formButtonIcon.Enabled, defaultFormButtonIcon.Enabled)
+                    .AppendJavaScriptArrayEnumValue(formButtonIcon.Position, defaultFormButtonIcon.Position)
+                    .AppendJavaScriptArrayStringValue(formButtonIcon.Class, defaultFormButtonIcon.Class)
+                    .AppendJavaScriptArrayFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendNavigatorModifyActionOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorModifyActionOptions navigatorModifyActionOptions)
+        {
+            javaScriptBuilder.AppendNavigatorFormActionOptions(navigatorModifyActionOptions);
+
+            return javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.AFTER_SHOW_FORM, navigatorModifyActionOptions.AfterShowForm)
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.AFTER_SUBMIT, navigatorModifyActionOptions.AfterSubmit)
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.BEFORE_SUBMIT, navigatorModifyActionOptions.BeforeSubmit)
+                .AppendJavaScriptObjectEnumField(JqGridOptionsNames.Navigator.METHOD_TYPE, navigatorModifyActionOptions.MethodType, JqGridOptionsDefaults.Navigator.MethodType)
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ON_CLICK_SUBMIT, navigatorModifyActionOptions.OnClickSubmit)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.RELOAD_AFTER_SUBMIT, navigatorModifyActionOptions.ReloadAfterSubmit, JqGridOptionsDefaults.Navigator.ReloadAfterSubmit)
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.URL, navigatorModifyActionOptions.Url);
         }
 
         private static StringBuilder AppendNavigatorFormActionOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorFormActionOptions navigatorFormActionOptions)

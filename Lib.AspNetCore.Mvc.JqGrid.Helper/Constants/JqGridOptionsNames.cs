@@ -56,20 +56,33 @@
 
         internal static class Navigator
         {
+            internal const string AJAX_DELETE_OPTIONS = "ajaxDelOptions";
+            internal const string AFTER_SHOW_FORM = "afterShowForm";
+            internal const string AFTER_SUBMIT = "afterSubmit";
+            internal const string BEFORE_SUBMIT = "beforeSubmit";
             internal const string BEFORE_INIT_DATA = "beforeInitData";
             internal const string BEFORE_SHOW_FORM = "beforeShowForm";
+            internal const string CANCEL_ICON = "cancelicon";
             internal const string CLOSE_ON_ESCAPE = "closeOnEscape";
             internal const string DATA_HEIGHT = "dataheight";
             internal const string DATA_WIDTH = "datawidth";
+            internal const string DELETE_ICON = "delicon";
+            internal const string DELETE_EXTRA_DATA = "delData";
             internal const string DRAGABLE = "drag";
             internal const string HEIGHT = "height";
             internal const string LEFT = "left";
             internal const string MODAL = "modal";
+            internal const string ON_CLICK_SUBMIT = "onclickSubmit";
             internal const string ON_CLOSE = "onClose";
             internal const string OVERLAY = "overlay";
+            internal const string RELOAD_AFTER_SUBMIT = "reloadAfterSubmit";
             internal const string RESIZE = "resize";
+            internal const string SERIALIZE_DELETE_DATA = "serializeDelData";
             internal const string TOP = "top";
             internal const string USE_JQ_MODAL = "jqModal";
+            internal const string URL = "url";
+            internal const string METHOD_TYPE = "mtype";
+            internal const string WIDTH = "width";
         }
     }
 }
