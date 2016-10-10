@@ -101,7 +101,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (navigatorDeleteActionOptions as JqGridNavigatorModifyActionOptions).AreDefault();
         }
 
-        private static bool IsDefault(this JqGridFormKeyboardNavigation formKeyboardNavigation)
+        internal static bool IsDefault(this JqGridFormKeyboardNavigation formKeyboardNavigation)
         {
             return (formKeyboardNavigation.Enabled == JqGridOptionsDefaults.Navigator.KeyboardNavigation.Enabled)
                 && (formKeyboardNavigation.RecordDown == JqGridOptionsDefaults.Navigator.KeyboardNavigation.RecordDown)

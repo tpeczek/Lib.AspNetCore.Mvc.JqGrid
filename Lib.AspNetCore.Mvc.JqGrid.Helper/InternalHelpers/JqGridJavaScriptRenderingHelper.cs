@@ -19,34 +19,24 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder.Append("],");
         }
 
-        internal static StringBuilder AppendJavaScriptArrayStringValue(this StringBuilder javaScriptBuilder, string value, string defaultValue = null)
+        internal static StringBuilder AppendJavaScriptArrayStringValue(this StringBuilder javaScriptBuilder, string value)
         {
-            if (!String.IsNullOrEmpty(defaultValue) ? (value != defaultValue) : !String.IsNullOrEmpty(value))
-            {
-                javaScriptBuilder.AppendFormat("'{0}',", value);
-            }
-
-            return javaScriptBuilder;
+            return javaScriptBuilder.AppendFormat("'{0}',", value);
         }
 
-        internal static StringBuilder AppendJavaScriptArrayEnumValue<TEnum>(this StringBuilder javaScriptBuilder, TEnum value, TEnum? defaultValue = null) where TEnum : struct
+        internal static StringBuilder AppendJavaScriptArrayEnumValue<TEnum>(this StringBuilder javaScriptBuilder, TEnum value) where TEnum : struct
         {
-            if (!defaultValue.HasValue || !(value.Equals(defaultValue.Value)))
-            {
-                javaScriptBuilder.AppendFormat("'{0}',", value.ToString().ToLower());
-            }
-
-            return javaScriptBuilder;
+            return javaScriptBuilder.AppendFormat("'{0}',", value.ToString().ToLower());
         }
 
-        internal static StringBuilder AppendJavaScriptArrayBooleanValue(this StringBuilder javaScriptBuilder, bool value, bool? defaultValue = null)
+        internal static StringBuilder AppendJavaScriptArrayBooleanValue(this StringBuilder javaScriptBuilder, bool value)
         {
-            if (!defaultValue.HasValue || !(value.Equals(defaultValue.Value)))
-            {
-                javaScriptBuilder.AppendFormat("{0},", value.ToString().ToLower());
-            }
+            return javaScriptBuilder.AppendFormat("{0},", value.ToString().ToLower());
+        }
 
-            return javaScriptBuilder;
+        internal static StringBuilder AppendJavaScriptArrayIntegerValue(this StringBuilder javaScriptBuilder, int value)
+        {
+            return javaScriptBuilder.AppendFormat("{0},", value.ToString(CultureInfo.InvariantCulture));
         }
 
         internal static StringBuilder AppendJavaScriptObjectOpening(this StringBuilder javaScriptBuilder)

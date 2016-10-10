@@ -56,33 +56,56 @@
 
         internal static class Navigator
         {
-            internal const string AJAX_DELETE_OPTIONS = "ajaxDelOptions";
+            internal const string ADDED_ROW_POSITION = "addedrow";
+            internal const string AFTER_CLICK_PG_BUTTONS = "afterclickPgButtons";
+            internal const string AFTER_COMPLETE = "afterComplete";
             internal const string AFTER_SHOW_FORM = "afterShowForm";
             internal const string AFTER_SUBMIT = "afterSubmit";
+            internal const string AJAX_DELETE_OPTIONS = "ajaxDelOptions";
+            internal const string AJAX_EDIT_OPTIONS = "ajaxEditOptions";
+            internal const string BEFORE_CHECK_VALUES = "beforeCheckValues";
             internal const string BEFORE_SUBMIT = "beforeSubmit";
             internal const string BEFORE_INIT_DATA = "beforeInitData";
             internal const string BEFORE_SHOW_FORM = "beforeShowForm";
+            internal const string BOTTOM_INFO = "bottominfo";
             internal const string CANCEL_ICON = "cancelicon";
+            internal const string CHECK_ON_SUBMIT = "checkOnSubmit";
+            internal const string CHECK_ON_UPDATE = "checkOnUpdate";
+            internal const string CLEAR_AFTER_ADD = "clearAfterAdd";
+            internal const string CLOSE_AFTER_ADD = "closeAfterAdd";
+            internal const string CLOSE_AFTER_EDIT = "closeAfterEdit";
+            internal const string CLOSE_ICON = "closeicon";
             internal const string CLOSE_ON_ESCAPE = "closeOnEscape";
             internal const string DATA_HEIGHT = "dataheight";
             internal const string DATA_WIDTH = "datawidth";
             internal const string DELETE_ICON = "delicon";
             internal const string DELETE_EXTRA_DATA = "delData";
+            internal const string EDIT_EXTRA_DATA = "editData";
+            internal const string ERROR_TEXT_FORMAT = "errorTextFormat";
             internal const string DRAGABLE = "drag";
             internal const string HEIGHT = "height";
             internal const string LEFT = "left";
             internal const string MODAL = "modal";
+            internal const string NAVIGATION_KEYS = "navkeys";
+            internal const string ON_CLICK_PG_BUTTONS = "onclickPgButtons";
             internal const string ON_CLICK_SUBMIT = "onclickSubmit";
             internal const string ON_CLOSE = "onClose";
+            internal const string ON_INITIALIZE_FORM = "onInitializeForm";
             internal const string OVERLAY = "overlay";
+            internal const string RECREATE_FORM = "recreateForm";
             internal const string RELOAD_AFTER_SUBMIT = "reloadAfterSubmit";
             internal const string RESIZE = "resize";
+            internal const string SAVE_ICON = "saveicon";
+            internal const string SAVE_KEY = "savekey";
             internal const string SERIALIZE_DELETE_DATA = "serializeDelData";
+            internal const string SERIALIZE_EDIT_DATA = "serializeEditData";
             internal const string TOP = "top";
+            internal const string TOP_INFO = "topinfo";
             internal const string USE_JQ_MODAL = "jqModal";
             internal const string URL = "url";
             internal const string METHOD_TYPE = "mtype";
             internal const string WIDTH = "width";
+            internal const string VIEW_PAGER_BUTTONS = "viewPagerButtons";
         }
     }
 }

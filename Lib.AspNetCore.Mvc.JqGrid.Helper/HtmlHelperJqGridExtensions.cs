@@ -310,9 +310,37 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                     javaScriptBuilder.AppendJavaScriptObjectFieldOpening(fieldName);
                 }
 
-                // TODO
+                if ((navigatorEditActionOptions.SaveKeyEnabled != JqGridOptionsDefaults.Navigator.SaveKeyEnabled) || (navigatorEditActionOptions.SaveKey != JqGridOptionsDefaults.Navigator.SaveKey))
+                {
+                    javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.Navigator.SAVE_KEY)
+                    .AppendJavaScriptArrayBooleanValue(navigatorEditActionOptions.SaveKeyEnabled)
+                    .AppendJavaScriptArrayIntegerValue(navigatorEditActionOptions.SaveKey)
+                    .AppendJavaScriptArrayFieldClosing();
+                }
 
-                javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
+                javaScriptBuilder.AppendNavigatorModifyActionOptions(navigatorEditActionOptions)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.WIDTH, navigatorEditActionOptions.Width, JqGridOptionsDefaults.Navigator.EditActionWidth)
+                    .AppendJavaScriptObjectObjectField(JqGridOptionsNames.Navigator.AJAX_EDIT_OPTIONS, navigatorEditActionOptions.AjaxOptions)
+                    .AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.Navigator.EDIT_EXTRA_DATA, navigatorEditActionOptions.ExtraDataScript, navigatorEditActionOptions.ExtraData)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.SERIALIZE_EDIT_DATA, navigatorEditActionOptions.SerializeData)
+                    .AppendJavaScriptObjectEnumField(JqGridOptionsNames.Navigator.ADDED_ROW_POSITION, navigatorEditActionOptions.AddedRowPosition, JqGridOptionsDefaults.Navigator.AddedRowPosition)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.AFTER_CLICK_PG_BUTTONS, navigatorEditActionOptions.AfterClickPgButtons)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.AFTER_COMPLETE, navigatorEditActionOptions.AfterComplete)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.BEFORE_CHECK_VALUES, navigatorEditActionOptions.BeforeCheckValues)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.BOTTOM_INFO, navigatorEditActionOptions.BottomInfo)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CHECK_ON_SUBMIT, navigatorEditActionOptions.CheckOnSubmit, JqGridOptionsDefaults.Navigator.CheckOnSubmit)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CHECK_ON_UPDATE, navigatorEditActionOptions.CheckOnUpdate, JqGridOptionsDefaults.Navigator.CheckOnUpdate)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLEAR_AFTER_ADD, navigatorEditActionOptions.ClearAfterAdd, JqGridOptionsDefaults.Navigator.ClearAfterAdd)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLOSE_AFTER_ADD, navigatorEditActionOptions.CloseAfterAdd, JqGridOptionsDefaults.Navigator.CloseAfterAdd)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLOSE_AFTER_EDIT, navigatorEditActionOptions.CloseAfterEdit, JqGridOptionsDefaults.Navigator.CloseAfterEdit)
+                    .AppendFormButtonIcon(JqGridOptionsNames.Navigator.CLOSE_ICON, navigatorEditActionOptions.CloseButtonIcon, JqGridFormButtonIcon.CloseIcon)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ERROR_TEXT_FORMAT, navigatorEditActionOptions.ErrorTextFormat)
+                    .AppendNavigatorPageableFormActionOptions(navigatorEditActionOptions)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ON_CLICK_PG_BUTTONS, navigatorEditActionOptions.OnClickPgButtons)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ON_INITIALIZE_FORM, navigatorEditActionOptions.OnInitializeForm)
+                    .AppendFormButtonIcon(JqGridOptionsNames.Navigator.SAVE_ICON, navigatorEditActionOptions.SaveButtonIcon, JqGridFormButtonIcon.SaveIcon)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.TOP_INFO, navigatorEditActionOptions.TopInfo)
+                    .AppendJavaScriptObjectFieldClosing();
             }
 
             return javaScriptBuilder;
@@ -349,9 +377,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             if ((formButtonIcon != null) && !formButtonIcon.Equals(defaultFormButtonIcon))
             {
                 javaScriptBuilder.AppendJavaScriptArrayFieldOpening(formButtonIconName)
-                    .AppendJavaScriptArrayBooleanValue(formButtonIcon.Enabled, defaultFormButtonIcon.Enabled)
-                    .AppendJavaScriptArrayEnumValue(formButtonIcon.Position, defaultFormButtonIcon.Position)
-                    .AppendJavaScriptArrayStringValue(formButtonIcon.Class, defaultFormButtonIcon.Class)
+                    .AppendJavaScriptArrayBooleanValue(formButtonIcon.Enabled)
+                    .AppendJavaScriptArrayEnumValue(formButtonIcon.Position)
+                    .AppendJavaScriptArrayStringValue(formButtonIcon.Class)
                     .AppendJavaScriptArrayFieldClosing();
             }
 
@@ -377,6 +405,21 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 
             return javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.BEFORE_INIT_DATA, navigatorFormActionOptions.BeforeInitData)
                 .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.BEFORE_SHOW_FORM, navigatorFormActionOptions.BeforeShowForm);
+        }
+
+        private static StringBuilder AppendNavigatorPageableFormActionOptions(this StringBuilder javaScriptBuilder, IJqGridNavigatorPageableFormActionOptions navigatorPageableFormActionOptions)
+        {
+            if ((navigatorPageableFormActionOptions.NavigationKeys != null)&& navigatorPageableFormActionOptions.NavigationKeys.IsDefault())
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.Navigator.NAVIGATION_KEYS)
+                    .AppendJavaScriptArrayBooleanValue(navigatorPageableFormActionOptions.NavigationKeys.Enabled)
+                    .AppendJavaScriptArrayIntegerValue(navigatorPageableFormActionOptions.NavigationKeys.RecordDown)
+                    .AppendJavaScriptArrayIntegerValue(navigatorPageableFormActionOptions.NavigationKeys.RecordUp)
+                    .AppendJavaScriptArrayFieldClosing();
+            }
+
+            return javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.VIEW_PAGER_BUTTONS, navigatorPageableFormActionOptions.ViewPagerButtons, JqGridOptionsDefaults.Navigator.ViewPagerButtons)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.RECREATE_FORM, navigatorPageableFormActionOptions.RecreateForm, JqGridOptionsDefaults.Navigator.RecreateForm);
         }
 
         private static StringBuilder AppendNavigatorActionOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorActionOptions navigatorActionOptions)
