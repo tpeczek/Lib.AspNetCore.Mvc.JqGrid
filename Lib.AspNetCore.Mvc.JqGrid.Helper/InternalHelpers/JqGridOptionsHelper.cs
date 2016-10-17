@@ -46,6 +46,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                         && ((formatterOptions.InlineEditingOptions == null) || formatterOptions.InlineEditingOptions.AreDefault())
                         && (formatterOptions.DeleteButton == JqGridOptionsDefaults.ColumnModel.Formatter.DeleteButton)
                         && ((formatterOptions.DeleteOptions == null) || formatterOptions.DeleteOptions.AreDefault());
+                case JqGridPredefinedFormatters.JQueryUIButton:
+                    return String.IsNullOrEmpty(formatterOptions.Label)
+                        && (formatterOptions.Text == JqGridOptionsDefaults.ColumnModel.Formatter.Text)
+                        && String.IsNullOrEmpty(formatterOptions.PrimaryIcon)
+                        && String.IsNullOrEmpty(formatterOptions.SecondaryIcon);
                 default:
                     return true;
             }

@@ -2,7 +2,6 @@
 using System.Text;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Newtonsoft.Json;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
@@ -18,6 +17,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
     /// </summary>
     public static class HtmlHelperJqGridExtensions
     {
+        #region Fields
+        private const string JQUERY_UI_BUTTON_FORMATTER_START = "function(cellValue,options,rowObject){setTimeout(function(){$('#' + options.rowId + '_JQueryUIButton').attr('data-cell-value',cellValue).button(";
+        private const string JQUERY_UI_BUTTON_FORMATTER_ON_CLICK = ").click({0}";
+        private const string JQUERY_UI_BUTTON_FORMATTER_END = ");},0);return '<button id=\"' + options.rowId + '_JQueryUIButton\" />';}";
+        #endregion
+
         #region IHtmlHelper Extensions Methods
         /// <summary>
         /// Returns the HTML that is used to render the table placeholder for the grid. 
@@ -159,8 +164,33 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 
         private static StringBuilder AppendColumnModelJQueryUIButtonFormatter(this StringBuilder javaScriptBuilder, JqGridColumnFormatterOptions formatterOptions)
         {
+            StringBuilder jQueryUIButtonFormatterBuilder = new StringBuilder(80);
+            jQueryUIButtonFormatterBuilder.Append(JQUERY_UI_BUTTON_FORMATTER_START);
 
-            return javaScriptBuilder;
+            if (!formatterOptions.AreDefault(JqGridPredefinedFormatters.JQueryUIButton))
+            {
+                jQueryUIButtonFormatterBuilder.AppendJavaScriptObjectOpening()
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.Formatter.LABEL, formatterOptions.Label)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Formatter.TEXT, formatterOptions.Text, JqGridOptionsDefaults.ColumnModel.Formatter.Text);
+
+                if (!String.IsNullOrEmpty(formatterOptions.PrimaryIcon) || !String.IsNullOrEmpty(formatterOptions.SecondaryIcon))
+                {
+                    jQueryUIButtonFormatterBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.ColumnModel.Formatter.ICONS)
+                        .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.Formatter.PRIMARY, formatterOptions.PrimaryIcon)
+                        .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.Formatter.SECONDARY, formatterOptions.SecondaryIcon)
+                        .AppendJavaScriptObjectFieldClosing();
+                }
+
+                jQueryUIButtonFormatterBuilder.AppendJavaScriptObjectClosing();
+            }
+
+            if (!String.IsNullOrWhiteSpace(formatterOptions.OnClick))
+            {
+                jQueryUIButtonFormatterBuilder.AppendFormat(JQUERY_UI_BUTTON_FORMATTER_ON_CLICK, formatterOptions.OnClick);
+            }
+            jQueryUIButtonFormatterBuilder.Append(JQUERY_UI_BUTTON_FORMATTER_END);
+
+            return javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.FORMATTER_FIELD, jQueryUIButtonFormatterBuilder.ToString());
         }
 
         private static StringBuilder AppendColumnModelFormatterOptions(this StringBuilder javaScriptBuilder, string formatter, JqGridColumnFormatterOptions  formatterOptions)

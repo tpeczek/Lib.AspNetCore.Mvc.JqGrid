@@ -44,6 +44,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder.Append("{");
         }
 
+        internal static StringBuilder AppendJavaScriptObjectClosing(this StringBuilder javaScriptBuilder)
+        {
+            javaScriptBuilder.RemoveTrailingComma();
+            return javaScriptBuilder.Append("}");
+        }
+
         internal static StringBuilder AppendJavaScriptObjectFieldOpening(this StringBuilder javaScriptBuilder, string fieldName)
         {
             return javaScriptBuilder.Append("{0}:{");

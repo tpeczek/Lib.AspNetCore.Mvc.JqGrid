@@ -37,6 +37,11 @@
                 internal const string USE_FORM_EDITING = "editformbutton";
                 internal const string EDIT_OPTIONS = "editOptions";
                 internal const string DELETE_OPTIONS = "delOptions";
+                internal const string LABEL = "label";
+                internal const string TEXT = "text";
+                internal const string ICONS = "icons";
+                internal const string PRIMARY = "primary";
+                internal const string SECONDARY = "secondary";
             }
         };
 
