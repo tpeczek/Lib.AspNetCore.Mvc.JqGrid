@@ -2,8 +2,22 @@
 {
     internal static class JqGridOptionsNames
     {
+        internal const string CAPTION = "caption";
         internal const string COLUMNS_NAMES_FIELD = "colNames";
         internal const string COLUMNS_MODEL_FIELD = "colModel";
+        internal const string DATA_STRING = "datastr";
+        internal const string DATA_TYPE = "datatype";
+        internal const string FOOTER_ENABLED = "footerrow";
+        internal const string HEIGHT = "height";
+        internal const string METHOD_TYPE = "mtype";
+        internal const string PAGER = "pager";
+        internal const string ROWS_LIST = "rowList";
+        internal const string ROWS_NUMBER = "rowNum";
+        internal const string SORTING_NAME = "sortname";
+        internal const string SORTING_ORDER = "sortorder";
+        internal const string URL = "url";
+        internal const string USER_DATA_ON_FOOTER = "userDataOnFooter";
+        internal const string VIEW_RECORDS = "viewrecords";
 
         internal static class ColumnModel
         {

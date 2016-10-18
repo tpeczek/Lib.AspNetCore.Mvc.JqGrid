@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
@@ -106,6 +108,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             if (fieldValue.HasValue)
             {
                 javaScriptBuilder.AppendFormat("{0}:{1},", fieldName, fieldValue.Value.ToString(CultureInfo.InvariantCulture));
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendJavaScriptObjectIntegerArrayField(this StringBuilder javaScriptBuilder, string fieldName, IList<int> fieldValue)
+        {
+            if ((fieldValue != null) && fieldValue.Any())
+            {
+                javaScriptBuilder.AppendFormat("{0}:[{1}],", fieldName, String.Join(",", fieldValue));
             }
 
             return javaScriptBuilder;

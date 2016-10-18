@@ -390,6 +390,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         public const int CellLayout = 5;
 
         /// <summary>
+        /// The type of information to expect to represent data in the grid.
+        /// </summary>
+        public const JqGridDataTypes DataType = JqGridDataTypes.Xml;
+
+        /// <summary>
         /// The ISO date format.
         /// </summary>
         public const string DateFormat = "Y-m-d";
@@ -398,5 +403,45 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         /// The information to be displayed when the returned (or the current) number of records is zero.
         /// </summary>
         public const string EmptyRecords = "No records to view";
+
+        /// <summary>
+        /// The value indicating if the footer table (with one row) will be placed below the grid records and above the pager.
+        /// </summary>
+        public const bool FooterEnabled = false;
+
+        /// <summary>
+        /// The default height of the grid (100%).
+        /// </summary>
+        public const string Height = "100%";
+
+        /// <summary>
+        /// The type of request to make.
+        /// </summary>
+        public const JqGridMethodTypes MethodType = JqGridMethodTypes.Get;
+
+        /// <summary>
+        /// The value indicating if pager bar should be used to navigate through the records.
+        /// </summary>
+        public const bool Pager = false;
+
+        /// <summary>
+        /// The number of records which should be displayed in the grid.
+        /// </summary>
+        public const int RowsNumber = 20;
+
+        /// <summary>
+        /// The initial sorting order.
+        /// </summary>
+        public const JqGridSortingOrders SortingOrder = JqGridSortingOrders.Asc;
+
+        /// <summary>
+        /// The value indicating if the values from user data should be placed on footer.
+        /// </summary>
+        public const bool UserDataOnFooter = false;
+
+        /// <summary>
+        /// The value indicating if grid should display the beginning and ending record number out of the total number of records in the query
+        /// </summary>
+        public const bool ViewRecords = false;
     }
 }

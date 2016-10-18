@@ -34,12 +34,24 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         }
 
         /// <summary>
+        /// Returns the HTML that is used to render the pager (div) placeholder for the grid. 
+        /// </summary>
+        /// <returns>The HTML that represents the pager (div) placeholder for jqGrid</returns>
+        public static IHtmlContent JqGridPagerHtml(this IHtmlHelper htmlHelper, JqGridOptions options)
+        {
+            return new HtmlString(String.Format("<div id='{0}'></div>", GetJqGridPagerId(options)));
+        }
+
+        /// <summary>
         /// Returns the HTML that is used to render the table placeholder for the grid with pager placeholder below it and filter grid (if enabled) placeholder above it.
         /// </summary>
         /// <returns>The HTML that represents the table placeholder for jqGrid with pager placeholder below i</returns>
         public static IHtmlContent JqGridHtml(this IHtmlHelper htmlHelper, JqGridOptions options)
         {
-            return htmlHelper.JqGridTableHtml(options);
+            if (options.Pager)
+                return new HtmlString(htmlHelper.JqGridTableHtml(options).ToString() + htmlHelper.JqGridPagerHtml(options).ToString());
+            else
+                return htmlHelper.JqGridTableHtml(options);
         }
 
         /// <summary>
@@ -67,6 +79,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             javaScriptBuilder.AppendFormat("$({0}).jqGrid({{", GetJqGridGridSelector(options, false)).AppendLine()
                 .AppendColumnsNames(options)
                 .AppendColumnsModels(options)
+                .AppendOptions(options)
                 .Append("})");
 
             javaScriptBuilder.AppendLine(";");
@@ -82,6 +95,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         private static string GetJqGridGridSelector(JqGridOptions options, bool asSubgrid)
         {
             return asSubgrid ? "'#' + subgridTableId" : String.Format("'#{0}'", options.Id);
+        }
+
+        private static string GetJqGridPagerId(JqGridOptions options)
+        {
+            return options.Id + "Pager";
+        }
+
+        private static string GetJqGridPagerSelector(JqGridOptions options, bool asSubgrid)
+        {
+            return asSubgrid? "'#' + subgridPagerId" : String.Format("'#{0}'", GetJqGridPagerId(options));
         }
 
         private static StringBuilder AppendColumnsNames(this StringBuilder javaScriptBuilder, JqGridOptions options)
@@ -305,6 +328,42 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                 javaScriptBuilder.AppendNavigatorDeleteActionOptions(JqGridOptionsNames.ColumnModel.Formatter.DELETE_OPTIONS, formatterOptions.DeleteOptions);
             }
             
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendOptions(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            if (options.DataType.IsDataStringDataType())
+            {
+                javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.DATA_STRING, options.DataString);
+            }
+            else
+            {
+                javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.URL, options.Url);
+            }
+
+            javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.CAPTION, options.Caption)
+                .AppendJavaScriptObjectEnumField(JqGridOptionsNames.DATA_TYPE, options.DataType, JqGridOptionsDefaults.DataType)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.FOOTER_ENABLED, options.FooterEnabled, JqGridOptionsDefaults.FooterEnabled)
+                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.HEIGHT, options.Height)
+                .AppendJavaScriptObjectEnumField(JqGridOptionsNames.METHOD_TYPE, options.MethodType, JqGridOptionsDefaults.MethodType)
+                .AppendJavaScriptObjectIntegerArrayField(JqGridOptionsNames.ROWS_LIST, options.RowsList)
+                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ROWS_NUMBER, options.RowsNumber, JqGridOptionsDefaults.RowsNumber)
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.SORTING_NAME, options.SortingName)
+                .AppendJavaScriptObjectEnumField(JqGridOptionsNames.SORTING_ORDER, options.SortingOrder, JqGridOptionsDefaults.SortingOrder)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.USER_DATA_ON_FOOTER, options.UserDataOnFooter, JqGridOptionsDefaults.UserDataOnFooter)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.VIEW_RECORDS, options.ViewRecords, JqGridOptionsDefaults.ViewRecords);
+
+            if (options.Pager)
+            {
+                javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.PAGER, GetJqGridPagerSelector(options, false));
+            }
+
+            if (!options.Height.HasValue)
+            {
+                javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.HEIGHT, JqGridOptionsDefaults.Height);
+            }
+
             return javaScriptBuilder;
         }
 
