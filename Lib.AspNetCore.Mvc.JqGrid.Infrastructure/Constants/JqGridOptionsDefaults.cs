@@ -46,6 +46,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// The name of an array that contains record values.
             /// </summary>
             public const string RecordValues = "cell";
+
+            /// <summary>
+            /// The value indicating if the information for the data in the row is repeatable.
+            /// </summary>
+            public const bool RepeatItems = true;
         }
         
         /// <summary>

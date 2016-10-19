@@ -54,7 +54,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
         internal static StringBuilder AppendJavaScriptObjectFieldOpening(this StringBuilder javaScriptBuilder, string fieldName)
         {
-            return javaScriptBuilder.Append("{0}:{");
+            return javaScriptBuilder.AppendFormat("{0}:{{", fieldName);
         }
 
         internal static StringBuilder AppendJavaScriptObjectFieldClosing(this StringBuilder javaScriptBuilder)

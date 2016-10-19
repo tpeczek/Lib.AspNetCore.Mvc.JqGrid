@@ -1,7 +1,7 @@
 ﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using System;
 
-namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
+namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
 {
     /// <summary>
     /// Class which represents JSON reader for jqGrid records.
@@ -46,14 +46,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
         /// Gets or sets the value indicating if the information for the data in the row is repeatable.
         /// </summary>
         public bool RepeatItems { get; set; }
-
-        /// <summary>
-        /// Gets the value indicating if the configuration is default
-        /// </summary>
-        public virtual bool IsDefault
-        {
-            get { return ((Records == JqGridOptionsDefaults.Response.Records) && (RecordValues == JqGridOptionsDefaults.Response.RecordValues) && RepeatItems); }
-        }
         #endregion
 
         #region Constructor
@@ -64,7 +56,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
         {
             Records = JqGridOptionsDefaults.Response.Records;
             RecordValues = JqGridOptionsDefaults.Response.RecordValues;
-            RepeatItems = true;
+            RepeatItems = JqGridOptionsDefaults.Response.RepeatItems;
         }
         #endregion
     }
@@ -176,14 +168,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
 
                 _userData = value;
             }
-        }
-
-        /// <summary>
-        /// Gets the value indicating if the configuration is default
-        /// </summary>
-        public new bool IsDefault
-        {
-            get { return (base.IsDefault && (PageIndex == JqGridOptionsDefaults.Response.PageIndex) && (RecordId == JqGridOptionsDefaults.Response.RecordId) && (TotalPagesCount == JqGridOptionsDefaults.Response.TotalPagesCount) && (TotalRecordsCount == JqGridOptionsDefaults.Response.TotalRecordsCount) && (UserData == JqGridOptionsDefaults.Response.UserData)); }
         }
         #endregion
 

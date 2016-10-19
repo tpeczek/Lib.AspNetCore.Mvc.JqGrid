@@ -58,6 +58,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public int? Height { get; set; }
 
         /// <summary>
+        /// Gets or sets the JSON reader for the grid.
+        /// </summary>
+        public JqGridJsonReader JsonReader { get; set; }
+
+        /// <summary>
         /// Gets or sets the type of request to make (default JqGridMethodTypes.Get).
         /// </summary>
         public JqGridMethodTypes MethodType { get; set; }
@@ -116,6 +121,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             DataType = JqGridOptionsDefaults.DataType;
             FooterEnabled = JqGridOptionsDefaults.FooterEnabled;
             Height = null;
+            JsonReader = null;
             MethodType = JqGridOptionsDefaults.MethodType;
             Pager = JqGridOptionsDefaults.Pager;
             RowsList = null;

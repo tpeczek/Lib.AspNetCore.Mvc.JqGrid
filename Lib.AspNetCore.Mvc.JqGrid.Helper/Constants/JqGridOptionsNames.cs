@@ -9,6 +9,7 @@
         internal const string DATA_TYPE = "datatype";
         internal const string FOOTER_ENABLED = "footerrow";
         internal const string HEIGHT = "height";
+        internal const string JSON_READER = "jsonReader";
         internal const string METHOD_TYPE = "mtype";
         internal const string PAGER = "pager";
         internal const string ROWS_LIST = "rowList";
@@ -125,6 +126,19 @@
             internal const string METHOD_TYPE = "mtype";
             internal const string WIDTH = "width";
             internal const string VIEW_PAGER_BUTTONS = "viewPagerButtons";
+        }
+
+        internal static class JsonReader
+        {
+            internal const string PAGE_INDEX = "page";
+            internal const string RECORDS = "root";
+            internal const string RECORD_ID = "id";
+            internal const string RECORD_VALUES = "cell";
+            internal const string REPEAT_ITEMS = "repeatitems";
+            internal const string SUBGRID = "subgrid";
+            internal const string TOTAL_PAGES_COUNT = "total";
+            internal const string TOTAL_RECORDS_COUNT = "records";
+            internal const string USER_DATA = "userdata";
         }
     }
 }

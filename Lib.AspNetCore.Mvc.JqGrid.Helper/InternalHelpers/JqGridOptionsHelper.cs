@@ -1,5 +1,6 @@
 ﻿using System;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator;
 
@@ -8,6 +9,24 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
     internal static class JqGridOptionsHelper
     {
         #region Extension Methods
+        internal static bool IsDefault(this JqGridJsonReader jsonReader)
+        {
+            return (jsonReader.PageIndex == JqGridOptionsDefaults.Response.PageIndex)
+                && (jsonReader.RecordId == JqGridOptionsDefaults.Response.RecordId)
+                && (jsonReader.TotalPagesCount == JqGridOptionsDefaults.Response.TotalPagesCount)
+                && (jsonReader.TotalRecordsCount == JqGridOptionsDefaults.Response.TotalRecordsCount)
+                && (jsonReader.UserData == JqGridOptionsDefaults.Response.UserData)
+                && ((jsonReader.SubgridReader == null) || jsonReader.SubgridReader.IsDefault())
+                && (jsonReader as JqGridJsonRecordsReader).IsDefault();
+        }
+
+        internal static bool IsDefault(this JqGridJsonRecordsReader jsonRecordsReader)
+        {
+            return (jsonRecordsReader.Records == JqGridOptionsDefaults.Response.Records)
+                && (jsonRecordsReader.RecordValues == JqGridOptionsDefaults.Response.RecordValues)
+                && (jsonRecordsReader.RepeatItems == JqGridOptionsDefaults.Response.RepeatItems);
+        }
+
         internal static bool AreDefault(this JqGridColumnFormatterOptions formatterOptions, string formatter)
         {
             switch (formatter)
@@ -150,7 +169,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (navigatorActionOptions.Resizable == JqGridOptionsDefaults.Navigator.Resizable)
                 && (navigatorActionOptions.Top == JqGridOptionsDefaults.Navigator.Top)
                 && (navigatorActionOptions.UseJqModal == JqGridOptionsDefaults.Navigator.UseJqModal);
-        }
+        } 
         #endregion
     }
 }

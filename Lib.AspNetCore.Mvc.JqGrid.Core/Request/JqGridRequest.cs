@@ -17,7 +17,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
 
         #region Properties
         /// <summary>
-        /// Gets or sets the customized names for jqGrid request parameters (will be also use as defaults for JqGridOptions/JqGridHelper).
+        /// Gets or sets the customized names for jqGrid request parameters (will be also use as defaults for JqGridHelper).
         /// </summary>
         public static JqGridParametersNames ParameterNames
         {

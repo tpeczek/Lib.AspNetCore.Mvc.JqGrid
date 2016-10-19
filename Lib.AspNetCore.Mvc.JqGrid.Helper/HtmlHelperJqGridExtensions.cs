@@ -9,6 +9,7 @@ using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Response;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 {
@@ -333,31 +334,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 
         private static StringBuilder AppendOptions(this StringBuilder javaScriptBuilder, JqGridOptions options)
         {
-            if (options.DataType.IsDataStringDataType())
-            {
-                javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.DATA_STRING, options.DataString);
-            }
-            else
-            {
-                javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.URL, options.Url);
-            }
-
             javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.CAPTION, options.Caption)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.DATA_TYPE, options.DataType, JqGridOptionsDefaults.DataType)
-                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.FOOTER_ENABLED, options.FooterEnabled, JqGridOptionsDefaults.FooterEnabled)
-                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.HEIGHT, options.Height)
-                .AppendJavaScriptObjectEnumField(JqGridOptionsNames.METHOD_TYPE, options.MethodType, JqGridOptionsDefaults.MethodType)
-                .AppendJavaScriptObjectIntegerArrayField(JqGridOptionsNames.ROWS_LIST, options.RowsList)
-                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ROWS_NUMBER, options.RowsNumber, JqGridOptionsDefaults.RowsNumber)
+                .AppendDataSource(options)
+                .AppendJsonReader(options.JsonReader)
+                .AppendPager(options)
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.SORTING_NAME, options.SortingName)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.SORTING_ORDER, options.SortingOrder, JqGridOptionsDefaults.SortingOrder)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.FOOTER_ENABLED, options.FooterEnabled, JqGridOptionsDefaults.FooterEnabled)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.USER_DATA_ON_FOOTER, options.UserDataOnFooter, JqGridOptionsDefaults.UserDataOnFooter)
-                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.VIEW_RECORDS, options.ViewRecords, JqGridOptionsDefaults.ViewRecords);
-
-            if (options.Pager)
-            {
-                javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.PAGER, GetJqGridPagerSelector(options, false));
-            }
+                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.HEIGHT, options.Height);
 
             if (!options.Height.HasValue)
             {
@@ -365,6 +351,73 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             }
 
             return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendDataSource(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            if (options.DataType.IsDataStringDataType())
+            {
+                javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.DATA_STRING, options.DataString);
+            }
+            else
+            {
+                javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.URL, options.Url)
+                    .AppendJavaScriptObjectEnumField(JqGridOptionsNames.METHOD_TYPE, options.MethodType, JqGridOptionsDefaults.MethodType);
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendPager(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            if (options.Pager)
+            {
+                javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.PAGER, GetJqGridPagerSelector(options, false))
+                    .AppendJavaScriptObjectIntegerArrayField(JqGridOptionsNames.ROWS_LIST, options.RowsList)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ROWS_NUMBER, options.RowsNumber, JqGridOptionsDefaults.RowsNumber)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.VIEW_RECORDS, options.ViewRecords, JqGridOptionsDefaults.ViewRecords);
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendJsonReader(this StringBuilder javaScriptBuilder, JqGridJsonReader jsonReader)
+        {
+            jsonReader = jsonReader ?? JqGridResponse.JsonReader;
+
+            if ((jsonReader != null) && !jsonReader.IsDefault())
+            {
+                javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.JSON_READER)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.JsonReader.PAGE_INDEX, jsonReader.PageIndex, JqGridOptionsDefaults.Response.PageIndex)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.JsonReader.RECORD_ID, jsonReader.RecordId, JqGridOptionsDefaults.Response.RecordId)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.JsonReader.TOTAL_PAGES_COUNT, jsonReader.TotalPagesCount, JqGridOptionsDefaults.Response.TotalPagesCount)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.JsonReader.TOTAL_RECORDS_COUNT, jsonReader.TotalRecordsCount, JqGridOptionsDefaults.Response.TotalRecordsCount)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.JsonReader.USER_DATA, jsonReader.UserData, JqGridOptionsDefaults.Response.UserData)
+                    .AppendJsonRecordsReaderProperties(jsonReader)
+                    .AppendJsonRecordsReader(jsonReader.SubgridReader)
+                    .AppendJavaScriptObjectFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendJsonRecordsReader(this StringBuilder javaScriptBuilder, JqGridJsonRecordsReader jsonRecordsReader)
+        {
+            if ((jsonRecordsReader != null) && !jsonRecordsReader.IsDefault())
+            {
+                javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.JsonReader.SUBGRID)
+                    .AppendJsonRecordsReaderProperties(jsonRecordsReader)
+                    .AppendJavaScriptObjectFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendJsonRecordsReaderProperties(this StringBuilder javaScriptBuilder, JqGridJsonRecordsReader jsonRecordsReader)
+        {
+            return javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.JsonReader.RECORDS, jsonRecordsReader.Records, JqGridOptionsDefaults.Response.Records)
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.JsonReader.RECORD_VALUES, jsonRecordsReader.RecordValues, JqGridOptionsDefaults.Response.RecordValues)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.JsonReader.REPEAT_ITEMS, jsonRecordsReader.RepeatItems, JqGridOptionsDefaults.Response.RepeatItems);
         }
 
         private static StringBuilder AppendInlineNavigatorActionOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorActionOptions inlineNavigatorActionOptions)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
 {
@@ -14,7 +15,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
 
         #region Properties
         /// <summary>
-        /// Gets or sets the customized JSON reader for jqGrid (will be also used as defaults for JqGridOptions/JqGridHelper).
+        /// Gets or sets the customized JSON reader for jqGrid (will be also used as defaults for JqGridHelper).
         /// </summary>
         public static JqGridJsonReader JsonReader
         {
