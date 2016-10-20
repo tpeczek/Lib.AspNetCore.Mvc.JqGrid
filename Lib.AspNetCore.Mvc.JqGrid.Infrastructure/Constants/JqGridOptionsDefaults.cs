@@ -220,6 +220,46 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
                 /// </summary>
                 public const JqGridSortTypes Type = JqGridSortTypes.Text;
             }
+
+            /// <summary>
+            /// The alignment of the cell in the grid body layer.
+            /// </summary>
+            public const JqGridAlignments Alignment = JqGridAlignments.Left;
+
+            /// <summary>
+            /// The value which defines if internal recalculation of the width of the column is disabled.
+            /// </summary>
+            public const bool Fixed = false;
+
+            /// <summary>
+            /// The value indicating if column shouldn't scroll out of view when user is moving horizontally across the grid.
+            /// </summary>
+            public const bool Frozen = false;
+
+            /// <summary>
+            /// The value which defines if column will appear in the modal dialog where users can choose which columns to show or hide.
+            /// </summary>
+            public const bool HideInDialog = false;
+
+            /// <summary>
+            /// The value which defines if column can be resized.
+            /// </summary>
+            public const bool Resizable = true;
+
+            /// <summary>
+            /// The value which defines if the title should be displayed in the column when user hovers a cell with the mouse.
+            /// </summary>
+            public const bool Title = true;
+
+            /// <summary>
+            /// The initial width in pixels of the column.
+            /// </summary>
+            public const int Width = 150;
+
+            /// <summary>
+            /// The value which defines if the column should appear in view form.
+            /// </summary>
+            public const bool Viewable = true;
         }
 
         /// <summary>
