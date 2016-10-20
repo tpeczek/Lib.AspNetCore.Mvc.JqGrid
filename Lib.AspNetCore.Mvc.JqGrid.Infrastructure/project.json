@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-alpha-2",
+  "version": "1.0.0-beta",
   "description": "Common infrastructure for jqGrid support in ASP.NET Core.",
   "authors": [ "Tomasz Pęczek" ],
   "copyright": "Copyright © 2016 Tomasz Pęczek",
@@ -25,5 +25,10 @@
     }
   },
   "dependencies": {
+  },
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
   }
 }

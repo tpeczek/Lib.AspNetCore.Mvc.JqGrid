@@ -1,8 +1,8 @@
 {
-  "version": "1.0.0-alpha-2",
+  "version": "1.0.0-beta",
   "description": "Core server side support for jqGrid in ASP.NET Core.",
-  "authors": [ "Tomasz Pêczek" ],
-  "copyright": "Copyright © 2016 Tomasz Pêczek",
+  "authors": [ "Tomasz PÄ™czek" ],
+  "copyright": "Copyright Â© 2016 Tomasz PÄ™czek",
   "packOptions": {
     "tags": [ "aspnetcore", "aspnetcoremvc", "jqgrid" ],
     "projectUrl": "https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid",
@@ -16,11 +16,16 @@
     "xmlDoc": true
   },
   "frameworks": {
-    "net451": { },
-    "netstandard1.6": { }
+    "net451": {},
+    "netstandard1.6": {}
   },
   "dependencies": {
-    "Lib.AspNetCore.Mvc.JqGrid.Infrastructure": "1.0.0-*",
-    "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0"
+    "Lib.AspNetCore.Mvc.JqGrid.Infrastructure": "1.0.0-beta",
+    "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.1"
+  },
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
   }
 }

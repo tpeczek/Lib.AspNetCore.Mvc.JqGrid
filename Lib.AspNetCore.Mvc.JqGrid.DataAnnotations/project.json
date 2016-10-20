@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.0.0-alpha-2",
+  "version": "1.0.0-beta",
   "description": "Custom data annotations which allow for providing additional metadata when working with strongly typed jqGrid helper for ASP.NET Core.",
   "authors": [ "Tomasz Pęczek" ],
   "copyright": "Copyright © 2016 Tomasz Pęczek",
@@ -24,6 +24,11 @@
     }
   },
   "dependencies": {
-    "Lib.AspNetCore.Mvc.JqGrid.Infrastructure": "1.0.0-alpha-2"
+    "Lib.AspNetCore.Mvc.JqGrid.Infrastructure": "1.0.0-beta"
+  },
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
   }
 }

@@ -1,4 +1,6 @@
 # Lib.AspNetCore.Mvc.JqGrid
+[![NuGet Lib.AspNetCore.Mvc.JqGrid.Infrastructure](https://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.svg)](http://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Infrastructure) [![NuGet Lib.AspNetCore.Mvc.JqGrid.Core](https://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Core.svg)](http://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Core) [![NuGet Lib.AspNetCore.Mvc.JqGrid.DataAnnotations](https://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.svg)](http://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations) [![NuGet Lib.AspNetCore.Mvc.JqGrid.Helper](https://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Helper.svg)](http://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Helper)
+
 
 A set of libraries which provide support for jqGrid usage in ASP.NET Core.
 
@@ -9,7 +11,7 @@ This is ASP.NET Core version of jqGrid related functionality from [Lib.Web.Mvc](
 - **Lib.AspNetCore.Mvc.JqGrid.DataAnnotations** - Custom data annotations which allow for providing additional metadata when working with strongly typed helper.
 - **Lib.AspNetCore.Mvc.JqGrid.Helper** - The strongly typed helper.
 
-*This project is currently in pre-alpha status. Only part of the functionality has been migrated.*
+*This project is currently in beta status. Not all of the functionality has been migrated.*
 
 ## Donating
 Support this and my [other projects](https://github.com/tpeczek/) via [Gittip](https://www.gittip.com/tpeczek/).
