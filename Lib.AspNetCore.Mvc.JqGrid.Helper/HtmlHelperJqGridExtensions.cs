@@ -6,10 +6,10 @@ using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
-using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
-using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator;
 using Lib.AspNetCore.Mvc.JqGrid.Core.Response;
+using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
+using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 {
@@ -131,6 +131,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             {
                 javaScriptBuilder.AppendJavaScriptObjectOpening()
                     .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.NAME_FIELD, columnModel.Name)
+                    .AppendJavaScriptObjectEnumField(JqGridOptionsNames.ColumnModel.ALIGNMENT, columnModel.Alignment, JqGridOptionsDefaults.ColumnModel.Alignment)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.CELL_ATTRIBUTES, columnModel.CellAttributes)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.CLASSES, columnModel.Classes)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.FIXED, columnModel.Fixed, JqGridOptionsDefaults.ColumnModel.Fixed)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.FROZEN, columnModel.Frozen, JqGridOptionsDefaults.ColumnModel.Frozen)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.HIDE_IN_DIALOG, columnModel.HideInDialog, JqGridOptionsDefaults.ColumnModel.HideInDialog)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.RESIZABLE, columnModel.Resizable, JqGridOptionsDefaults.ColumnModel.Resizable)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.TITLE, columnModel.Title, JqGridOptionsDefaults.ColumnModel.Title)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ColumnModel.WIDTH, columnModel.Width, JqGridOptionsDefaults.ColumnModel.Width)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.VIEWABLE, columnModel.Viewable, JqGridOptionsDefaults.ColumnModel.Viewable)
                     .AppendColumnModelSortOptions(columnModel)
                     .AppendColumnModelFormatter(columnModel);
 

@@ -23,10 +23,20 @@
         internal static class ColumnModel
         {
             internal const string NAME_FIELD = "name";
+            internal const string ALIGNMENT = "align";
+            internal const string CELL_ATTRIBUTES = "cellattr";
+            internal const string CLASSES = "classes";
+            internal const string FIXED = "fixed";
+            internal const string FROZEN = "frozen";
+            internal const string HIDE_IN_DIALOG = "hidedlg";
             internal const string INDEX_FIELD = "index";
             internal const string INITIAL_SORTING_ORDER_FIELD = "firstsortorder";
+            internal const string RESIZABLE = "resizable";
             internal const string SORTABLE_FIELD = "sortable";
             internal const string SORT_TYPE_FIELD = "sorttype";
+            internal const string TITLE = "title";
+            internal const string WIDTH = "width";
+            internal const string VIEWABLE = "viewable";
             internal const string FORMATTER_FIELD = "formatter";
             internal const string UNFORMATTER_FIELD = "unformat";
             internal const string FORMATTER_OPTIONS_FIELD = "formatoptions";

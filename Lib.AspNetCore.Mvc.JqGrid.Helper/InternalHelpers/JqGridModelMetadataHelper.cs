@@ -39,12 +39,14 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             JqGridColumnModel columnModel = new JqGridColumnModel(columnMetadata.PropertyName);
 
             TimestampAttribute timeStampAttribute = null;
+            JqGridColumnLayoutAttribute jqGridColumnLayoutAttribute = null;
             JqGridColumnSortableAttribute jqGridColumnSortableAttribute = null;
             JqGridColumnFormatterAttribute jqGridColumnFormatterAttribute = null;
 
             foreach (Attribute customAttribute in columnMetadata.ContainerType.GetProperty(columnMetadata.PropertyName).GetCustomAttributes(true))
             {
                 timeStampAttribute = (customAttribute as TimestampAttribute) ?? timeStampAttribute;
+                jqGridColumnLayoutAttribute = (customAttribute as JqGridColumnLayoutAttribute) ?? jqGridColumnLayoutAttribute;
                 jqGridColumnSortableAttribute = (customAttribute as JqGridColumnSortableAttribute) ?? jqGridColumnSortableAttribute;
                 jqGridColumnFormatterAttribute = (customAttribute as JqGridColumnFormatterAttribute) ?? jqGridColumnFormatterAttribute;
             }
@@ -53,8 +55,28 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             { }
             else
             {
+                columnModel = SetLayoutOptions(columnModel, jqGridColumnLayoutAttribute);
                 columnModel = SetSortOptions(columnModel, jqGridColumnSortableAttribute);
                 columnModel = SetFormatterOptions(columnModel, jqGridColumnFormatterAttribute);
+            }
+
+            return columnModel;
+        }
+
+        private static JqGridColumnModel SetLayoutOptions(JqGridColumnModel columnModel, JqGridColumnLayoutAttribute jqGridColumnLayoutAttribute)
+        {
+            if (jqGridColumnLayoutAttribute != null)
+            {
+                columnModel.Alignment = jqGridColumnLayoutAttribute.Alignment;
+                columnModel.CellAttributes = jqGridColumnLayoutAttribute.CellAttributes;
+                columnModel.Classes = jqGridColumnLayoutAttribute.Classes;
+                columnModel.Fixed = jqGridColumnLayoutAttribute.Fixed;
+                columnModel.Frozen = jqGridColumnLayoutAttribute.Frozen;
+                columnModel.HideInDialog = jqGridColumnLayoutAttribute.HideInDialog;
+                columnModel.Resizable = jqGridColumnLayoutAttribute.Resizable;
+                columnModel.Title = jqGridColumnLayoutAttribute.Title;
+                columnModel.Width = jqGridColumnLayoutAttribute.Width;
+                columnModel.Viewable = jqGridColumnLayoutAttribute.Viewable;
             }
 
             return columnModel;
