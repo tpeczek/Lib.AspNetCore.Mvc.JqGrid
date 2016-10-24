@@ -7,11 +7,14 @@
         internal const string COLUMNS_MODEL_FIELD = "colModel";
         internal const string DATA_STRING = "datastr";
         internal const string DATA_TYPE = "datatype";
+        internal const string DYNAMIC_SCROLLING_MODE = "scroll";
+        internal const string DYNAMIC_SCROLLING_TIMEOUT = "scrollTimeout";
         internal const string FOOTER_ENABLED = "footerrow";
         internal const string HEIGHT = "height";
         internal const string JSON_READER = "jsonReader";
         internal const string METHOD_TYPE = "mtype";
         internal const string PAGER = "pager";
+        internal const string PARAMETERS_NAMES = "prmNames";
         internal const string ROWS_LIST = "rowList";
         internal const string ROWS_NUMBER = "rowNum";
         internal const string SORTING_NAME = "sortname";
@@ -149,6 +152,23 @@
             internal const string TOTAL_PAGES_COUNT = "total";
             internal const string TOTAL_RECORDS_COUNT = "records";
             internal const string USER_DATA = "userdata";
+        }
+
+        internal static class ParametersNames
+        {
+            internal const string PAGE_INDEX = "page";
+            internal const string RECORDS_COUNT = "rows";
+            internal const string SORTING_NAME = "sort";
+            internal const string SORTING_ORDER = "order";
+            internal const string SEARCHING = "search";
+            internal const string ID = "id";
+            internal const string OPERATOR = "oper";
+            internal const string EDIT_OPERATOR = "editoper";
+            internal const string ADD_OPERATOR = "addoper";
+            internal const string DELETE_OPERATOR = "deloper";
+            internal const string SUBGRID_ID = "subgridid";
+            internal const string PAGES_COUNT = "npage";
+            internal const string TOTAL_ROWS = "totalrows";
         }
     }
 }

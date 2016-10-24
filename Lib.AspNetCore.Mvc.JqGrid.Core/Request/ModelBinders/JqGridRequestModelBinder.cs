@@ -54,9 +54,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
 
         private JqGridRequest BindPagingProperties(JqGridRequest model, ModelBindingContext bindingContext)
         {
-            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParameterNames.PageIndex))
+            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParametersNames.PageIndex))
             {
-                model.PageIndex = bindingContext.ValueProvider.GetValue(JqGridRequest.ParameterNames.PageIndex).ConvertTo<int>() - 1;
+                model.PageIndex = bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.PageIndex).ConvertTo<int>() - 1;
             }
             else
             {
@@ -64,18 +64,18 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
             }
 
             model.PagesCount = 1;
-            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParameterNames.PagesCount))
+            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParametersNames.PagesCount))
             {
-                ValueProviderResult pagesCountValueResult = bindingContext.ValueProvider.GetValue(JqGridRequest.ParameterNames.PagesCount);
+                ValueProviderResult pagesCountValueResult = bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.PagesCount);
                 if (pagesCountValueResult != ValueProviderResult.None)
                 {
                     model.PagesCount = pagesCountValueResult.ConvertTo<int>();
                 }
             }
 
-            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParameterNames.RecordsCount))
+            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParametersNames.RecordsCount))
             {
-                model.RecordsCount = bindingContext.ValueProvider.GetValue(JqGridRequest.ParameterNames.RecordsCount).ConvertTo<int>();
+                model.RecordsCount = bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.RecordsCount).ConvertTo<int>();
             }
 
             return model;
@@ -83,9 +83,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
 
         private JqGridRequest BindSortingProperties(JqGridRequest model, ModelBindingContext bindingContext)
         {
-            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParameterNames.SortingName))
+            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParametersNames.SortingName))
             {
-                string sortingName = bindingContext.ValueProvider.GetValue(JqGridRequest.ParameterNames.SortingName).ConvertTo<string>();
+                string sortingName = bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.SortingName).ConvertTo<string>();
 
                 if (!String.IsNullOrWhiteSpace(sortingName))
                 {
@@ -93,10 +93,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 }
             }
 
-            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParameterNames.SortingOrder))
+            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParametersNames.SortingOrder))
             {
                 JqGridSortingOrders sortingOrder = JqGridSortingOrders.Asc;
-                string sortingOrderAsString = bindingContext.ValueProvider.GetValue(JqGridRequest.ParameterNames.SortingOrder).ConvertTo<string>();
+                string sortingOrderAsString = bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.SortingOrder).ConvertTo<string>();
 
                 if (!String.IsNullOrWhiteSpace(sortingOrderAsString) && Enum.TryParse(sortingOrderAsString, true, out sortingOrder))
                 {
@@ -110,9 +110,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
         private JqGridRequest BindSearchingProperties(JqGridRequest model, ModelBindingContext bindingContext)
         {
             model.Searching = false;
-            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParameterNames.Searching))
+            if (!String.IsNullOrWhiteSpace(JqGridRequest.ParametersNames.Searching))
             {
-                ValueProviderResult searchingValueResult = bindingContext.ValueProvider.GetValue(JqGridRequest.ParameterNames.Searching);
+                ValueProviderResult searchingValueResult = bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.Searching);
                 if (searchingValueResult != ValueProviderResult.None)
                 {
                     model.Searching = searchingValueResult.ConvertTo<bool>();

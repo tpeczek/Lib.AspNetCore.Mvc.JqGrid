@@ -1,7 +1,6 @@
-﻿using System;
-using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
+﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 
-namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
+namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
 {
     /// <summary>
     /// Class which represents names for jqGrid request parameters.
@@ -94,13 +93,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
             SubgridId = JqGridOptionsDefaults.Request.SubgridId;
             PagesCount = null;
             TotalRows = JqGridOptionsDefaults.Request.TotalRows;
-        }
-        #endregion
-
-        #region Methods
-        internal bool IsDefault()
-        {
-            return ((PageIndex == JqGridOptionsDefaults.Request.PageIndex) && (RecordsCount == JqGridOptionsDefaults.Request.RecordsCount) && (SortingName == JqGridOptionsDefaults.Request.SortingName) && (SortingOrder == JqGridOptionsDefaults.Request.SortingOrder) && (Searching == JqGridOptionsDefaults.Request.Searching) && (Id == JqGridOptionsDefaults.Request.Id) && (Operator == JqGridOptionsDefaults.Request.Operator) && (EditOperator == JqGridOptionsDefaults.Request.EditOperator) && (AddOperator == JqGridOptionsDefaults.Request.AddOperator) && (DeleteOperator == JqGridOptionsDefaults.Request.DeleteOperator) && (SubgridId == JqGridOptionsDefaults.Request.SubgridId) && String.IsNullOrWhiteSpace(PagesCount) && (TotalRows == JqGridOptionsDefaults.Request.TotalRows));
         }
         #endregion
     }

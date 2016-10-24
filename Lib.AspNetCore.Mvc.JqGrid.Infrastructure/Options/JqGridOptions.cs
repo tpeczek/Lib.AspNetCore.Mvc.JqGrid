@@ -48,6 +48,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public JqGridDataTypes DataType { get; set; }
 
         /// <summary>
+        /// Gets or sets the value which defines if dynamic scrolling is enabled.
+        /// </summary>
+        public JqGridDynamicScrollingModes DynamicScrollingMode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the timeout (in miliseconds) if DynamicScrollingMode is set to JqGridDynamicScrollingModes.HoldVisibleRows
+        /// </summary>
+        public int DynamicScrollingTimeout { get; set; }
+
+        /// <summary>
         /// Gets or sets the value indicating if the footer table (with one row) will be placed below the grid records and above the pager. The number of columns equal of these from ColumnsModels.
         /// </summary>
         public bool FooterEnabled { get; set; }
@@ -71,6 +81,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         /// Gets or sets if grid should use a pager bar to navigate through the records (default: false).
         /// </summary>
         public bool Pager { get; set; }
+
+        /// <summary>
+        /// Gets or sets customized names for jqGrid request parameters.
+        /// </summary>
+        public JqGridParametersNames ParametersNames { get; set; }
 
         /// <summary>
         /// Gets or sets an array to construct a select box element in the pager in which user can change the number of the visible rows.
@@ -119,11 +134,14 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             Caption = null;
             DataString = null;
             DataType = JqGridOptionsDefaults.DataType;
+            DynamicScrollingMode = JqGridOptionsDefaults.DynamicScrollingMode;
+            DynamicScrollingTimeout = JqGridOptionsDefaults.DynamicScrollingTimeout;
             FooterEnabled = JqGridOptionsDefaults.FooterEnabled;
             Height = null;
             JsonReader = null;
             MethodType = JqGridOptionsDefaults.MethodType;
             Pager = JqGridOptionsDefaults.Pager;
+            ParametersNames = null;
             RowsList = null;
             RowsNumber = JqGridOptionsDefaults.RowsNumber;
             SortingName = null;

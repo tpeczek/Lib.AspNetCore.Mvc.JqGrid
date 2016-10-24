@@ -27,6 +27,23 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (jsonRecordsReader.RepeatItems == JqGridOptionsDefaults.Response.RepeatItems);
         }
 
+        internal static bool AreDefault(this JqGridParametersNames parametersNames)
+        {
+            return (parametersNames.PageIndex == JqGridOptionsDefaults.Request.PageIndex)
+                && (parametersNames.RecordsCount == JqGridOptionsDefaults.Request.RecordsCount)
+                && (parametersNames.SortingName == JqGridOptionsDefaults.Request.SortingName)
+                && (parametersNames.SortingOrder == JqGridOptionsDefaults.Request.SortingOrder)
+                && (parametersNames.Searching == JqGridOptionsDefaults.Request.Searching)
+                && (parametersNames.Id == JqGridOptionsDefaults.Request.Id)
+                && (parametersNames.Operator == JqGridOptionsDefaults.Request.Operator)
+                && (parametersNames.EditOperator == JqGridOptionsDefaults.Request.EditOperator)
+                && (parametersNames.AddOperator == JqGridOptionsDefaults.Request.AddOperator)
+                && (parametersNames.DeleteOperator == JqGridOptionsDefaults.Request.DeleteOperator)
+                && (parametersNames.SubgridId == JqGridOptionsDefaults.Request.SubgridId)
+                && String.IsNullOrEmpty(parametersNames.PagesCount)
+                && (parametersNames.TotalRows == JqGridOptionsDefaults.Request.TotalRows);
+        }
+
         internal static bool AreDefault(this JqGridColumnFormatterOptions formatterOptions, string formatter)
         {
             switch (formatter)

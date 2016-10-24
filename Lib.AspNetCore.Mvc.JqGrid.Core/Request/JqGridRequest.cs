@@ -1,4 +1,5 @@
 ﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -19,7 +20,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
         /// <summary>
         /// Gets or sets the customized names for jqGrid request parameters (will be also use as defaults for JqGridHelper).
         /// </summary>
-        public static JqGridParametersNames ParameterNames
+        public static JqGridParametersNames ParametersNames
         {
             get { return _parametersNames; }
 
@@ -77,7 +78,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
         #region Constructors
         static JqGridRequest()
         {
-            ParameterNames = new JqGridParametersNames();
+            ParametersNames = new JqGridParametersNames();
         }
         #endregion
     }

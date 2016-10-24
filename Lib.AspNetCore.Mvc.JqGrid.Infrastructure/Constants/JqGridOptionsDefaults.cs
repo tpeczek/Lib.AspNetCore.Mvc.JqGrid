@@ -445,6 +445,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         public const string DateFormat = "Y-m-d";
 
         /// <summary>
+        /// The value which defines if dynamic scrolling is enabled.
+        /// </summary>
+        public const JqGridDynamicScrollingModes DynamicScrollingMode = JqGridDynamicScrollingModes.Disabled;
+
+        /// <summary>
+        /// The timeout (in miliseconds) if DynamicScrollingMode is set to JqGridDynamicScrollingModes.HoldVisibleRows.
+        /// </summary>
+        public const int DynamicScrollingTimeout = 200;
+
+        /// <summary>
         /// The information to be displayed when the returned (or the current) number of records is zero.
         /// </summary>
         public const string EmptyRecords = "No records to view";

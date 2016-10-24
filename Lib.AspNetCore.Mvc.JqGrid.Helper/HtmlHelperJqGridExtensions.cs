@@ -7,6 +7,7 @@ using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Request;
 using Lib.AspNetCore.Mvc.JqGrid.Core.Response;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
@@ -347,8 +348,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.CAPTION, options.Caption)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.DATA_TYPE, options.DataType, JqGridOptionsDefaults.DataType)
                 .AppendDataSource(options)
+                .AppendParametersNames(options.ParametersNames)
                 .AppendJsonReader(options.JsonReader)
                 .AppendPager(options)
+                .AppendDynamicScrolling(options)
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.SORTING_NAME, options.SortingName)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.SORTING_ORDER, options.SortingOrder, JqGridOptionsDefaults.SortingOrder)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.FOOTER_ENABLED, options.FooterEnabled, JqGridOptionsDefaults.FooterEnabled)
@@ -373,6 +376,21 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             {
                 javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.URL, options.Url)
                     .AppendJavaScriptObjectEnumField(JqGridOptionsNames.METHOD_TYPE, options.MethodType, JqGridOptionsDefaults.MethodType);
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendDynamicScrolling(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            if (options.DynamicScrollingMode == JqGridDynamicScrollingModes.HoldAllRows)
+            {
+                javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.DYNAMIC_SCROLLING_MODE, true);
+            }
+            else if (options.DynamicScrollingMode == JqGridDynamicScrollingModes.HoldVisibleRows)
+            {
+                javaScriptBuilder.AppendJavaScriptObjectIntegerField(JqGridOptionsNames.DYNAMIC_SCROLLING_MODE, 10)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.DYNAMIC_SCROLLING_TIMEOUT, options.DynamicScrollingTimeout, JqGridOptionsDefaults.DynamicScrollingTimeout);
             }
 
             return javaScriptBuilder;
@@ -428,6 +446,32 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             return javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.JsonReader.RECORDS, jsonRecordsReader.Records, JqGridOptionsDefaults.Response.Records)
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.JsonReader.RECORD_VALUES, jsonRecordsReader.RecordValues, JqGridOptionsDefaults.Response.RecordValues)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.JsonReader.REPEAT_ITEMS, jsonRecordsReader.RepeatItems, JqGridOptionsDefaults.Response.RepeatItems);
+        }
+
+        private static StringBuilder AppendParametersNames(this StringBuilder javaScriptBuilder, JqGridParametersNames parametersNames)
+        {
+            parametersNames = parametersNames ?? JqGridRequest.ParametersNames;
+
+            if ((parametersNames != null) && !parametersNames.AreDefault())
+            {
+                javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.PARAMETERS_NAMES)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.PAGE_INDEX, parametersNames.PageIndex, JqGridOptionsDefaults.Request.PageIndex)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.RECORDS_COUNT, parametersNames.RecordsCount, JqGridOptionsDefaults.Request.RecordsCount)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.SORTING_NAME, parametersNames.SortingName, JqGridOptionsDefaults.Request.SortingName)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.SORTING_ORDER, parametersNames.SortingOrder, JqGridOptionsDefaults.Request.SortingOrder)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.SEARCHING, parametersNames.Searching, JqGridOptionsDefaults.Request.Searching)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.ID, parametersNames.Id, JqGridOptionsDefaults.Request.Id)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.OPERATOR, parametersNames.Operator, JqGridOptionsDefaults.Request.Operator)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.EDIT_OPERATOR, parametersNames.EditOperator, JqGridOptionsDefaults.Request.EditOperator)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.ADD_OPERATOR, parametersNames.AddOperator, JqGridOptionsDefaults.Request.AddOperator)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.DELETE_OPERATOR, parametersNames.DeleteOperator, JqGridOptionsDefaults.Request.DeleteOperator)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.SUBGRID_ID, parametersNames.SubgridId, JqGridOptionsDefaults.Request.SubgridId)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.PAGES_COUNT, parametersNames.PagesCount)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.TOTAL_ROWS, parametersNames.TotalRows, JqGridOptionsDefaults.Request.TotalRows)
+                    .AppendJavaScriptObjectFieldClosing();
+            }
+
+            return javaScriptBuilder;
         }
 
         private static StringBuilder AppendInlineNavigatorActionOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorActionOptions inlineNavigatorActionOptions)
