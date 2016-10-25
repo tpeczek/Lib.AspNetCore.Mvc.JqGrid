@@ -86,6 +86,21 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         public JqGridSortTypes SortType { get; set; }
 
         /// <summary>
+        /// Gets or sets the grouping summary type.
+        /// </summary>
+        public JqGridColumnSummaryTypes? SummaryType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the grouping summary template.
+        /// </summary>
+        public string SummaryTemplate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the grouping summary function for custom type.
+        /// </summary>
+        public string SummaryFunction { get; set; }
+
+        /// <summary>
         /// Gets or sets the value which defines if the title should be displayed in the column when user hovers a cell with the mouse.
         /// </summary>
         public bool Title { get; set; }
@@ -129,6 +144,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
             Sortable = JqGridOptionsDefaults.ColumnModel.Sorting.Sortable;
             SortFunction = String.Empty;
             SortType = JqGridOptionsDefaults.ColumnModel.Sorting.Type;
+            SummaryType = null;
+            SummaryTemplate = JqGridOptionsDefaults.ColumnModel.SummaryTemplate;
+            SummaryFunction = null;
             Title = JqGridOptionsDefaults.ColumnModel.Title;
             UnFormatter = String.Empty;
             Width = JqGridOptionsDefaults.ColumnModel.Width;

@@ -63,6 +63,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public bool FooterEnabled { get; set; }
 
         /// <summary>
+        /// Gets or sets the value indicating if the grouping is enabled.
+        /// </summary>
+        public bool GroupingEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or sets the grouping view options.
+        /// </summary>
+        public JqGridGroupingView GroupingView { get; set; }
+
+        /// <summary>
         /// Gets or sets the height of the grid in pixels (default '100%').
         /// </summary>
         public int? Height { get; set; }
@@ -137,6 +147,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             DynamicScrollingMode = JqGridOptionsDefaults.DynamicScrollingMode;
             DynamicScrollingTimeout = JqGridOptionsDefaults.DynamicScrollingTimeout;
             FooterEnabled = JqGridOptionsDefaults.FooterEnabled;
+            GroupingEnabled = JqGridOptionsDefaults.GroupingEnabled;
+            GroupingView = null;
             Height = null;
             JsonReader = null;
             MethodType = JqGridOptionsDefaults.MethodType;

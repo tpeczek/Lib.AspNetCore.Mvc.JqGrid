@@ -11,6 +11,7 @@
         internal const string DYNAMIC_SCROLLING_TIMEOUT = "scrollTimeout";
         internal const string FOOTER_ENABLED = "footerrow";
         internal const string HEIGHT = "height";
+        internal const string GROUPING_ENABLED = "grouping";
         internal const string JSON_READER = "jsonReader";
         internal const string METHOD_TYPE = "mtype";
         internal const string PAGER = "pager";
@@ -37,6 +38,8 @@
             internal const string RESIZABLE = "resizable";
             internal const string SORTABLE_FIELD = "sortable";
             internal const string SORT_TYPE_FIELD = "sorttype";
+            internal const string SUMMARY_TYPE = "summaryType";
+            internal const string SUMMARY_TEMPLATE = "summaryTpl";
             internal const string TITLE = "title";
             internal const string WIDTH = "width";
             internal const string VIEWABLE = "viewable";

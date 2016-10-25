@@ -42,6 +42,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             JqGridColumnLayoutAttribute jqGridColumnLayoutAttribute = null;
             JqGridColumnSortableAttribute jqGridColumnSortableAttribute = null;
             JqGridColumnFormatterAttribute jqGridColumnFormatterAttribute = null;
+            JqGridColumnSummaryAttribute jqGridColumnSummaryAttribute = null;
 
             foreach (Attribute customAttribute in columnMetadata.ContainerType.GetProperty(columnMetadata.PropertyName).GetCustomAttributes(true))
             {
@@ -49,6 +50,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 jqGridColumnLayoutAttribute = (customAttribute as JqGridColumnLayoutAttribute) ?? jqGridColumnLayoutAttribute;
                 jqGridColumnSortableAttribute = (customAttribute as JqGridColumnSortableAttribute) ?? jqGridColumnSortableAttribute;
                 jqGridColumnFormatterAttribute = (customAttribute as JqGridColumnFormatterAttribute) ?? jqGridColumnFormatterAttribute;
+                jqGridColumnSummaryAttribute = (customAttribute as JqGridColumnSummaryAttribute) ?? jqGridColumnSummaryAttribute;
             }
 
             if (timeStampAttribute != null)
@@ -58,6 +60,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel = SetLayoutOptions(columnModel, jqGridColumnLayoutAttribute);
                 columnModel = SetSortOptions(columnModel, jqGridColumnSortableAttribute);
                 columnModel = SetFormatterOptions(columnModel, jqGridColumnFormatterAttribute);
+                columnModel = SetSummaryOptions(columnModel, jqGridColumnSummaryAttribute);
             }
 
             return columnModel;
@@ -103,6 +106,18 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel.Formatter = jqGridColumnFormatterAttribute.Formatter;
                 columnModel.FormatterOptions = jqGridColumnFormatterAttribute.FormatterOptions;
                 columnModel.UnFormatter = jqGridColumnFormatterAttribute.UnFormatter;
+            }
+
+            return columnModel;
+        }
+
+        private static JqGridColumnModel SetSummaryOptions(JqGridColumnModel columnModel, JqGridColumnSummaryAttribute jqGridColumnSummaryAttribute)
+        {
+            if (jqGridColumnSummaryAttribute != null)
+            {
+                columnModel.SummaryType = jqGridColumnSummaryAttribute.Type;
+                columnModel.SummaryTemplate = jqGridColumnSummaryAttribute.Template;
+                columnModel.SummaryFunction = jqGridColumnSummaryAttribute.Function;
             }
 
             return columnModel;

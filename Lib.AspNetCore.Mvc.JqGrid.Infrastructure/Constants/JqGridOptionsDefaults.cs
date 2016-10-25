@@ -247,6 +247,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             public const bool Resizable = true;
 
             /// <summary>
+            /// The grouping summary template.
+            /// </summary>
+            public const string SummaryTemplate = "{0}";
+
+            /// <summary>
             /// The value which defines if the title should be displayed in the column when user hovers a cell with the mouse.
             /// </summary>
             public const bool Title = true;
@@ -260,6 +265,37 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// The value which defines if the column should appear in view form.
             /// </summary>
             public const bool Viewable = true;
+        }
+
+        /// <summary>
+        /// The options for jqGrid grouping view.
+        /// </summary>
+        public static class GroupingView
+        {
+            /// <summary>
+            /// The value indicating if summary row is visible when the group is collapsed.
+            /// </summary>
+            public const bool SummaryOnHide = false;
+
+            /// <summary>
+            /// The value indicating if the group names should be added to request SortingName.
+            /// </summary>
+            public const bool DataSorted = false;
+
+            /// <summary>
+            /// The value indicating if the groups should be initially collapsed.
+            /// </summary>
+            public const bool Collapse = false;
+
+            /// <summary>
+            /// The icon (form UI theme images) that will be used if the group is collapsed.
+            /// </summary>
+            public const string GroupingPlusIcon = "ui-icon-circlesmall-plus";
+
+            /// <summary>
+            /// The icon (form UI theme images) that will be used if the group is expanded.
+            /// </summary>
+            public const string GroupingMinusIcon = "ui-icon-circlesmall-minus";
         }
 
         /// <summary>
@@ -415,14 +451,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         }
 
         /// <summary>
-        /// The icon (form UI theme images) that will be used if the group is collapsed.
+        /// The value indicating if the grouping is enabled.
         /// </summary>
-        public const string GroupingPlusIcon = "ui-icon-circlesmall-plus";
-
-        /// <summary>
-        /// The icon (form UI theme images) that will be used if the group is expanded.
-        /// </summary>
-        public const string GroupingMinusIcon = "ui-icon-circlesmall-minus";
+        public const bool GroupingEnabled = false;
 
         /// <summary>
         /// The class that is used for alternate rows.
