@@ -79,7 +79,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             StringBuilder javaScriptBuilder = new StringBuilder();
 
             javaScriptBuilder.AppendFormat("$({0}).jqGrid({{", GetJqGridGridSelector(options, false)).AppendLine()
-                .AppendColumnsNames(options)
+                .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.COLUMNS_NAMES_FIELD, options.ColumnsNames)
                 .AppendColumnsModels(options)
                 .AppendOptions(options)
                 .Append("})");
@@ -92,7 +92,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 
         #region Private Methods
         private static void ValidateJqGridConstraints(JqGridOptions options)
-        { }
+        {
+            if ((options.DynamicScrollingMode != JqGridDynamicScrollingModes.Disabled) && options.GroupingEnabled)
+            {
+                throw new InvalidOperationException("Dynamic scrolling and data grouping can not be enabled at the same time.");
+            }
+        }
 
         private static string GetJqGridGridSelector(JqGridOptions options, bool asSubgrid)
         {
@@ -107,21 +112,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         private static string GetJqGridPagerSelector(JqGridOptions options, bool asSubgrid)
         {
             return asSubgrid? "'#' + subgridPagerId" : String.Format("'#{0}'", GetJqGridPagerId(options));
-        }
-
-        private static StringBuilder AppendColumnsNames(this StringBuilder javaScriptBuilder, JqGridOptions options)
-        {
-            javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.COLUMNS_NAMES_FIELD);
-
-            foreach (string columnName in options.ColumnsNames)
-            {
-                javaScriptBuilder.AppendJavaScriptArrayStringValue(columnName);
-            }
-
-            javaScriptBuilder.AppendJavaScriptArrayFieldClosing()
-                .AppendLine();
-
-            return javaScriptBuilder;
         }
 
         private static StringBuilder AppendColumnsModels(this StringBuilder javaScriptBuilder, JqGridOptions options)
@@ -143,6 +133,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                     .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ColumnModel.WIDTH, columnModel.Width, JqGridOptionsDefaults.ColumnModel.Width)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.VIEWABLE, columnModel.Viewable, JqGridOptionsDefaults.ColumnModel.Viewable)
                     .AppendColumnModelSortOptions(columnModel)
+                    .AppendColumnModelSummaryOptions(columnModel, options)
                     .AppendColumnModelFormatter(columnModel);
 
                 javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
@@ -173,6 +164,28 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                 {
                     javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.ColumnModel.SORT_TYPE_FIELD, columnModel.SortType, JqGridOptionsDefaults.ColumnModel.Sorting.Type);
                 }
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendColumnModelSummaryOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel, JqGridOptions options)
+        {
+            if (options.GroupingEnabled)
+            {
+                if (columnModel.SummaryType.HasValue)
+                {
+                    if (columnModel.SummaryType.Value != JqGridColumnSummaryTypes.Custom)
+                    {
+                        javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.ColumnModel.SUMMARY_TYPE, columnModel.SummaryType.Value);
+                    }
+                    else
+                    {
+                        javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.SUMMARY_TYPE, columnModel.SummaryFunction);
+                    }
+                }
+
+                javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.SUMMARY_TEMPLATE, columnModel.SummaryTemplate, JqGridOptionsDefaults.ColumnModel.SummaryTemplate);
             }
 
             return javaScriptBuilder;
@@ -348,6 +361,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.CAPTION, options.Caption)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.DATA_TYPE, options.DataType, JqGridOptionsDefaults.DataType)
                 .AppendDataSource(options)
+                .AppendGrouping(options)
                 .AppendParametersNames(options.ParametersNames)
                 .AppendJsonReader(options.JsonReader)
                 .AppendPager(options)
@@ -391,6 +405,33 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             {
                 javaScriptBuilder.AppendJavaScriptObjectIntegerField(JqGridOptionsNames.DYNAMIC_SCROLLING_MODE, 10)
                     .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.DYNAMIC_SCROLLING_TIMEOUT, options.DynamicScrollingTimeout, JqGridOptionsDefaults.DynamicScrollingTimeout);
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendGrouping(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            if (options.GroupingEnabled)
+            {
+                javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.GROUPING_ENABLED, options.GroupingEnabled);
+                if (options.GroupingView != null)
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.GROUPING_VIEW)
+                        .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.GroupingView.FIELDS, options.GroupingView.Fields)
+                        .AppendJavaScriptObjectEnumArrayField(JqGridOptionsNames.GroupingView.ORDERS, options.GroupingView.Orders)
+                        .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.GroupingView.TEXTS, options.GroupingView.Texts)
+                        .AppendJavaScriptObjectBooleanArrayField(JqGridOptionsNames.GroupingView.SUMMARY, options.GroupingView.Summary)
+                        .AppendJavaScriptObjectBooleanArrayField(JqGridOptionsNames.GroupingView.COLUMN_SHOW, options.GroupingView.ColumnShow)
+                        .AppendJavaScriptObjectFunctionArrayField(JqGridOptionsNames.GroupingView.IS_IN_THE_SAME_GROUP_CALLBACKS, options.GroupingView.IsInTheSameGroupCallbacks)
+                        .AppendJavaScriptObjectFunctionArrayField(JqGridOptionsNames.GroupingView.FORMAT_DISPLAY_FIELD_CALLBACKS, options.GroupingView.FormatDisplayFieldCallbacks)
+                        .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.GroupingView.SUMMARY_ON_HIDE, options.GroupingView.SummaryOnHide, JqGridOptionsDefaults.GroupingView.SummaryOnHide)
+                        .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.GroupingView.DATA_SORTED, options.GroupingView.DataSorted, JqGridOptionsDefaults.GroupingView.DataSorted)
+                        .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.GroupingView.COLLAPSE, options.GroupingView.Collapse, JqGridOptionsDefaults.GroupingView.Collapse)
+                        .AppendJavaScriptObjectStringField(JqGridOptionsNames.GroupingView.PLUS_ICON, options.GroupingView.PlusIcon, JqGridOptionsDefaults.GroupingView.PlusIcon)
+                        .AppendJavaScriptObjectStringField(JqGridOptionsNames.GroupingView.MINUS_ICON, options.GroupingView.MinusIcon, JqGridOptionsDefaults.GroupingView.MinusIcon)
+                        .AppendJavaScriptObjectFieldClosing();
+                }
             }
 
             return javaScriptBuilder;

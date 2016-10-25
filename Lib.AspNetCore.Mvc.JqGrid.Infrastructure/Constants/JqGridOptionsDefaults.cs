@@ -290,12 +290,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// <summary>
             /// The icon (form UI theme images) that will be used if the group is collapsed.
             /// </summary>
-            public const string GroupingPlusIcon = "ui-icon-circlesmall-plus";
+            public const string PlusIcon = "ui-icon-circlesmall-plus";
 
             /// <summary>
             /// The icon (form UI theme images) that will be used if the group is expanded.
             /// </summary>
-            public const string GroupingMinusIcon = "ui-icon-circlesmall-minus";
+            public const string MinusIcon = "ui-icon-circlesmall-minus";
         }
 
         /// <summary>

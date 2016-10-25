@@ -86,8 +86,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             SummaryOnHide = JqGridOptionsDefaults.GroupingView.SummaryOnHide;
             DataSorted = JqGridOptionsDefaults.GroupingView.DataSorted;
             Collapse = JqGridOptionsDefaults.GroupingView.Collapse;
-            PlusIcon = JqGridOptionsDefaults.GroupingView.GroupingPlusIcon;
-            MinusIcon = JqGridOptionsDefaults.GroupingView.GroupingMinusIcon;
+            PlusIcon = JqGridOptionsDefaults.GroupingView.PlusIcon;
+            MinusIcon = JqGridOptionsDefaults.GroupingView.MinusIcon;
         }
         #endregion
     }

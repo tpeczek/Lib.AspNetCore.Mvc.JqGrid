@@ -41,6 +41,96 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder.AppendFormat("{0},", value.ToString(CultureInfo.InvariantCulture));
         }
 
+        internal static StringBuilder AppendJavaScriptArrayFunctionValue(this StringBuilder javaScriptBuilder, string value)
+        {
+            return javaScriptBuilder.AppendFormat("{0},", value);
+        }
+
+        internal static StringBuilder AppendJavaScriptObjectStringArrayField(this StringBuilder javaScriptBuilder, string fieldName, IEnumerable<string> fieldValue)
+        {
+            if ((fieldValue != null) && fieldValue.Any())
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFieldOpening(fieldName);
+
+                foreach (string arrayValue in fieldValue)
+                {
+                    javaScriptBuilder.AppendJavaScriptArrayStringValue(arrayValue);
+                }
+
+                javaScriptBuilder.AppendJavaScriptArrayFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendJavaScriptObjectEnumArrayField<TEnum>(this StringBuilder javaScriptBuilder, string fieldName, IEnumerable<TEnum> fieldValue) where TEnum : struct
+        {
+            if ((fieldValue != null) && fieldValue.Any())
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFieldOpening(fieldName);
+
+                foreach (TEnum arrayValue in fieldValue)
+                {
+                    javaScriptBuilder.AppendJavaScriptArrayEnumValue(arrayValue);
+                }
+
+                javaScriptBuilder.AppendJavaScriptArrayFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendJavaScriptObjectBooleanArrayField(this StringBuilder javaScriptBuilder, string fieldName, IEnumerable<bool> fieldValue)
+        {
+            if ((fieldValue != null) && fieldValue.Any())
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFieldOpening(fieldName);
+
+                foreach (bool arrayValue in fieldValue)
+                {
+                    javaScriptBuilder.AppendJavaScriptArrayBooleanValue(arrayValue);
+                }
+
+                javaScriptBuilder.AppendJavaScriptArrayFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendJavaScriptObjectIntegerArrayField(this StringBuilder javaScriptBuilder, string fieldName, IEnumerable<int> fieldValue)
+        {
+            if ((fieldValue != null) && fieldValue.Any())
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFieldOpening(fieldName);
+
+                foreach (int arrayValue in fieldValue)
+                {
+                    javaScriptBuilder.AppendJavaScriptArrayIntegerValue(arrayValue);
+                }
+
+                javaScriptBuilder.AppendJavaScriptArrayFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendJavaScriptObjectFunctionArrayField(this StringBuilder javaScriptBuilder, string fieldName, IEnumerable<string> fieldValue)
+        {
+            if ((fieldValue != null) && fieldValue.Any())
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFieldOpening(fieldName);
+
+                foreach (string arrayValue in fieldValue)
+                {
+                    javaScriptBuilder.AppendJavaScriptArrayFunctionValue(arrayValue);
+                }
+
+                javaScriptBuilder.AppendJavaScriptArrayFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
         internal static StringBuilder AppendJavaScriptObjectOpening(this StringBuilder javaScriptBuilder)
         {
             return javaScriptBuilder.Append("{");
@@ -108,16 +198,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             if (fieldValue.HasValue)
             {
                 javaScriptBuilder.AppendFormat("{0}:{1},", fieldName, fieldValue.Value.ToString(CultureInfo.InvariantCulture));
-            }
-
-            return javaScriptBuilder;
-        }
-
-        internal static StringBuilder AppendJavaScriptObjectIntegerArrayField(this StringBuilder javaScriptBuilder, string fieldName, IList<int> fieldValue)
-        {
-            if ((fieldValue != null) && fieldValue.Any())
-            {
-                javaScriptBuilder.AppendFormat("{0}:[{1}],", fieldName, String.Join(",", fieldValue));
             }
 
             return javaScriptBuilder;
