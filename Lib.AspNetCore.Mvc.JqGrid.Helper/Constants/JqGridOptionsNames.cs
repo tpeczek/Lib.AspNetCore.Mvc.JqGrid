@@ -12,6 +12,7 @@
         internal const string FOOTER_ENABLED = "footerrow";
         internal const string HEIGHT = "height";
         internal const string GROUPING_ENABLED = "grouping";
+        internal const string GROUPING_VIEW = "groupingView";
         internal const string JSON_READER = "jsonReader";
         internal const string METHOD_TYPE = "mtype";
         internal const string PAGER = "pager";
@@ -75,6 +76,22 @@
                 internal const string SECONDARY = "secondary";
             }
         };
+
+        internal static class GroupingView
+        {
+            internal const string FIELDS = "groupField";
+            internal const string ORDERS = "groupOrder";
+            internal const string TEXTS = "groupText";
+            internal const string SUMMARY = "groupSummary";
+            internal const string COLUMN_SHOW = "groupColumnShow";
+            internal const string IS_IN_THE_SAME_GROUP_CALLBACKS = "isInTheSameGroup";
+            internal const string FORMAT_DISPLAY_FIELD_CALLBACKS = "formatDisplayField";
+            internal const string SUMMARY_ON_HIDE = "showSummaryOnHide";
+            internal const string DATA_SORTED = "groupDataSorted";
+            internal const string COLLAPSE = "groupCollapse";
+            internal const string PLUS_ICON = "plusicon";
+            internal const string MINUS_ICON = "minusicon";
+        }
 
         internal static class InlineNavigator
         {
