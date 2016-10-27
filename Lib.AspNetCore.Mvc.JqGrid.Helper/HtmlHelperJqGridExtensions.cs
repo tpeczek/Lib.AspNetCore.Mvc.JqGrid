@@ -93,6 +93,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         #region Private Methods
         private static void ValidateJqGridConstraints(JqGridOptions options)
         {
+            if (options.TreeGridEnabled && options.GroupingEnabled)
+            {
+                throw new InvalidOperationException("TreeGrid and data grouping can not be enabled at the same time.");
+            }
+
             if ((options.DynamicScrollingMode != JqGridDynamicScrollingModes.Disabled) && options.GroupingEnabled)
             {
                 throw new InvalidOperationException("Dynamic scrolling and data grouping can not be enabled at the same time.");
@@ -365,6 +370,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                 .AppendParametersNames(options.ParametersNames)
                 .AppendJsonReader(options.JsonReader)
                 .AppendPager(options)
+                .AppendTreeGrid(options)
                 .AppendDynamicScrolling(options)
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.SORTING_NAME, options.SortingName)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.SORTING_ORDER, options.SortingOrder, JqGridOptionsDefaults.SortingOrder)
@@ -432,6 +438,19 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                         .AppendJavaScriptObjectStringField(JqGridOptionsNames.GroupingView.MINUS_ICON, options.GroupingView.MinusIcon, JqGridOptionsDefaults.GroupingView.MinusIcon)
                         .AppendJavaScriptObjectFieldClosing();
                 }
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendTreeGrid(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            if (options.TreeGridEnabled)
+            {
+                javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.TREE_GRID_ENABLED, options.TreeGridEnabled)
+                    .AppendJavaScriptObjectEnumField(JqGridOptionsNames.TREE_GRID_MODEL, options.TreeGridModel, JqGridOptionsDefaults.TreeGridModel)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.EXPAND_COLUMN_CLICK, options.ExpandColumnClick, JqGridOptionsDefaults.ExpandColumnClick)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.EXPAND_COLUMN, options.ExpandColumn);
             }
 
             return javaScriptBuilder;

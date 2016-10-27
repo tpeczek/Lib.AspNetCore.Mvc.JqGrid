@@ -491,6 +491,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         public const string EmptyRecords = "No records to view";
 
         /// <summary>
+        /// The value which defines whether the tree is expanded and/or collapsed when user clicks on the text of the expanded column, not only on the image.
+        /// </summary>
+        public const bool ExpandColumnClick = true;
+
+        /// <summary>
         /// The value indicating if the footer table (with one row) will be placed below the grid records and above the pager.
         /// </summary>
         public const bool FooterEnabled = false;
@@ -519,6 +524,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         /// The initial sorting order.
         /// </summary>
         public const JqGridSortingOrders SortingOrder = JqGridSortingOrders.Asc;
+
+        /// <summary>
+        /// The value which defines if TreeGrid is enabled.
+        /// </summary>
+        public const bool TreeGridEnabled = false;
+
+        /// <summary>
+        /// The model for TreeGrid.
+        /// </summary>
+        public const JqGridTreeGridModels TreeGridModel = JqGridTreeGridModels.Nested;
 
         /// <summary>
         /// The value indicating if the values from user data should be placed on footer.

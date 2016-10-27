@@ -58,6 +58,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public int DynamicScrollingTimeout { get; set; }
 
         /// <summary>
+        /// Gets or sets the value which defines whether the tree is expanded and/or collapsed when user clicks on the text of the expanded column, not only on the image.
+        /// </summary>
+        public bool ExpandColumnClick { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of column which should be used to expand the tree grid.
+        /// </summary>
+        public string ExpandColumn { get; set; }
+
+        /// <summary>
         /// Gets or sets the value indicating if the footer table (with one row) will be placed below the grid records and above the pager. The number of columns equal of these from ColumnsModels.
         /// </summary>
         public bool FooterEnabled { get; set; }
@@ -118,6 +128,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public JqGridSortingOrders SortingOrder { get; set; }
 
         /// <summary>
+        /// Gets or sets the value which defines if TreeGrid is enabled.
+        /// </summary>
+        public bool TreeGridEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or sets the model for TreeGrid.
+        /// </summary>
+        public JqGridTreeGridModels TreeGridModel { get; set; }
+
+        /// <summary>
         /// Gets or sets the url for data requests
         /// </summary>
         public string Url { get; set; }
@@ -146,6 +166,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             DataType = JqGridOptionsDefaults.DataType;
             DynamicScrollingMode = JqGridOptionsDefaults.DynamicScrollingMode;
             DynamicScrollingTimeout = JqGridOptionsDefaults.DynamicScrollingTimeout;
+            ExpandColumn = null;
+            ExpandColumnClick = JqGridOptionsDefaults.ExpandColumnClick;
             FooterEnabled = JqGridOptionsDefaults.FooterEnabled;
             GroupingEnabled = JqGridOptionsDefaults.GroupingEnabled;
             GroupingView = null;
@@ -158,6 +180,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             RowsNumber = JqGridOptionsDefaults.RowsNumber;
             SortingName = null;
             SortingOrder = JqGridOptionsDefaults.SortingOrder;
+            TreeGridEnabled = JqGridOptionsDefaults.TreeGridEnabled;
+            TreeGridModel = JqGridOptionsDefaults.TreeGridModel;
             Url = null;
             UserDataOnFooter = JqGridOptionsDefaults.UserDataOnFooter;
             ViewRecords = JqGridOptionsDefaults.ViewRecords;

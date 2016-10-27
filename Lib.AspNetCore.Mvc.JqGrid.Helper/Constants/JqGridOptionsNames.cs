@@ -9,6 +9,8 @@
         internal const string DATA_TYPE = "datatype";
         internal const string DYNAMIC_SCROLLING_MODE = "scroll";
         internal const string DYNAMIC_SCROLLING_TIMEOUT = "scrollTimeout";
+        internal const string EXPAND_COLUMN = "ExpandColumn";
+        internal const string EXPAND_COLUMN_CLICK = "ExpandColClick";
         internal const string FOOTER_ENABLED = "footerrow";
         internal const string HEIGHT = "height";
         internal const string GROUPING_ENABLED = "grouping";
@@ -21,6 +23,8 @@
         internal const string ROWS_NUMBER = "rowNum";
         internal const string SORTING_NAME = "sortname";
         internal const string SORTING_ORDER = "sortorder";
+        internal const string TREE_GRID_ENABLED = "treeGrid";
+        internal const string TREE_GRID_MODEL = "treeGridModel";
         internal const string URL = "url";
         internal const string USER_DATA_ON_FOOTER = "userDataOnFooter";
         internal const string VIEW_RECORDS = "viewrecords";
