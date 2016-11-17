@@ -2,7 +2,7 @@
 [![NuGet Lib.AspNetCore.Mvc.JqGrid.Infrastructure](https://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.svg)](http://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Infrastructure) [![NuGet Lib.AspNetCore.Mvc.JqGrid.Core](https://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Core.svg)](http://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Core) [![NuGet Lib.AspNetCore.Mvc.JqGrid.DataAnnotations](https://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.svg)](http://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations) [![NuGet Lib.AspNetCore.Mvc.JqGrid.Helper](https://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Helper.svg)](http://badge.fury.io/nu/Lib.AspNetCore.Mvc.JqGrid.Helper)
 
 
-A set of libraries which provide support for jqGrid usage in ASP.NET Core.
+A set of libraries which provide support for [Guriddo jqGrid](http://guriddo.net/) and [free jqGrid](https://github.com/free-jqgrid/jqGrid) usage in ASP.NET Core.
 
 This is ASP.NET Core version of jqGrid related functionality from [Lib.Web.Mvc](https://github.com/tpeczek/Lib.Web.Mvc/).
 

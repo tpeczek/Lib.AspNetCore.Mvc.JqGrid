@@ -3,8 +3,12 @@ using System.Reflection;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Options;
+using Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid;
 using Lib.AspNetCore.Mvc.JqGrid.DataAnnotations;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
@@ -24,6 +28,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                         options.AddColumn(columnMetadata.GetDisplayName(), CreateJqGridColumnModel(columnMetadata));
                     }
                 }
+            }
+
+            if (options.SubgridEnabled && (options.SubgridModel != null))
+            {
+                options.SubgridModel.ApplyModelMetadata(metadataProvider);
             }
         }
         #endregion
@@ -121,6 +130,41 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
 
             return columnModel;
+        }
+
+        private static void ApplyModelMetadata(this JqGridSubgridModel subgridModel, IModelMetadataProvider metadataProvider)
+        {
+            Type jqGridsubgridModelType = subgridModel.GetType();
+            if (jqGridsubgridModelType.IsConstructedGenericType && jqGridsubgridModelType.GetGenericTypeDefinition() == typeof(JqGridSubgridModel<>))
+            {
+                foreach (ModelMetadata columnMetadata in metadataProvider.GetMetadataForProperties(jqGridsubgridModelType.GenericTypeArguments[0]))
+                {
+                    if (IsValidForColumn(columnMetadata))
+                    {
+                        subgridModel.AddColumn(CreateJqGridSubgridColumnModel(columnMetadata));
+                    }
+                }
+            }
+        }
+
+        private static JqGridSubgridColumnModel CreateJqGridSubgridColumnModel(ModelMetadata columnMetadata)
+        {
+            JqGridAlignments alignment = JqGridOptionsDefaults.ColumnModel.Alignment;
+            int width = JqGridOptionsDefaults.ColumnModel.Width;
+
+            foreach (Attribute customAttribute in columnMetadata.ContainerType.GetProperty(columnMetadata.PropertyName).GetCustomAttributes(true))
+            {
+                JqGridColumnLayoutAttribute jqGridColumnLayoutAttribute = (customAttribute as JqGridColumnLayoutAttribute);
+
+                if (jqGridColumnLayoutAttribute != null)
+                {
+                    alignment = jqGridColumnLayoutAttribute.Alignment;
+                    width = jqGridColumnLayoutAttribute.Width;
+                    break;
+                }
+            }
+
+            return new JqGridSubgridColumnModel(columnMetadata.GetDisplayName(), alignment, width, columnMetadata.PropertyName);
         }
         #endregion
     }

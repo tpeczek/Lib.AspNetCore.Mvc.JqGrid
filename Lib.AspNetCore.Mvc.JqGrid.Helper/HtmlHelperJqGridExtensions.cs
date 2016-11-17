@@ -370,6 +370,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                 .AppendParametersNames(options.ParametersNames)
                 .AppendJsonReader(options.JsonReader)
                 .AppendPager(options)
+                .AppendSubgrid(options)
                 .AppendTreeGrid(options)
                 .AppendDynamicScrolling(options)
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.SORTING_NAME, options.SortingName)
@@ -440,6 +441,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                 }
             }
 
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendSubgrid(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
             return javaScriptBuilder;
         }
 
