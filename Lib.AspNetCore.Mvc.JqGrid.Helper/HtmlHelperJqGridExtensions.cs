@@ -448,19 +448,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         {
             if (options.SubgridEnabled && !String.IsNullOrWhiteSpace(options.SubgridUrl) && (options.SubgridModel != null))
             {
-                string[] subgridModelColumnsNames = new string[options.SubgridModel.ColumnsModels.Count];
-                int[] subgridModelColumnsWidths = new int[options.SubgridModel.ColumnsModels.Count];
-                JqGridAlignments[] subgridModelColumnsAlignments = new JqGridAlignments[options.SubgridModel.ColumnsModels.Count];
-                string[] subgridModelColumnsMappings = new string[options.SubgridModel.ColumnsModels.Count];
-
-                for (int subgridModelColumnIndex = 0; subgridModelColumnIndex < options.SubgridModel.ColumnsModels.Count; subgridModelColumnIndex++)
-                {
-                    subgridModelColumnsNames[subgridModelColumnIndex] = options.SubgridModel.ColumnsModels[subgridModelColumnIndex].Name;
-                    subgridModelColumnsAlignments[subgridModelColumnIndex] = options.SubgridModel.ColumnsModels[subgridModelColumnIndex].Alignment;
-                    subgridModelColumnsWidths[subgridModelColumnIndex] = options.SubgridModel.ColumnsModels[subgridModelColumnIndex].Width;
-                    subgridModelColumnsMappings[subgridModelColumnIndex] = options.SubgridModel.ColumnsModels[subgridModelColumnIndex].Mapping;
-                }
-
                 javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.SUBGRID_ENABLED, true)
                     .AppendJavaScriptObjectStringField(JqGridOptionsNames.SUBGRID_ULR, options.SubgridUrl)
                     .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.SUBGRID_WIDTH, options.SubgridColumnWidth, JqGridOptionsDefaults.SubgridColumnWidth)
@@ -469,10 +456,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.SUBGRID_ROW_COLAPSED, options.SubGridRowColapsed)
                     .AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.SUBGRID_MODEL)
                     .AppendJavaScriptObjectOpening()
-                    .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.SubgridModel.NAMES, subgridModelColumnsNames)
-                    .AppendJavaScriptObjectIntegerArrayField(JqGridOptionsNames.SubgridModel.WIDTHS, subgridModelColumnsWidths)
-                    .AppendJavaScriptObjectEnumArrayField(JqGridOptionsNames.SubgridModel.ALIGNMENTS, subgridModelColumnsAlignments)
-                    .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.SubgridModel.MAPPINGS, subgridModelColumnsMappings)
+                    .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.SubgridModel.NAMES, options.SubgridModel.ColumnsModels.Select(c => c.Name))
+                    .AppendJavaScriptObjectIntegerArrayField(JqGridOptionsNames.SubgridModel.WIDTHS, options.SubgridModel.ColumnsModels.Select(c => c.Width))
+                    .AppendJavaScriptObjectEnumArrayField(JqGridOptionsNames.SubgridModel.ALIGNMENTS, options.SubgridModel.ColumnsModels.Select(c => c.Alignment))
+                    .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.SubgridModel.MAPPINGS, options.SubgridModel.ColumnsModels.Select(c => c.Mapping))
                     .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.SubgridModel.PARAMETERS, options.SubgridModel.Parameters)
                     .AppendJavaScriptObjectFieldClosing()
                     .AppendJavaScriptArrayFieldClosing();
