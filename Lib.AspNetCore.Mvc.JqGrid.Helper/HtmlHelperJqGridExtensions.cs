@@ -11,6 +11,7 @@ using Lib.AspNetCore.Mvc.JqGrid.Core.Request;
 using Lib.AspNetCore.Mvc.JqGrid.Core.Response;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
+using System.Linq;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 {
@@ -82,9 +83,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                 .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.COLUMNS_NAMES_FIELD, options.ColumnsNames)
                 .AppendColumnsModels(options)
                 .AppendOptions(options)
-                .Append("})");
-
-            javaScriptBuilder.AppendLine(";");
+                .AppendJavaScriptObjectClosing()
+                .AppendLine(");");
 
             return new HtmlString(javaScriptBuilder.ToString());
         }
@@ -446,6 +446,38 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 
         private static StringBuilder AppendSubgrid(this StringBuilder javaScriptBuilder, JqGridOptions options)
         {
+            if (options.SubgridEnabled && !String.IsNullOrWhiteSpace(options.SubgridUrl) && (options.SubgridModel != null))
+            {
+                string[] subgridModelColumnsNames = new string[options.SubgridModel.ColumnsModels.Count];
+                int[] subgridModelColumnsWidths = new int[options.SubgridModel.ColumnsModels.Count];
+                JqGridAlignments[] subgridModelColumnsAlignments = new JqGridAlignments[options.SubgridModel.ColumnsModels.Count];
+                string[] subgridModelColumnsMappings = new string[options.SubgridModel.ColumnsModels.Count];
+
+                for (int subgridModelColumnIndex = 0; subgridModelColumnIndex < options.SubgridModel.ColumnsModels.Count; subgridModelColumnIndex++)
+                {
+                    subgridModelColumnsNames[subgridModelColumnIndex] = options.SubgridModel.ColumnsModels[subgridModelColumnIndex].Name;
+                    subgridModelColumnsAlignments[subgridModelColumnIndex] = options.SubgridModel.ColumnsModels[subgridModelColumnIndex].Alignment;
+                    subgridModelColumnsWidths[subgridModelColumnIndex] = options.SubgridModel.ColumnsModels[subgridModelColumnIndex].Width;
+                    subgridModelColumnsMappings[subgridModelColumnIndex] = options.SubgridModel.ColumnsModels[subgridModelColumnIndex].Mapping;
+                }
+
+                javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.SUBGRID_ENABLED, true)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.SUBGRID_ULR, options.SubgridUrl)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.SUBGRID_WIDTH, options.SubgridColumnWidth, JqGridOptionsDefaults.SubgridColumnWidth)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.SUBGRID_BEFORE_EXPAND, options.SubGridBeforeExpand)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.SUBGRID_ROW_EXPANDED, options.SubGridRowExpanded)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.SUBGRID_ROW_COLAPSED, options.SubGridRowColapsed)
+                    .AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.SUBGRID_MODEL)
+                    .AppendJavaScriptObjectOpening()
+                    .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.SubgridModel.NAMES, subgridModelColumnsNames)
+                    .AppendJavaScriptObjectIntegerArrayField(JqGridOptionsNames.SubgridModel.WIDTHS, subgridModelColumnsWidths)
+                    .AppendJavaScriptObjectEnumArrayField(JqGridOptionsNames.SubgridModel.ALIGNMENTS, subgridModelColumnsAlignments)
+                    .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.SubgridModel.MAPPINGS, subgridModelColumnsMappings)
+                    .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.SubgridModel.PARAMETERS, options.SubgridModel.Parameters)
+                    .AppendJavaScriptObjectFieldClosing()
+                    .AppendJavaScriptArrayFieldClosing();
+            }
+
             return javaScriptBuilder;
         }
 
