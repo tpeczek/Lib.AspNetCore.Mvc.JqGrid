@@ -30,10 +30,19 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 }
             }
 
-            if (options.SubgridEnabled && (options.SubgridModel != null))
+            if (options.SubgridEnabled)
             {
-                options.SubgridModel.ApplyModelMetadata(metadataProvider);
+                if (options.SubgridOptions != null)
+                {
+                    options.SubgridOptions.ApplyModelMetadata(metadataProvider);
+                }
+                else if (options.SubgridModel != null)
+                {
+                    options.SubgridModel.ApplyModelMetadata(metadataProvider);
+                }
             }
+
+
         }
         #endregion
 

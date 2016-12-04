@@ -79,12 +79,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 
             StringBuilder javaScriptBuilder = new StringBuilder();
 
-            javaScriptBuilder.AppendFormat("$({0}).jqGrid({{", GetJqGridGridSelector(options, false)).AppendLine()
-                .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.COLUMNS_NAMES_FIELD, options.ColumnsNames)
-                .AppendColumnsModels(options)
-                .AppendOptions(options)
-                .AppendJavaScriptObjectClosing()
-                .AppendLine(");");
+            javaScriptBuilder.AppendFormat("$({0})", GetJqGridGridSelector(options))
+                .AppendJqGridScript(options, false);
 
             return new HtmlString(javaScriptBuilder.ToString());
         }
@@ -93,6 +89,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         #region Private Methods
         private static void ValidateJqGridConstraints(JqGridOptions options)
         {
+            if ((options.SubgridModel != null) && (options.SubgridOptions != null))
+            {
+                throw new InvalidOperationException("Subgrid model and subgrid options can't be used at the same time.");
+            }
+
+            if ((options.SubgridOptions != null) && !String.IsNullOrWhiteSpace(options.SubGridRowExpanded))
+            {
+                throw new InvalidOperationException("Subgrid options and subGridRowExpanded can't be used at the same time.");
+            }
+
             if (options.TreeGridEnabled && options.GroupingEnabled)
             {
                 throw new InvalidOperationException("TreeGrid and data grouping can not be enabled at the same time.");
@@ -104,9 +110,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             }
         }
 
-        private static string GetJqGridGridSelector(JqGridOptions options, bool asSubgrid)
+        private static string GetJqGridGridSelector(JqGridOptions options)
         {
-            return asSubgrid ? "'#' + subgridTableId" : String.Format("'#{0}'", options.Id);
+            return String.Format("'#{0}'", options.Id);
         }
 
         private static string GetJqGridPagerId(JqGridOptions options)
@@ -114,9 +120,21 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             return options.Id + "Pager";
         }
 
-        private static string GetJqGridPagerSelector(JqGridOptions options, bool asSubgrid)
+        private static string GetJqGridPager(JqGridOptions options, bool asSubgrid)
         {
-            return asSubgrid? "'#' + subgridPagerId" : String.Format("'#{0}'", GetJqGridPagerId(options));
+            return asSubgrid? "$subgridPager" : String.Format("'#{0}'", GetJqGridPagerId(options));
+        }
+
+        private static StringBuilder AppendJqGridScript(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
+        {
+            javaScriptBuilder.Append(".jqGrid({").AppendLine()
+               .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.COLUMNS_NAMES_FIELD, options.ColumnsNames)
+               .AppendColumnsModels(options)
+               .AppendOptions(options, asSubgrid)
+               .AppendJavaScriptObjectClosing()
+               .AppendLine(");");
+
+            return javaScriptBuilder;
         }
 
         private static StringBuilder AppendColumnsModels(this StringBuilder javaScriptBuilder, JqGridOptions options)
@@ -361,15 +379,15 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             return javaScriptBuilder;
         }
 
-        private static StringBuilder AppendOptions(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        private static StringBuilder AppendOptions(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
         {
             javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.CAPTION, options.Caption)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.DATA_TYPE, options.DataType, JqGridOptionsDefaults.DataType)
-                .AppendDataSource(options)
+                .AppendDataSource(options, asSubgrid)
                 .AppendGrouping(options)
                 .AppendParametersNames(options.ParametersNames)
                 .AppendJsonReader(options.JsonReader)
-                .AppendPager(options)
+                .AppendPager(options, asSubgrid)
                 .AppendSubgrid(options)
                 .AppendTreeGrid(options)
                 .AppendDynamicScrolling(options)
@@ -387,7 +405,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             return javaScriptBuilder;
         }
 
-        private static StringBuilder AppendDataSource(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        private static StringBuilder AppendDataSource(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
         {
             if (options.DataType.IsDataStringDataType())
             {
@@ -395,8 +413,23 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             }
             else
             {
-                javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.URL, options.Url)
-                    .AppendJavaScriptObjectEnumField(JqGridOptionsNames.METHOD_TYPE, options.MethodType, JqGridOptionsDefaults.MethodType);
+                if (asSubgrid)
+                {
+                    if (options.Url.Contains("?"))
+                    {
+                        javaScriptBuilder.AppendFormat("{0}:'{1}&rowId=' + encodeURIComponent(rowId),", JqGridOptionsNames.URL, options.Url);
+                    }
+                    else
+                    {
+                        javaScriptBuilder.AppendFormat("{0}:'{1}?rowId=' + encodeURIComponent(rowId),", JqGridOptionsNames.URL, options.Url);
+                    }
+                }
+                else
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.URL, options.Url);
+                }
+
+                javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.METHOD_TYPE, options.MethodType, JqGridOptionsDefaults.MethodType);
             }
 
             return javaScriptBuilder;
@@ -446,14 +479,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 
         private static StringBuilder AppendSubgrid(this StringBuilder javaScriptBuilder, JqGridOptions options)
         {
-            if (options.SubgridEnabled && !String.IsNullOrWhiteSpace(options.SubgridUrl) && (options.SubgridModel != null))
+            if (options.SubgridEnabled && (options.SubgridOptions != null))
             {
-                javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.SUBGRID_ENABLED, true)
-                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.SUBGRID_ULR, options.SubgridUrl)
-                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.SUBGRID_WIDTH, options.SubgridColumnWidth, JqGridOptionsDefaults.SubgridColumnWidth)
-                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.SUBGRID_BEFORE_EXPAND, options.SubGridBeforeExpand)
+                javaScriptBuilder.AppendCoreSubgridOptions(options)
+                    .AppendSubgridAsGridRowExpanded(options);
+            }
+            else if (options.SubgridEnabled && !String.IsNullOrWhiteSpace(options.SubgridUrl) && (options.SubgridModel != null))
+            {
+                javaScriptBuilder.AppendCoreSubgridOptions(options)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.SUBGRID_ROW_EXPANDED, options.SubGridRowExpanded)
-                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.SUBGRID_ROW_COLAPSED, options.SubGridRowColapsed)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.SUBGRID_ULR, options.SubgridUrl)
                     .AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.SUBGRID_MODEL)
                     .AppendJavaScriptObjectOpening()
                     .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.SubgridModel.NAMES, options.SubgridModel.ColumnsModels.Select(c => c.Name))
@@ -464,6 +499,36 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
                     .AppendJavaScriptObjectFieldClosing()
                     .AppendJavaScriptArrayFieldClosing();
             }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendCoreSubgridOptions(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.SUBGRID_ENABLED, true)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.SUBGRID_WIDTH, options.SubgridColumnWidth, JqGridOptionsDefaults.SubgridColumnWidth)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.SUBGRID_BEFORE_EXPAND, options.SubGridBeforeExpand)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.SUBGRID_ROW_COLAPSED, options.SubGridRowColapsed);
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendSubgridAsGridRowExpanded(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            javaScriptBuilder.AppendFormat("{0}: function (subgridId, rowId) {{", JqGridOptionsNames.SUBGRID_ROW_EXPANDED)
+                .Append("var $subgridContainer = jQuery('#' + subgridId);")
+                .Append("var $subgridTable = jQuery('<table></table').attr('id', subgridId + '_t');")
+                .Append("$subgridContainer.append($subgridTable);");
+
+            if (options.SubgridOptions.Pager)
+            {
+                javaScriptBuilder.Append("var $subgridPager = jQuery('<div></div>').attr('id', subgridId + '_p');")
+                    .Append("$subgridContainer.append($subgridPager);");
+            }
+
+            javaScriptBuilder.Append("$subgridTable")
+                .AppendJqGridScript(options.SubgridOptions, true)
+                .Append("},");
 
             return javaScriptBuilder;
         }
@@ -481,11 +546,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
             return javaScriptBuilder;
         }
 
-        private static StringBuilder AppendPager(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        private static StringBuilder AppendPager(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
         {
             if (options.Pager)
             {
-                javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.PAGER, GetJqGridPagerSelector(options, false))
+                javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.PAGER, GetJqGridPager(options, asSubgrid))
                     .AppendJavaScriptObjectIntegerArrayField(JqGridOptionsNames.ROWS_LIST, options.RowsList)
                     .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ROWS_NUMBER, options.RowsNumber, JqGridOptionsDefaults.RowsNumber)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.VIEW_RECORDS, options.ViewRecords, JqGridOptionsDefaults.ViewRecords);

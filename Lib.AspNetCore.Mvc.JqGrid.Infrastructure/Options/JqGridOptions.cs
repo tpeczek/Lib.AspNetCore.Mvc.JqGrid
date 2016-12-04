@@ -134,6 +134,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public bool SubgridEnabled { get; set; }
 
         /// <summary>
+        /// Gets or sets the subgrid options for "Subgrid as Grid" scenario.
+        /// </summary>
+        public JqGridOptions SubgridOptions { get; set; }
+
+        /// <summary>
         /// Gets or sets the subgrid model.
         /// </summary>
         public JqGridSubgridModel SubgridModel { get; set; }
