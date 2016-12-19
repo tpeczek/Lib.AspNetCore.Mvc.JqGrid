@@ -222,6 +222,57 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             }
 
             /// <summary>
+            /// Rules options.
+            /// </summary>
+            public static class Rules
+            {
+                /// <summary>
+                /// The flag indicating if the value should be validated with custom function.
+                /// </summary>
+                public const bool Custom = false;
+
+                /// <summary>
+                /// The flag indicating if the value should be valid date.
+                /// </summary>
+                public const bool Date = false;
+
+                /// <summary>
+                /// The flag indicating if hidden column can be edited in form editing.
+                /// </summary>
+                public const bool EditHidden = false;
+
+                /// <summary>
+                /// The flag indicating if the value should be valid email.
+                /// </summary>
+                public const bool Email = false;
+
+                /// <summary>
+                /// The flag indicating if the value should be valid integer.
+                /// </summary>
+                public const bool Integer = false;
+
+                /// <summary>
+                /// The flag indicating if the value should be valid number.
+                /// </summary>
+                public const bool Number = false;
+
+                /// <summary>
+                /// The flag indicating if the value is required.
+                /// </summary>
+                public const bool Required = false;
+
+                /// <summary>
+                /// The flag indicating if the value should be valid time.
+                /// </summary>
+                public const bool Time = false;
+
+                /// <summary>
+                /// The flag indicating if the value should be valid url.
+                /// </summary>
+                public const bool Url = false;
+            }
+
+            /// <summary>
             /// The alignment of the cell in the grid body layer.
             /// </summary>
             public const JqGridAlignments Alignment = JqGridAlignments.Left;
