@@ -273,6 +273,132 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             }
 
             /// <summary>
+            /// jQuery UI widgets options. 
+            /// </summary>
+            public static class JQueryUIWidgets
+            {
+                /// <summary>
+                /// The flag indicating if the first item will automatically be focused when the menu is shown.
+                /// </summary>
+                public const bool AutocompleteAutoFocus = false;
+
+                /// <summary>
+                /// The delay in milliseconds between when a keystroke occurs and when a search is performed.
+                /// </summary>
+                public const int AutocompleteDelay = 300;
+
+                /// <summary>
+                /// The minimum number of characters a user must type before a search is performed.
+                /// </summary>
+                public const int AutocompleteMinLength = 1;
+
+                /// <summary>
+                /// The flag indicating if the input field should be automatically resize to accommodate dates in the current format.
+                /// </summary>
+                public const bool DatepickerAutoSize = false;
+
+                /// <summary>
+                /// The flag indicating if the month should be rendered as a dropdown instead of text.
+                /// </summary>
+                public const bool DatepickerChangeMonth = false;
+
+                /// <summary>
+                /// The flag indicating if the year should be rendered as a dropdown instead of text.
+                /// </summary>
+                public const bool DatepickerChangeYear = false;
+
+                /// <summary>
+                /// The flag indicating if the input field should constrained to characters allowed by the current format.
+                /// </summary>
+                public const bool DatepickerConstrainInput = true;
+
+                /// <summary>
+                /// The format for parsed and displayed dates in Datepicker.
+                /// </summary>
+                public const string DatepickerDateFormat = "m/d/yy";
+
+                /// <summary>
+                /// The first day of the week: Sunday is 0, Monday is 1, etc.
+                /// </summary>
+                public const int DatepickerFirstDay = 0;
+
+                /// <summary>
+                /// The flag indicating if the current day link moves to the currently selected date instead of today.
+                /// </summary>
+                public const bool DatepickerGotoCurrent = false;
+
+                /// <summary>
+                /// The number of months to show at once.
+                /// </summary>
+                public const int DatepickerNumberOfMonths = 1;
+
+                /// <summary>
+                /// The flag indicating if days in other months shown before or after the current month are selectable.
+                /// </summary>
+                public const bool DatepickerSelectOtherMonths = false;
+
+                /// <summary>
+                /// The cutoff year for determining the century for a date in Datepicker.
+                /// </summary>
+                public const string DatepickerShortYearCutoff = "+10";
+
+                /// <summary>
+                /// The position to display the current month in.
+                /// </summary>
+                public const int DatepickerShowCurrentAtPos = 0;
+
+                /// <summary>
+                /// The flag indicating if month should be shown after the year in the header.
+                /// </summary>
+                public const bool DatepickerShowMonthAfterYear = false;
+
+                /// <summary>
+                /// The flag indicating if dates should be displayed in other months (non-selectable) at the start or end of the current month
+                /// </summary>
+                public const bool DatepickerShowOtherMonths = false;
+
+                /// <summary>
+                /// The flag indicating whether to add column with the week of the year.
+                /// </summary>
+                public const bool DatepickerShowWeek = false;
+
+                /// <summary>
+                /// How many months to move when clicking the previous/next links.
+                /// </summary>
+                public const int DatepickerStepMonths = 1;
+
+                /// <summary>
+                /// The range of years displayed in the Datepicker year dropdown.
+                /// </summary>
+                public const string DatepickerYearRange = "c-10:c+10";
+
+                /// <summary>
+                /// The icon class (form UI theme icons) for Spinner down button.
+                /// </summary>
+                public const string SpinnerDownIcon = "ui-icon-triangle-1-s";
+
+                /// <summary>
+                /// The number of steps taken when holding down a spin button).
+                /// </summary>
+                public const bool SpinnerIncremental = true;
+
+                /// <summary>
+                /// The number of steps to take when paging via the pageUp/pageDown JavaScript methods.
+                /// </summary>
+                public const int SpinnerPage = 10;
+
+                /// <summary>
+                /// The size of the step to take when spinning via buttons or via the stepUp/stepDown JavaScript methods.
+                /// </summary>
+                public const int SpinnerStep = 1;
+
+                /// <summary>
+                /// The icon class (form UI theme icons) for Spinner up button.
+                /// </summary>
+                public const string SpinnerUpIcon = "ui-icon-triangle-1-n";
+            }
+
+            /// <summary>
             /// The alignment of the cell in the grid body layer.
             /// </summary>
             public const JqGridAlignments Alignment = JqGridAlignments.Left;
