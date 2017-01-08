@@ -71,6 +71,26 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         public bool Resizable { get; set; }
 
         /// <summary>
+        /// Gets or sets the value defining if this column can be searched.
+        /// </summary>
+        public bool Searchable { get; set; }
+
+        /// <summary>
+        /// Gets or sets the options for searchable column.
+        /// </summary>
+        public JqGridColumnSearchOptions SearchOptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the additional conditions for validating user input in search field.
+        /// </summary>
+        public JqGridColumnRules SearchRules { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type of the search field for the column.
+        /// </summary>
+        public JqGridColumnSearchTypes SearchType { get; set; }
+
+        /// <summary>
         /// Gets or sets the value defining if this column can be sorted.
         /// </summary>
         public bool Sortable { get; set; }
@@ -141,6 +161,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
             Index = String.Empty;
             InitialSortingOrder = JqGridOptionsDefaults.ColumnModel.Sorting.InitialOrder;
             Resizable = JqGridOptionsDefaults.ColumnModel.Resizable;
+            Searchable = JqGridOptionsDefaults.ColumnModel.Searchable;
+            SearchOptions = null;
+            SearchRules = null;
+            SearchType = JqGridOptionsDefaults.ColumnModel.SearchType;
             Sortable = JqGridOptionsDefaults.ColumnModel.Sorting.Sortable;
             SortFunction = String.Empty;
             SortType = JqGridOptionsDefaults.ColumnModel.Sorting.Type;

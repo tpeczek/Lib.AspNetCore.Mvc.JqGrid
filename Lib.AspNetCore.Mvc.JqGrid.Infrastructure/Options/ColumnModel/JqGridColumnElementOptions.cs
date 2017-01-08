@@ -221,6 +221,13 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         /// </summary>
         public JqGridColumnElementOptions()
         {
+            BuildSelect = null;
+            DataEvents = null;
+            DataInit = null;
+            DataUrl = null;
+            DefaultValue = null;
+            HtmlAttributes = null;
+
             AutocompleteAutoFocus = JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.AutocompleteAutoFocus;
             AutocompleteDelay = JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.AutocompleteDelay;
             AutocompleteMinLength = JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.AutocompleteMinLength;

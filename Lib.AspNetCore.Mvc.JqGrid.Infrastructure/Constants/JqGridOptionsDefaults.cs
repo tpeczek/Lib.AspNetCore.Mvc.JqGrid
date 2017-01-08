@@ -201,6 +201,27 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             }
 
             /// <summary>
+            /// Searching options.
+            /// </summary>
+            public static class Searching
+            {
+                /// <summary>
+                /// The value which defines if Clear ("X") button is available at the end of search field in jqGrid filter toolbar.
+                /// </summary>
+                public const bool ClearSearch = true;
+
+                /// <summary>
+                /// The value which defines if hidden column can be searched.
+                /// </summary>
+                public const bool SearchHidden = false;
+
+                /// <summary>
+                /// The available search operators for the column.
+                /// </summary>
+                public const JqGridSearchOperators SearchOperators = (JqGridSearchOperators)32768;
+            }
+
+            /// <summary>
             /// Sorting options.
             /// </summary>
             public static class Sorting
@@ -422,6 +443,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// The value which defines if column can be resized.
             /// </summary>
             public const bool Resizable = true;
+
+            /// <summary>
+            /// The value which defines if column can be searched.
+            /// </summary>
+            public const bool Searchable = true;
+
+            /// <summary>
+            /// The type of the search field for the column.
+            /// </summary>
+            public const JqGridColumnSearchTypes SearchType = JqGridColumnSearchTypes.Text;
 
             /// <summary>
             /// The grouping summary template.
