@@ -20,6 +20,6 @@ Support this and my [other projects](https://github.com/tpeczek/) via [Gittip](h
 
 ## Copyright and License
 
-Copyright © 2016 Tomasz Pęczek
+Copyright © 2016 - 2017 Tomasz Pęczek
 
 Licensed under the [MIT License](https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid/blob/master/LICENSE.md)
