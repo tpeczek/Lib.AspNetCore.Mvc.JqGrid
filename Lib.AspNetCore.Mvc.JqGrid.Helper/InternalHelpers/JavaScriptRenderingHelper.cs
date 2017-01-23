@@ -203,6 +203,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder;
         }
 
+        internal static StringBuilder AppendJavaScriptObjectDoubleField(this StringBuilder javaScriptBuilder, string fieldName, double? fieldValue)
+        {
+            if (fieldValue.HasValue)
+            {
+                javaScriptBuilder.AppendFormat("{0}:{1},", fieldName, fieldValue.Value.ToString(CultureInfo.InvariantCulture));
+            }
+
+            return javaScriptBuilder;
+        }
+
         internal static StringBuilder AppendJavaScriptObjectFunctionField(this StringBuilder javaScriptBuilder, string fieldName, string fieldValue)
         {
             if (!String.IsNullOrWhiteSpace(fieldValue))

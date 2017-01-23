@@ -38,26 +38,114 @@
 
         internal static class ColumnModel
         {
-            internal const string NAME_FIELD = "name";
+            internal const string NAME = "name";
             internal const string ALIGNMENT = "align";
             internal const string CELL_ATTRIBUTES = "cellattr";
             internal const string CLASSES = "classes";
             internal const string FIXED = "fixed";
             internal const string FROZEN = "frozen";
             internal const string HIDE_IN_DIALOG = "hidedlg";
-            internal const string INDEX_FIELD = "index";
-            internal const string INITIAL_SORTING_ORDER_FIELD = "firstsortorder";
+            internal const string INDEX = "index";
+            internal const string INITIAL_SORTING_ORDER = "firstsortorder";
             internal const string RESIZABLE = "resizable";
-            internal const string SORTABLE_FIELD = "sortable";
-            internal const string SORT_TYPE_FIELD = "sorttype";
+            internal const string SEARCHABLE = "search";
+            internal const string SEARCH_TYPE = "stype";
+            internal const string SEARCH_RULES = "searchrules";
+            internal const string SEARCH_OPTIONS = "searchoptions";
+            internal const string SORTABLE = "sortable";
+            internal const string SORT_TYPE = "sorttype";
             internal const string SUMMARY_TYPE = "summaryType";
             internal const string SUMMARY_TEMPLATE = "summaryTpl";
             internal const string TITLE = "title";
             internal const string WIDTH = "width";
             internal const string VIEWABLE = "viewable";
-            internal const string FORMATTER_FIELD = "formatter";
-            internal const string UNFORMATTER_FIELD = "unformat";
-            internal const string FORMATTER_OPTIONS_FIELD = "formatoptions";
+            internal const string FORMATTER = "formatter";
+            internal const string UNFORMATTER = "unformat";
+            internal const string FORMATTER_OPTIONS = "formatoptions";
+
+            internal static class Element
+            {
+                internal const string BUILD_SELECT = "buildSelect";
+                internal const string DATA_EVENTS = "dataEvents";
+                internal const string DATA_INIT = "dataInit";
+                internal const string DATA_URL = "dataUrl";
+                internal const string DEFAULT_VALUE = "defaultValue";
+                internal const string VALUE = "value";
+
+                internal static class DataEvent
+                {
+                    internal const string TYPE = "type";
+                    internal const string DATA = "data";
+                    internal const string FUNCTION = "fn";
+                }
+            }
+
+            internal static class JQueryUIWidgets
+            {
+                internal const string AUTOCOMPLETE_SOURCE = "source";
+                internal const string AUTOCOMPLETE_AUTO_FOCUS = "autoFocus";
+                internal const string AUTOCOMPLETE_DELAY = "delay";
+                internal const string AUTOCOMPLETE_MIN_LENGTH = "minLength";
+                internal const string DATEPICKER_DAY_NAMES = "dayNames";
+                internal const string DATEPICKER_DAY_NAMES_MIN = "dayNamesMin";
+                internal const string DATEPICKER_DAY_NAMES_SHORT = "dayNamesShort";
+                internal const string DATEPICKER_MONTH_NAMES = "monthNames";
+                internal const string DATEPICKER_MONTH_NAMES_SHORT = "monthNamesShort";
+                internal const string DATEPICKER_APPEND_TEXT = "appendText";
+                internal const string DATEPICKER_AUTO_SIZE = "autoSize";
+                internal const string DATEPICKER_CHANGE_MONTH = "changeMonth";
+                internal const string DATEPICKER_CHANGE_YEAR = "changeYear";
+                internal const string DATEPICKER_CONSTRAIN_INPUT = "constrainInput";
+                internal const string DATEPICKER_DATE_FORMAT = "dateFormat";
+                internal const string DATEPICKER_FIRST_DAY = "firstDay";
+                internal const string DATEPICKER_GO_TO_CURRENT = "gotoCurrent";
+                internal const string DATEPICKER_MAX_DATE = "maxDate";
+                internal const string DATEPICKER_MIN_DATE = "minDate";
+                internal const string DATEPICKER_NUMBER_OF_MONTHS = "numberOfMonths";
+                internal const string DATEPICKER_SELECT_OTHER_MONTHS = "selectOtherMonths";
+                internal const string DATEPICKER_SHORT_YEAR_CUTOFF = "shortYearCutoff";
+                internal const string DATEPICKER_SHOW_CURRENT_AT_POS = "showCurrentAtPos";
+                internal const string DATEPICKER_SHOW_MONTH_AFTER_YEAR = "showMonthAfterYear";
+                internal const string DATEPICKER_SHOW_OTHER_MONTHS = "showOtherMonths";
+                internal const string DATEPICKER_SHOW_WEEK = "showWeek";
+                internal const string DATEPICKER_STEP_MONTHS = "stepMonths";
+                internal const string DATEPICKER_YEAR_RANGE = "yearRange";
+                internal const string DATEPICKER_YEAR_SUFFIX = "yearSuffix";
+                internal const string SPINNER_ICONS = "icons";
+                internal const string SPINNER_DOWN_ICON = "down";
+                internal const string SPINNER_UP_ICON = "up";
+                internal const string SPINNER_CULTURE = "culture";
+                internal const string SPINNER_INCREMENTAL = "incremental";
+                internal const string SPINNER_MAX = "max";
+                internal const string SPINNER_MIN = "min";
+                internal const string SPINNER_NUMBER_FORMAT = "numberFormat";
+                internal const string SPINNER_PAGE = "page";
+                internal const string SPINNER_STEP = "step";
+            }
+
+            internal static class Searching
+            {
+                internal const string HTML_ATTRIBUTES = "attr";
+                internal const string CLEAR_SEARCH = "clearSearch";
+                internal const string SEARCH_HIDDEN = "searchhidden";
+                internal const string SEARCH_OPERATORS = "sopt";
+            }
+
+            internal static class Rules
+            {
+                internal const string CUSTOM = "custom";
+                internal const string CUSTOM_FUNCTION = "custom_func";
+                internal const string DATE = "date";
+                internal const string EDIT_HIDDEN = "edithidden";
+                internal const string EMAIL = "email";
+                internal const string INTEGER = "integer";
+                internal const string MAX_VALUE = "maxValue";
+                internal const string MIN_VALUE = "minValue";
+                internal const string NUMBER = "number";
+                internal const string REQUIRED = "required";
+                internal const string TIME = "time";
+                internal const string URL = "url";
+            }
 
             internal static class Formatter
             {

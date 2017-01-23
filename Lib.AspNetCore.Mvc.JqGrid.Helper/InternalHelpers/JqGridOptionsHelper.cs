@@ -44,6 +44,54 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (parametersNames.TotalRows == JqGridOptionsDefaults.Request.TotalRows);
         }
 
+        internal static bool AreDefault(this JqGridColumnSearchOptions searchOptions)
+        {
+            return (searchOptions.ClearSearch == JqGridOptionsDefaults.ColumnModel.Searching.ClearSearch)
+                && (searchOptions.SearchHidden == JqGridOptionsDefaults.ColumnModel.Searching.SearchHidden)
+                && (searchOptions.SearchOperators == JqGridOptionsDefaults.ColumnModel.Searching.SearchOperators)
+                && (searchOptions as JqGridColumnElementOptions).AreDefault();
+        }
+
+        internal static bool AreDefault(this JqGridColumnElementOptions elementOptions)
+        {
+            return String.IsNullOrWhiteSpace(elementOptions.BuildSelect)
+                && ((elementOptions.DataEvents == null) || (elementOptions.DataEvents.Count == 0))
+                && String.IsNullOrWhiteSpace(elementOptions.DataInit)
+                && String.IsNullOrEmpty(elementOptions.DataUrl)
+                && String.IsNullOrEmpty(elementOptions.DefaultValue)
+                && ((elementOptions.HtmlAttributes == null) || (elementOptions.HtmlAttributes.Count == 0))
+                && String.IsNullOrEmpty(elementOptions.Value)
+                && ((elementOptions.ValueDictionary == null) || (elementOptions.ValueDictionary.Count == 0));
+        }
+
+        internal static bool IsDefaultJQueryUISpinner(this JqGridColumnElementOptions elementOptions)
+        {
+            return (elementOptions.SpinnerDownIcon == JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.SpinnerDownIcon)
+                && (elementOptions.SpinnerUpIcon == JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.SpinnerUpIcon)
+                && (elementOptions.SpinnerIncremental == JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.SpinnerIncremental)
+                && !elementOptions.SpinnerMax.HasValue
+                && !elementOptions.SpinnerMin.HasValue
+                && String.IsNullOrEmpty(elementOptions.SpinnerNumberFormat)
+                && (elementOptions.SpinnerPage == JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.SpinnerPage)
+                && (elementOptions.SpinnerStep == JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.SpinnerStep)
+                && String.IsNullOrEmpty(elementOptions.SpinnerCulture);
+        }
+
+        internal static bool AreDefault(this JqGridColumnRules columnRules)
+        {
+            return (columnRules.Custom == JqGridOptionsDefaults.ColumnModel.Rules.Custom)
+                && (columnRules.Date == JqGridOptionsDefaults.ColumnModel.Rules.Date)
+                && (columnRules.EditHidden == JqGridOptionsDefaults.ColumnModel.Rules.EditHidden)
+                && (columnRules.Email == JqGridOptionsDefaults.ColumnModel.Rules.Email)
+                && (columnRules.Integer == JqGridOptionsDefaults.ColumnModel.Rules.Integer)
+                && !columnRules.MaxValue.HasValue
+                && !columnRules.MinValue.HasValue
+                && (columnRules.Number == JqGridOptionsDefaults.ColumnModel.Rules.Number)
+                && (columnRules.Required == JqGridOptionsDefaults.ColumnModel.Rules.Required)
+                && (columnRules.Time == JqGridOptionsDefaults.ColumnModel.Rules.Time)
+                && (columnRules.Url == JqGridOptionsDefaults.ColumnModel.Rules.Url);
+        }
+
         internal static bool AreDefault(this JqGridColumnFormatterOptions formatterOptions, string formatter)
         {
             switch (formatter)

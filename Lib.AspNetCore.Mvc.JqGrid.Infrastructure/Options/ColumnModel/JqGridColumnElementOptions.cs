@@ -227,6 +227,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
             DataUrl = null;
             DefaultValue = null;
             HtmlAttributes = null;
+            Value = null;
+            ValueDictionary = null;
 
             AutocompleteAutoFocus = JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.AutocompleteAutoFocus;
             AutocompleteDelay = JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.AutocompleteDelay;
