@@ -1,5 +1,5 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
 {
