@@ -256,21 +256,24 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
             if (!isJQueryUIElement)
             {
-                javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DATA_INIT, elementOptions.DataInit)
-                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.Element.DATA_URL, elementOptions.DataUrl);
-            }
+                javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DATA_INIT, elementOptions.DataInit);
 
-            if (!String.IsNullOrEmpty(elementOptions.Value))
-            {
-                javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.Element.VALUE, elementOptions.Value);
+                if (!String.IsNullOrWhiteSpace(elementOptions.DataUrl))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.Element.DATA_URL, elementOptions.DataUrl)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.BUILD_SELECT, elementOptions.BuildSelect);
+                }
+                else if (!String.IsNullOrEmpty(elementOptions.Value))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.Element.VALUE, elementOptions.Value);
+                }
+                else if (elementOptions.ValueDictionary != null)
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Element.VALUE, elementOptions.ValueDictionary);
+                }
             }
-            else if (elementOptions.ValueDictionary != null)
-            {
-                javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Element.VALUE, elementOptions.ValueDictionary);
-            }
-
-            return javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.BUILD_SELECT, elementOptions.BuildSelect)
-                .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.Element.DEFAULT_VALUE, elementOptions.DefaultValue);
+            
+            return javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.Element.DEFAULT_VALUE, elementOptions.DefaultValue);
         }
 
         private static StringBuilder AppendColumnModelSortOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel)

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
+using Microsoft.AspNetCore.Mvc.Routing;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper
 {
@@ -62,7 +63,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         {
             ValidateJqGridConstraints(options);
 
-            options.ApplyModelMetadata(htmlHelper.MetadataProvider);
+            IUrlHelperFactory urlHelperFactory = (IUrlHelperFactory)htmlHelper.ViewContext.HttpContext.RequestServices.GetService(typeof(IUrlHelperFactory));
+            options.ApplyModelMetadata(htmlHelper.MetadataProvider, urlHelperFactory.GetUrlHelper(htmlHelper.ViewContext));
 
             StringBuilder javaScriptBuilder = new StringBuilder();
 

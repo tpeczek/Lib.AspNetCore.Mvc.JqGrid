@@ -10,13 +10,23 @@ using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
     internal static class JqGridModelMetadataHelper
     {
+        #region Fields
+        private static char[] _invalidDateFormatTokens = new char[] { 'N', 'S', 'w', 'W', 't', 'L', 'o' };
+        private const string _ignoredDateFormatTokensRegexExpression = "[aABgGhHisueIOPTZcr]";
+        private static Regex _dateFormatTokensRegex = new Regex("d|j|l|z|F|m|n|Y|U", RegexOptions.Compiled);
+        private static Dictionary<string, string> _dateFormatTokensReplecements = new Dictionary<string, string> { { "d", "dd" }, { "j", "d" }, { "l", "DD" }, { "z", "o" }, { "F", "MM" }, { "m", "mm" }, { "n", "m" }, { "Y", "yy" }, { "U", "@" } };
+        #endregion
+
         #region Extension Methods
-        internal static void ApplyModelMetadata(this JqGridOptions options, IModelMetadataProvider metadataProvider)
+        internal static void ApplyModelMetadata(this JqGridOptions options, IModelMetadataProvider metadataProvider, IUrlHelper urlHelper)
         {
             Type jqGridOptionsType = options.GetType();
             if (jqGridOptionsType.IsConstructedGenericType && jqGridOptionsType.GetGenericTypeDefinition() == typeof(JqGridOptions<>))
@@ -25,7 +35,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 {
                     if (IsValidForColumn(columnMetadata))
                     {
-                        options.AddColumn(columnMetadata.GetDisplayName(), CreateJqGridColumnModel(columnMetadata));
+                        options.AddColumn(columnMetadata.GetDisplayName(), CreateJqGridColumnModel(columnMetadata, urlHelper));
                     }
                 }
             }
@@ -34,7 +44,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             {
                 if (options.SubgridOptions != null)
                 {
-                    options.SubgridOptions.ApplyModelMetadata(metadataProvider);
+                    options.SubgridOptions.ApplyModelMetadata(metadataProvider, urlHelper);
                 }
                 else if (options.SubgridModel != null)
                 {
@@ -52,22 +62,26 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return columnMetadata.ShowForDisplay && (!columnMetadata.IsComplexType || columnMetadata.ModelType == typeof(byte[]));
         }
 
-        private static JqGridColumnModel CreateJqGridColumnModel(ModelMetadata columnMetadata)
+        private static JqGridColumnModel CreateJqGridColumnModel(ModelMetadata columnMetadata, IUrlHelper urlHelper)
         {
             JqGridColumnModel columnModel = new JqGridColumnModel(columnMetadata.PropertyName);
 
             TimestampAttribute timeStampAttribute = null;
+            RangeAttribute rangeAttribute = null;
             JqGridColumnLayoutAttribute jqGridColumnLayoutAttribute = null;
             JqGridColumnSortableAttribute jqGridColumnSortableAttribute = null;
             JqGridColumnFormatterAttribute jqGridColumnFormatterAttribute = null;
+            JqGridColumnSearchableAttribute jqGridColumnSearchableAttribute = null;
             JqGridColumnSummaryAttribute jqGridColumnSummaryAttribute = null;
 
             foreach (Attribute customAttribute in columnMetadata.ContainerType.GetProperty(columnMetadata.PropertyName).GetCustomAttributes(true))
             {
                 timeStampAttribute = (customAttribute as TimestampAttribute) ?? timeStampAttribute;
+                rangeAttribute = (customAttribute as RangeAttribute) ?? rangeAttribute;
                 jqGridColumnLayoutAttribute = (customAttribute as JqGridColumnLayoutAttribute) ?? jqGridColumnLayoutAttribute;
                 jqGridColumnSortableAttribute = (customAttribute as JqGridColumnSortableAttribute) ?? jqGridColumnSortableAttribute;
                 jqGridColumnFormatterAttribute = (customAttribute as JqGridColumnFormatterAttribute) ?? jqGridColumnFormatterAttribute;
+                jqGridColumnSearchableAttribute = (customAttribute as JqGridColumnSearchableAttribute) ?? jqGridColumnSearchableAttribute;
                 jqGridColumnSummaryAttribute = (customAttribute as JqGridColumnSummaryAttribute) ?? jqGridColumnSummaryAttribute;
             }
 
@@ -78,6 +92,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel = SetLayoutOptions(columnModel, jqGridColumnLayoutAttribute);
                 columnModel = SetSortOptions(columnModel, jqGridColumnSortableAttribute);
                 columnModel = SetFormatterOptions(columnModel, jqGridColumnFormatterAttribute);
+                columnModel = SetSearchOptions(columnModel, urlHelper, columnMetadata.ModelType, jqGridColumnSearchableAttribute, rangeAttribute);
+                columnModel = SetDatePickerDateFormatFromFormatter(columnModel, jqGridColumnFormatterAttribute);
                 columnModel = SetSummaryOptions(columnModel, jqGridColumnSummaryAttribute);
             }
 
@@ -126,6 +142,88 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel.UnFormatter = jqGridColumnFormatterAttribute.UnFormatter;
             }
 
+            return columnModel;
+        }
+
+        private static JqGridColumnModel SetSearchOptions(JqGridColumnModel columnModel, IUrlHelper urlHelper, Type modelType, JqGridColumnSearchableAttribute jqGridColumnSearchableAttribute, RangeAttribute rangeAttribute)
+        {
+            if (jqGridColumnSearchableAttribute != null)
+            {
+                columnModel.Searchable = jqGridColumnSearchableAttribute.Searchable;
+                columnModel.SearchOptions = GetElementOptions(jqGridColumnSearchableAttribute.SearchOptions, urlHelper, jqGridColumnSearchableAttribute);
+                columnModel.SearchRules = GetRules(modelType, jqGridColumnSearchableAttribute, rangeAttribute);
+                columnModel.SearchType = jqGridColumnSearchableAttribute.SearchType;
+            }
+
+            return columnModel;
+        }
+
+        private static TElementOptions GetElementOptions<TElementOptions>(TElementOptions elementOptions, IUrlHelper urlHelper, JqGridColumnElementAttribute jqGridColumnElementAttribute) where TElementOptions: JqGridColumnElementOptions
+        {
+            elementOptions.DataEvents = jqGridColumnElementAttribute.DataEvents;
+
+            if (!String.IsNullOrWhiteSpace(jqGridColumnElementAttribute.DataAction))
+            {
+                elementOptions.DataUrl = String.IsNullOrWhiteSpace(jqGridColumnElementAttribute.DataController) ? urlHelper.Action(jqGridColumnElementAttribute.DataAction) : urlHelper.Action(jqGridColumnElementAttribute.DataAction, jqGridColumnElementAttribute.DataController);
+            }
+            else if (!String.IsNullOrWhiteSpace(jqGridColumnElementAttribute.DataRoute))
+            {
+                elementOptions.DataUrl = urlHelper.RouteUrl(jqGridColumnElementAttribute.DataRoute);
+            }
+
+            elementOptions.HtmlAttributes = jqGridColumnElementAttribute.HtmlAttributes;
+
+            return elementOptions;
+        }
+
+        private static JqGridColumnRules GetRules(Type modelType, JqGridColumnElementAttribute jqGridColumnElementAttribute, RangeAttribute rangeAttribute)
+        {
+            JqGridColumnRules rules = jqGridColumnElementAttribute.Rules;
+
+            if (rules != null)
+            {
+                if (rangeAttribute != null)
+                {
+                    rules.MaxValue = Convert.ToDouble(rangeAttribute.Maximum);
+                    rules.MinValue = Convert.ToDouble(rangeAttribute.Minimum);
+                }
+
+                if ((modelType == typeof(Int16)) || (modelType == typeof(Int32)) || (modelType == typeof(Int64)) || (modelType == typeof(UInt16)) || (modelType == typeof(UInt32)) || (modelType == typeof(UInt32)))
+                {
+                    rules.Integer = true;
+                }
+                else if ((modelType == typeof(Decimal)) || (modelType == typeof(Double)) || (modelType == typeof(Single)))
+                {
+                    rules.Number = true;
+                }
+            }
+
+            return rules;
+        }
+
+        private static JqGridColumnModel SetDatePickerDateFormatFromFormatter(JqGridColumnModel columnModel, JqGridColumnFormatterAttribute jqGridColumnFormatterAttribute)
+        {
+            bool setSearchOptionsDatePickerDateFormat = columnModel.Searchable && (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUIDatepicker) && (columnModel.SearchOptions.DatePickerDateFormat == JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.DatepickerDateFormat);
+            bool setEditOptionsDatePickerDateFormat = false;
+
+            if (setSearchOptionsDatePickerDateFormat || setEditOptionsDatePickerDateFormat)
+            {
+                if ((jqGridColumnFormatterAttribute != null) && (jqGridColumnFormatterAttribute.Formatter == JqGridPredefinedFormatters.Date) && (jqGridColumnFormatterAttribute.OutputFormat != JqGridOptionsDefaults.ColumnModel.Formatter.OutputFormat) && (jqGridColumnFormatterAttribute.OutputFormat.IndexOfAny(_invalidDateFormatTokens) == -1))
+                {
+                    string datePickerDateFormat = Regex.Replace(jqGridColumnFormatterAttribute.OutputFormat, _ignoredDateFormatTokensRegexExpression, String.Empty);
+                    datePickerDateFormat = _dateFormatTokensRegex.Replace(datePickerDateFormat, match => { return _dateFormatTokensReplecements[match.Value]; });
+
+                    if (setSearchOptionsDatePickerDateFormat)
+                    {
+                        columnModel.SearchOptions.DatePickerDateFormat = datePickerDateFormat;
+                    }
+
+                    if (setEditOptionsDatePickerDateFormat)
+                    {
+
+                    }
+                }
+            }
             return columnModel;
         }
 
