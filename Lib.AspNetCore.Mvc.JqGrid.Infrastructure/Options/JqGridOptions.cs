@@ -19,6 +19,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
 
         #region Properties
         /// <summary>
+        /// Gets or sets the jqGrid compatibility mode.
+        /// </summary>
+        public JqGridCompatibilityModes CompatibilityMode { get; set; }
+
+        /// <summary>
         /// Gets the grid identifier which will be used for table (id='{0}'), pager div (id='{0}Pager') and in JavaScript.
         /// </summary>
         public string Id { get; private set; }
@@ -201,6 +206,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         /// <param name="id">Identifier, which will be used for table (id='{0}'), pager div (id='{0}Pager'), filter grid div (id='{0}Search') and in JavaScript.</param>
         public JqGridOptions(string id)
         {
+            CompatibilityMode = JqGridCompatibilityModes.JqGrid;
             Id = id;
             Caption = null;
             DataString = null;

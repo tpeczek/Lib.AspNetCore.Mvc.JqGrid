@@ -16,7 +16,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         {
             javaScriptBuilder.Append(".jqGrid({").AppendLine()
                .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.COLUMNS_NAMES_FIELD, options.ColumnsNames)
-               .AppendColumnsModels(options)
+               .AppendColumnsModels(options, asSubgrid)
                .AppendOptions(options, asSubgrid)
                .AppendJavaScriptObjectClosing()
                .AppendLine(");");

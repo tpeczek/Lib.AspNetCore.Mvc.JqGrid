@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text;
+using System.Collections;
+using System.Collections.Generic;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
@@ -20,17 +22,41 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
         private const string JQUERY_UI_DATEPICKER_DATA_INIT_START = "function(element){setTimeout(function(){$(element).datepicker(";
         private const string JQUERY_UI_DATEPICKER_DATA_INIT_END = ");},0);}";
-        private const string JQUERY_UI_DATEPICKER_DAY_NAMES_FUNCTION = "$.jgrid.formatter.date.dayNames.slice(7)";
-        private const string JQUERY_UI_DATEPICKER_DAY_NAMES_SHORT_FUNCTION = "$.jgrid.formatter.date.dayNames.slice(0, 7)";
-        private const string JQUERY_UI_DATEPICKER_MONTH_NAMES_FUNCTION = "$.jgrid.formatter.date.monthNames.slice(12)";
-        private const string JQUERY_UI_DATEPICKER_MONTH_NAMES_SHORT_FUNCTION = "$.jgrid.formatter.date.monthNames.slice(0, 12)";
 
         private const string JQUERY_UI_SPINNER_DATA_INIT_START = "function(element){setTimeout(function(){$(element).spinner(";
         private const string JQUERY_UI_SPINNER_DATA_INIT_END = ");},0);}";
+
+        private readonly static IDictionary<JqGridCompatibilityModes, string> _jqueryUiDatepickerDaysNamesFunctions = new Dictionary<JqGridCompatibilityModes, string>
+        {
+            { JqGridCompatibilityModes.JqGrid, "$.jgrid.formatter.date.dayNames.slice(7)" },
+            { JqGridCompatibilityModes.GuriddoJqGrid, "$.jgrid.getRegional({0}[0], 'formatter.date.dayNames').slice(7)" },
+            { JqGridCompatibilityModes.FreeJqGrid, "{0}.jqGrid('getGridRes', 'formatter.date.dayNames').slice(7)" }
+        };
+
+        private readonly static IDictionary<JqGridCompatibilityModes, string> _jqueryUiDatepickerDaysNamesShortFunctions = new Dictionary<JqGridCompatibilityModes, string>
+        {
+            { JqGridCompatibilityModes.JqGrid, "$.jgrid.formatter.date.dayNames.slice(0, 7)" },
+            { JqGridCompatibilityModes.GuriddoJqGrid, "$.jgrid.getRegional({0}[0], 'formatter.date.dayNames').slice(0, 7)" },
+            { JqGridCompatibilityModes.FreeJqGrid, "{0}.jqGrid('getGridRes', 'formatter.date.dayNames').slice(0, 7)" }
+        };
+
+        private readonly static IDictionary<JqGridCompatibilityModes, string> _jqueryUiDatepickerMonthsNamesFunctions = new Dictionary<JqGridCompatibilityModes, string>
+        {
+            { JqGridCompatibilityModes.JqGrid, "$.jgrid.formatter.date.monthNames.slice(12)" },
+            { JqGridCompatibilityModes.GuriddoJqGrid, "$.jgrid.getRegional({0}[0], 'formatter.date.monthNames').slice(12)" },
+            { JqGridCompatibilityModes.FreeJqGrid, "{0}.jqGrid('getGridRes', 'formatter.date.monthNames').slice(12)" }
+        };
+
+        private readonly static IDictionary<JqGridCompatibilityModes, string> _jqueryUiDatepickerMonthsNamesShortFunctions = new Dictionary<JqGridCompatibilityModes, string>
+        {
+            { JqGridCompatibilityModes.JqGrid, "$.jgrid.formatter.date.monthNames.slice(0, 12)" },
+            { JqGridCompatibilityModes.GuriddoJqGrid, "$.jgrid.getRegional({0}[0], 'formatter.date.monthNames').slice(0, 12)" },
+            { JqGridCompatibilityModes.FreeJqGrid, "{0}.jqGrid('getGridRes', 'formatter.date.monthNames').slice(0, 12)" }
+        };
         #endregion
 
         #region Extension Methods
-        internal static StringBuilder AppendColumnsModels(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        internal static StringBuilder AppendColumnsModels(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
         {
             javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.COLUMNS_MODEL_FIELD);
 
@@ -48,7 +74,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.TITLE, columnModel.Title, JqGridOptionsDefaults.ColumnModel.Title)
                     .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ColumnModel.WIDTH, columnModel.Width, JqGridOptionsDefaults.ColumnModel.Width)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.VIEWABLE, columnModel.Viewable, JqGridOptionsDefaults.ColumnModel.Viewable)
-                    .AppendColumnModelSearchOptions(columnModel)
+                    .AppendColumnModelSearchOptions(columnModel, options, asSubgrid)
                     .AppendColumnModelSortOptions(columnModel)
                     .AppendColumnModelSummaryOptions(columnModel, options)
                     .AppendColumnModelFormatter(columnModel);
@@ -64,7 +90,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         #endregion
 
         #region Private Methods
-        private static StringBuilder AppendColumnModelSearchOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel)
+        private static StringBuilder AppendColumnModelSearchOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel, JqGridOptions options, bool asSubgrid)
         {
             if (columnModel.Searchable != JqGridOptionsDefaults.ColumnModel.Searchable)
             {
@@ -108,7 +134,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                             javaScriptBuilder.AppendColumnModelJQueryUIAutocompleteDataInit(columnModel.SearchOptions);
                             break;
                         case JqGridColumnSearchTypes.JQueryUIDatepicker:
-                            javaScriptBuilder.AppendColumnModelJQueryUIDatepickerDataInit(columnModel.SearchOptions);
+                            javaScriptBuilder.AppendColumnModelJQueryUIDatepickerDataInit(columnModel.SearchOptions, options, asSubgrid);
                             break;
                         case JqGridColumnSearchTypes.JQueryUISpinner:
                             javaScriptBuilder.AppendColumnModelJQueryUISpinnerDataInit(columnModel.SearchOptions);
@@ -170,17 +196,19 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DATA_INIT, jQueryUIAutocompleteDataInitBuilder.ToString());
         }
 
-        private static StringBuilder AppendColumnModelJQueryUIDatepickerDataInit(this StringBuilder javaScriptBuilder, JqGridColumnElementOptions elementOptions)
+        private static StringBuilder AppendColumnModelJQueryUIDatepickerDataInit(this StringBuilder javaScriptBuilder, JqGridColumnElementOptions elementOptions, JqGridOptions options, bool asSubgrid)
         {
             StringBuilder jQueryUIDatepickerDataInitBuilder = new StringBuilder(JQUERY_UI_DATEPICKER_DATA_INIT_START.Length + JQUERY_UI_DATEPICKER_DATA_INIT_END.Length);
 
+            string jQueryGridElement = asSubgrid ? JqGridSubgridJavaScriptRenderingHelper.SUBGRID_VARIABLE : String.Format("$('#{0}')", options.Id);
+
             jQueryUIDatepickerDataInitBuilder.Append(JQUERY_UI_DATEPICKER_DATA_INIT_START)
                 .AppendJavaScriptObjectOpening()
-                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_DAY_NAMES, JQUERY_UI_DATEPICKER_DAY_NAMES_FUNCTION)
-                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_DAY_NAMES_MIN, JQUERY_UI_DATEPICKER_DAY_NAMES_SHORT_FUNCTION)
-                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_DAY_NAMES_SHORT, JQUERY_UI_DATEPICKER_DAY_NAMES_SHORT_FUNCTION)
-                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_MONTH_NAMES, JQUERY_UI_DATEPICKER_MONTH_NAMES_FUNCTION)
-                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_MONTH_NAMES_SHORT, JQUERY_UI_DATEPICKER_MONTH_NAMES_SHORT_FUNCTION)
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_DAY_NAMES, String.Format(_jqueryUiDatepickerDaysNamesFunctions[options.CompatibilityMode], jQueryGridElement))
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_DAY_NAMES_MIN, String.Format(_jqueryUiDatepickerDaysNamesShortFunctions[options.CompatibilityMode], jQueryGridElement))
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_DAY_NAMES_SHORT, String.Format(_jqueryUiDatepickerDaysNamesShortFunctions[options.CompatibilityMode], jQueryGridElement))
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_MONTH_NAMES, String.Format(_jqueryUiDatepickerMonthsNamesFunctions[options.CompatibilityMode], jQueryGridElement))
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_MONTH_NAMES_SHORT, String.Format(_jqueryUiDatepickerMonthsNamesShortFunctions[options.CompatibilityMode], jQueryGridElement))
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_APPEND_TEXT, elementOptions.DatepickerAppendText)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_AUTO_SIZE, elementOptions.DatepickerAutoSize, JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.DatepickerAutoSize)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.DATEPICKER_CHANGE_MONTH, elementOptions.DatepickerChangeMonth, JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.DatepickerChangeMonth)

@@ -9,6 +9,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
     internal static class JqGridSubgridJavaScriptRenderingHelper
     {
+        #region Consts
+        internal const string SUBGRID_VARIABLE = "$subgridTable";
+        #endregion
+
         #region Extension Methods
         internal static StringBuilder AppendSubgrid(this StringBuilder javaScriptBuilder, JqGridOptions options)
         {
@@ -52,8 +56,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         {
             javaScriptBuilder.AppendFormat("{0}: function (subgridId, rowId) {{", JqGridOptionsNames.SUBGRID_ROW_EXPANDED)
                 .Append("var $subgridContainer = jQuery('#' + subgridId);")
-                .Append("var $subgridTable = jQuery('<table></table').attr('id', subgridId + '_t');")
-                .Append("$subgridContainer.append($subgridTable);");
+                .AppendFormat("var {0} = jQuery('<table></table').attr('id', subgridId + '_t');", SUBGRID_VARIABLE)
+                .AppendFormat("$subgridContainer.append({0});", SUBGRID_VARIABLE);
 
             if (options.SubgridOptions.Pager)
             {
@@ -61,7 +65,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .Append("$subgridContainer.append($subgridPager);");
             }
 
-            javaScriptBuilder.Append("$subgridTable")
+            javaScriptBuilder.Append(SUBGRID_VARIABLE)
                 .AppendJqGridScript(options.SubgridOptions, true)
                 .Append("},");
 
