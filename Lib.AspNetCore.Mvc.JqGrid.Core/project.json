@@ -2,7 +2,7 @@
   "version": "1.0.0-beta",
   "description": "Core server side support for jqGrid in ASP.NET Core.",
   "authors": [ "Tomasz Pęczek" ],
-  "copyright": "Copyright © 2016 Tomasz Pęczek",
+  "copyright": "Copyright © 2016 - 2017 Tomasz Pęczek",
   "packOptions": {
     "tags": [ "aspnetcore", "aspnetcoremvc", "jqgrid" ],
     "projectUrl": "https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid",

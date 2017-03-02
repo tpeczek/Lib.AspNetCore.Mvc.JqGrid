@@ -163,6 +163,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.AUTOCOMPLETE_AUTO_FOCUS, elementOptions.AutocompleteAutoFocus, JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.AutocompleteAutoFocus)
                 .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.AUTOCOMPLETE_DELAY, elementOptions.AutocompleteDelay, JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.AutocompleteDelay)
                 .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ColumnModel.JQueryUIWidgets.AUTOCOMPLETE_MIN_LENGTH, elementOptions.AutocompleteMinLength, JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.AutocompleteMinLength)
+                //.AppendJavaScriptObjectStringField("appendTo", $"#searchmodfbox_{options.Id}")
                 .AppendJavaScriptObjectClosing()
                 .Append(JQUERY_UI_AUTOCOMPLETE_DATA_INIT_END);
 

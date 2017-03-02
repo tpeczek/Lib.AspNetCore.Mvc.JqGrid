@@ -512,6 +512,41 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         public static class Navigator
         {
             /// <summary>
+            /// The value which defines if add action is enabled.
+            /// </summary>
+            public const bool Add = true;
+
+            /// <summary>
+            /// The icon (form UI theme images) for add action.
+            /// </summary>
+            public const string AddIcon = "ui-icon-plus";
+
+            /// <summary>
+            /// The tooltip for add action.
+            /// </summary>
+            public const string AddToolTip = "Add new row";
+
+            /// <summary>
+            /// The value which defines if edit action is enabled.
+            /// </summary>
+            public const bool Edit = true;
+
+            /// <summary>
+            /// The icon (form UI theme images) for edit action.
+            /// </summary>
+            public const string EditIcon = "ui-icon-pencil";
+
+            /// <summary>
+            /// The tooltip for edit action.
+            /// </summary>
+            public const string EditToolTip = "Edit selected row";
+
+            /// <summary>
+            /// The position of the Navigator buttons in the pager.
+            /// </summary>
+            public const JqGridAlignments Position = JqGridAlignments.Left;
+
+            /// <summary>
             /// The initial top position of modal dialog.
             /// </summary>
             public const int Top = 0;
