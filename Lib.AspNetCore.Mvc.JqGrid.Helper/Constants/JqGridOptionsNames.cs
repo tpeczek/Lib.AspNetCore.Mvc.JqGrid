@@ -30,6 +30,7 @@
         internal const string SUBGRID_ROW_EXPANDED = "subGridRowExpanded";
         internal const string SUBGRID_ROW_COLAPSED = "subGridRowColapsed";
         internal const string SUBGRID_MODEL = "subGridModel";
+        internal const string TOP_PAGER = "toppager";
         internal const string TREE_GRID_ENABLED = "treeGrid";
         internal const string TREE_GRID_MODEL = "treeGridModel";
         internal const string URL = "url";

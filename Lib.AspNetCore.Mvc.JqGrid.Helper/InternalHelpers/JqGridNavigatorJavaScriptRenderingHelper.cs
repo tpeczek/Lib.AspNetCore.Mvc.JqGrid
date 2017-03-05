@@ -160,7 +160,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
         private static StringBuilder AppendNavigatorActionOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorActionOptions navigatorActionOptions)
         {
-            return javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLOSE_ON_ESCAPE, navigatorActionOptions.CloseOnEscape, JqGridOptionsDefaults.Navigator.CloseOnEscape)
+            return javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLOSE_ON_ESCAPE, navigatorActionOptions.CloseOnEscape, JqGridOptionsDefaults.Navigator.ActionCloseOnEscape)
                 .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.DATA_HEIGHT, navigatorActionOptions.DataHeight)
                 .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.DATA_WIDTH, navigatorActionOptions.DataWidth)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.DRAGABLE, navigatorActionOptions.Dragable, JqGridOptionsDefaults.Navigator.Dragable)

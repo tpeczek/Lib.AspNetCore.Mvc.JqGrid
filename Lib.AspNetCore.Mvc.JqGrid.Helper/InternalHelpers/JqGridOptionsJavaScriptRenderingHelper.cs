@@ -20,6 +20,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendParametersNames(options.ParametersNames)
                 .AppendJsonReader(options.JsonReader)
                 .AppendPager(options, asSubgrid)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.TOP_PAGER, options.TopPager, JqGridOptionsDefaults.TopPager)
                 .AppendSubgrid(options)
                 .AppendTreeGrid(options)
                 .AppendDynamicScrolling(options)

@@ -542,6 +542,91 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             public const string EditToolTip = "Edit selected row";
 
             /// <summary>
+            /// The value which defines if delete action is enabled.
+            /// </summary>
+            public const bool Delete = true;
+
+            /// <summary>
+            /// The icon (form UI theme images) for delete action.
+            /// </summary>
+            public const string DeleteIcon = "ui-icon-trash";
+
+            /// <summary>
+            /// The tooltip for delete action.
+            /// </summary>
+            public const string DeleteToolTip = "Delete selected row";
+
+            /// <summary>
+            /// The value which defines if search action is enabled.
+            /// </summary>
+            public const bool Search = true;
+
+            /// <summary>
+            /// The icon (form UI theme images) for search action.
+            /// </summary>
+            public const string SearchIcon = "ui-icon-search";
+
+            /// <summary>
+            /// The tooltip for search action.
+            /// </summary>
+            public const string SearchToolTip = "Find records";
+
+            /// <summary>
+            /// The value which defines if view action is enabled.
+            /// </summary>
+            public const bool View = false;
+
+            /// <summary>
+            /// The icon (form UI theme images) for view action.
+            /// </summary>
+            public const string ViewIcon = "ui-icon-document";
+
+            /// <summary>
+            /// The tooltip for view action.
+            /// </summary>
+            public const string ViewToolTip = "View selected row";
+
+            /// <summary>
+            /// The value which defines if refresh action is enabled.
+            /// </summary>
+            public const bool Refresh = true;
+
+            /// <summary>
+            /// The icon (form UI theme images) for refresh action.
+            /// </summary>
+            public const string RefreshIcon = "ui-icon-refresh";
+
+            /// <summary>
+            /// The tooltip for refresh action.
+            /// </summary>
+            public const string RefreshToolTip = "Reload Grid";
+
+            /// <summary>
+            /// The mode for refresh action.
+            /// </summary>
+            public const JqGridRefreshModes RefreshMode = JqGridRefreshModes.FirstPage;
+
+            /// <summary>
+            /// The caption for warning which appears when user try to edit, delete or view a row without selecting it.
+            /// </summary>
+            public const string AlertCaption = "Warning";
+
+            /// <summary>
+            /// The text for warning which appears when user try to edit, delete or view a row without selecting it.
+            /// </summary>
+            public const string AlertText = "Please, select row";
+
+            /// <summary>
+            /// The value which defines if all the actions from the bottom pager should be coppied to the top pager.
+            /// </summary>
+            public const bool CloneToTop = false;
+
+            /// <summary>
+            /// The pager to which the Navigator should be attached to.
+            /// </summary>
+            public const JqGridNavigatorPagers Pager = JqGridNavigatorPagers.Standard;
+
+            /// <summary>
             /// The position of the Navigator buttons in the pager.
             /// </summary>
             public const JqGridAlignments Position = JqGridAlignments.Left;
@@ -579,7 +664,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// <summary>
             /// The value indicating if modal window can be closed with ESC key.
             /// </summary>
-            public const bool CloseOnEscape = false;
+            public const bool CloseOnEscape = true;
+
+            /// <summary>
+            /// The value indicating if modal window can be closed with ESC key.
+            /// </summary>
+            public const bool ActionCloseOnEscape = false;
 
             /// <summary>
             /// The value controling overlay in the grid.
@@ -777,6 +867,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         /// The value which defines if subgrid is enabled.
         /// </summary>
         public const bool SubgridEnabled = false;
+
+        /// <summary>
+        /// The value indicating if jqGrid should place a pager element at top of the grid below the caption (if available).
+        /// </summary>
+        public const bool TopPager = false;
 
         /// <summary>
         /// The value which defines if TreeGrid is enabled.

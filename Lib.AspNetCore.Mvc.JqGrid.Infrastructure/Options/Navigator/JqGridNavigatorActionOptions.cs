@@ -86,7 +86,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
             Dragable = JqGridOptionsDefaults.Navigator.Dragable;
             Resizable = JqGridOptionsDefaults.Navigator.Resizable;
             UseJqModal = JqGridOptionsDefaults.Navigator.UseJqModal;
-            CloseOnEscape = JqGridOptionsDefaults.Navigator.CloseOnEscape;
+            CloseOnEscape = JqGridOptionsDefaults.Navigator.ActionCloseOnEscape;
             Overlay = JqGridOptionsDefaults.Navigator.Overlay;
 
             OnClose = null;
