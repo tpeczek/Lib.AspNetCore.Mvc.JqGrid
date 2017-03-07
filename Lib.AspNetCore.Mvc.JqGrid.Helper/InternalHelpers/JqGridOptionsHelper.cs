@@ -235,6 +235,17 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (navigatorDeleteActionOptions as JqGridNavigatorModifyActionOptions).AreDefault();
         }
 
+        internal static bool AreDefault(this JqGridNavigatorViewActionOptions navigatorViewActionOptions)
+        {
+            return (navigatorViewActionOptions.Width == JqGridOptionsDefaults.Navigator.ViewActionWidth)
+                && (navigatorViewActionOptions.LabelsWidth == JqGridOptionsDefaults.Navigator.LabelsWidth)
+                && (navigatorViewActionOptions.ViewPagerButtons == JqGridOptionsDefaults.Navigator.ViewPagerButtons)
+                && (navigatorViewActionOptions.RecreateForm == JqGridOptionsDefaults.Navigator.RecreateForm)
+                && ((navigatorViewActionOptions.NavigationKeys == null) || navigatorViewActionOptions.NavigationKeys.IsDefault())
+                && ((navigatorViewActionOptions.CloseButtonIcon == null) || navigatorViewActionOptions.CloseButtonIcon.Equals(JqGridFormButtonIcon.CloseIcon))
+                && (navigatorViewActionOptions as JqGridNavigatorFormActionOptions).AreDefault();
+        }
+
         internal static bool IsDefault(this JqGridFormKeyboardNavigation formKeyboardNavigation)
         {
             return (formKeyboardNavigation.Enabled == JqGridOptionsDefaults.Navigator.KeyboardNavigation.Enabled)

@@ -697,6 +697,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             public const int EditActionWidth = 300;
 
             /// <summary>
+            /// The width of view action confirmation dialog.
+            /// </summary>
+            public const int ViewActionWidth = 0;
+
+            /// <summary>
             /// The value indicating if the pager buttons should appear on the form.
             /// </summary>
             public const bool ViewPagerButtons = true;
@@ -705,6 +710,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// The value indicating if the form should be recreated every time the dialog is activeted with the new options from colModel.
             /// </summary>
             public const bool RecreateForm = false;
+
+            /// <summary>
+            /// The value which defines how much width is needed for the labels.
+            /// </summary>
+            public const string LabelsWidth = "30%";
 
             /// <summary>
             /// The value indicating where the row just added should be placed.
