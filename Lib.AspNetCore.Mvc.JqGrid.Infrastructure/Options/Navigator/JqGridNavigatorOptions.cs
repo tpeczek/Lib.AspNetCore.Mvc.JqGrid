@@ -35,6 +35,26 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
         public bool CloseOnEscape { get; set; }
 
         /// <summary>
+        /// Gets or sets the options for add action.
+        /// </summary>
+        public JqGridNavigatorEditActionOptions AddOptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the custom function to replace the build in add function.
+        /// </summary>
+        public string AddFunction { get; set; }
+
+        /// <summary>
+        /// Gets or sets the options for edit action.
+        /// </summary>
+        public JqGridNavigatorEditActionOptions EditOptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the custom function to replace the build in edit function.
+        /// </summary>
+        public string EditFunction { get; set; }
+
+        /// <summary>
         /// Gets or set the value which defines if delete action is enabled (default true).
         /// </summary>
         public bool Delete { get; set; }
@@ -53,6 +73,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
         /// Gets or sets the tooltip for delete action.
         /// </summary>
         public string DeleteToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the options for delete action.
+        /// </summary>
+        public JqGridNavigatorDeleteActionOptions DeleteOptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the custom function to replace the build in delete function.
+        /// </summary>
+        public string DeleteFunction { get; set; }
 
         /// <summary>
         /// Gets or set the value which defines if refresh action is enabled (default true).
@@ -110,6 +140,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
         public string SearchToolTip { get; set; }
 
         /// <summary>
+        /// Gets or sets the options for search action.
+        /// </summary>
+        public JqGridNavigatorSearchActionOptions SearchOptions { get; set; }
+
+        /// <summary>
         /// Gets or set the value which defines if view action is enabled (default true).
         /// </summary>
         public bool View { get; set; }
@@ -130,19 +165,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
         public string ViewToolTip { get; set; }
 
         /// <summary>
-        /// Gets or sets the custom function to replace the build in add function.
+        /// Gets or sets the options for view action.
         /// </summary>
-        public string AddFunction { get; set; }
-
-        /// <summary>
-        /// Gets or sets the custom function to replace the build in edit function.
-        /// </summary>
-        public string EditFunction { get; set; }
-
-        /// <summary>
-        /// Gets or sets the custom function to replace the build in delete function.
-        /// </summary>
-        public string DeleteFunction { get; set; }
+        public JqGridNavigatorViewActionOptions ViewOptions { get; set; }
         #endregion
 
         #region Constructor
@@ -157,10 +182,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
             AlertText = JqGridOptionsDefaults.Navigator.AlertText;
             CloneToTop = JqGridOptionsDefaults.Navigator.CloneToTop;
             CloseOnEscape = JqGridOptionsDefaults.Navigator.CloseOnEscape;
+            AddOptions = null;
+            AddFunction = null;
+            EditOptions = null;
+            EditFunction = null;
             Delete = JqGridOptionsDefaults.Navigator.Delete;
             DeleteIcon = JqGridOptionsDefaults.Navigator.DeleteIcon;
             DeleteText = null;
             DeleteToolTip = JqGridOptionsDefaults.Navigator.DeleteToolTip;
+            DeleteOptions = null;
+            DeleteFunction = null;
             Refresh = JqGridOptionsDefaults.Navigator.Refresh;
             RefreshIcon = JqGridOptionsDefaults.Navigator.RefreshIcon;
             RefreshText = null;
@@ -172,13 +203,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
             SearchIcon = JqGridOptionsDefaults.Navigator.SearchIcon;
             SearchText = null;
             SearchToolTip = JqGridOptionsDefaults.Navigator.SearchToolTip;
+            SearchOptions = null;
             View = JqGridOptionsDefaults.Navigator.View;
             ViewIcon = JqGridOptionsDefaults.Navigator.ViewIcon;
             ViewText = null;
             ViewToolTip = JqGridOptionsDefaults.Navigator.ViewToolTip;
-            AddFunction = null;
-            EditFunction = null;
-            DeleteFunction = null;
+            ViewOptions = null;
         }
         #endregion
     }

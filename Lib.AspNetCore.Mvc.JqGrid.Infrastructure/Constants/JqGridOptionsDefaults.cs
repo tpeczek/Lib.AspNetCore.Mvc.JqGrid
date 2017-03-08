@@ -672,6 +672,21 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             public const bool ActionCloseOnEscape = false;
 
             /// <summary>
+            /// The value indicating if search action dialog should be closed after searching.
+            /// </summary>
+            public const bool CloseAfterSearch = false;
+
+            /// <summary>
+            /// The value indicating if search action dialog should be closed after reseting.
+            /// </summary>
+            public const bool CloseAfterReset = false;
+
+            /// <summary>
+            /// The value indicating if the SearchRules should be validated.
+            /// </summary>
+            public const bool ErrorCheck = true;
+
+            /// <summary>
             /// The value controling overlay in the grid.
             /// </summary>
             public const int Overlay = 30;
@@ -692,12 +707,17 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             public const int DeleteActionWidth = 240;
 
             /// <summary>
-            /// The width of edit action confirmation dialog.
+            /// The width of edit action dialog.
             /// </summary>
             public const int EditActionWidth = 300;
 
             /// <summary>
-            /// The width of view action confirmation dialog.
+            /// The width of search action dialog.
+            /// </summary>
+            public const int SearchActionWidth = 450;
+
+            /// <summary>
+            /// The width of view action dialog.
             /// </summary>
             public const int ViewActionWidth = 0;
 
@@ -715,6 +735,36 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// The value which defines how much width is needed for the labels.
             /// </summary>
             public const string LabelsWidth = "30%";
+
+            /// <summary>
+            /// The value indicating if advanced searching is enabled.
+            /// </summary>
+            public const bool AdvancedSearching = false;
+
+            /// <summary>
+            /// The value indicating if advanced searching with a possibilities to define a complex condfitions is enabled.
+            /// </summary>
+            public const bool AdvancedSearchingWithGroups = false;
+
+            /// <summary>
+            /// The value indicating if added row (in advanced searching) should be copied from previous row.
+            /// </summary>
+            public const bool CloneSearchRowOnAdd = true;
+
+            /// <summary>
+            /// The value indicating if the entry filter should be destroyed unbinding all the events and then constructed again.
+            /// </summary>
+            public const bool RecreateFilter = false;
+
+            /// <summary>
+            /// The value indicating if the dialog should appear automatically when the grid is constructed for first time.
+            /// </summary>
+            public const bool ShowOnLoad = false;
+
+            /// <summary>
+            /// The value indicating if the query which is generated when the user defines the conditions for the search should be shown.
+            /// </summary>
+            public const bool ShowQuery = false;
 
             /// <summary>
             /// The value indicating where the row just added should be placed.

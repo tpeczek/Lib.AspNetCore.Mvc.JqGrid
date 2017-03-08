@@ -1,12 +1,12 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 
-namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
+namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching
 {
     /// <summary>
     /// Class which represents filters in request from jqGrid.
     /// </summary>
-    public class JqGridRequestSearchingFilters
+    public class JqGridSearchingFilters
     {
         #region Properties
         /// <summary>
@@ -17,22 +17,22 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
         /// <summary>
         /// Gets the list of filters.
         /// </summary>
-        public List<JqGridRequestSearchingFilter> Filters { get; set; }
+        public List<JqGridSearchingFilter> Filters { get; set; }
 
         /// <summary>
         /// Gets the list of filters sub groups.
         /// </summary>
-        public List<JqGridRequestSearchingFilters> Groups { get; set; }
+        public List<JqGridSearchingFilters> Groups { get; set; }
         #endregion
 
         #region Constructor
         /// <summary>
         /// Initializes a new instance of the JqGridRequestSearchingFilters class.
         /// </summary>
-        public JqGridRequestSearchingFilters()
+        public JqGridSearchingFilters()
         {
-            Filters = new List<JqGridRequestSearchingFilter>();
-            Groups = new List<JqGridRequestSearchingFilters>();
+            Filters = new List<JqGridSearchingFilter>();
+            Groups = new List<JqGridSearchingFilters>();
         }
         #endregion
     }

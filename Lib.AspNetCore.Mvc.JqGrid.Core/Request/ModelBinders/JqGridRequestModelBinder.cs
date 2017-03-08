@@ -1,10 +1,11 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters;
-using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Internal;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
-using System;
-using System.Threading.Tasks;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
 {
@@ -130,7 +131,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                     JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings();
                     jsonSerializerSettings.Converters.Add(new JqGridRequestSearchingFiltersJsonConverter());
 
-                    model.SearchingFilters = JsonConvert.DeserializeObject<JqGridRequestSearchingFilters>(searchingFiltersValueResult.ConvertTo<string>(), jsonSerializerSettings);
+                    model.SearchingFilters = JsonConvert.DeserializeObject<JqGridSearchingFilters>(searchingFiltersValueResult.ConvertTo<string>(), jsonSerializerSettings);
                 }
                 else
                 {
@@ -142,7 +143,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
 
                     if (!String.IsNullOrWhiteSpace(searchingName) && (!String.IsNullOrWhiteSpace(searchingValue) || ((searchingOperator & JqGridSearchOperators.NullOperators) != 0)))
                     {
-                        model.SearchingFilter = new JqGridRequestSearchingFilter() { SearchingName = searchingName, SearchingOperator = searchingOperator, SearchingValue = searchingValue };
+                        model.SearchingFilter = new JqGridSearchingFilter() { SearchingName = searchingName, SearchingOperator = searchingOperator, SearchingValue = searchingValue };
                     }
                 }
             }

@@ -1,11 +1,11 @@
 ﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 
-namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
+namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching
 {
     /// <summary>
     /// Class which represents filter in request from jqGrid.
     /// </summary>
-    public class JqGridRequestSearchingFilter
+    public class JqGridSearchingFilter
     {
         #region Properties
         /// <summary>

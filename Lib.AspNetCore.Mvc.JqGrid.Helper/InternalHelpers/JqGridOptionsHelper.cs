@@ -142,15 +142,21 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
         internal static bool AreDefault(this JqGridNavigatorOptions navigatorOptions)
         {
-            return (navigatorOptions.Pager == JqGridOptionsDefaults.Navigator.Pager)
-                && (navigatorOptions.AlertCaption == JqGridOptionsDefaults.Navigator.AlertCaption)
+            return (navigatorOptions.AlertCaption == JqGridOptionsDefaults.Navigator.AlertCaption)
                 && (navigatorOptions.AlertText == JqGridOptionsDefaults.Navigator.AlertText)
                 && (navigatorOptions.CloneToTop == JqGridOptionsDefaults.Navigator.CloneToTop)
                 && (navigatorOptions.CloseOnEscape == JqGridOptionsDefaults.Navigator.CloseOnEscape)
+                && (navigatorOptions.Pager == JqGridOptionsDefaults.Navigator.Pager)
+                && ((navigatorOptions.AddOptions == null) || (navigatorOptions.AddOptions.AreDefault()))
+                && String.IsNullOrWhiteSpace(navigatorOptions.AddFunction)
+                && ((navigatorOptions.EditOptions == null) || (navigatorOptions.EditOptions.AreDefault()))
+                && String.IsNullOrWhiteSpace(navigatorOptions.EditFunction)
                 && (navigatorOptions.Delete == JqGridOptionsDefaults.Navigator.Delete)
                 && (navigatorOptions.DeleteIcon == JqGridOptionsDefaults.Navigator.DeleteIcon)
                 && String.IsNullOrEmpty(navigatorOptions.DeleteText)
                 && (navigatorOptions.DeleteToolTip == JqGridOptionsDefaults.Navigator.DeleteToolTip)
+                && ((navigatorOptions.DeleteOptions == null) || (navigatorOptions.DeleteOptions.AreDefault()))
+                && String.IsNullOrWhiteSpace(navigatorOptions.DeleteFunction)
                 && (navigatorOptions.Refresh == JqGridOptionsDefaults.Navigator.Refresh)
                 && (navigatorOptions.RefreshIcon == JqGridOptionsDefaults.Navigator.RefreshIcon)
                 && String.IsNullOrEmpty(navigatorOptions.RefreshText)
@@ -162,27 +168,26 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (navigatorOptions.SearchIcon == JqGridOptionsDefaults.Navigator.SearchIcon)
                 && String.IsNullOrEmpty(navigatorOptions.SearchText)
                 && (navigatorOptions.SearchToolTip == JqGridOptionsDefaults.Navigator.SearchToolTip)
+                && ((navigatorOptions.SearchOptions == null) || (navigatorOptions.SearchOptions.AreDefault()))
                 && (navigatorOptions.View == JqGridOptionsDefaults.Navigator.View)
                 && (navigatorOptions.ViewIcon == JqGridOptionsDefaults.Navigator.ViewIcon)
                 && String.IsNullOrEmpty(navigatorOptions.ViewText)
                 && (navigatorOptions.ViewToolTip == JqGridOptionsDefaults.Navigator.ViewToolTip)
-                && String.IsNullOrWhiteSpace(navigatorOptions.AddFunction)
-                && String.IsNullOrWhiteSpace(navigatorOptions.EditFunction)
-                && String.IsNullOrWhiteSpace(navigatorOptions.DeleteFunction)
+                && ((navigatorOptions.ViewOptions == null) || (navigatorOptions.ViewOptions.AreDefault()))
                 && (navigatorOptions as JqGridNavigatorOptions).AreDefault();
         }
 
         private static bool AreDefault(this JqGridNavigatorOptionsBase navigatorOptions)
         {
-            return (navigatorOptions.Add == JqGridOptionsDefaults.Navigator.Add)
+            return (navigatorOptions.Position == JqGridOptionsDefaults.Navigator.Position)
+                && (navigatorOptions.Add == JqGridOptionsDefaults.Navigator.Add)
                 && (navigatorOptions.AddIcon == JqGridOptionsDefaults.Navigator.AddIcon)
                 && String.IsNullOrEmpty(navigatorOptions.AddText)
                 && (navigatorOptions.AddToolTip == JqGridOptionsDefaults.Navigator.AddToolTip)
                 && (navigatorOptions.Edit == JqGridOptionsDefaults.Navigator.Edit)
                 && (navigatorOptions.EditIcon == JqGridOptionsDefaults.Navigator.EditIcon)
                 && String.IsNullOrEmpty(navigatorOptions.EditText)
-                && (navigatorOptions.EditToolTip == JqGridOptionsDefaults.Navigator.EditToolTip)
-                && (navigatorOptions.Position == JqGridOptionsDefaults.Navigator.Position);
+                && (navigatorOptions.EditToolTip == JqGridOptionsDefaults.Navigator.EditToolTip);
         }
 
         internal static bool AreDefault(this JqGridInlineNavigatorActionOptions inlineNavigatorActionOptions)
@@ -244,6 +249,33 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && ((navigatorViewActionOptions.NavigationKeys == null) || navigatorViewActionOptions.NavigationKeys.IsDefault())
                 && ((navigatorViewActionOptions.CloseButtonIcon == null) || navigatorViewActionOptions.CloseButtonIcon.Equals(JqGridFormButtonIcon.CloseIcon))
                 && (navigatorViewActionOptions as JqGridNavigatorFormActionOptions).AreDefault();
+        }
+
+        internal static bool AreDefault(this JqGridNavigatorSearchActionOptions navigatorSearchActionOptions)
+        {
+            return (navigatorSearchActionOptions.Width == JqGridOptionsDefaults.Navigator.SearchActionWidth)
+                && String.IsNullOrWhiteSpace(navigatorSearchActionOptions.AfterRedraw)
+                && String.IsNullOrWhiteSpace(navigatorSearchActionOptions.AfterShowSearch)
+                && String.IsNullOrWhiteSpace(navigatorSearchActionOptions.BeforeShowSearch)
+                && String.IsNullOrEmpty(navigatorSearchActionOptions.Caption)
+                && (navigatorSearchActionOptions.CloseAfterSearch == JqGridOptionsDefaults.Navigator.CloseAfterSearch)
+                && (navigatorSearchActionOptions.CloseAfterReset == JqGridOptionsDefaults.Navigator.CloseAfterReset)
+                && (navigatorSearchActionOptions.ErrorCheck == JqGridOptionsDefaults.Navigator.ErrorCheck)
+                && String.IsNullOrEmpty(navigatorSearchActionOptions.SearchText)
+                && (navigatorSearchActionOptions.AdvancedSearching == JqGridOptionsDefaults.Navigator.AdvancedSearching)
+                && (navigatorSearchActionOptions.AdvancedSearchingWithGroups == JqGridOptionsDefaults.Navigator.AdvancedSearchingWithGroups)
+                && (navigatorSearchActionOptions.CloneSearchRowOnAdd == JqGridOptionsDefaults.Navigator.CloneSearchRowOnAdd)
+                && String.IsNullOrWhiteSpace(navigatorSearchActionOptions.OnInitializeSearch)
+                && String.IsNullOrWhiteSpace(navigatorSearchActionOptions.OnReset)
+                && String.IsNullOrWhiteSpace(navigatorSearchActionOptions.OnSearch)
+                && (navigatorSearchActionOptions.RecreateFilter = JqGridOptionsDefaults.Navigator.RecreateFilter)
+                && String.IsNullOrEmpty(navigatorSearchActionOptions.ResetText)
+                && (navigatorSearchActionOptions.SearchOperators == null)
+                && (navigatorSearchActionOptions.ShowOnLoad == JqGridOptionsDefaults.Navigator.ShowOnLoad)
+                && (navigatorSearchActionOptions.ShowQuery == JqGridOptionsDefaults.Navigator.ShowQuery)
+                && (navigatorSearchActionOptions.Templates == null)
+                && (navigatorSearchActionOptions.Layer == null)
+                && (navigatorSearchActionOptions as JqGridNavigatorActionOptions).AreDefault();
         }
 
         internal static bool IsDefault(this JqGridFormKeyboardNavigation formKeyboardNavigation)

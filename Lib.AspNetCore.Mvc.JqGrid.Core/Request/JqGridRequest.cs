@@ -1,8 +1,9 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
-using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders;
+﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
 {
@@ -42,12 +43,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request
         /// <summary>
         /// Gets the searching filter (single searching). 
         /// </summary>
-        public JqGridRequestSearchingFilter SearchingFilter { get; set; }
+        public JqGridSearchingFilter SearchingFilter { get; set; }
 
         /// <summary>
         /// Gets the searching filters (advanced searching or toolbar searching with JqGridFilterToolbarOptions.StringResult = true). 
         /// </summary>
-        public JqGridRequestSearchingFilters SearchingFilters { get; set; }
+        public JqGridSearchingFilters SearchingFilters { get; set; }
 
         /// <summary>
         /// Gets the sorting column name.

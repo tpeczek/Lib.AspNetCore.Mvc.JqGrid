@@ -4,6 +4,7 @@ using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
 {
@@ -102,6 +103,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         /// Gets or sets the type of request to make (default JqGridMethodTypes.Get).
         /// </summary>
         public JqGridMethodTypes MethodType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the navigator options.
+        /// </summary>
+        public JqGridNavigatorOptions Navigator { get; set; }
 
         /// <summary>
         /// Gets or sets if grid should use a pager bar to navigate through the records (default: false).
@@ -226,6 +232,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             Height = null;
             JsonReader = null;
             MethodType = JqGridOptionsDefaults.MethodType;
+            Navigator = null;
             Pager = JqGridOptionsDefaults.Pager;
             ParametersNames = null;
             RowsList = null;

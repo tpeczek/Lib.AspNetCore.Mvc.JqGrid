@@ -1,5 +1,5 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Core.Request;
-using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -13,7 +13,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
     internal sealed class JqGridRequestSearchingFiltersJsonConverter : JsonConverter
     {
         #region Fields
-        private Type _jqGridRequestSearchingFiltersType = typeof(JqGridRequestSearchingFilters);
+        private Type _jqGridRequestSearchingFiltersType = typeof(JqGridSearchingFilters);
         #endregion
 
         #region Properties
@@ -71,9 +71,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
             throw new NotImplementedException();
         }
 
-        private static JqGridRequestSearchingFilters ReadJqGridRequestSearchingFilters(JToken filtersToken)
+        private static JqGridSearchingFilters ReadJqGridRequestSearchingFilters(JToken filtersToken)
         {
-            JqGridRequestSearchingFilters jqGridRequestSearchingFilters = new JqGridRequestSearchingFilters();
+            JqGridSearchingFilters jqGridRequestSearchingFilters = new JqGridSearchingFilters();
 
             jqGridRequestSearchingFilters.GroupingOperator = ReadEnum<JqGridSearchGroupingOperators>(filtersToken, "groupOp", JqGridSearchGroupingOperators.And);
             if ((filtersToken["rules"] != null) && (filtersToken["rules"].Type == JTokenType.Array))
@@ -95,9 +95,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
             return jqGridRequestSearchingFilters;
         }
 
-        private static JqGridRequestSearchingFilter ReadJqGridRequestSearchingFilter(JToken jqGridRequestSearchingFilterToken)
+        private static JqGridSearchingFilter ReadJqGridRequestSearchingFilter(JToken jqGridRequestSearchingFilterToken)
         {
-            JqGridRequestSearchingFilter jqGridRequestSearchingFilter = new JqGridRequestSearchingFilter();
+            JqGridSearchingFilter jqGridRequestSearchingFilter = new JqGridSearchingFilter();
 
             jqGridRequestSearchingFilter.SearchingName = ReadString(jqGridRequestSearchingFilterToken, "field");
             jqGridRequestSearchingFilter.SearchingOperator = ReadEnum(jqGridRequestSearchingFilterToken, "op", JqGridSearchOperators.Eq);
