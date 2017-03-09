@@ -1,11 +1,9 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
-using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
-using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Text;
-using System.Threading.Tasks;
+using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
@@ -29,6 +27,70 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
 
             return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendNavigator(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
+        {
+            if (options.Navigator != null)
+            {
+                javaScriptBuilder.AppendLine(")")
+                    .AppendFormat(".jqGrid('navGrid',{0}", options.GetJqGridPagerSelector(options.Navigator.Pager, asSubgrid))
+                    .AppendNavigatorOptions(options.Navigator);
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendNavigatorOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorOptions navigatorOptions)
+        {
+            if ((navigatorOptions != null) && !navigatorOptions.AreDefault())
+            {
+                javaScriptBuilder.Append(",")
+                    .AppendJavaScriptObjectOpening()
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.ALERT_CAPTION, navigatorOptions.AlertCaption, JqGridOptionsDefaults.Navigator.AlertCaption)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.ALERT_TEXT, navigatorOptions.AlertText, JqGridOptionsDefaults.Navigator.AlertText)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLONE_TO_TOP, navigatorOptions.CloneToTop, JqGridOptionsDefaults.Navigator.CloneToTop)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLOSE_ON_ESCAPE, navigatorOptions.CloseOnEscape, JqGridOptionsDefaults.Navigator.CloseOnEscape)
+                    .AppendBaseNavigatorOptions(navigatorOptions)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ADD_FUNCTION, navigatorOptions.AddFunction)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.EDIT_FUNCTION, navigatorOptions.EditFunction)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.DELETE, navigatorOptions.Delete, JqGridOptionsDefaults.Navigator.Delete)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.DELETE_ICON, navigatorOptions.DeleteIcon, JqGridOptionsDefaults.Navigator.DeleteIcon)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.DELETE_TEXT, navigatorOptions.DeleteText)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.DELETE_TITLE, navigatorOptions.DeleteToolTip, JqGridOptionsDefaults.Navigator.DeleteToolTip)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.DELETE_FUNCTION, navigatorOptions.DeleteFunction)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.REFRESH, navigatorOptions.Refresh, JqGridOptionsDefaults.Navigator.Refresh)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.REFRESH_ICON, navigatorOptions.RefreshIcon, JqGridOptionsDefaults.Navigator.RefreshIcon)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.REFRESH_TEXT, navigatorOptions.RefreshText)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.REFRESH_TITLE, navigatorOptions.RefreshToolTip, JqGridOptionsDefaults.Navigator.RefreshToolTip)
+                    .AppendJavaScriptObjectEnumField(JqGridOptionsNames.Navigator.REFRESH_STATE, navigatorOptions.RefreshMode, JqGridOptionsDefaults.Navigator.RefreshMode)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.AFTER_REFRESH, navigatorOptions.AfterRefresh)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.BEFORE_REFRESH, navigatorOptions.BeforeRefresh)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.SEARCH, navigatorOptions.Search, JqGridOptionsDefaults.Navigator.Search)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.SEARCH_ICON, navigatorOptions.SearchIcon, JqGridOptionsDefaults.Navigator.SearchIcon)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.SEARCH_TEXT, navigatorOptions.SearchText)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.SEARCH_TITLE, navigatorOptions.SearchToolTip, JqGridOptionsDefaults.Navigator.SearchToolTip)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.VIEW, navigatorOptions.View, JqGridOptionsDefaults.Navigator.View)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.VIEW_ICON, navigatorOptions.ViewIcon, JqGridOptionsDefaults.Navigator.ViewIcon)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.VIEW_TEXT, navigatorOptions.ViewText)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.VIEW_TITLE, navigatorOptions.ViewToolTip, JqGridOptionsDefaults.Navigator.ViewToolTip)
+                    .AppendJavaScriptObjectClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendBaseNavigatorOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorOptionsBase navigatorOptions)
+        {
+            return javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.Navigator.POSITION, navigatorOptions.Position, JqGridOptionsDefaults.Navigator.Position)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.ADD, navigatorOptions.Add, JqGridOptionsDefaults.Navigator.Add)
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.ADD_ICON, navigatorOptions.AddIcon, JqGridOptionsDefaults.Navigator.AddIcon)
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.ADD_TEXT, navigatorOptions.AddText)
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.ADD_TITLE, navigatorOptions.AddToolTip, JqGridOptionsDefaults.Navigator.AddToolTip)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.EDIT, navigatorOptions.Edit, JqGridOptionsDefaults.Navigator.Edit)
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.EDIT_ICON, navigatorOptions.EditIcon, JqGridOptionsDefaults.Navigator.EditIcon)
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.EDIT_TEXT, navigatorOptions.EditText)
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.EDIT_TITLE, navigatorOptions.EditToolTip, JqGridOptionsDefaults.Navigator.EditToolTip);
         }
 
         internal static StringBuilder AppendNavigatorEditActionOptions(this StringBuilder javaScriptBuilder, string fieldName, JqGridNavigatorEditActionOptions navigatorEditActionOptions)

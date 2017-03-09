@@ -11,6 +11,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
     {
         #region Consts
         internal const string SUBGRID_VARIABLE = "$subgridTable";
+        internal const string SUBGRID_PAGER_ID = "subgridId + '_p'";
+        internal const string SUBGRID_TOP_PAGER_ID = "subgridId + '_t_toppager'";
         #endregion
 
         #region Extension Methods
@@ -61,7 +63,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
             if (options.SubgridOptions.Pager)
             {
-                javaScriptBuilder.Append("var $subgridPager = jQuery('<div></div>').attr('id', subgridId + '_p');")
+                javaScriptBuilder.AppendFormat("var $subgridPager = jQuery('<div></div>').attr('id', {0});", SUBGRID_PAGER_ID)
                     .Append("$subgridContainer.append($subgridPager);");
             }
 

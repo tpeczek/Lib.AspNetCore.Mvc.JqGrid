@@ -222,14 +222,23 @@
 
         internal static class Navigator
         {
+            internal const string ADD = "add";
+            internal const string ADD_ICON = "addicon";
+            internal const string ADD_FUNCTION = "addfunc";
+            internal const string ADD_TEXT = "addtext";
+            internal const string ADD_TITLE = "addtitle";
             internal const string ADDED_ROW_POSITION = "addedrow";
             internal const string AFTER_CLICK_PG_BUTTONS = "afterclickPgButtons";
             internal const string AFTER_COMPLETE = "afterComplete";
+            internal const string AFTER_REFRESH = "afterRefresh";
             internal const string AFTER_SHOW_FORM = "afterShowForm";
             internal const string AFTER_SUBMIT = "afterSubmit";
             internal const string AJAX_DELETE_OPTIONS = "ajaxDelOptions";
             internal const string AJAX_EDIT_OPTIONS = "ajaxEditOptions";
+            internal const string ALERT_CAPTION = "alertcap";
+            internal const string ALERT_TEXT = "alerttext";
             internal const string BEFORE_CHECK_VALUES = "beforeCheckValues";
+            internal const string BEFORE_REFRESH = "beforeRefresh";
             internal const string BEFORE_SUBMIT = "beforeSubmit";
             internal const string BEFORE_INIT_DATA = "beforeInitData";
             internal const string BEFORE_SHOW_FORM = "beforeShowForm";
@@ -238,14 +247,24 @@
             internal const string CHECK_ON_SUBMIT = "checkOnSubmit";
             internal const string CHECK_ON_UPDATE = "checkOnUpdate";
             internal const string CLEAR_AFTER_ADD = "clearAfterAdd";
+            internal const string CLONE_TO_TOP = "cloneToTop";
             internal const string CLOSE_AFTER_ADD = "closeAfterAdd";
             internal const string CLOSE_AFTER_EDIT = "closeAfterEdit";
             internal const string CLOSE_ICON = "closeicon";
             internal const string CLOSE_ON_ESCAPE = "closeOnEscape";
             internal const string DATA_HEIGHT = "dataheight";
             internal const string DATA_WIDTH = "datawidth";
+            internal const string DELETE = "del";
             internal const string DELETE_ICON = "delicon";
+            internal const string DELETE_FUNCTION = "delfunc";
+            internal const string DELETE_TEXT = "deltext";
+            internal const string DELETE_TITLE = "deltitle";
             internal const string DELETE_EXTRA_DATA = "delData";
+            internal const string EDIT = "edit";
+            internal const string EDIT_ICON = "editicon";
+            internal const string EDIT_FUNCTION = "editfunc";
+            internal const string EDIT_TEXT = "addtext";
+            internal const string EDIT_TITLE = "edittitle";
             internal const string EDIT_EXTRA_DATA = "editData";
             internal const string ERROR_TEXT_FORMAT = "errorTextFormat";
             internal const string DRAGABLE = "drag";
@@ -258,11 +277,21 @@
             internal const string ON_CLOSE = "onClose";
             internal const string ON_INITIALIZE_FORM = "onInitializeForm";
             internal const string OVERLAY = "overlay";
+            internal const string POSITION = "position";
             internal const string RECREATE_FORM = "recreateForm";
+            internal const string REFRESH = "refresh";
+            internal const string REFRESH_ICON = "refreshicon";
+            internal const string REFRESH_TEXT = "refreshtext";
+            internal const string REFRESH_TITLE = "refreshtitle";
+            internal const string REFRESH_STATE = "refreshstate";
             internal const string RELOAD_AFTER_SUBMIT = "reloadAfterSubmit";
             internal const string RESIZE = "resize";
             internal const string SAVE_ICON = "saveicon";
             internal const string SAVE_KEY = "savekey";
+            internal const string SEARCH = "search";
+            internal const string SEARCH_ICON = "searchicon";
+            internal const string SEARCH_TEXT = "searchtext";
+            internal const string SEARCH_TITLE = "searchtitle";
             internal const string SERIALIZE_DELETE_DATA = "serializeDelData";
             internal const string SERIALIZE_EDIT_DATA = "serializeEditData";
             internal const string TOP = "top";
@@ -271,6 +300,10 @@
             internal const string URL = "url";
             internal const string METHOD_TYPE = "mtype";
             internal const string WIDTH = "width";
+            internal const string VIEW = "view";
+            internal const string VIEW_ICON = "viewicon";
+            internal const string VIEW_TEXT = "viewtext";
+            internal const string VIEW_TITLE = "viewtitle";
             internal const string VIEW_PAGER_BUTTONS = "viewPagerButtons";
         }
         

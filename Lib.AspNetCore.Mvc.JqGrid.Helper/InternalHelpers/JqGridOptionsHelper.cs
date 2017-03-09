@@ -146,7 +146,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (navigatorOptions.AlertText == JqGridOptionsDefaults.Navigator.AlertText)
                 && (navigatorOptions.CloneToTop == JqGridOptionsDefaults.Navigator.CloneToTop)
                 && (navigatorOptions.CloseOnEscape == JqGridOptionsDefaults.Navigator.CloseOnEscape)
-                && (navigatorOptions.Pager == JqGridOptionsDefaults.Navigator.Pager)
                 && ((navigatorOptions.AddOptions == null) || (navigatorOptions.AddOptions.AreDefault()))
                 && String.IsNullOrWhiteSpace(navigatorOptions.AddFunction)
                 && ((navigatorOptions.EditOptions == null) || (navigatorOptions.EditOptions.AreDefault()))
