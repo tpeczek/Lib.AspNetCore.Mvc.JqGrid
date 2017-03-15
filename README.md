@@ -14,9 +14,9 @@ This is ASP.NET Core version of jqGrid related functionality from [Lib.Web.Mvc](
 *This project is currently in beta status. Not all of the functionality has been migrated.*
 
 ## Donating
-Support this and my [other projects](https://github.com/tpeczek/) via [Gittip](https://www.gittip.com/tpeczek/).
+Lib.AspNetCore.Mvc.JqGrid is a personal open source project. If Lib.AspNetCore.Mvc.JqGridc has been helpful to you, consider donating. Donating helps support Lib.AspNetCore.Mvc.JqGrid.
 
-[![Support via Gittip](https://2.bp.blogspot.com/-hfTLKixXGvw/U-PmH5hGK4I/AAAAAAAAAf8/o94Go42VeZU/s1600/gittip.png)](https://www.gittip.com/tpeczek/)
+<a href='https://pledgie.com/campaigns/33551'><img alt='Click here to lend your support to: Lib.AspNetCore.Mvc.JqGrid and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/33551.png?skin_name=chrome' border='0' ></a>
 
 ## Copyright and License
 
