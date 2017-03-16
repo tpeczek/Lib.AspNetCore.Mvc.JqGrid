@@ -4,6 +4,7 @@ using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
@@ -35,7 +36,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             {
                 javaScriptBuilder.AppendLine(")")
                     .AppendFormat(".jqGrid('navGrid',{0}", options.GetJqGridPagerSelector(options.Navigator.Pager, asSubgrid))
-                    .AppendNavigatorOptions(options.Navigator);
+                    .AppendNavigatorOptions(options.Navigator)
+                    .Append(",{}")  // TODO: EDIT OPTIONS
+                    .Append(",{}")  // TODO: ADD OPTIONS
+                    .Append(",{}")  // TODO: DELETE OPTIONS
+                    .AppendNavigatorSearchActionOptions(options.Navigator.SearchOptions)
+                    .Append(",{}"); // TODO: VIEW OPTIONS
             }
 
             return javaScriptBuilder;
@@ -220,6 +226,57 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.RECREATE_FORM, navigatorPageableFormActionOptions.RecreateForm, JqGridOptionsDefaults.Navigator.RecreateForm);
         }
 
+        private static StringBuilder AppendNavigatorSearchActionOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorSearchActionOptions navigatorSearchActionOptions)
+        {
+            if ((navigatorSearchActionOptions != null) && !navigatorSearchActionOptions.AreDefault())
+            {
+                javaScriptBuilder.Append(",")
+                    .AppendJavaScriptObjectOpening()
+                    .AppendNavigatorActionOptions(navigatorSearchActionOptions)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.WIDTH, navigatorSearchActionOptions.Width, JqGridOptionsDefaults.Navigator.SearchActionWidth)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.AFTER_REDRAW, navigatorSearchActionOptions.AfterRedraw)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.AFTER_SHOW_SEARCH, navigatorSearchActionOptions.AfterShowSearch)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.BEFORE_SHOW_SEARCH, navigatorSearchActionOptions.BeforeShowSearch)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.CAPTION, navigatorSearchActionOptions.Caption)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLOSE_AFTER_SEARCH, navigatorSearchActionOptions.CloseAfterSearch, JqGridOptionsDefaults.Navigator.CloseAfterSearch)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLOSE_AFTER_RESET, navigatorSearchActionOptions.CloseAfterReset, JqGridOptionsDefaults.Navigator.CloseAfterReset)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.ERROR_CHECK, navigatorSearchActionOptions.ErrorCheck, JqGridOptionsDefaults.Navigator.ErrorCheck)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.SEARCH_BUTTON_TEXT, navigatorSearchActionOptions.SearchText)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.ADVANCED_SEARCHING, navigatorSearchActionOptions.AdvancedSearching, JqGridOptionsDefaults.Navigator.AdvancedSearching)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.ADVANCED_SEARCHING_WITH_GROUPS, navigatorSearchActionOptions.AdvancedSearchingWithGroups, JqGridOptionsDefaults.Navigator.AdvancedSearchingWithGroups)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLONE_SEARCH_ROW_ON_ADD, navigatorSearchActionOptions.CloneSearchRowOnAdd, JqGridOptionsDefaults.Navigator.CloneSearchRowOnAdd)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ON_INITIALIZE_SEARCH, navigatorSearchActionOptions.OnInitializeSearch)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ON_RESET, navigatorSearchActionOptions.OnReset)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ON_SEARCH, navigatorSearchActionOptions.OnSearch)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.RECREATE_FILTER, navigatorSearchActionOptions.RecreateFilter, JqGridOptionsDefaults.Navigator.RecreateFilter)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.RESET_BUTTON_TEXT, navigatorSearchActionOptions.ResetText)
+                    .AppendSearchOperators(navigatorSearchActionOptions.SearchOperators)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.SHOW_ON_LOAD, navigatorSearchActionOptions.ShowOnLoad, JqGridOptionsDefaults.Navigator.ShowOnLoad)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.SHOW_QUERY, navigatorSearchActionOptions.ShowQuery, JqGridOptionsDefaults.Navigator.ShowQuery)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.LAYER, navigatorSearchActionOptions.Layer);
+
+                if ((navigatorSearchActionOptions.Templates != null) && (navigatorSearchActionOptions.Templates.Count > 0))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.Navigator.TEMPLATES_NAMES, navigatorSearchActionOptions.Templates.Keys);
+
+                    javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.Navigator.TEMPLATES_FILTERS);
+                    foreach(string templateName in navigatorSearchActionOptions.Templates.Keys)
+                    {
+                        javaScriptBuilder.AppendSearchingFilters(navigatorSearchActionOptions.Templates[templateName]);
+                    }
+                    javaScriptBuilder.AppendJavaScriptArrayFieldClosing();
+                }
+
+                javaScriptBuilder.AppendJavaScriptObjectClosing();
+            }
+            else
+            {
+                javaScriptBuilder.Append(",null");
+            }
+
+            return javaScriptBuilder;
+        }
+
         private static StringBuilder AppendNavigatorActionOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorActionOptions navigatorActionOptions)
         {
             return javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CLOSE_ON_ESCAPE, navigatorActionOptions.CloseOnEscape, JqGridOptionsDefaults.Navigator.ActionCloseOnEscape)
@@ -234,6 +291,40 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.RESIZE, navigatorActionOptions.Resizable, JqGridOptionsDefaults.Navigator.Resizable)
                 .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.TOP, navigatorActionOptions.Top, JqGridOptionsDefaults.Navigator.Top)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.USE_JQ_MODAL, navigatorActionOptions.UseJqModal, JqGridOptionsDefaults.Navigator.UseJqModal);
+        }
+        
+        private static StringBuilder AppendSearchingFilters(this StringBuilder javaScriptBuilder, JqGridSearchingFilters searchingFilters)
+        {
+            javaScriptBuilder.AppendJavaScriptObjectOpening()
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.TEMPLATES_FILTERS_GROUPING_OPERATOR, searchingFilters.GroupingOperator.ToString().ToUpperInvariant());
+
+            if ((searchingFilters.Filters != null) && (searchingFilters.Filters.Count > 0))
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.Navigator.TEMPLATES_FILTERS_RULES);
+                foreach(JqGridSearchingFilter searchingFilter in searchingFilters.Filters)
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectOpening()
+                        .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.TEMPLATES_FILTERS_RULE_FIELD, searchingFilter.SearchingName)
+                        .AppendJavaScriptObjectEnumField(JqGridOptionsNames.Navigator.TEMPLATES_FILTERS_RULE_OPERATOR, searchingFilter.SearchingOperator)
+                        .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.TEMPLATES_FILTERS_RULE_VALUE, searchingFilter.SearchingValue)
+                        .AppendJavaScriptObjectFieldClosing();
+                }
+                javaScriptBuilder.AppendJavaScriptArrayFieldClosing();
+            }
+
+            if ((searchingFilters.Groups != null) && (searchingFilters.Groups.Count > 0))
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.Navigator.TEMPLATES_FILTERS_GROUPS);
+                foreach (JqGridSearchingFilters innerSearchingFilters in searchingFilters.Groups)
+                {
+                    javaScriptBuilder.AppendSearchingFilters(innerSearchingFilters);
+                }
+                javaScriptBuilder.AppendJavaScriptArrayFieldClosing();
+            }
+
+            javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
+
+            return javaScriptBuilder;
         }
         #endregion
     }

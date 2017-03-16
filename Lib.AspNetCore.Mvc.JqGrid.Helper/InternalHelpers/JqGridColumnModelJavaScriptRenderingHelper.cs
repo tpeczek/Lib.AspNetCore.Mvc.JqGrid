@@ -87,6 +87,24 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
             return javaScriptBuilder;
         }
+        
+        internal static StringBuilder AppendSearchOperators(this StringBuilder javaScriptBuilder, JqGridSearchOperators? searchOperators)
+        {
+            if (searchOperators.HasValue && (searchOperators != JqGridOptionsDefaults.ColumnModel.Searching.SearchOperators))
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.ColumnModel.Searching.SEARCH_OPERATORS);
+                foreach (JqGridSearchOperators searchOperator in Enum.GetValues(typeof(JqGridSearchOperators)))
+                {
+                    if ((searchOperator != JqGridSearchOperators.EqualOrNotEqual) && (searchOperator != JqGridSearchOperators.NoTextOperators) && (searchOperator != JqGridSearchOperators.TextOperators) && (searchOperator != JqGridSearchOperators.NullOperators) && ((searchOperators.Value & searchOperator) == searchOperator))
+                    {
+                        javaScriptBuilder.AppendJavaScriptArrayEnumValue(searchOperator);
+                    }
+                }
+                javaScriptBuilder.AppendJavaScriptArrayFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
         #endregion
 
         #region Private Methods
@@ -113,20 +131,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.ColumnModel.SEARCH_OPTIONS)
                         .AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Searching.HTML_ATTRIBUTES, columnModel.SearchOptions.HtmlAttributes)
                         .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Searching.CLEAR_SEARCH, columnModel.SearchOptions.ClearSearch, JqGridOptionsDefaults.ColumnModel.Searching.ClearSearch)
-                        .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Searching.SEARCH_HIDDEN, columnModel.SearchOptions.SearchHidden, JqGridOptionsDefaults.ColumnModel.Searching.SearchHidden);
-
-                    if (columnModel.SearchOptions.SearchOperators != JqGridOptionsDefaults.ColumnModel.Searching.SearchOperators)
-                    {
-                        javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.ColumnModel.Searching.SEARCH_OPERATORS);
-                        foreach (JqGridSearchOperators searchOperator in Enum.GetValues(typeof(JqGridSearchOperators)))
-                        {
-                            if (searchOperator != JqGridSearchOperators.EqualOrNotEqual && searchOperator != JqGridSearchOperators.NoTextOperators && searchOperator != JqGridSearchOperators.TextOperators && (columnModel.SearchOptions.SearchOperators & searchOperator) == searchOperator)
-                            {
-                                javaScriptBuilder.AppendJavaScriptArrayEnumValue(searchOperator);
-                            }
-                        }
-                        javaScriptBuilder.AppendJavaScriptArrayFieldClosing();
-                    }
+                        .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Searching.SEARCH_HIDDEN, columnModel.SearchOptions.SearchHidden, JqGridOptionsDefaults.ColumnModel.Searching.SearchHidden)
+                        .AppendSearchOperators(columnModel.SearchOptions.SearchOperators);
 
                     switch(columnModel.SearchType)
                     {

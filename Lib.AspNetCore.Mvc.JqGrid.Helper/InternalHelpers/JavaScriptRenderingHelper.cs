@@ -46,6 +46,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder.AppendFormat("{0},", value);
         }
 
+        internal static StringBuilder AppendJavaScriptArrayObjectValue(this StringBuilder javaScriptBuilder, object value)
+        {
+            if (value != null)
+            {
+                javaScriptBuilder.AppendJavaScriptArrayFunctionValue(JsonConvert.SerializeObject(value, Formatting.None));
+            }
+
+            return javaScriptBuilder;
+        }
+
         internal static StringBuilder AppendJavaScriptObjectStringArrayField(this StringBuilder javaScriptBuilder, string fieldName, IEnumerable<string> fieldValue)
         {
             if ((fieldValue != null) && fieldValue.Any())
