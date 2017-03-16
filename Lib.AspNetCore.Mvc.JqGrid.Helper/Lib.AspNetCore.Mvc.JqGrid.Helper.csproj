@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Strongly typed jqGrid helper for ASP.NET Core.</Description>
+    <Copyright>Copyright © 2016 - 2017 Tomasz Pęczek</Copyright>
+    <VersionPrefix>1.0.0-beta</VersionPrefix>
+    <Authors>Tomasz Pęczek</Authors>
+    <TargetFrameworks>net451;netstandard1.6</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>Lib.AspNetCore.Mvc.JqGrid.Helper</AssemblyName>
+    <PackageId>Lib.AspNetCore.Mvc.JqGrid.Helper</PackageId>
+    <PackageTags>aspnetcore;aspnetcoremvc;jqgrid</PackageTags>
+    <PackageProjectUrl>https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid/blob/master/LICENSE.md</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid</RepositoryUrl>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Infrastructure\Lib.AspNetCore.Mvc.JqGrid.Infrastructure.csproj" />
+    <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Core\Lib.AspNetCore.Mvc.JqGrid.Core.csproj" />
+    <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.DataAnnotations\Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="1.1.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <Target Name="PostcompileScript" AfterTargets="Build" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">
+    <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
+  </Target>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>
