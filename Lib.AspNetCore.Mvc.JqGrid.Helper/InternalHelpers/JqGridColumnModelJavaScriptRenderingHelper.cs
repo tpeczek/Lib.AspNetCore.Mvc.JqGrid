@@ -117,13 +117,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             else
             {
                 bool isJQueryUIElement = (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUIAutocomplete) || (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUIDatepicker) || (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUISpinner);
-                if (isJQueryUIElement)
+                if (!isJQueryUIElement)
                 {
-                    javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.ColumnModel.SEARCH_TYPE, JqGridColumnSearchTypes.Text);
-                }
-                else
-                {
-                    javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.ColumnModel.SEARCH_TYPE, columnModel.SearchType);
+                    javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.ColumnModel.SEARCH_TYPE, columnModel.SearchType, JqGridOptionsDefaults.ColumnModel.SearchType);
                 }
 
                 if ((columnModel.SearchOptions != null) && (isJQueryUIElement || !columnModel.SearchOptions.AreDefault()))

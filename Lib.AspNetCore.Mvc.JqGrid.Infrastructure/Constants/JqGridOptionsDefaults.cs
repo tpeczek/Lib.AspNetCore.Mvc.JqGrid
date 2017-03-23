@@ -125,6 +125,17 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         public static class ColumnModel
         {
             /// <summary>
+            /// Editing options.
+            /// </summary>
+            public static class Editing
+            {
+                /// <summary>
+                /// The value which defines if null value should be send to server if the field is empty.
+                /// </summary>
+                public const bool NullIfEmpty = false;
+            }
+
+            /// <summary>
             /// Formatter options.
             /// </summary>
             public static class Formatter
@@ -423,6 +434,21 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// The alignment of the cell in the grid body layer.
             /// </summary>
             public const JqGridAlignments Alignment = JqGridAlignments.Left;
+
+            /// <summary>
+            /// The ISO date format.
+            /// </summary>
+            public const string DateFormat = "Y-m-d";
+
+            /// <summary>
+            /// The value defining if this column can be edited.
+            /// </summary>
+            public const bool Editable = false;
+
+            /// <summary>
+            /// Tthe type for editable column.
+            /// </summary>
+            public const JqGridColumnEditTypes EditType = JqGridColumnEditTypes.Text;
 
             /// <summary>
             /// The value which defines if internal recalculation of the width of the column is disabled.
@@ -862,11 +888,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         /// The type of information to expect to represent data in the grid.
         /// </summary>
         public const JqGridDataTypes DataType = JqGridDataTypes.Xml;
-
-        /// <summary>
-        /// The ISO date format.
-        /// </summary>
-        public const string DateFormat = "Y-m-d";
 
         /// <summary>
         /// The value which defines if dynamic scrolling is enabled.

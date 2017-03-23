@@ -26,6 +26,31 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         public string Classes { get; set; }
 
         /// <summary>
+        /// Gets or sets the expected date format for this column in case of date validation (default ISO date). 
+        /// </summary>
+        public string DateFormat { get; set; }
+
+        /// <summary>
+        /// Gets or set the value defining if this column can be edited.
+        /// </summary>
+        public bool Editable { get; set; }
+
+        /// <summary>
+        /// Gets or sets the options for editable column.
+        /// </summary>
+        public JqGridColumnEditOptions EditOptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rules for editable column.
+        /// </summary>
+        public JqGridColumnRules EditRules { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type for editable column.
+        /// </summary>
+        public JqGridColumnEditTypes EditType { get; set; }
+
+        /// <summary>
         /// Gets or sets the value which defines if internal recalculation of the width of the column is disabled (default false).
         /// </summary>
         public bool Fixed { get; set; }
@@ -39,6 +64,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         /// Gets or sets the options for predefined formatter (every predefined formatter uses only a subset of all options), which are overwriting the defaults from the language file.
         /// </summary>
         public JqGridColumnFormatterOptions FormatterOptions { get; set; }
+
+        /// <summary>
+        /// Get or sets additional, used in form editing, options for editable column.
+        /// </summary>
+        public JqGridColumnFormOptions FormOptions { get; set; }
 
         /// <summary>
         /// Gets or sets the value indicating if column shouldn't scroll out of view when user is moving horizontally across the grid.
@@ -153,9 +183,15 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
             Alignment = JqGridOptionsDefaults.ColumnModel.Alignment;
             CellAttributes = null;
             Classes = null;
+            DateFormat = JqGridOptionsDefaults.ColumnModel.DateFormat;
+            Editable = JqGridOptionsDefaults.ColumnModel.Editable;
+            EditOptions = null;
+            EditRules = null;
+            EditType = JqGridOptionsDefaults.ColumnModel.EditType;
             Fixed = JqGridOptionsDefaults.ColumnModel.Fixed;
             Formatter = String.Empty;
             FormatterOptions = null;
+            FormOptions = null;
             Frozen = JqGridOptionsDefaults.ColumnModel.Frozen;
             HideInDialog = JqGridOptionsDefaults.ColumnModel.HideInDialog;
             Index = String.Empty;
