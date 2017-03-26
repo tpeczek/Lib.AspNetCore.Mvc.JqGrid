@@ -72,6 +72,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             JqGridColumnSortableAttribute jqGridColumnSortableAttribute = null;
             JqGridColumnFormatterAttribute jqGridColumnFormatterAttribute = null;
             JqGridColumnSearchableAttribute jqGridColumnSearchableAttribute = null;
+            JqGridColumnEditableAttribute jqGridColumnEditableAttribute = null;
             JqGridColumnSummaryAttribute jqGridColumnSummaryAttribute = null;
 
             foreach (Attribute customAttribute in columnMetadata.ContainerType.GetProperty(columnMetadata.PropertyName).GetCustomAttributes(true))
@@ -82,6 +83,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 jqGridColumnSortableAttribute = (customAttribute as JqGridColumnSortableAttribute) ?? jqGridColumnSortableAttribute;
                 jqGridColumnFormatterAttribute = (customAttribute as JqGridColumnFormatterAttribute) ?? jqGridColumnFormatterAttribute;
                 jqGridColumnSearchableAttribute = (customAttribute as JqGridColumnSearchableAttribute) ?? jqGridColumnSearchableAttribute;
+                jqGridColumnEditableAttribute = (customAttribute as JqGridColumnEditableAttribute) ?? jqGridColumnEditableAttribute;
                 jqGridColumnSummaryAttribute = (customAttribute as JqGridColumnSummaryAttribute) ?? jqGridColumnSummaryAttribute;
             }
 
@@ -93,6 +95,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel = SetSortOptions(columnModel, jqGridColumnSortableAttribute);
                 columnModel = SetFormatterOptions(columnModel, jqGridColumnFormatterAttribute);
                 columnModel = SetSearchOptions(columnModel, urlHelper, columnMetadata.ModelType, jqGridColumnSearchableAttribute, rangeAttribute);
+                columnModel = SetEditOptions(columnModel, urlHelper, columnMetadata.ModelType, jqGridColumnEditableAttribute, rangeAttribute);
                 columnModel = SetDatePickerDateFormatFromFormatter(columnModel, jqGridColumnFormatterAttribute);
                 columnModel = SetSummaryOptions(columnModel, jqGridColumnSummaryAttribute);
             }
@@ -128,6 +131,22 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel.Sortable = jqGridColumnSortableAttribute.Sortable;
                 columnModel.SortType = jqGridColumnSortableAttribute.SortType;
                 columnModel.SortFunction = jqGridColumnSortableAttribute.SortFunction;
+            }
+
+            return columnModel;
+        }
+
+        private static JqGridColumnModel SetEditOptions(JqGridColumnModel columnModel, IUrlHelper urlHelper, Type modelType, JqGridColumnEditableAttribute jqGridColumnEditableAttribute, RangeAttribute rangeAttribute)
+        {
+            if (jqGridColumnEditableAttribute != null)
+            {
+                columnModel.DateFormat = jqGridColumnEditableAttribute.DateFormat;
+                columnModel.Editable = jqGridColumnEditableAttribute.Editable;
+                columnModel.EditOptions = GetElementOptions(jqGridColumnEditableAttribute.EditOptions, urlHelper, jqGridColumnEditableAttribute);
+                columnModel.EditOptions.PostData = jqGridColumnEditableAttribute.PostData;
+                columnModel.EditRules = GetRules(modelType, jqGridColumnEditableAttribute, rangeAttribute);
+                columnModel.EditType = jqGridColumnEditableAttribute.EditType;
+                columnModel.FormOptions = jqGridColumnEditableAttribute.FormOptions;
             }
 
             return columnModel;
