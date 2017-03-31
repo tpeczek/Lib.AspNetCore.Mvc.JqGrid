@@ -68,6 +68,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
             TimestampAttribute timeStampAttribute = null;
             RangeAttribute rangeAttribute = null;
+            RequiredAttribute requiredAttribute = null;
             JqGridColumnLayoutAttribute jqGridColumnLayoutAttribute = null;
             JqGridColumnSortableAttribute jqGridColumnSortableAttribute = null;
             JqGridColumnFormatterAttribute jqGridColumnFormatterAttribute = null;
@@ -79,6 +80,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             {
                 timeStampAttribute = (customAttribute as TimestampAttribute) ?? timeStampAttribute;
                 rangeAttribute = (customAttribute as RangeAttribute) ?? rangeAttribute;
+                requiredAttribute = (customAttribute as RequiredAttribute) ?? requiredAttribute;
                 jqGridColumnLayoutAttribute = (customAttribute as JqGridColumnLayoutAttribute) ?? jqGridColumnLayoutAttribute;
                 jqGridColumnSortableAttribute = (customAttribute as JqGridColumnSortableAttribute) ?? jqGridColumnSortableAttribute;
                 jqGridColumnFormatterAttribute = (customAttribute as JqGridColumnFormatterAttribute) ?? jqGridColumnFormatterAttribute;
@@ -95,7 +97,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel = SetSortOptions(columnModel, jqGridColumnSortableAttribute);
                 columnModel = SetFormatterOptions(columnModel, jqGridColumnFormatterAttribute);
                 columnModel = SetSearchOptions(columnModel, urlHelper, columnMetadata.ModelType, jqGridColumnSearchableAttribute, rangeAttribute);
-                columnModel = SetEditOptions(columnModel, urlHelper, columnMetadata.ModelType, jqGridColumnEditableAttribute, rangeAttribute);
+                columnModel = SetEditOptions(columnModel, urlHelper, columnMetadata.ModelType, jqGridColumnEditableAttribute, rangeAttribute, requiredAttribute);
                 columnModel = SetDatePickerDateFormatFromFormatter(columnModel, jqGridColumnFormatterAttribute);
                 columnModel = SetSummaryOptions(columnModel, jqGridColumnSummaryAttribute);
             }
@@ -136,7 +138,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return columnModel;
         }
 
-        private static JqGridColumnModel SetEditOptions(JqGridColumnModel columnModel, IUrlHelper urlHelper, Type modelType, JqGridColumnEditableAttribute jqGridColumnEditableAttribute, RangeAttribute rangeAttribute)
+        private static JqGridColumnModel SetEditOptions(JqGridColumnModel columnModel, IUrlHelper urlHelper, Type modelType, JqGridColumnEditableAttribute jqGridColumnEditableAttribute, RangeAttribute rangeAttribute, RequiredAttribute requiredAttribute)
         {
             if (jqGridColumnEditableAttribute != null)
             {
@@ -144,7 +146,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel.Editable = jqGridColumnEditableAttribute.Editable;
                 columnModel.EditOptions = GetElementOptions(jqGridColumnEditableAttribute.EditOptions, urlHelper, jqGridColumnEditableAttribute);
                 columnModel.EditOptions.PostData = jqGridColumnEditableAttribute.PostData;
-                columnModel.EditRules = GetRules(modelType, jqGridColumnEditableAttribute, rangeAttribute);
+                columnModel.EditRules = GetRules(modelType, jqGridColumnEditableAttribute, rangeAttribute, requiredAttribute);
                 columnModel.EditType = jqGridColumnEditableAttribute.EditType;
                 columnModel.FormOptions = jqGridColumnEditableAttribute.FormOptions;
             }
@@ -170,7 +172,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             {
                 columnModel.Searchable = jqGridColumnSearchableAttribute.Searchable;
                 columnModel.SearchOptions = GetElementOptions(jqGridColumnSearchableAttribute.SearchOptions, urlHelper, jqGridColumnSearchableAttribute);
-                columnModel.SearchRules = GetRules(modelType, jqGridColumnSearchableAttribute, rangeAttribute);
+                columnModel.SearchRules = GetRules(modelType, jqGridColumnSearchableAttribute, rangeAttribute, null);
                 columnModel.SearchType = jqGridColumnSearchableAttribute.SearchType;
             }
 
@@ -195,12 +197,17 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return elementOptions;
         }
 
-        private static JqGridColumnRules GetRules(Type modelType, JqGridColumnElementAttribute jqGridColumnElementAttribute, RangeAttribute rangeAttribute)
+        private static JqGridColumnRules GetRules(Type modelType, JqGridColumnElementAttribute jqGridColumnElementAttribute, RangeAttribute rangeAttribute, RequiredAttribute requiredAttribute)
         {
             JqGridColumnRules rules = jqGridColumnElementAttribute.Rules;
 
             if (rules != null)
             {
+                if (requiredAttribute != null)
+                {
+                    rules.Required = true;
+                }
+
                 if (rangeAttribute != null)
                 {
                     rules.MaxValue = Convert.ToDouble(rangeAttribute.Maximum);

@@ -44,6 +44,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (parametersNames.TotalRows == JqGridOptionsDefaults.Request.TotalRows);
         }
 
+        internal static bool AreDefault(this JqGridColumnEditOptions editOptions)
+        {
+            return String.IsNullOrWhiteSpace(editOptions.CustomElementFunction)
+                && String.IsNullOrWhiteSpace(editOptions.CustomValueFunction)
+                && (editOptions.NullIfEmpty == JqGridOptionsDefaults.ColumnModel.Editing.NullIfEmpty)
+                && String.IsNullOrWhiteSpace(editOptions.PostDataScript)
+                && (editOptions.PostData == null)
+                && (editOptions as JqGridColumnElementOptions).AreDefault();
+        }
+
         internal static bool AreDefault(this JqGridColumnSearchOptions searchOptions)
         {
             return (searchOptions.ClearSearch == JqGridOptionsDefaults.ColumnModel.Searching.ClearSearch)
@@ -90,6 +100,15 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (columnRules.Required == JqGridOptionsDefaults.ColumnModel.Rules.Required)
                 && (columnRules.Time == JqGridOptionsDefaults.ColumnModel.Rules.Time)
                 && (columnRules.Url == JqGridOptionsDefaults.ColumnModel.Rules.Url);
+        }
+
+        internal static bool AreDefault(this JqGridColumnFormOptions formOptions)
+        {
+            return !formOptions.ColumnPosition.HasValue
+                && String.IsNullOrEmpty(formOptions.ElementPrefix)
+                && String.IsNullOrEmpty(formOptions.ElementSuffix)
+                && String.IsNullOrEmpty(formOptions.Label)
+                && !formOptions.RowPosition.HasValue;
         }
 
         internal static bool AreDefault(this JqGridColumnFormatterOptions formatterOptions, string formatter)

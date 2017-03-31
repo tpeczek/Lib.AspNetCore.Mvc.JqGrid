@@ -43,7 +43,12 @@
             internal const string ALIGNMENT = "align";
             internal const string CELL_ATTRIBUTES = "cellattr";
             internal const string CLASSES = "classes";
+            internal const string EDITABLE = "editable";
+            internal const string EDIT_TYPE = "edittype";
+            internal const string EDIT_RULES = "editrules";
+            internal const string EDIT_OPTIONS = "editoptions";
             internal const string FIXED = "fixed";
+            internal const string FORM_OPTIONS = "formoptions";
             internal const string FROZEN = "frozen";
             internal const string HIDE_IN_DIALOG = "hidedlg";
             internal const string INDEX = "index";
@@ -79,6 +84,23 @@
                     internal const string DATA = "data";
                     internal const string FUNCTION = "fn";
                 }
+            }
+
+            internal static class Editing
+            {
+                internal const string CUSTOM_ELEMENT = "custom_element";
+                internal const string CUSTOM_VALUE = "custom_value";
+                internal const string NULL_IF_EMPTY = "NullIfEmpty";
+                internal const string POST_DATA = "postData";
+            }
+
+            internal static class FormOptions
+            {
+                internal const string COLUMN_POSITION = "colpos";
+                internal const string ELEMENT_PREFIX = "elmprefix";
+                internal const string ELEMENT_SUFFIX = "elmsuffix";
+                internal const string LABEL = "label";
+                internal const string ROW_POSITION = "rowpos";
             }
 
             internal static class JQueryUIWidgets

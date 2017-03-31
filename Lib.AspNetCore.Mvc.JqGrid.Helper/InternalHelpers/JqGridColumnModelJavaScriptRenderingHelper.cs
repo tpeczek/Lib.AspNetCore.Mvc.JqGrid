@@ -74,6 +74,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.TITLE, columnModel.Title, JqGridOptionsDefaults.ColumnModel.Title)
                     .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ColumnModel.WIDTH, columnModel.Width, JqGridOptionsDefaults.ColumnModel.Width)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.VIEWABLE, columnModel.Viewable, JqGridOptionsDefaults.ColumnModel.Viewable)
+                    .AppendColumnModelEditOptions(columnModel, options, asSubgrid)
                     .AppendColumnModelSearchOptions(columnModel, options, asSubgrid)
                     .AppendColumnModelSortOptions(columnModel)
                     .AppendColumnModelSummaryOptions(columnModel, options)
@@ -108,13 +109,68 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         #endregion
 
         #region Private Methods
+        private static StringBuilder AppendColumnModelEditOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel, JqGridOptions options, bool asSubgrid)
+        {
+            javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.EDITABLE, columnModel.Editable, JqGridOptionsDefaults.ColumnModel.Editable);
+
+            if (columnModel.Editable)
+            {
+                bool isJQueryUIElement = (columnModel.EditType == JqGridColumnEditTypes.JQueryUIAutocomplete) || (columnModel.EditType == JqGridColumnEditTypes.JQueryUIDatepicker) || (columnModel.EditType == JqGridColumnEditTypes.JQueryUISpinner);
+                if (!isJQueryUIElement)
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.ColumnModel.EDIT_TYPE, columnModel.EditType, JqGridOptionsDefaults.ColumnModel.EditType);
+                }
+
+                if ((columnModel.EditOptions != null) && (isJQueryUIElement || !columnModel.EditOptions.AreDefault()))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.ColumnModel.EDIT_OPTIONS)
+                        .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Editing.CUSTOM_ELEMENT, columnModel.EditOptions.CustomElementFunction)
+                        .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Editing.CUSTOM_VALUE, columnModel.EditOptions.CustomValueFunction)
+                        .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Editing.NULL_IF_EMPTY, columnModel.EditOptions.NullIfEmpty, JqGridOptionsDefaults.ColumnModel.Editing.NullIfEmpty);
+
+                    if (!String.IsNullOrWhiteSpace(columnModel.EditOptions.PostDataScript))
+                    {
+                        javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Editing.POST_DATA, columnModel.EditOptions.PostDataScript);
+                    }
+                    else if (columnModel.EditOptions.PostData != null)
+                    {
+                        javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Editing.POST_DATA, columnModel.EditOptions.PostData);
+                    }
+
+                    if ((columnModel.EditOptions.HtmlAttributes != null) && (columnModel.EditOptions.HtmlAttributes.Count > 0))
+                    {
+                        javaScriptBuilder.AppendJavaScriptObjectObjectPropertiesFields(columnModel.EditOptions.HtmlAttributes);
+                    }
+
+                    switch (columnModel.EditType)
+                    {
+                        case JqGridColumnEditTypes.JQueryUIAutocomplete:
+                            javaScriptBuilder.AppendColumnModelJQueryUIAutocompleteDataInit(columnModel.EditOptions);
+                            break;
+                        case JqGridColumnEditTypes.JQueryUIDatepicker:
+                            javaScriptBuilder.AppendColumnModelJQueryUIDatepickerDataInit(columnModel.EditOptions, options, asSubgrid);
+                            break;
+                        case JqGridColumnEditTypes.JQueryUISpinner:
+                            javaScriptBuilder.AppendColumnModelJQueryUISpinnerDataInit(columnModel.EditOptions);
+                            break;
+                    }
+
+                    javaScriptBuilder.AppendColumnModelElementOptions(columnModel.EditOptions, isJQueryUIElement)
+                        .AppendJavaScriptObjectFieldClosing();
+                }
+
+                javaScriptBuilder.AppendColumnModelRules(JqGridOptionsNames.ColumnModel.EDIT_RULES, columnModel.EditRules)
+                    .AppendColumnModelFormOptions(columnModel.FormOptions);
+            }
+
+            return javaScriptBuilder;
+        }
+
         private static StringBuilder AppendColumnModelSearchOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel, JqGridOptions options, bool asSubgrid)
         {
-            if (columnModel.Searchable != JqGridOptionsDefaults.ColumnModel.Searchable)
-            {
-                javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.SEARCHABLE, columnModel.Searchable);
-            }
-            else
+            javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.SEARCHABLE, columnModel.Searchable, JqGridOptionsDefaults.ColumnModel.Searchable);
+            
+            if (columnModel.Searchable)
             {
                 bool isJQueryUIElement = (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUIAutocomplete) || (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUIDatepicker) || (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUISpinner);
                 if (!isJQueryUIElement)
@@ -175,6 +231,22 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Rules.REQUIRED, columnRules.Required, JqGridOptionsDefaults.ColumnModel.Rules.Required)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Rules.TIME, columnRules.Time, JqGridOptionsDefaults.ColumnModel.Rules.Time)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Rules.URL, columnRules.Url, JqGridOptionsDefaults.ColumnModel.Rules.Url)
+                    .AppendJavaScriptObjectFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendColumnModelFormOptions(this StringBuilder javaScriptBuilder, JqGridColumnFormOptions formOptions)
+        {
+            if ((formOptions != null) && !formOptions.AreDefault())
+            {
+                javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.ColumnModel.FORM_OPTIONS)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ColumnModel.FormOptions.COLUMN_POSITION, formOptions.ColumnPosition)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.FormOptions.ELEMENT_PREFIX, formOptions.ElementPrefix)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.FormOptions.ELEMENT_SUFFIX, formOptions.ElementSuffix)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.FormOptions.LABEL, formOptions.Label)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ColumnModel.FormOptions.ROW_POSITION, formOptions.RowPosition)
                     .AppendJavaScriptObjectFieldClosing();
             }
 
