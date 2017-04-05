@@ -10,6 +10,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
     internal static class JqGridNavigatorJavaScriptRenderingHelper
     {
+        #region Fields
+        private const string NULL_NAVIGATOR_OPTIONS = ",null";
+        #endregion
+
         #region Extension Methods
         internal static StringBuilder AppendInlineNavigatorActionOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorActionOptions inlineNavigatorActionOptions)
         {
@@ -37,11 +41,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 javaScriptBuilder.AppendLine(")")
                     .AppendFormat(".jqGrid('navGrid',{0}", options.GetJqGridPagerSelector(options.Navigator.Pager, asSubgrid))
                     .AppendNavigatorOptions(options.Navigator)
-                    .Append(",{}")  // TODO: EDIT OPTIONS
-                    .Append(",{}")  // TODO: ADD OPTIONS
-                    .Append(",{}")  // TODO: DELETE OPTIONS
+                    .AppendNavigatorEditActionOptions(null, options.Navigator.EditOptions)
+                    .Append(NULL_NAVIGATOR_OPTIONS)  // TODO: ADD OPTIONS
+                    .AppendNavigatorDeleteActionOptions(null, options.Navigator.DeleteOptions)
                     .AppendNavigatorSearchActionOptions(options.Navigator.SearchOptions)
-                    .Append(",{}"); // TODO: VIEW OPTIONS
+                    .Append(NULL_NAVIGATOR_OPTIONS); // TODO: VIEW OPTIONS
             }
 
             return javaScriptBuilder;
@@ -105,7 +109,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             {
                 if (String.IsNullOrWhiteSpace(fieldName))
                 {
-                    javaScriptBuilder.AppendJavaScriptObjectOpening();
+                    javaScriptBuilder.Append(",").AppendJavaScriptObjectOpening();
                 }
                 else
                 {
@@ -141,8 +145,20 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ON_CLICK_PG_BUTTONS, navigatorEditActionOptions.OnClickPgButtons)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ON_INITIALIZE_FORM, navigatorEditActionOptions.OnInitializeForm)
                     .AppendFormButtonIcon(JqGridOptionsNames.Navigator.SAVE_ICON, navigatorEditActionOptions.SaveButtonIcon, JqGridFormButtonIcon.SaveIcon)
-                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.TOP_INFO, navigatorEditActionOptions.TopInfo)
-                    .AppendJavaScriptObjectFieldClosing();
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.TOP_INFO, navigatorEditActionOptions.TopInfo);
+
+                if (String.IsNullOrWhiteSpace(fieldName))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectClosing();
+                }
+                else
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
+                }
+            }
+            else if (String.IsNullOrWhiteSpace(fieldName))
+            {
+                javaScriptBuilder.Append(NULL_NAVIGATOR_OPTIONS);
             }
 
             return javaScriptBuilder;
@@ -154,7 +170,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             {
                 if (String.IsNullOrWhiteSpace(fieldName))
                 {
-                    javaScriptBuilder.AppendJavaScriptObjectOpening();
+                    javaScriptBuilder.Append(",").AppendJavaScriptObjectOpening();
                 }
                 else
                 {
@@ -167,8 +183,20 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.Navigator.DELETE_EXTRA_DATA, navigatorDeleteActionOptions.ExtraDataScript, navigatorDeleteActionOptions.ExtraData)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.SERIALIZE_DELETE_DATA, navigatorDeleteActionOptions.SerializeData)
                     .AppendFormButtonIcon(JqGridOptionsNames.Navigator.DELETE_ICON, navigatorDeleteActionOptions.DeleteButtonIcon, JqGridFormButtonIcon.DeleteIcon)
-                    .AppendFormButtonIcon(JqGridOptionsNames.Navigator.CANCEL_ICON, navigatorDeleteActionOptions.CancelButtonIcon, JqGridFormButtonIcon.CancelIcon)
-                    .AppendJavaScriptObjectFieldClosing();
+                    .AppendFormButtonIcon(JqGridOptionsNames.Navigator.CANCEL_ICON, navigatorDeleteActionOptions.CancelButtonIcon, JqGridFormButtonIcon.CancelIcon);
+
+                if (String.IsNullOrWhiteSpace(fieldName))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectClosing();
+                }
+                else
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
+                }
+            }
+            else if (String.IsNullOrWhiteSpace(fieldName))
+            {
+                javaScriptBuilder.Append(NULL_NAVIGATOR_OPTIONS);
             }
 
             return javaScriptBuilder;
@@ -213,7 +241,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
         private static StringBuilder AppendNavigatorPageableFormActionOptions(this StringBuilder javaScriptBuilder, IJqGridNavigatorPageableFormActionOptions navigatorPageableFormActionOptions)
         {
-            if ((navigatorPageableFormActionOptions.NavigationKeys != null) && navigatorPageableFormActionOptions.NavigationKeys.IsDefault())
+            if ((navigatorPageableFormActionOptions.NavigationKeys != null) && !navigatorPageableFormActionOptions.NavigationKeys.IsDefault())
             {
                 javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.Navigator.NAVIGATION_KEYS)
                     .AppendJavaScriptArrayBooleanValue(navigatorPageableFormActionOptions.NavigationKeys.Enabled)
@@ -271,7 +299,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
             else
             {
-                javaScriptBuilder.Append(",null");
+                javaScriptBuilder.Append(NULL_NAVIGATOR_OPTIONS);
             }
 
             return javaScriptBuilder;
