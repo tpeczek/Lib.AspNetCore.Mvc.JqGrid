@@ -45,7 +45,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendNavigatorEditActionOptions(null, options.Navigator.AddOptions)
                     .AppendNavigatorDeleteActionOptions(null, options.Navigator.DeleteOptions)
                     .AppendNavigatorSearchActionOptions(options.Navigator.SearchOptions)
-                    .Append(NULL_NAVIGATOR_OPTIONS); // TODO: VIEW OPTIONS
+                    .AppendNavigatorViewActionOptions(options.Navigator.ViewOptions);
             }
 
             return javaScriptBuilder;
@@ -229,6 +229,27 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.ON_CLICK_SUBMIT, navigatorModifyActionOptions.OnClickSubmit)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.RELOAD_AFTER_SUBMIT, navigatorModifyActionOptions.ReloadAfterSubmit, JqGridOptionsDefaults.Navigator.ReloadAfterSubmit)
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.URL, navigatorModifyActionOptions.Url);
+        }
+
+        private static StringBuilder AppendNavigatorViewActionOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorViewActionOptions navigatorViewActionOptions)
+        {
+            if ((navigatorViewActionOptions != null) && !navigatorViewActionOptions.AreDefault())
+            {
+                javaScriptBuilder.Append(",")
+                    .AppendJavaScriptObjectOpening()
+                    .AppendNavigatorFormActionOptions(navigatorViewActionOptions)
+                    .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.WIDTH, navigatorViewActionOptions.Width, JqGridOptionsDefaults.Navigator.ViewActionWidth)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.LABELS_WIDTH, navigatorViewActionOptions.LabelsWidth, JqGridOptionsDefaults.Navigator.LabelsWidth)
+                    .AppendFormButtonIcon(JqGridOptionsNames.Navigator.CLOSE_ICON, navigatorViewActionOptions.CloseButtonIcon, JqGridFormButtonIcon.CloseIcon)
+                    .AppendNavigatorPageableFormActionOptions(navigatorViewActionOptions)
+                    .AppendJavaScriptObjectClosing();
+            }
+            else
+            {
+                javaScriptBuilder.Append(NULL_NAVIGATOR_OPTIONS);
+            }
+
+            return javaScriptBuilder;
         }
 
         private static StringBuilder AppendNavigatorFormActionOptions(this StringBuilder javaScriptBuilder, JqGridNavigatorFormActionOptions navigatorFormActionOptions)

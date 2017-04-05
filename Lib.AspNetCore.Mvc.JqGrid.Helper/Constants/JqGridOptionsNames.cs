@@ -301,6 +301,7 @@
             internal const string ERROR_TEXT_FORMAT = "errorTextFormat";
             internal const string DRAGABLE = "drag";
             internal const string HEIGHT = "height";
+            internal const string LABELS_WIDTH = "labelswidth";
             internal const string LAYER = "layer";
             internal const string LEFT = "left";
             internal const string MODAL = "modal";
