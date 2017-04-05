@@ -42,7 +42,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendFormat(".jqGrid('navGrid',{0}", options.GetJqGridPagerSelector(options.Navigator.Pager, asSubgrid))
                     .AppendNavigatorOptions(options.Navigator)
                     .AppendNavigatorEditActionOptions(null, options.Navigator.EditOptions)
-                    .Append(NULL_NAVIGATOR_OPTIONS)  // TODO: ADD OPTIONS
+                    .AppendNavigatorEditActionOptions(null, options.Navigator.AddOptions)
                     .AppendNavigatorDeleteActionOptions(null, options.Navigator.DeleteOptions)
                     .AppendNavigatorSearchActionOptions(options.Navigator.SearchOptions)
                     .Append(NULL_NAVIGATOR_OPTIONS); // TODO: VIEW OPTIONS
