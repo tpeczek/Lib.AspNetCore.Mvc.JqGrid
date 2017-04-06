@@ -35,6 +35,21 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public string Caption { get; set; }
 
         /// <summary>
+        /// Gets or sets the value indicating if cell editing is enabled
+        /// </summary>
+        public bool CellEditingEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or sets the cell editing submit mode
+        /// </summary>
+        public JqGridCellEditingSubmitModes CellEditingSubmitMode { get; set; }
+
+        /// <summary>
+        /// Gets or set the URL for cell editing submit
+        /// </summary>
+        public string CellEditingUrl { get; set; }
+
+        /// <summary>
         /// Gets the list of columns parameters descriptions.
         /// </summary>
         public IReadOnlyList<JqGridColumnModel> ColumnsModels { get { return (IReadOnlyList<JqGridColumnModel>)_columnsModels; } }
@@ -220,6 +235,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             CompatibilityMode = JqGridCompatibilityModes.JqGrid;
             Id = id;
             Caption = null;
+            CellEditingEnabled = JqGridOptionsDefaults.CellEditingEnabled;
+            CellEditingSubmitMode = JqGridOptionsDefaults.CellEditingSubmitMode;
+            CellEditingUrl = null;
             DataString = null;
             DataType = JqGridOptionsDefaults.DataType;
             DynamicScrollingMode = JqGridOptionsDefaults.DynamicScrollingMode;

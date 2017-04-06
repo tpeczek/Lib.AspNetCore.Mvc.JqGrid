@@ -3,6 +3,9 @@
     internal static class JqGridOptionsNames
     {
         internal const string CAPTION = "caption";
+        internal const string CELL_EDITING = "cellEdit";
+        internal const string CELL_EDITING_SUBMIT_MODE = "cellsubmit";
+        internal const string CELL_EDITITNG_URL = "cellurl";
         internal const string COLUMNS_NAMES_FIELD = "colNames";
         internal const string COLUMNS_MODEL_FIELD = "colModel";
         internal const string DATA_STRING = "datastr";

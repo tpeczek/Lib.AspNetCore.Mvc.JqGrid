@@ -14,6 +14,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         internal static StringBuilder AppendOptions(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
         {
             javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.CAPTION, options.Caption)
+                .AppendCellEditing(options)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.DATA_TYPE, options.DataType, JqGridOptionsDefaults.DataType)
                 .AppendDataSource(options, asSubgrid)
                 .AppendGrouping(options)
@@ -43,6 +44,25 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         internal static string GetJqGridPager(JqGridOptions options, bool asSubgrid)
         {
             return asSubgrid ? "$subgridPager" : String.Format("'#{0}'", options.GetJqGridPagerId());
+        }
+
+        private static StringBuilder AppendCellEditing(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            if (options.CellEditingEnabled)
+            {
+                javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.CELL_EDITING, true);
+
+                if (options.CellEditingSubmitMode == JqGridCellEditingSubmitModes.ClientArray)
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.CELL_EDITING_SUBMIT_MODE, "clientArray");
+                }
+                else
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.CELL_EDITITNG_URL, options.CellEditingUrl);
+                }
+            }
+
+            return javaScriptBuilder;
         }
 
         private static StringBuilder AppendDataSource(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)

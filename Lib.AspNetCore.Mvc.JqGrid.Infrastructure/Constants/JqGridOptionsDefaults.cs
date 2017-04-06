@@ -885,6 +885,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         public const string AltClass = "ui-priority-secondary";
 
         /// <summary>
+        /// The value indicating if cell editing is enabled.
+        /// </summary>
+        public const bool CellEditingEnabled = false;
+
+        /// <summary>
+        /// The cell editing submit mode.
+        /// </summary>
+        public const JqGridCellEditingSubmitModes CellEditingSubmitMode = JqGridCellEditingSubmitModes.Remote;
+
+        /// <summary>
         /// The padding plus border width of the cell.
         /// </summary>
         public const int CellLayout = 5;
