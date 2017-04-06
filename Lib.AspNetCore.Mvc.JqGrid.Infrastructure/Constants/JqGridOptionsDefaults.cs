@@ -466,6 +466,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             public const bool HideInDialog = false;
 
             /// <summary>
+            /// The value which defines if this column is hidden at initialization.
+            /// </summary>
+            public const bool Hidden = false;
+
+            /// <summary>
             /// The value which defines if column can be resized.
             /// </summary>
             public const bool Resizable = true;

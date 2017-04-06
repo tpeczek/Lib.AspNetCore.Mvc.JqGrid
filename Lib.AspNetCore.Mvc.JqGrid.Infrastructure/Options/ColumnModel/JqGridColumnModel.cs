@@ -81,6 +81,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         public bool HideInDialog { get; set; }
 
         /// <summary>
+        /// Gets or sets the value which defines if this column is hidden at initialization.
+        /// </summary>
+        public bool Hidden { get; set; }
+
+        /// <summary>
         /// Gets or sets the index name for sorting and searching (default String.Empty)
         /// </summary>
         public string Index { get; set; }
@@ -194,6 +199,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
             FormOptions = null;
             Frozen = JqGridOptionsDefaults.ColumnModel.Frozen;
             HideInDialog = JqGridOptionsDefaults.ColumnModel.HideInDialog;
+            Hidden = JqGridOptionsDefaults.ColumnModel.Hidden;
             Index = String.Empty;
             InitialSortingOrder = JqGridOptionsDefaults.ColumnModel.Sorting.InitialOrder;
             Resizable = JqGridOptionsDefaults.ColumnModel.Resizable;

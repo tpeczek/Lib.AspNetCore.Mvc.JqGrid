@@ -90,7 +90,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
 
             if (timeStampAttribute != null)
-            { }
+            {
+                columnModel.Editable = true;
+                columnModel.Hidden = true;
+            }
             else
             {
                 columnModel = SetLayoutOptions(columnModel, jqGridColumnLayoutAttribute);

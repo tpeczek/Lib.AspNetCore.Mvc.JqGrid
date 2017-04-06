@@ -51,6 +51,7 @@
             internal const string FORM_OPTIONS = "formoptions";
             internal const string FROZEN = "frozen";
             internal const string HIDE_IN_DIALOG = "hidedlg";
+            internal const string HIDDEN = "hidden";
             internal const string INDEX = "index";
             internal const string INITIAL_SORTING_ORDER = "firstsortorder";
             internal const string RESIZABLE = "resizable";
