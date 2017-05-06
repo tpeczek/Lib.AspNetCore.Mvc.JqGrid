@@ -159,6 +159,27 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
         }
 
+        internal static bool AreDefault(this JqGridFilterToolbarOptions filterToolbarOptions)
+        {
+            return (filterToolbarOptions.DefaultSearchOperator == JqGridOptionsDefaults.Filter.Toolbar.DefaultSearchOperator)
+                && (filterToolbarOptions.GroupingOperator == JqGridOptionsDefaults.Filter.Toolbar.GroupingOperator)
+                && ((filterToolbarOptions.Operands == null) || (filterToolbarOptions.Operands.Count == 0))
+                && (filterToolbarOptions.OperandToolTip == JqGridOptionsDefaults.Filter.Toolbar.OperandToolTip)
+                && (filterToolbarOptions.SearchOnEnter == JqGridOptionsDefaults.Filter.Toolbar.SearchOnEnter)
+                && (filterToolbarOptions.SearchOperators == JqGridOptionsDefaults.Filter.Toolbar.SearchOperators)
+                && (filterToolbarOptions.StringResult == JqGridOptionsDefaults.Filter.Toolbar.StringResult)
+                && (filterToolbarOptions as JqGridFilterOptions).AreDefault();
+        }
+
+        internal static bool AreDefault(this JqGridFilterOptions filterOptions)
+        {
+            return String.IsNullOrWhiteSpace(filterOptions.AfterClear)
+                && String.IsNullOrWhiteSpace(filterOptions.AfterSearch)
+                && (filterOptions.AutoSearch == JqGridOptionsDefaults.Filter.AutoSearch)
+                && String.IsNullOrWhiteSpace(filterOptions.BeforeClear)
+                && String.IsNullOrWhiteSpace(filterOptions.BeforeSearch);
+        }
+
         internal static bool AreDefault(this JqGridNavigatorOptions navigatorOptions)
         {
             return (navigatorOptions.AlertCaption == JqGridOptionsDefaults.Navigator.AlertCaption)

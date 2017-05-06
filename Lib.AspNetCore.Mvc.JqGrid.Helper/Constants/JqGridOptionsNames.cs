@@ -203,6 +203,26 @@
             }
         };
 
+        internal static class Filter
+        {
+            internal const string AFTER_CLEAR = "afterClear";
+            internal const string AFTER_SEARCH = "afterSearch";
+            internal const string AUTO_SEARCH = "autosearch";
+            internal const string BEFORE_CLEAR = "beforeClear";
+            internal const string BEFORE_SEARCH = "beforeSearch";
+
+            internal static class Toolbar
+            {
+                internal const string DEFAULT_SEARCH = "defaultSearch";
+                internal const string GROUPING_OPERATOR = "groupOp";
+                internal const string OPERANDS = "operands";
+                internal const string OPERAND_TITLE = "operandTitle";
+                internal const string SEARCH_ON_ENTER = "searchOnEnter";
+                internal const string SEARCH_OPERATORS = "searchOperators";
+                internal const string STRING_RESULT = "stringResult";
+            }
+        }
+
         internal static class GroupingView
         {
             internal const string FIELDS = "groupField";

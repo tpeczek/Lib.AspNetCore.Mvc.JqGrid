@@ -26,6 +26,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                .AppendColumnsModels(options, asSubgrid)
                .AppendOptions(options, asSubgrid)
                .AppendJavaScriptObjectClosing()
+               .AppendFilterToolbar(options.FilterToolbar)
                .AppendNavigator(options, asSubgrid)
                .AppendLine(");");
 

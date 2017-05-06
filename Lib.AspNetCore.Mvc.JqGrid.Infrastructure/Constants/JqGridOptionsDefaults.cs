@@ -1,4 +1,5 @@
 ﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+using System.Collections.Generic;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
 {
@@ -530,6 +531,29 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
                 /// The grouping operator for filters.
                 /// </summary>
                 public const JqGridSearchGroupingOperators GroupingOperator = JqGridSearchGroupingOperators.And;
+
+                /// <summary>
+                /// The default operands.
+                /// </summary>
+                public static readonly IReadOnlyDictionary<JqGridSearchOperators, string> Operands = new Dictionary<JqGridSearchOperators, string>()
+                {
+                    { JqGridSearchOperators.Eq, "==" },
+                    { JqGridSearchOperators.Ne, "!" },
+                    { JqGridSearchOperators.Lt, "<" },
+                    { JqGridSearchOperators.Le, "<=" },
+                    { JqGridSearchOperators.Gt, ">" },
+                    { JqGridSearchOperators.Ge, ">=" },
+                    { JqGridSearchOperators.Bw, "^" },
+                    { JqGridSearchOperators.Bn, "!^" },
+                    { JqGridSearchOperators.In, "=" },
+                    { JqGridSearchOperators.Ni, "!=" },
+                    { JqGridSearchOperators.Ew, "|" },
+                    { JqGridSearchOperators.En, "!@" },
+                    { JqGridSearchOperators.Cn, "~" },
+                    { JqGridSearchOperators.Nc, "!~" },
+                    { JqGridSearchOperators.Nu, "#" },
+                    { JqGridSearchOperators.Nn, "!#" }
+                };
 
                 /// <summary>
                 /// The tooltip for the operation button.

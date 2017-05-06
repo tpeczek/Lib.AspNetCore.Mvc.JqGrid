@@ -41,7 +41,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         /// <summary>
         /// Gets or sets the short texts for search operators which are dispalyed to the user when a operation button is clicked.
         /// </summary>
-        public Dictionary<JqGridSearchOperators, string> Operands { get; set; }
+        public IDictionary<JqGridSearchOperators, string> Operands { get; set; }
 
         /// <summary>
         /// Gets or sets the tooltip for the operation button.
