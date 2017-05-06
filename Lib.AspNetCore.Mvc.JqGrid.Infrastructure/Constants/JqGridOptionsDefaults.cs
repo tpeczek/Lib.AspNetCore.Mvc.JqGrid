@@ -507,6 +507,53 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         }
 
         /// <summary>
+        /// Filter toolbar and grid options.
+        /// </summary>
+        public static class Filter
+        {
+            /// <summary>
+            /// The value indicating if searching is performed automatically.
+            /// </summary>
+            public const bool AutoSearch = true;
+
+            /// <summary>
+            /// Filter toolbar options.
+            /// </summary>
+            public static class Toolbar
+            {
+                /// <summary>
+                /// The default search operator.
+                /// </summary>
+                public const JqGridSearchOperators DefaultSearchOperator = JqGridSearchOperators.Bw;
+
+                /// <summary>
+                /// The grouping operator for filters.
+                /// </summary>
+                public const JqGridSearchGroupingOperators GroupingOperator = JqGridSearchGroupingOperators.And;
+
+                /// <summary>
+                /// The tooltip for the operation button.
+                /// </summary>
+                public const string OperandToolTip = "Click to select search operation.";
+
+                /// <summary>
+                /// The value which defines if the user needs to press Enter key in text input to trigger search or if searching should triggered after typing any character.
+                /// </summary>
+                public const bool SearchOnEnter = true;
+
+                /// <summary>
+                /// The value which defines if user is allowed to select operation when searching.
+                /// </summary>
+                public const bool SearchOperators = false;
+
+                /// <summary>
+                /// The value which defines if filters should be posted as JSON string (the same as in advanced searching) or as key:value pairs.
+                /// </summary>
+                public const bool StringResult = false;
+            }
+        }
+
+        /// <summary>
         /// The options for jqGrid grouping view.
         /// </summary>
         public static class GroupingView

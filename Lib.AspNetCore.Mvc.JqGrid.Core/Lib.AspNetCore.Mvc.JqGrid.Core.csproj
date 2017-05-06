@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <Description>Core server side support for jqGrid in ASP.NET Core.</Description>
     <Copyright>Copyright © 2016 - 2017 Tomasz Pęczek</Copyright>
@@ -19,22 +18,13 @@
     <GenerateAssemblyProductAttribute>true</GenerateAssemblyProductAttribute>
     <GenerateAssemblyCopyrightAttribute>true</GenerateAssemblyCopyrightAttribute>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Infrastructure\Lib.AspNetCore.Mvc.JqGrid.Infrastructure.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="1.1.2" />
   </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
   <Target Name="PostcompileScript" AfterTargets="Build" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">
     <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
   </Target>
-
 </Project>

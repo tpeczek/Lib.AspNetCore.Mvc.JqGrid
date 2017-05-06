@@ -90,6 +90,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public string ExpandColumn { get; set; }
 
         /// <summary>
+        /// Gets or sets the filter toolbar options.
+        /// </summary>
+        public JqGridFilterToolbarOptions FilterToolbar { get; set; }
+
+        /// <summary>
         /// Gets or sets the value indicating if the footer table (with one row) will be placed below the grid records and above the pager. The number of columns equal of these from ColumnsModels.
         /// </summary>
         public bool FooterEnabled { get; set; }

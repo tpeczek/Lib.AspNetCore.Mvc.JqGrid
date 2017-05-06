@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <Description>Strongly typed jqGrid helper for ASP.NET Core.</Description>
     <Copyright>Copyright © 2016 - 2017 Tomasz Pęczek</Copyright>
@@ -19,32 +18,17 @@
     <GenerateAssemblyProductAttribute>true</GenerateAssemblyProductAttribute>
     <GenerateAssemblyCopyrightAttribute>true</GenerateAssemblyCopyrightAttribute>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Infrastructure\Lib.AspNetCore.Mvc.JqGrid.Infrastructure.csproj" />
     <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Core\Lib.AspNetCore.Mvc.JqGrid.Core.csproj" />
     <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.DataAnnotations\Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="1.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Runtime" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
   <Target Name="PostcompileScript" AfterTargets="Build" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">
     <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
   </Target>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
-    <PackageReference Include="System.Runtime" Version="4.3.0" />
-  </ItemGroup>
-
 </Project>

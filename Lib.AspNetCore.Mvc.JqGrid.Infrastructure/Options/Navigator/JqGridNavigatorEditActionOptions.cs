@@ -109,11 +109,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
         /// Gets or sets the function for event which is raised only once when creating the form for editing and adding.
         /// </summary>
         public string OnInitializeForm { get; set; }
-
-        /// <summary>
-        /// Gets or sets the function for event which is raised when error occurs from the ajax call and can be used for better formatting of the error messages.
-        /// </summary>
-        public string ErrorTextFormat { get; set; }
         #endregion
 
         #region Constructor
@@ -144,7 +139,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
             BeforeCheckValues = null;
             OnClickPgButtons = null;
             OnInitializeForm = null;
-            ErrorTextFormat = null;
         }
         #endregion
     }
