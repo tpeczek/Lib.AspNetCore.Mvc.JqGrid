@@ -946,6 +946,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         }
 
         /// <summary>
+        /// The value which determines that the non grouping header cell should have cell above it.
+        /// </summary>
+        public const bool GroupHeadersUseColSpanStyle = false;
+
+        /// <summary>
         /// The value indicating if the grouping is enabled.
         /// </summary>
         public const bool GroupingEnabled = false;

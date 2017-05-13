@@ -3,7 +3,7 @@
 namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid
 {
     /// <summary>
-    /// Class which represents subgrid column for jqGrid.
+    /// Represents subgrid column for jqGrid.
     /// </summary>
     public struct JqGridSubgridColumnModel
     {
@@ -11,22 +11,22 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid
         /// <summary>
         /// The name of the column.
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; }
 
         /// <summary>
         /// The alignment of the column.
         /// </summary>
-        public JqGridAlignments Alignment { get; private set; }
+        public JqGridAlignments Alignment { get; }
 
         /// <summary>
         /// The width of the column.
         /// </summary>
-        public int Width { get; private set; }
+        public int Width { get; }
 
         /// <summary>
         /// The mapping for the column.
         /// </summary>
-        public string Mapping { get; private set; }
+        public string Mapping { get; }
         #endregion
 
         #region Constructors
@@ -48,7 +48,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid
         /// <param name="width">The width of the column.</param>
         /// <param name="mapping">The mapping for the column.</param>
         public JqGridSubgridColumnModel(string name, JqGridAlignments alignment, int width, string mapping)
-            : this()
         {
             Name = name;
             Alignment = alignment;

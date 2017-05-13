@@ -239,6 +239,19 @@
             internal const string MINUS_ICON = "minusicon";
         }
 
+        internal static class HeaderGrouping
+        {
+            internal const string USE_COL_SPAN_STYLE = "useColSpanStyle";
+            internal const string GROUP_HEADERS = "groupHeaders";
+
+            internal static class Group
+            {
+                internal const string START_COLUMN_NAME = "startColumnName";
+                internal const string NUMBER_OF_COLUMNS = "numberOfColumns";
+                internal const string TITLE_TEXT = "titleText";
+            }
+        }
+
         internal static class InlineNavigator
         {
             internal const string KEYS = "keys";

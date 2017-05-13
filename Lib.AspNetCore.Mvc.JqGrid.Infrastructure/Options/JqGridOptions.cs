@@ -100,6 +100,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public bool FooterEnabled { get; set; }
 
         /// <summary>
+        /// Gets or sets the grouping headers.
+        /// </summary>
+        public IEnumerable<JqGridGroupHeader> GroupHeaders { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value which determines if the non grouping header cell should have cell above it (false), or the column should be treated as one combining boot (true).
+        /// </summary>
+        public bool GroupHeadersUseColSpanStyle { get; set; }
+
+        /// <summary>
         /// Gets or sets the value indicating if the grouping is enabled.
         /// </summary>
         public bool GroupingEnabled { get; set; }
@@ -250,6 +260,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             ExpandColumn = null;
             ExpandColumnClick = JqGridOptionsDefaults.ExpandColumnClick;
             FooterEnabled = JqGridOptionsDefaults.FooterEnabled;
+            GroupHeaders = null;
+            GroupHeadersUseColSpanStyle = JqGridOptionsDefaults.GroupHeadersUseColSpanStyle;
             GroupingEnabled = JqGridOptionsDefaults.GroupingEnabled;
             GroupingView = null;
             Height = null;
