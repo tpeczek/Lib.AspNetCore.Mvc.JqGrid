@@ -135,6 +135,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public JqGridMethodTypes MethodType { get; set; }
 
         /// <summary>
+        /// Gets or sets the inline navigator options.
+        /// </summary>
+        public JqGridInlineNavigatorOptions InlineNavigator { get; set; }
+
+        /// <summary>
         /// Gets or sets the navigator options.
         /// </summary>
         public JqGridNavigatorOptions Navigator { get; set; }

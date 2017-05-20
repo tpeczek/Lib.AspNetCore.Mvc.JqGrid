@@ -659,6 +659,36 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             public const string DeleteToolTip = "Delete selected row";
 
             /// <summary>
+            /// The value which defines if cancel action (Inline Navigator) is enabled.
+            /// </summary>
+            public const bool Cancel = true;
+
+            /// <summary>
+            /// The icon (form UI theme images) for cancel action.
+            /// </summary>
+            public const string CancelIcon = "ui-icon-cancel";
+
+            /// <summary>
+            /// The tooltip for cancel action.
+            /// </summary>
+            public const string CancelToolTip = "Cancel row editing";
+
+            /// <summary>
+            /// The value which defines if save action (Inline Navigator) is enabled.
+            /// </summary>
+            public const bool Save = true;
+
+            /// <summary>
+            /// The icon (form UI theme images) for save action.
+            /// </summary>
+            public const string SaveIcon = "ui-icon-disk";
+
+            /// <summary>
+            /// The tooltip for save action.
+            /// </summary>
+            public const string SaveToolTip = "Save row";
+
+            /// <summary>
             /// The value which defines if search action is enabled.
             /// </summary>
             public const bool Search = true;
@@ -943,6 +973,26 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
                 /// </summary>
                 public const char RecordDown = (char)40;
             }
+
+            /// <summary>
+            /// The row id for new row in Inline Nagivator add action.
+            /// </summary>
+            public const string NewRowId = "new_row";
+
+            /// <summary>
+            /// The new row position for Inline Nagivator add action.
+            /// </summary>
+            public const JqGridNewRowPositions NewRowPosition = JqGridNewRowPositions.First;
+
+            /// <summary>
+            /// The value which defines if the DefaultValue from ColumnsModel should be used for Inline Nagivator add action.
+            /// </summary>
+            public const bool UseDefaultValues = false;
+
+            /// <summary>
+            /// The value which defines if formatters should be used for Inline Nagivator add action.
+            /// </summary>
+            public const bool UseFormatter = false;
         }
 
         /// <summary>
