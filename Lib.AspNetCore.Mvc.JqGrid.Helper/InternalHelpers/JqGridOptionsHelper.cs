@@ -180,6 +180,21 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && String.IsNullOrWhiteSpace(filterOptions.BeforeSearch);
         }
 
+        internal static bool AreDefault(this JqGridInlineNavigatorOptions inlineNavigatorOptions)
+        {
+            return (inlineNavigatorOptions.Save == JqGridOptionsDefaults.Navigator.Save)
+                && (inlineNavigatorOptions.SaveIcon == JqGridOptionsDefaults.Navigator.SaveIcon)
+                && String.IsNullOrEmpty(inlineNavigatorOptions.SaveText)
+                && (inlineNavigatorOptions.SaveToolTip == JqGridOptionsDefaults.Navigator.SaveToolTip)
+                && (inlineNavigatorOptions.Cancel == JqGridOptionsDefaults.Navigator.Cancel)
+                && (inlineNavigatorOptions.CancelIcon == JqGridOptionsDefaults.Navigator.CancelIcon)
+                && String.IsNullOrEmpty(inlineNavigatorOptions.CancelText)
+                && (inlineNavigatorOptions.CancelToolTip == JqGridOptionsDefaults.Navigator.CancelToolTip)
+                && ((inlineNavigatorOptions.ActionOptions == null) || inlineNavigatorOptions.ActionOptions.AreDefault())
+                && ((inlineNavigatorOptions.AddActionOptions == null) || inlineNavigatorOptions.AddActionOptions.AreDefault())
+                && (inlineNavigatorOptions as JqGridNavigatorOptionsBase).AreDefault();
+        }
+
         internal static bool AreDefault(this JqGridNavigatorOptions navigatorOptions)
         {
             return (navigatorOptions.AlertCaption == JqGridOptionsDefaults.Navigator.AlertCaption)
@@ -213,7 +228,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && String.IsNullOrEmpty(navigatorOptions.ViewText)
                 && (navigatorOptions.ViewToolTip == JqGridOptionsDefaults.Navigator.ViewToolTip)
                 && ((navigatorOptions.ViewOptions == null) || (navigatorOptions.ViewOptions.AreDefault()))
-                && (navigatorOptions as JqGridNavigatorOptions).AreDefault();
+                && (navigatorOptions as JqGridNavigatorOptionsBase).AreDefault();
         }
 
         private static bool AreDefault(this JqGridNavigatorOptionsBase navigatorOptions)
@@ -227,6 +242,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (navigatorOptions.EditIcon == JqGridOptionsDefaults.Navigator.EditIcon)
                 && String.IsNullOrEmpty(navigatorOptions.EditText)
                 && (navigatorOptions.EditToolTip == JqGridOptionsDefaults.Navigator.EditToolTip);
+        }
+
+        internal static bool AreDefault(this JqGridInlineNavigatorAddActionOptions inlineNavigatorAddActionOptions)
+        {
+            return (inlineNavigatorAddActionOptions.RowId == JqGridOptionsDefaults.Navigator.NewRowId)
+                && (inlineNavigatorAddActionOptions.InitData == null)
+                && (inlineNavigatorAddActionOptions.NewRowPosition == JqGridOptionsDefaults.Navigator.NewRowPosition)
+                && (inlineNavigatorAddActionOptions.UseDefaultValues == JqGridOptionsDefaults.Navigator.UseDefaultValues)
+                && (inlineNavigatorAddActionOptions.UseFormatter == JqGridOptionsDefaults.Navigator.UseFormatter)
+                && (inlineNavigatorAddActionOptions as JqGridInlineNavigatorActionOptions).AreDefault();
         }
 
         internal static bool AreDefault(this JqGridInlineNavigatorActionOptions inlineNavigatorActionOptions)

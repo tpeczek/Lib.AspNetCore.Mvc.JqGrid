@@ -15,10 +15,50 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         #endregion
 
         #region Extension Methods
-        internal static StringBuilder AppendInlineNavigatorActionOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorActionOptions inlineNavigatorActionOptions)
+        internal static StringBuilder AppendInlineNavigator(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
+        {
+            if (options.InlineNavigator != null)
+            {
+                javaScriptBuilder.AppendLine(")")
+                    .AppendFormat(".jqGrid('inlineNav',{0}", options.GetJqGridPagerSelector(options.Navigator.Pager, asSubgrid))
+                    .AppendInlineNavigatorOptions(options.InlineNavigator);
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendInlineNavigatorOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorOptions inlineNavigatorOptions)
+        {
+            if ((inlineNavigatorOptions != null) && !inlineNavigatorOptions.AreDefault())
+            {
+                javaScriptBuilder.Append(",")
+                    .AppendJavaScriptObjectOpening()
+                    .AppendBaseNavigatorOptions(inlineNavigatorOptions)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.SAVE, inlineNavigatorOptions.Save, JqGridOptionsDefaults.Navigator.Save)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.SAVE_ICON, inlineNavigatorOptions.SaveIcon, JqGridOptionsDefaults.Navigator.SaveIcon)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.SAVE_TEXT, inlineNavigatorOptions.SaveText)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.SAVE_TITLE, inlineNavigatorOptions.SaveToolTip, JqGridOptionsDefaults.Navigator.SaveToolTip)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.CANCEL, inlineNavigatorOptions.Cancel, JqGridOptionsDefaults.Navigator.Cancel)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.CANCEL_ICON, inlineNavigatorOptions.CancelIcon, JqGridOptionsDefaults.Navigator.CancelIcon)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.CANCEL_TEXT, inlineNavigatorOptions.CancelText)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.CANCEL_TITLE, inlineNavigatorOptions.CancelToolTip, JqGridOptionsDefaults.Navigator.CancelToolTip)
+                    .AppendInlineNavigatorActionOptions(JqGridOptionsNames.Navigator.EDIT_PARAMETERS, inlineNavigatorOptions.ActionOptions)
+                    .AppendInlineNavigatorAddActionOptions(inlineNavigatorOptions.AddActionOptions)
+                    .AppendJavaScriptObjectClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendInlineNavigatorActionOptions(this StringBuilder javaScriptBuilder, string fieldName, JqGridInlineNavigatorActionOptions inlineNavigatorActionOptions)
         {
             if ((inlineNavigatorActionOptions != null) && !inlineNavigatorActionOptions.AreDefault())
             {
+                if (!String.IsNullOrWhiteSpace(fieldName))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectFieldOpening(fieldName);
+                }
+
                 javaScriptBuilder.AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.InlineNavigator.EXTRA_PARAM, inlineNavigatorActionOptions.ExtraParamScript, inlineNavigatorActionOptions.ExtraParam)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.InlineNavigator.KEYS, inlineNavigatorActionOptions.Keys, JqGridOptionsDefaults.Navigator.InlineActionKeys)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.ON_EDIT_FUNCTION, inlineNavigatorActionOptions.OnEditFunction)
@@ -29,6 +69,28 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.AFTER_RESTORE_FUNCTION, inlineNavigatorActionOptions.AfterRestoreFunction)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.InlineNavigator.RESTORE_AFTER_ERROR, inlineNavigatorActionOptions.RestoreAfterError, JqGridOptionsDefaults.Navigator.InlineActionRestoreAfterError)
                     .AppendJavaScriptObjectEnumField(JqGridOptionsNames.InlineNavigator.METHOD_TYPE, inlineNavigatorActionOptions.MethodType, JqGridOptionsDefaults.Navigator.InlineActionMethodType);
+
+                if (!String.IsNullOrWhiteSpace(fieldName))
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
+                }
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendInlineNavigatorAddActionOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorAddActionOptions inlineNavigatorAddActionOptions)
+        {
+            if ((inlineNavigatorAddActionOptions != null) && !inlineNavigatorAddActionOptions.AreDefault())
+            {
+                javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.Navigator.ADD_PARAMETERS)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.ROW_ID, inlineNavigatorAddActionOptions.RowId, JqGridOptionsDefaults.Navigator.NewRowId)
+                    .AppendJavaScriptObjectObjectField(JqGridOptionsNames.Navigator.INIT_DATA, inlineNavigatorAddActionOptions.InitData)
+                    .AppendJavaScriptObjectEnumField(JqGridOptionsNames.Navigator.POSITION, inlineNavigatorAddActionOptions.NewRowPosition, JqGridOptionsDefaults.Navigator.NewRowPosition)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.USE_DEFAULT_VALUES, inlineNavigatorAddActionOptions.UseDefaultValues, JqGridOptionsDefaults.Navigator.UseDefaultValues)
+                    .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.USE_FORMATTER, inlineNavigatorAddActionOptions.UseFormatter, JqGridOptionsDefaults.Navigator.UseFormatter)
+                    .AppendInlineNavigatorActionOptions(JqGridOptionsNames.Navigator.ADD_ROW_PARAMETERS, inlineNavigatorAddActionOptions)
+                    .AppendJavaScriptObjectFieldClosing();
             }
 
             return javaScriptBuilder;

@@ -29,6 +29,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                .AppendHeaderGrouping(options)
                .AppendFilterToolbar(options.FilterToolbar)
                .AppendNavigator(options, asSubgrid)
+               .AppendInlineNavigator(options, asSubgrid)
                .AppendLine(");");
 
             return javaScriptBuilder;

@@ -15,6 +15,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         {
             javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.CAPTION, options.Caption)
                 .AppendCellEditing(options)
+                .AppendJavaScriptObjectStringField(JqGridOptionsNames.EDITITNG_URL, options.EditingUrl)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.DATA_TYPE, options.DataType, JqGridOptionsDefaults.DataType)
                 .AppendDataSource(options, asSubgrid)
                 .AppendGrouping(options)

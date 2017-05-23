@@ -79,6 +79,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         #region Private Methods
         private static void ValidateJqGridConstraints(JqGridOptions options)
         {
+            if ((options.InlineNavigator != null) && (options.Navigator == null))
+            {
+                throw new InvalidOperationException("In order to set up Inline Navigator you must set up Navigator as well.");
+            }
+
             if ((options.SubgridModel != null) && (options.SubgridOptions != null))
             {
                 throw new InvalidOperationException("Subgrid model and subgrid options can't be used at the same time.");

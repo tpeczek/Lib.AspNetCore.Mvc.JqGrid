@@ -580,7 +580,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 }
                 else
                 {
-                    javaScriptBuilder.AppendInlineNavigatorActionOptions(formatterOptions.InlineEditingOptions);
+                    javaScriptBuilder.AppendInlineNavigatorActionOptions(null, formatterOptions.InlineEditingOptions);
                 }
             }
 

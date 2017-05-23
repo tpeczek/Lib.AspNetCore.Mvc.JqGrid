@@ -12,6 +12,7 @@
         internal const string DATA_TYPE = "datatype";
         internal const string DYNAMIC_SCROLLING_MODE = "scroll";
         internal const string DYNAMIC_SCROLLING_TIMEOUT = "scrollTimeout";
+        internal const string EDITITNG_URL = "editurl";
         internal const string EXPAND_COLUMN = "ExpandColumn";
         internal const string EXPAND_COLUMN_CLICK = "ExpandColClick";
         internal const string FOOTER_ENABLED = "footerrow";
@@ -286,6 +287,8 @@
             internal const string ADD_FUNCTION = "addfunc";
             internal const string ADD_TEXT = "addtext";
             internal const string ADD_TITLE = "addtitle";
+            internal const string ADD_PARAMETERS = "addParams";
+            internal const string ADD_ROW_PARAMETERS = "addRowParams";
             internal const string ADDED_ROW_POSITION = "addedrow";
             internal const string ADVANCED_SEARCHING = "multipleSearch";
             internal const string ADVANCED_SEARCHING_WITH_GROUPS = "multipleGroup";
@@ -307,7 +310,10 @@
             internal const string BEFORE_SHOW_SEARCH = "beforeShowSearch";
             internal const string BEFORE_SUBMIT = "beforeSubmit";
             internal const string BOTTOM_INFO = "bottominfo";
+            internal const string CANCEL = "cancel";
             internal const string CANCEL_ICON = "cancelicon";
+            internal const string CANCEL_TEXT = "canceltext";
+            internal const string CANCEL_TITLE = "canceltitle";
             internal const string CAPTION = "caption";
             internal const string CHECK_ON_SUBMIT = "checkOnSubmit";
             internal const string CHECK_ON_UPDATE = "checkOnUpdate";
@@ -334,10 +340,12 @@
             internal const string EDIT_TEXT = "addtext";
             internal const string EDIT_TITLE = "edittitle";
             internal const string EDIT_EXTRA_DATA = "editData";
+            internal const string EDIT_PARAMETERS = "editParams";
             internal const string ERROR_CHECK = "errorcheck";
             internal const string ERROR_TEXT_FORMAT = "errorTextFormat";
             internal const string DRAGABLE = "drag";
             internal const string HEIGHT = "height";
+            internal const string INIT_DATA = "initdata";
             internal const string LABELS_WIDTH = "labelswidth";
             internal const string LAYER = "layer";
             internal const string LEFT = "left";
@@ -362,7 +370,11 @@
             internal const string RELOAD_AFTER_SUBMIT = "reloadAfterSubmit";
             internal const string RESET_BUTTON_TEXT = "Reset";
             internal const string RESIZE = "resize";
+            internal const string ROW_ID = "rowID";
+            internal const string SAVE = "save";
             internal const string SAVE_ICON = "saveicon";
+            internal const string SAVE_TEXT = "savetext";
+            internal const string SAVE_TITLE = "savetitle";
             internal const string SAVE_KEY = "savekey";
             internal const string SEARCH = "search";
             internal const string SEARCH_BUTTON_TEXT = "Find";
@@ -383,6 +395,8 @@
             internal const string TEMPLATES_FILTERS_GROUPS = "groups";
             internal const string TOP = "top";
             internal const string TOP_INFO = "topinfo";
+            internal const string USE_DEFAULT_VALUES = "useDefValues";
+            internal const string USE_FORMATTER = "useFormatter";
             internal const string USE_JQ_MODAL = "jqModal";
             internal const string URL = "url";
             internal const string METHOD_TYPE = "mtype";

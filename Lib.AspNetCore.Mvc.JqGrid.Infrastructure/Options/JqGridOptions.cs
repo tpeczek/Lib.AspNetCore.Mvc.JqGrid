@@ -80,6 +80,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public int DynamicScrollingTimeout { get; set; }
 
         /// <summary>
+        /// Gets or sets the url for inline and form editing.
+        /// </summary>
+        public string EditingUrl { get; set; }
+
+        /// <summary>
         /// Gets or sets the value which defines whether the tree is expanded and/or collapsed when user clicks on the text of the expanded column, not only on the image.
         /// </summary>
         public bool ExpandColumnClick { get; set; }
@@ -262,6 +267,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             DataType = JqGridOptionsDefaults.DataType;
             DynamicScrollingMode = JqGridOptionsDefaults.DynamicScrollingMode;
             DynamicScrollingTimeout = JqGridOptionsDefaults.DynamicScrollingTimeout;
+            EditingUrl = null;
             ExpandColumn = null;
             ExpandColumnClick = JqGridOptionsDefaults.ExpandColumnClick;
             FooterEnabled = JqGridOptionsDefaults.FooterEnabled;
