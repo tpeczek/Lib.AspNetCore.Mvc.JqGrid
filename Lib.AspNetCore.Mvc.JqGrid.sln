@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.Mvc.JqGrid.Infrastructure", "Lib.AspNetCore.Mvc.JqGrid.Infrastructure\Lib.AspNetCore.Mvc.JqGrid.Infrastructure.csproj", "{548A56AB-8AAB-4582-AEA7-DB6403B0FA1F}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.Mvc.JqGrid.DataAnnotations", "Lib.AspNetCore.Mvc.JqGrid.DataAnnotations\Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.csproj", "{D46AF8D4-973D-457B-9E50-DEBCE69465FF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.Mvc.JqGrid.Helper", "Lib.AspNetCore.Mvc.JqGrid.Helper\Lib.AspNetCore.Mvc.JqGrid.Helper.csproj", "{7FF4996A-D13C-4BAB-B7B5-4ED9396A2957}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocFx.AspNetCore.Mvc.JqGrid", "DocFx.AspNetCore.Mvc.JqGrid\DocFx.AspNetCore.Mvc.JqGrid.csproj", "{CAA68343-A1C3-4DD0-BBA7-0BF69DDF9A52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7FF4996A-D13C-4BAB-B7B5-4ED9396A2957}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FF4996A-D13C-4BAB-B7B5-4ED9396A2957}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FF4996A-D13C-4BAB-B7B5-4ED9396A2957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA68343-A1C3-4DD0-BBA7-0BF69DDF9A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA68343-A1C3-4DD0-BBA7-0BF69DDF9A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA68343-A1C3-4DD0-BBA7-0BF69DDF9A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA68343-A1C3-4DD0-BBA7-0BF69DDF9A52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
