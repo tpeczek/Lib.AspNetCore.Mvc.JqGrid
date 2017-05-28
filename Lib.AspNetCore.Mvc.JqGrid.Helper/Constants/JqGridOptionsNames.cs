@@ -191,6 +191,7 @@
                 internal const string SUFFIX = "suffix";
                 internal const string TARGET = "target";
                 internal const string THOUSANDS_SEPARATOR = "thousandsSeparator";
+                internal const string KEYS = "keys";
                 internal const string EDIT_BUTTON = "editbutton";
                 internal const string DELETE_BUTTON = "delbutton";
                 internal const string USE_FORM_EDITING = "editformbutton";

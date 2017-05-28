@@ -325,6 +325,31 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             _columnsModels.Add(columnModel);
             _columnsNames.Add(columnName);
         }
+
+        /// <summary>
+        /// Inserts column to options.
+        /// </summary>
+        /// <param name="position">The column position.</param>
+        /// <param name="columnName">The column name.</param>
+        /// <param name="columnModel">The column model.</param>
+        /// <exception cref="System.ArgumentNullException">
+        /// The column name or model haven't been provided. 
+        /// </exception>
+        public void InsertColumn(int position, string columnName, JqGridColumnModel columnModel)
+        {
+            if (String.IsNullOrWhiteSpace(columnName))
+            {
+                throw new ArgumentNullException(nameof(columnName));
+            }
+
+            if (columnModel == null)
+            {
+                throw new ArgumentNullException(nameof(columnModel));
+            }
+
+            _columnsModels.Insert(position, columnModel);
+            _columnsNames.Insert(position, columnName);
+        }
         #endregion
     }
 }

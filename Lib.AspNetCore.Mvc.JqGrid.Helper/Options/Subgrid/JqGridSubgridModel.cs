@@ -6,6 +6,5 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid
     /// Class which represents subgrid model for jqGrid.
     /// </summary>
     public class JqGridSubgridModel<TModel> : JqGridSubgridModel
-    {
-    }
+    { }
 }

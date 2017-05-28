@@ -144,7 +144,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 case JqGridPredefinedFormatters.CheckBox:
                     return (formatterOptions.Disabled == JqGridOptionsDefaults.ColumnModel.Formatter.Disabled);
                 case JqGridPredefinedFormatters.Actions:
-                    return (formatterOptions.EditButton == JqGridOptionsDefaults.ColumnModel.Formatter.EditButton)
+                    return (formatterOptions.Keys == JqGridOptionsDefaults.ColumnModel.Formatter.Keys)
+                        && (formatterOptions.EditButton == JqGridOptionsDefaults.ColumnModel.Formatter.EditButton)
                         && (formatterOptions.UseFormEditing == JqGridOptionsDefaults.ColumnModel.Formatter.UseFormEditing)
                         && ((formatterOptions.InlineEditingOptions == null) || formatterOptions.InlineEditingOptions.AreDefault())
                         && (formatterOptions.DeleteButton == JqGridOptionsDefaults.ColumnModel.Formatter.DeleteButton)

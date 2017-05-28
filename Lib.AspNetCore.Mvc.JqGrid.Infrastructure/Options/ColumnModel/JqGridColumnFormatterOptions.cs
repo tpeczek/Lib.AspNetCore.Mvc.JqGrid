@@ -7,7 +7,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
     /// <summary>
     /// Class which represents options for predefined formatter.
     /// </summary>
-    public class JqGridColumnFormatterOptions
+    public class JqGridColumnFormatterOptions : JqGridColumnInlineEditingOptions
     {
         #region Properties
         /// <summary>
@@ -81,21 +81,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         public string ThousandsSeparator { get; set; }
 
         /// <summary>
-        /// Gets or sets the value indicating if edit button is enabled for actions formatter.
-        /// </summary>
-        public bool EditButton { get; set; }
-
-        /// <summary>
-        /// Gets or sets the value indicating if delete button is enabled for actions formatter.
-        /// </summary>
-        public bool DeleteButton { get; set; }
-
-        /// <summary>
-        /// Gets or sets value indicating if form editing should be used instead of inline editing for actions formatter.
-        /// </summary>
-        public bool UseFormEditing { get; set; }
-
-        /// <summary>
         /// Gets or sets the primary icon class (form UI theme icons) for jQuery UI Button widget.
         /// </summary>
         public string PrimaryIcon { get; set; }
@@ -119,21 +104,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         /// Gets or sets the click handler (JavaScript) for jQuery UI Button widget.
         /// </summary>
         public string OnClick { get; set; }
-
-        /// <summary>
-        /// Gets or sets options for inline editing (RestoreAfterError and MethodType options are ignored in this context) for actions formatter.
-        /// </summary>
-        public JqGridInlineNavigatorActionOptions InlineEditingOptions { get; set; }
-
-        /// <summary>
-        /// Gets or sets options for form editing for actions formatter.
-        /// </summary>
-        public JqGridNavigatorEditActionOptions FormEditingOptions { get; set; }
-
-        /// <summary>
-        /// Gets or sets options for deleting for actions formatter.
-        /// </summary>
-        public JqGridNavigatorDeleteActionOptions DeleteOptions { get; set; }
         #endregion
 
         #region Constructors
@@ -141,6 +111,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         /// Initializes new instance of JqGridColumnFormatterOptions class.
         /// </summary>
         public JqGridColumnFormatterOptions()
+            : base()
         {
             DecimalPlaces = 0;
             DecimalSeparator = String.Empty;

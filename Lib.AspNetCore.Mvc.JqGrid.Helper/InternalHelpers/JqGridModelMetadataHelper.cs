@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Reflection;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Lib.AspNetCore.Mvc.JqGrid.Helper.Options;
-using Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid;
-using Lib.AspNetCore.Mvc.JqGrid.DataAnnotations;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+using Lib.AspNetCore.Mvc.JqGrid.DataAnnotations;
+using Lib.AspNetCore.Mvc.JqGrid.Helper.Options;
+using Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid;
+using Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
     internal static class JqGridModelMetadataHelper
     {
         #region Fields
+        private static string _actionsColumnDisplayName = "&nbsp;";
         private static char[] _invalidDateFormatTokens = new char[] { 'N', 'S', 'w', 'W', 't', 'L', 'o' };
         private const string _ignoredDateFormatTokensRegexExpression = "[aABgGhHisueIOPTZcr]";
         private static Regex _dateFormatTokensRegex = new Regex("d|j|l|z|F|m|n|Y|U", RegexOptions.Compiled);
@@ -28,14 +30,26 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         #region Extension Methods
         internal static void ApplyModelMetadata(this JqGridOptions options, IModelMetadataProvider metadataProvider, IUrlHelper urlHelper)
         {
-            Type jqGridOptionsType = options.GetType();
-            if (jqGridOptionsType.IsConstructedGenericType && jqGridOptionsType.GetGenericTypeDefinition() == typeof(JqGridOptions<>))
+            IJqGridStronglyTypedOptions jqGridStronglyTypedOptions = options as IJqGridStronglyTypedOptions;
+            if (jqGridStronglyTypedOptions != null)
             {
-                foreach (ModelMetadata columnMetadata in metadataProvider.GetMetadataForProperties(jqGridOptionsType.GenericTypeArguments[0]))
+                foreach (ModelMetadata columnMetadata in metadataProvider.GetMetadataForProperties(jqGridStronglyTypedOptions.ModelType))
                 {
                     if (IsValidForColumn(columnMetadata))
                     {
                         options.AddColumn(columnMetadata.GetDisplayName(), CreateJqGridColumnModel(columnMetadata, urlHelper));
+                    }
+                }
+
+                if (jqGridStronglyTypedOptions.ActionsColumn != null)
+                {
+                    if (jqGridStronglyTypedOptions.ActionsColumn.Position >= options.ColumnsModels.Count)
+                    {
+                        options.AddColumn(_actionsColumnDisplayName, CreateActionsColumnModel(jqGridStronglyTypedOptions.ActionsColumn));
+                    }
+                    else
+                    {
+                        options.InsertColumn(jqGridStronglyTypedOptions.ActionsColumn.Position, _actionsColumnDisplayName, CreateActionsColumnModel(jqGridStronglyTypedOptions.ActionsColumn));
                     }
                 }
             }
@@ -51,8 +65,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     options.SubgridModel.ApplyModelMetadata(metadataProvider);
                 }
             }
-
-
         }
         #endregion
 
@@ -268,6 +280,29 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return columnModel;
         }
 
+        private static JqGridColumnModel CreateActionsColumnModel(JqGridActionsColumnOptions actionsColumnOptions)
+        {
+            return new JqGridColumnModel(actionsColumnOptions.Name)
+            {
+                Width = actionsColumnOptions.Width,
+                Resizable = false,
+                Searchable = false,
+                Sortable = false,
+                Viewable = false,
+                Formatter = JqGridPredefinedFormatters.Actions,
+                FormatterOptions = new JqGridColumnFormatterOptions()
+                {
+                    Keys = actionsColumnOptions.Keys,
+                    EditButton = actionsColumnOptions.EditButton,
+                    DeleteButton = actionsColumnOptions.DeleteButton,
+                    UseFormEditing = actionsColumnOptions.UseFormEditing,
+                    InlineEditingOptions = actionsColumnOptions.InlineEditingOptions,
+                    FormEditingOptions = actionsColumnOptions.FormEditingOptions,
+                    DeleteOptions = actionsColumnOptions.DeleteOptions
+                }
+            };
+        }
+
         private static void ApplyModelMetadata(this JqGridSubgridModel subgridModel, IModelMetadataProvider metadataProvider)
         {
             Type jqGridsubgridModelType = subgridModel.GetType();
@@ -301,7 +336,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
 
             return new JqGridSubgridColumnModel(columnMetadata.GetDisplayName(), alignment, width, columnMetadata.PropertyName);
-        }
+        } 
         #endregion
     }
 }

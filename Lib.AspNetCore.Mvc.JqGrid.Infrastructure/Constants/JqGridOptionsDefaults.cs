@@ -202,6 +202,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
                 public const bool DeleteButton = true;
 
                 /// <summary>
+                /// The value indicating if keys interaction is enabled (like saving a record with pressing a Enter key) for actions formatter.
+                /// </summary>
+                public const bool Keys = false;
+
+                /// <summary>
                 /// The value indicating if form editing should be used instead of inline editing for actions formatter
                 /// </summary>
                 public const bool UseFormEditing = false;
