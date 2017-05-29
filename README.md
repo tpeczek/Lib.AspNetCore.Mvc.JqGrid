@@ -4,8 +4,6 @@
 
 A set of libraries which provide support for [Guriddo jqGrid](http://guriddo.net/) and [free jqGrid](https://github.com/free-jqgrid/jqGrid) usage in ASP.NET Core.
 
-<a href='https://pledgie.com/campaigns/33551'><img alt='Click here to lend your support to: Lib.AspNetCore.Mvc.JqGrid and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/33551.png?skin_name=chrome' border='0' ></a>
-
 This is ASP.NET Core evolution of jqGrid related functionality from [Lib.Web.Mvc](https://github.com/tpeczek/Lib.Web.Mvc/).
 
 - **Lib.AspNetCore.Mvc.JqGrid.Infrastructure** - Classes, enumerations and constants representing jqGrid options. Shared by all libraries.
