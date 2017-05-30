@@ -29,9 +29,13 @@ PM> Install-Package Lib.AspNetCore.Mvc.JqGrid.Core
 PM> Install-Package Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
 ```
 
+## Documentation
+
+The documentation is available [here](https://tpeczek.github.io/Lib.AspNetCore.Mvc.JqGrid/).
+
 ## Demos
 
-There is a demo project available [here](https://github.com/tpeczek/Demo.AspNetCore.JqGrid).
+The demo project is available [here](https://github.com/tpeczek/Demo.AspNetCore.JqGrid).
 
 ## Donating
 Lib.AspNetCore.Mvc.JqGrid is a personal open source project. If Lib.AspNetCore.Mvc.JqGridc has been helpful to you, consider donating. Donating helps support Lib.AspNetCore.Mvc.JqGrid.
