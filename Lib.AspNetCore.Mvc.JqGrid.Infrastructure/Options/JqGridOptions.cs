@@ -100,6 +100,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public JqGridFilterToolbarOptions FilterToolbar { get; set; }
 
         /// <summary>
+        /// Gets or sets the values for the footer.
+        /// </summary>
+        public IEnumerable<KeyValuePair<string, string>> FooterData { get; set; }
+
+        /// <summary>
         /// Gets or sets the value indicating if the footer table (with one row) will be placed below the grid records and above the pager. The number of columns equal of these from ColumnsModels.
         /// </summary>
         public bool FooterEnabled { get; set; }
@@ -240,6 +245,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public string Url { get; set; }
 
         /// <summary>
+        /// Gets or sets the value indicating if formatters should be used in case of providing values for footer through <see cref="FooterData"/>.
+        /// </summary>
+        public bool UseFormattersForFooterData { get; set; }
+
+        /// <summary>
         /// Gets or sets the value indicating if the values from user data should be placed on footer.
         /// </summary>
         public bool UserDataOnFooter { get; set; }
@@ -296,6 +306,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             TreeGridEnabled = JqGridOptionsDefaults.TreeGridEnabled;
             TreeGridModel = JqGridOptionsDefaults.TreeGridModel;
             Url = null;
+            UseFormattersForFooterData = JqGridOptionsDefaults.UseFormattersForFooterData;
             UserDataOnFooter = JqGridOptionsDefaults.UserDataOnFooter;
             ViewRecords = JqGridOptionsDefaults.ViewRecords;
         }

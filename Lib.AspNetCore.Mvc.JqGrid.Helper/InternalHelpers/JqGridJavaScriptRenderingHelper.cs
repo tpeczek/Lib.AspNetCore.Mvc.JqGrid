@@ -27,6 +27,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                .AppendOptions(options, asSubgrid)
                .AppendJavaScriptObjectClosing()
                .AppendHeaderGrouping(options)
+               .AppendFooterData(options)
                .AppendFilterToolbar(options.FilterToolbar)
                .AppendNavigator(options, asSubgrid)
                .AppendInlineNavigator(options, asSubgrid)

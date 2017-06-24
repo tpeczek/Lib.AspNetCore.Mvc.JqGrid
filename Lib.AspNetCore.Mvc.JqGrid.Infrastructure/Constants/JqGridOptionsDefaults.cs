@@ -1,5 +1,6 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
 {
@@ -1109,6 +1110,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         /// The model for TreeGrid.
         /// </summary>
         public const JqGridTreeGridModels TreeGridModel = JqGridTreeGridModels.Nested;
+
+        /// <summary>
+        /// The value indicating if formatters should be used in case of providing values for footer through <see cref="JqGridOptions.FooterData"/>.
+        /// </summary>
+        public const bool UseFormattersForFooterData = true;
 
         /// <summary>
         /// The value indicating if the values from user data should be placed on footer.
