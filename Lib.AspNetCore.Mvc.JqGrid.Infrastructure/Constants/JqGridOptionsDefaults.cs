@@ -635,6 +635,21 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             public const string AddToolTip = "Add new row";
 
             /// <summary>
+            /// The default caption for the custom button.
+            /// </summary>
+            public const string ButtonCaption = "NewButton";
+
+            /// <summary>
+            /// The default icon (from UI theme images) for the custom button.
+            /// </summary>
+            public const string ButtonIcon = "ui-icon-newwin";
+
+            /// <summary>
+            /// The default cursor when user mouseover the custom button.
+            /// </summary>
+            public const string ButtonCursor = "pointer";
+
+            /// <summary>
             /// The value which defines if edit action is enabled.
             /// </summary>
             public const bool Edit = true;
@@ -708,6 +723,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             /// The tooltip for search action.
             /// </summary>
             public const string SearchToolTip = "Find records";
+
+            /// <summary>
+            /// The class for the separator.
+            /// </summary>
+            public const string SeparatorClass = "ui-separator";
 
             /// <summary>
             /// The value which defines if view action is enabled.

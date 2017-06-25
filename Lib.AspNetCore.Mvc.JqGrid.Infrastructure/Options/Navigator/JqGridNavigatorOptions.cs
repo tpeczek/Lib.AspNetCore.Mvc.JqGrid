@@ -1,4 +1,5 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
+﻿using System.Collections.Generic;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
@@ -168,6 +169,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator
         /// Gets or sets the options for view action.
         /// </summary>
         public JqGridNavigatorViewActionOptions ViewOptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the list of custom elements which will be placed before the standard buttons.
+        /// </summary>
+        public IList<JqGridNavigatorCustomElementOptions> LeadingCustomElements { get; set; }
+
+        /// <summary>
+        /// Gets or sets the list of custom elements which will be placed after the standard buttons.
+        /// </summary>
+        public IList<JqGridNavigatorCustomElementOptions> TrailingCustomElements { get; set; }
         #endregion
 
         #region Constructor
