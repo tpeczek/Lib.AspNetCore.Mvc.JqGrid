@@ -311,6 +311,11 @@
             internal const string BEFORE_SHOW_SEARCH = "beforeShowSearch";
             internal const string BEFORE_SUBMIT = "beforeSubmit";
             internal const string BOTTOM_INFO = "bottominfo";
+            internal const string BUTTON_CURSOR = "cursor";
+            internal const string BUTTON_ICON = "buttonicon";
+            internal const string BUTTON_ID = "id";
+            internal const string BUTTON_ON_CLICK = "onClickButton";
+            internal const string BUTTON_TOOLTIP = "title";
             internal const string CANCEL = "cancel";
             internal const string CANCEL_ICON = "cancelicon";
             internal const string CANCEL_TEXT = "canceltext";
@@ -382,6 +387,8 @@
             internal const string SEARCH_ICON = "searchicon";
             internal const string SEARCH_TEXT = "searchtext";
             internal const string SEARCH_TITLE = "searchtitle";
+            internal const string SEPARATOR_CLASS = "sepclass";
+            internal const string SEPARATOR_CONTENT = "sepcontent";
             internal const string SERIALIZE_DELETE_DATA = "serializeDelData";
             internal const string SERIALIZE_EDIT_DATA = "serializeEditData";
             internal const string SHOW_ON_LOAD = "showOnLoad";

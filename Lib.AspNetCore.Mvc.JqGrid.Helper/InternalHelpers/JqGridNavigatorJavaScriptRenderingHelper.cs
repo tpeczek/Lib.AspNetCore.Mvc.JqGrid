@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Collections.Generic;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
@@ -12,6 +13,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
     {
         #region Fields
         private const string NULL_NAVIGATOR_OPTIONS = ",null";
+        private const string POSITION_FIRST = "first";
+        private const string POSITION_LAST = "last";
+        internal const string DEFAULT_POSITION = POSITION_LAST;
         #endregion
 
         #region Extension Methods
@@ -100,14 +104,18 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         {
             if (options.Navigator != null)
             {
+                string jqGridPagerSelector = options.GetJqGridPagerSelector(options.Navigator.Pager, asSubgrid);
+
                 javaScriptBuilder.AppendLine(")")
-                    .AppendFormat(".jqGrid('navGrid',{0}", options.GetJqGridPagerSelector(options.Navigator.Pager, asSubgrid))
+                    .AppendFormat(".jqGrid('navGrid',{0}", jqGridPagerSelector)
                     .AppendNavigatorOptions(options.Navigator)
                     .AppendNavigatorEditActionOptions(null, options.Navigator.EditOptions)
                     .AppendNavigatorEditActionOptions(null, options.Navigator.AddOptions)
                     .AppendNavigatorDeleteActionOptions(null, options.Navigator.DeleteOptions)
                     .AppendNavigatorSearchActionOptions(options.Navigator.SearchOptions)
-                    .AppendNavigatorViewActionOptions(options.Navigator.ViewOptions);
+                    .AppendNavigatorViewActionOptions(options.Navigator.ViewOptions)
+                    .AppendNavigatorLeadingCustomElements(jqGridPagerSelector, options.Navigator.LeadingCustomElements)
+                    .AppendNavigatorTrailingCustomElements(jqGridPagerSelector, options.Navigator.TrailingCustomElements);
             }
 
             return javaScriptBuilder;
@@ -403,7 +411,87 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.TOP, navigatorActionOptions.Top, JqGridOptionsDefaults.Navigator.Top)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.USE_JQ_MODAL, navigatorActionOptions.UseJqModal, JqGridOptionsDefaults.Navigator.UseJqModal);
         }
-        
+
+        private static StringBuilder AppendNavigatorLeadingCustomElements(this StringBuilder javaScriptBuilder, string jqGridPagerSelector, IList<JqGridNavigatorCustomElementOptions> leadingCustomElements)
+        {
+            if (leadingCustomElements != null)
+            {
+                for (int index = leadingCustomElements.Count - 1; index >= 0; index--)
+                {
+                    javaScriptBuilder.AppendNavigatorCustomElement(jqGridPagerSelector, POSITION_FIRST, leadingCustomElements[index]);
+                }
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendNavigatorTrailingCustomElements(this StringBuilder javaScriptBuilder, string jqGridPagerSelector, IList<JqGridNavigatorCustomElementOptions> trailingCustomElements)
+        {
+            if (trailingCustomElements != null)
+            {
+                for (int index = 0; index < trailingCustomElements.Count; index++)
+                {
+                    javaScriptBuilder.AppendNavigatorCustomElement(jqGridPagerSelector, POSITION_LAST, trailingCustomElements[index]);
+                }
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendNavigatorCustomElement(this StringBuilder javaScriptBuilder, string jqGridPagerSelector, string position, JqGridNavigatorCustomElementOptions navigatorCustomElementOptions)
+        {
+            if (navigatorCustomElementOptions is JqGridNavigatorButtonOptions)
+            {
+                javaScriptBuilder.AppendNavigatorButtonOptions(jqGridPagerSelector, position, (JqGridNavigatorButtonOptions)navigatorCustomElementOptions);
+            }
+            else if (navigatorCustomElementOptions is JqGridNavigatorSeparatorOptions)
+            {
+                javaScriptBuilder.AppendNavigatorSeparator(jqGridPagerSelector, position, (JqGridNavigatorSeparatorOptions)navigatorCustomElementOptions);
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendNavigatorButtonOptions(this StringBuilder javaScriptBuilder, string jqGridPagerSelector, string position, JqGridNavigatorButtonOptions navigatorButtonOptions)
+        {
+            javaScriptBuilder.AppendLine(")")
+                    .AppendFormat(".jqGrid('navButtonAdd',{0}", jqGridPagerSelector);
+
+            if (!navigatorButtonOptions.AreDefault(position))
+            {
+                javaScriptBuilder.Append(",")
+                    .AppendJavaScriptObjectOpening()
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.CAPTION, navigatorButtonOptions.Caption, JqGridOptionsDefaults.Navigator.ButtonCaption)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.BUTTON_ICON, navigatorButtonOptions.Icon, JqGridOptionsDefaults.Navigator.ButtonIcon)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.BUTTON_ID, navigatorButtonOptions.Id)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.BUTTON_ON_CLICK, navigatorButtonOptions.OnClick)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.BUTTON_TOOLTIP, navigatorButtonOptions.ToolTip)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.BUTTON_CURSOR, navigatorButtonOptions.Cursor, JqGridOptionsDefaults.Navigator.ButtonCursor)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.POSITION, position, POSITION_LAST)
+                    .AppendJavaScriptObjectClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendNavigatorSeparator(this StringBuilder javaScriptBuilder, string jqGridPagerSelector, string position, JqGridNavigatorSeparatorOptions navigatorSeparatorOptions)
+        {
+            javaScriptBuilder.AppendLine(")")
+                    .AppendFormat(".jqGrid('navSeparatorAdd',{0}", jqGridPagerSelector);
+
+            if (!navigatorSeparatorOptions.AreDefault(position))
+            {
+                javaScriptBuilder.Append(",")
+                    .AppendJavaScriptObjectOpening()
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.SEPARATOR_CLASS, navigatorSeparatorOptions.Class, JqGridOptionsDefaults.Navigator.SeparatorClass)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.SEPARATOR_CONTENT, navigatorSeparatorOptions.Content)
+                    .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.POSITION, position, POSITION_LAST)
+                    .AppendJavaScriptObjectClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
         private static StringBuilder AppendSearchingFilters(this StringBuilder javaScriptBuilder, JqGridSearchingFilters searchingFilters)
         {
             javaScriptBuilder.AppendJavaScriptObjectOpening()

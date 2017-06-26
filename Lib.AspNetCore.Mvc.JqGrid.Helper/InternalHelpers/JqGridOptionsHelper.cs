@@ -387,7 +387,25 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 && (navigatorActionOptions.Resizable == JqGridOptionsDefaults.Navigator.Resizable)
                 && (navigatorActionOptions.Top == JqGridOptionsDefaults.Navigator.Top)
                 && (navigatorActionOptions.UseJqModal == JqGridOptionsDefaults.Navigator.UseJqModal);
-        } 
+        }
+
+        internal static bool AreDefault(this JqGridNavigatorButtonOptions navigatorButtonOptions, string position)
+        {
+            return (navigatorButtonOptions.Caption == JqGridOptionsDefaults.Navigator.ButtonCaption)
+                && (navigatorButtonOptions.Icon == JqGridOptionsDefaults.Navigator.ButtonIcon)
+                && String.IsNullOrEmpty(navigatorButtonOptions.Id)
+                && String.IsNullOrEmpty(navigatorButtonOptions.OnClick)
+                && String.IsNullOrEmpty(navigatorButtonOptions.ToolTip)
+                && (navigatorButtonOptions.Cursor == JqGridOptionsDefaults.Navigator.ButtonCursor)
+                && (position == JqGridNavigatorJavaScriptRenderingHelper.DEFAULT_POSITION);
+        }
+
+        internal static bool AreDefault(this JqGridNavigatorSeparatorOptions navigatorSeparatorOptions, string position)
+        {
+            return (navigatorSeparatorOptions.Class == JqGridOptionsDefaults.Navigator.SeparatorClass)
+                && String.IsNullOrEmpty(navigatorSeparatorOptions.Content)
+                && (position == JqGridNavigatorJavaScriptRenderingHelper.DEFAULT_POSITION);
+        }
         #endregion
     }
 }
