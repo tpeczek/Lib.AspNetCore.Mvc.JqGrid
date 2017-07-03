@@ -3085,6 +3085,24 @@ references:
   commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.AlertText
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.AlertText
   nameWithType: JqGridOptionsDefaults.Navigator.AlertText
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.ButtonCaption
+  name: ButtonCaption
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_Navigator_ButtonCaption
+  commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.ButtonCaption
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.ButtonCaption
+  nameWithType: JqGridOptionsDefaults.Navigator.ButtonCaption
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.ButtonCursor
+  name: ButtonCursor
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_Navigator_ButtonCursor
+  commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.ButtonCursor
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.ButtonCursor
+  nameWithType: JqGridOptionsDefaults.Navigator.ButtonCursor
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.ButtonIcon
+  name: ButtonIcon
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_Navigator_ButtonIcon
+  commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.ButtonIcon
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.ButtonIcon
+  nameWithType: JqGridOptionsDefaults.Navigator.ButtonIcon
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.Cancel
   name: Cancel
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_Navigator_Cancel
@@ -3421,6 +3439,12 @@ references:
   commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.SearchToolTip
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.SearchToolTip
   nameWithType: JqGridOptionsDefaults.Navigator.SearchToolTip
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.SeparatorClass
+  name: SeparatorClass
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_Navigator_SeparatorClass
+  commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.SeparatorClass
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.SeparatorClass
+  nameWithType: JqGridOptionsDefaults.Navigator.SeparatorClass
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.ShowOnLoad
   name: ShowOnLoad
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_Navigator_ShowOnLoad
@@ -3667,6 +3691,12 @@ references:
   commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.TreeGridModel
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.TreeGridModel
   nameWithType: JqGridOptionsDefaults.TreeGridModel
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.UseFormattersForFooterData
+  name: UseFormattersForFooterData
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_UseFormattersForFooterData
+  commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.UseFormattersForFooterData
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.UseFormattersForFooterData
+  nameWithType: JqGridOptionsDefaults.UseFormattersForFooterData
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.UserDataOnFooter
   name: UserDataOnFooter
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_UserDataOnFooter
@@ -6817,6 +6847,18 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.FilterToolbar
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.FilterToolbar
   nameWithType: JqGridOptions.FilterToolbar
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.FooterData
+  name: FooterData
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_FooterData
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.FooterData
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.FooterData
+  nameWithType: JqGridOptions.FooterData
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.FooterData*
+  name: FooterData
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_FooterData_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.FooterData
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.FooterData
+  nameWithType: JqGridOptions.FooterData
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.FooterEnabled
   name: FooterEnabled
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_FooterEnabled
@@ -7177,6 +7219,18 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.Url
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.Url
   nameWithType: JqGridOptions.Url
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.UseFormattersForFooterData
+  name: UseFormattersForFooterData
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_UseFormattersForFooterData
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.UseFormattersForFooterData
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.UseFormattersForFooterData
+  nameWithType: JqGridOptions.UseFormattersForFooterData
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.UseFormattersForFooterData*
+  name: UseFormattersForFooterData
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_UseFormattersForFooterData_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.UseFormattersForFooterData
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.UseFormattersForFooterData
+  nameWithType: JqGridOptions.UseFormattersForFooterData
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.UserDataOnFooter
   name: UserDataOnFooter
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_UserDataOnFooter
@@ -8131,6 +8185,102 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorActionOptions.Width
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorActionOptions.Width
   nameWithType: JqGridNavigatorActionOptions.Width
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions
+  name: JqGridNavigatorButtonOptions
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html
+  commentId: T:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions
+  nameWithType: JqGridNavigatorButtonOptions
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.#ctor
+  name: JqGridNavigatorButtonOptions()
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions__ctor
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.#ctor
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.JqGridNavigatorButtonOptions()
+  nameWithType: JqGridNavigatorButtonOptions.JqGridNavigatorButtonOptions()
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.#ctor*
+  name: JqGridNavigatorButtonOptions
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions__ctor_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.#ctor
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.JqGridNavigatorButtonOptions
+  nameWithType: JqGridNavigatorButtonOptions.JqGridNavigatorButtonOptions
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Caption
+  name: Caption
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_Caption
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Caption
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Caption
+  nameWithType: JqGridNavigatorButtonOptions.Caption
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Caption*
+  name: Caption
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_Caption_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Caption
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Caption
+  nameWithType: JqGridNavigatorButtonOptions.Caption
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Cursor
+  name: Cursor
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_Cursor
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Cursor
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Cursor
+  nameWithType: JqGridNavigatorButtonOptions.Cursor
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Cursor*
+  name: Cursor
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_Cursor_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Cursor
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Cursor
+  nameWithType: JqGridNavigatorButtonOptions.Cursor
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Icon
+  name: Icon
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_Icon
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Icon
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Icon
+  nameWithType: JqGridNavigatorButtonOptions.Icon
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Icon*
+  name: Icon
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_Icon_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Icon
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Icon
+  nameWithType: JqGridNavigatorButtonOptions.Icon
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Id
+  name: Id
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_Id
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Id
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Id
+  nameWithType: JqGridNavigatorButtonOptions.Id
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Id*
+  name: Id
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_Id_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Id
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.Id
+  nameWithType: JqGridNavigatorButtonOptions.Id
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.OnClick
+  name: OnClick
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_OnClick
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.OnClick
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.OnClick
+  nameWithType: JqGridNavigatorButtonOptions.OnClick
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.OnClick*
+  name: OnClick
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_OnClick_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.OnClick
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.OnClick
+  nameWithType: JqGridNavigatorButtonOptions.OnClick
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.ToolTip
+  name: ToolTip
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_ToolTip
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.ToolTip
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.ToolTip
+  nameWithType: JqGridNavigatorButtonOptions.ToolTip
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.ToolTip*
+  name: ToolTip
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorButtonOptions_ToolTip_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.ToolTip
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.ToolTip
+  nameWithType: JqGridNavigatorButtonOptions.ToolTip
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorCustomElementOptions
+  name: JqGridNavigatorCustomElementOptions
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorCustomElementOptions.html
+  commentId: T:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorCustomElementOptions
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorCustomElementOptions
+  nameWithType: JqGridNavigatorCustomElementOptions
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorDeleteActionOptions
   name: JqGridNavigatorDeleteActionOptions
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorDeleteActionOptions.html
@@ -8845,6 +8995,18 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.EditOptions
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.EditOptions
   nameWithType: JqGridNavigatorOptions.EditOptions
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.LeadingCustomElements
+  name: LeadingCustomElements
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorOptions_LeadingCustomElements
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.LeadingCustomElements
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.LeadingCustomElements
+  nameWithType: JqGridNavigatorOptions.LeadingCustomElements
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.LeadingCustomElements*
+  name: LeadingCustomElements
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorOptions_LeadingCustomElements_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.LeadingCustomElements
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.LeadingCustomElements
+  nameWithType: JqGridNavigatorOptions.LeadingCustomElements
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.Pager
   name: Pager
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorOptions_Pager
@@ -8977,6 +9139,18 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.SearchToolTip
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.SearchToolTip
   nameWithType: JqGridNavigatorOptions.SearchToolTip
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.TrailingCustomElements
+  name: TrailingCustomElements
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorOptions_TrailingCustomElements
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.TrailingCustomElements
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.TrailingCustomElements
+  nameWithType: JqGridNavigatorOptions.TrailingCustomElements
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.TrailingCustomElements*
+  name: TrailingCustomElements
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorOptions_TrailingCustomElements_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.TrailingCustomElements
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.TrailingCustomElements
+  nameWithType: JqGridNavigatorOptions.TrailingCustomElements
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.View
   name: View
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorOptions_View
@@ -9433,6 +9607,48 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSearchActionOptions.Templates
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSearchActionOptions.Templates
   nameWithType: JqGridNavigatorSearchActionOptions.Templates
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions
+  name: JqGridNavigatorSeparatorOptions
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.html
+  commentId: T:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions
+  nameWithType: JqGridNavigatorSeparatorOptions
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.#ctor
+  name: JqGridNavigatorSeparatorOptions()
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorSeparatorOptions__ctor
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.#ctor
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.JqGridNavigatorSeparatorOptions()
+  nameWithType: JqGridNavigatorSeparatorOptions.JqGridNavigatorSeparatorOptions()
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.#ctor*
+  name: JqGridNavigatorSeparatorOptions
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorSeparatorOptions__ctor_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.#ctor
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.JqGridNavigatorSeparatorOptions
+  nameWithType: JqGridNavigatorSeparatorOptions.JqGridNavigatorSeparatorOptions
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Class
+  name: Class
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorSeparatorOptions_Class
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Class
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Class
+  nameWithType: JqGridNavigatorSeparatorOptions.Class
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Class*
+  name: Class
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorSeparatorOptions_Class_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Class
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Class
+  nameWithType: JqGridNavigatorSeparatorOptions.Class
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Content
+  name: Content
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorSeparatorOptions_Content
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Content
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Content
+  nameWithType: JqGridNavigatorSeparatorOptions.Content
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Content*
+  name: Content
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_Navigator_JqGridNavigatorSeparatorOptions_Content_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Content
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.Content
+  nameWithType: JqGridNavigatorSeparatorOptions.Content
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorViewActionOptions
   name: JqGridNavigatorViewActionOptions
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorViewActionOptions.html
