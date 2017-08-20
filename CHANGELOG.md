@@ -1,3 +1,7 @@
+## Lib.AspNetCore.Mvc.JqGrid 2.0.0
+### Additions and Changes
+- Support for ASP.NET Core 2.0.0
+
 ## Lib.AspNetCore.Mvc.JqGrid 1.2.0
 ### Additions and Changes
 - Added support for custom navigator elements

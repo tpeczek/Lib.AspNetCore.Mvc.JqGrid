@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.4
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.Mvc.JqGrid.Infrastructure", "Lib.AspNetCore.Mvc.JqGrid.Infrastructure\Lib.AspNetCore.Mvc.JqGrid.Infrastructure.csproj", "{548A56AB-8AAB-4582-AEA7-DB6403B0FA1F}"
 EndProject
@@ -11,7 +11,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.Mvc.JqGrid.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.Mvc.JqGrid.Helper", "Lib.AspNetCore.Mvc.JqGrid.Helper\Lib.AspNetCore.Mvc.JqGrid.Helper.csproj", "{7FF4996A-D13C-4BAB-B7B5-4ED9396A2957}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocFx.AspNetCore.Mvc.JqGrid", "DocFx.AspNetCore.Mvc.JqGrid\DocFx.AspNetCore.Mvc.JqGrid.csproj", "{CAA68343-A1C3-4DD0-BBA7-0BF69DDF9A52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocFx.AspNetCore.Mvc.JqGrid", "DocFx.AspNetCore.Mvc.JqGrid\DocFx.AspNetCore.Mvc.JqGrid.csproj", "{CAA68343-A1C3-4DD0-BBA7-0BF69DDF9A52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v1.x.y", "v1.x.y", "{A908E777-D5D2-4910-AFAF-ACEB152B51AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.Mvc.JqGrid.Infrastructure_v1.x.y", "v1.x.y\Lib.AspNetCore.Mvc.JqGrid.Infrastructure_v1.x.y\Lib.AspNetCore.Mvc.JqGrid.Infrastructure_v1.x.y.csproj", "{DC1FADB0-A047-4FB7-8ED8-971A33384C57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.AspNetCore.Mvc.JqGrid.Core_v1.x.y", "v1.x.y\Lib.AspNetCore.Mvc.JqGrid.Core_v1.x.y\Lib.AspNetCore.Mvc.JqGrid.Core_v1.x.y.csproj", "{886E7F59-9D47-4481-B803-EEA32FADE12B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.AspNetCore.Mvc.JqGrid.DataAnnotations_v1.x.y", "v1.x.y\Lib.AspNetCore.Mvc.JqGrid.DataAnnotations_v1.x.y\Lib.AspNetCore.Mvc.JqGrid.DataAnnotations_v1.x.y.csproj", "{A65FCACA-397E-4108-93A1-04C949A4245D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.AspNetCore.Mvc.JqGrid.Helper_v1.x.y", "v1.x.y\Lib.AspNetCore.Mvc.JqGrid.Helper_v1.x.y\Lib.AspNetCore.Mvc.JqGrid.Helper_v1.x.y.csproj", "{9D7249CD-7E4E-4CEE-A14A-29F38056AFCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +49,33 @@ Global
 		{CAA68343-A1C3-4DD0-BBA7-0BF69DDF9A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAA68343-A1C3-4DD0-BBA7-0BF69DDF9A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAA68343-A1C3-4DD0-BBA7-0BF69DDF9A52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC1FADB0-A047-4FB7-8ED8-971A33384C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC1FADB0-A047-4FB7-8ED8-971A33384C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC1FADB0-A047-4FB7-8ED8-971A33384C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC1FADB0-A047-4FB7-8ED8-971A33384C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886E7F59-9D47-4481-B803-EEA32FADE12B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886E7F59-9D47-4481-B803-EEA32FADE12B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886E7F59-9D47-4481-B803-EEA32FADE12B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886E7F59-9D47-4481-B803-EEA32FADE12B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A65FCACA-397E-4108-93A1-04C949A4245D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65FCACA-397E-4108-93A1-04C949A4245D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65FCACA-397E-4108-93A1-04C949A4245D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65FCACA-397E-4108-93A1-04C949A4245D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D7249CD-7E4E-4CEE-A14A-29F38056AFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7249CD-7E4E-4CEE-A14A-29F38056AFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7249CD-7E4E-4CEE-A14A-29F38056AFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7249CD-7E4E-4CEE-A14A-29F38056AFCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC1FADB0-A047-4FB7-8ED8-971A33384C57} = {A908E777-D5D2-4910-AFAF-ACEB152B51AF}
+		{886E7F59-9D47-4481-B803-EEA32FADE12B} = {A908E777-D5D2-4910-AFAF-ACEB152B51AF}
+		{A65FCACA-397E-4108-93A1-04C949A4245D} = {A908E777-D5D2-4910-AFAF-ACEB152B51AF}
+		{9D7249CD-7E4E-4CEE-A14A-29F38056AFCF} = {A908E777-D5D2-4910-AFAF-ACEB152B51AF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A78000F-C96C-4F99-B400-4C56EE6D8BB5}
 	EndGlobalSection
 EndGlobal

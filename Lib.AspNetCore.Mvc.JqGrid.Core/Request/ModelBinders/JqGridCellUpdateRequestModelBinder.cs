@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.Internal;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System;
+﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Internal;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Helpers;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
 {
@@ -35,7 +37,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
             {
                 JqGridCellUpdateRequest model = new JqGridCellUpdateRequest
                 {
-                    Id = bindingContext.ValueProvider.GetValue("id").ConvertTo<string>()
+                    Id = bindingContext.ValueProvider.GetValue("id").FirstValue
                 };
 
                 foreach (KeyValuePair<string, Type> supportedCell in SupportedCells)
@@ -53,7 +55,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 bindingContext.Result = ModelBindingResult.Failed();
             }
 
-            return TaskCache.CompletedTask;
+            return CompatibilityHelper.CompletedTask;
         }
 
         private bool BindCellProperties(JqGridCellUpdateRequest model, ModelBindingContext bindingContext, string cellName, Type cellType)
@@ -61,10 +63,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
             bool cellBinded = false;
 
             ValueProviderResult valueProviderResult = bindingContext.ValueProvider.GetValue(cellName);
-            if (valueProviderResult != ValueProviderResult.None)
+            if ((valueProviderResult != ValueProviderResult.None) && (valueProviderResult.Values.Count > 0))
             {
                 model.CellName = cellName;
-                model.CellValue = valueProviderResult.ConvertTo(cellType);
+                model.CellValue = (valueProviderResult.Values.Count == 1) ? (object)valueProviderResult.FirstValue : valueProviderResult.Values.ToArray();
             }
 
             return cellBinded;
