@@ -74,7 +74,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
             else
             {
-                if (asSubgrid)
+                if (asSubgrid && !String.IsNullOrWhiteSpace(options.Url))
                 {
                     if (options.Url.Contains("?"))
                     {

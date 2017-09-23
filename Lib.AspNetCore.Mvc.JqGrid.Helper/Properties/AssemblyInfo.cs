@@ -1,1 +1,1 @@
-﻿using System.Reflection;
+﻿[assembly:System.Runtime.CompilerServices.InternalsVisibleTo("Test.AspNetCore.Mvc.JqGrid.Helper")]
