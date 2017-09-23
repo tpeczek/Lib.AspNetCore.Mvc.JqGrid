@@ -38,6 +38,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendJavaScriptObjectFieldClosing()
                     .AppendJavaScriptArrayFieldClosing();
             }
+            else if (options.SubgridEnabled && !String.IsNullOrWhiteSpace(options.SubGridRowExpanded))
+            {
+                javaScriptBuilder.AppendCoreSubgridOptions(options)
+                    .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.SUBGRID_ROW_EXPANDED, options.SubGridRowExpanded);
+            }
 
             return javaScriptBuilder;
         }
