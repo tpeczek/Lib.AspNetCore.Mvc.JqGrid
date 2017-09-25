@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Description>Strongly typed jqGrid helper for ASP.NET Core.</Description>
     <Copyright>Copyright © 2016 - 2017 Tomasz Pęczek</Copyright>
-    <VersionPrefix>1.2.0</VersionPrefix>
+    <VersionPrefix>1.2.1</VersionPrefix>
     <Authors>Tomasz Pęczek</Authors>
     <TargetFrameworks>net451;netstandard1.6</TargetFrameworks>
     <AssemblyName>Lib.AspNetCore.Mvc.JqGrid.Helper</AssemblyName>
