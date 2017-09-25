@@ -1,3 +1,7 @@
+## Lib.AspNetCore.Mvc.JqGrid.Helper 1.2.1 & 2.0.1
+### Bug Fixes
+- Fix for scenario when only SubGridRowExpanded and SubGridEnabled is set
+
 ## Lib.AspNetCore.Mvc.JqGrid 2.0.0
 ### Additions and Changes
 - Support for ASP.NET Core 2.0.0
