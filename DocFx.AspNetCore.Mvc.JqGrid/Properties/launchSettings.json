@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Lib.AspNetCore.Mvc.JqGrid.DocFx": {
+    "DocFx.AspNetCore.Mvc.JqGrid": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
