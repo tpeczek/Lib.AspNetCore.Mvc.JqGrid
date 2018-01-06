@@ -1,1 +1,1443 @@
-{"homepages":[],"source_base_path":"D:/GitHub/Lib.AspNetCore.Mvc.JqGrid/DocFx.AspNetCore.Mvc.JqGrid","xrefmap":"xrefmap.yml","files":[{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDynamicScrollingModes.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDynamicScrollingModes.html","hash":"5uS/P3l3tq0cok7X6/xSHA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnDataEvent.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnDataEvent.html","hash":"gYAF730ViVX7+lYseFJqNg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.html","hash":"cXUfRrq6sPhdB6wwWlW0jw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridFilterOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridFilterOptions.html","hash":"8aZ9hk+q+poAPtcXIAt1CQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html","hash":"ZOdFoIIGUdL56qD15uRAAw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorCustomElementOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorCustomElementOptions.html","hash":"ErSZ1jVu0u4tuTWsu4VCQQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilter.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilter.html","hash":"nhVLY95YPGXjHK5YSMBF7Q=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSearchActionOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSearchActionOptions.html","hash":"epapW2knpzjGWw5ugLZvJQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.html","hash":"gHsM5/E4oj89iLXIEpd8Sg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridResponse.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridResponse.html","hash":"hfw1EzQ3wK6+6v4LcEHlhQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.html","hash":"OQyrsdPhEydpdSBR9aa78Q=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid.JqGridSubgridModel-1.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid.JqGridSubgridModel-1.html","hash":"/LxrcY3Q4zNJqKQvxin81w=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Rules.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Rules.html","hash":"a06We+NWNg0Og/51wMiqJA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Request.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Request.html","hash":"CdvZZMbd1LSndTYt3ozLmw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorEditActionOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorEditActionOptions.html","hash":"Q4UYy/1TE7CCM/YXc1rV7Q=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.html","hash":"S4359O1jTdiuNQjv0ksFuQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.JqGridRequest.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.JqGridRequest.html","hash":"wvWLcDKI8JdTTPTJEFphCg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.html","hash":"anLNqEaw83etQsHLIzA5Rg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.html","hash":"UVWSMsLke08rbmZhl46zpg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html","hash":"avVmjCdCt2tR5aKilvAWGA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Searching.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Searching.html","hash":"szUK1Ib6zs/0HiL+bLkfJQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.GroupingView.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.GroupingView.html","hash":"xdnwJBE+X21Te8l4AEzvEQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnSearchTypes.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnSearchTypes.html","hash":"xZiD0BDqlsUeSQqsQAHWAw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridMethodTypes.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridMethodTypes.html","hash":"GzWe59Rl9GiWhHDaqlv6XA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnFormatterOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnFormatterOptions.html","hash":"0UxvFOfeUg7IqNuYf/ffCw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnFormOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnFormOptions.html","hash":"3TTDbM+vsPkdU546wigsBw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridFormButtonIcon.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridFormButtonIcon.html","hash":"rHaZDAxHw0naUbQ7CwjhqA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridFormKeyboardNavigation.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridFormKeyboardNavigation.html","hash":"kdjIipx2GCMoKg3pUKp0JA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.html","hash":"xBqmD42NMz9WCtJlAxQoTw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.html","hash":"I2uJH8808VyE9pjKBUgn7w=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnLayoutAttribute.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnLayoutAttribute.html","hash":"nRneqUrvozqv8hYQHsBmqg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel.html","hash":"nJh/ItH4Fk3jJ0DZPqg/2w=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.html","hash":"z2M0kUYGN/5VvlPEPszDQg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Filter.Toolbar.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Filter.Toolbar.html","hash":"H6wj8vkD/zkwmPDzoe58CQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridPredefinedFormatters.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridPredefinedFormatters.html","hash":"HvlC3WsF/aU18H+lKqPyJA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDataTypes.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDataTypes.html","hash":"vOvEmYdRLwzaP1Y9yu5EIw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSearchGroupingOperators.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSearchGroupingOperators.html","hash":"Ds5fkFiVVO3pbVfC6/qbQg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSearchOperators.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSearchOperators.html","hash":"hDTsMl85U1+fFtS+74Q0SQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridFilterToolbarOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridFilterToolbarOptions.html","hash":"sDC5/XDvbPQXU2UiZ99iDQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupHeader.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupHeader.html","hash":"8lW+hMVXYtS92PPfkh70oA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorDeleteActionOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorDeleteActionOptions.html","hash":"ca/+sr3ZGbbWbMmn+tGfig=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptionsBase.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptionsBase.html","hash":"qIq4B/4GBrOXDCedK8fDwA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorModifyActionOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorModifyActionOptions.html","hash":"jkRNlY9Y1lv3zZ+4inAs2w=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.JqGridCellUpdateRequest.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.JqGridCellUpdateRequest.html","hash":"ffNZrjM+LrcDx2ufSFinFw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSummaryAttribute.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSummaryAttribute.html","hash":"e9M2xrJcT1oCOrSVC5ce/A=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid.html","hash":"2SGjhvM502MDtydoOrprTw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Sorting.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Sorting.html","hash":"UBR0pW2/PHfZjEZgRhiUUQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.html","hash":"ubKsTGsSAqaekhu0c0AOzQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.html","hash":"58p2mSUcO1yyhBJdKmmkmQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridCompatibilityModes.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridCompatibilityModes.html","hash":"0t8jhXyxBlBjPSnYvjI+Ow=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridRefreshModes.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridRefreshModes.html","hash":"lAt+Qe09rvgrdnB2JDyiKA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnInlineEditingOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnInlineEditingOptions.html","hash":"iE5J1EJX7NDcYHXVIfEV/A=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html","hash":"1JiIgMwv/GjPfg+WpXSG+A=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorActionOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorActionOptions.html","hash":"UW73B/F9pBzPj51kWeFBrg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorAddActionOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorAddActionOptions.html","hash":"R4S2t3tSMUHcR8tJGGUfxA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.JqGridSubgridColumnModel.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.JqGridSubgridColumnModel.html","hash":"QP82UbaFiUqgnV1cpFFnAw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters.html","hash":"IgmIcyPzOeUcyA4EBUcvYg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.html","hash":"DvD50aSve9gyDjLX4oE8YA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.html","hash":"9+GXOr4Lzi2Tjrp+UuHPAA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.html","hash":"c3VCjoebc19Fj5ZlQ3JShw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel.JqGridActionsColumnOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel.JqGridActionsColumnOptions.html","hash":"XtV6tKBUUmO6bTEDgFm7Lg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Editing.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Editing.html","hash":"xsQhicV23Pi7ultaBgSy5w=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Response.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Response.html","hash":"sYftAefCp9yYwiAK+1hYBQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnEditTypes.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnEditTypes.html","hash":"5H90SUcF/0d9ke+Mk5jJQA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridNewRowPositions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridNewRowPositions.html","hash":"v6NhHltdjNAM3k1KK4L5PQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridTreeGridModels.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridTreeGridModels.html","hash":"Y6nGYIDe3Q55pUVL4Rf8Ug=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.html","hash":"gxoq+Q8dtUjksGzxm30wvw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridJsonRecordsReader.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridJsonRecordsReader.html","hash":"9+67rkuLxqhCEwFuP+XGag=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html","hash":"sWRh+IKrImMfWJ6SMeUKQg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorFormActionOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorFormActionOptions.html","hash":"R1MFU8mYmMl5rXJ+tkU1Dw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.JqGridSubgridModel.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.JqGridSubgridModel.html","hash":"rfNjIkKSSbfXOh1VziEexQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JqGridJsonResult.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JqGridJsonResult.html","hash":"zntU3dwIPj/yGDQyNt/Taw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.html","hash":"WTdxQ1u9M1Vvdfy94lQzBw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSortableAttribute.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSortableAttribute.html","hash":"u+Ijl6Hwh/orpCZR2awAnQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.IJqGridStronglyTypedOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.IJqGridStronglyTypedOptions.html","hash":"6aFEtm1VgSTDArjWvwpQ4Q=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.html","hash":"Cg2D5gtjCKumpeVQIkBYKw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Filter.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Filter.html","hash":"GjLKsi6D9I9FK6hmr/LC8Q=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridAlignments.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridAlignments.html","hash":"BaAlovVtAtVta93fVI3bFA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDataTypesExtensions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDataTypesExtensions.html","hash":"wjCsApUbMLVMPy+gJlU0Jw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSortingOrders.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSortingOrders.html","hash":"VCe48A3JscRcgYprJIovow=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSortTypes.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSortTypes.html","hash":"5a0WqZrKmpRrobvtIKHmbA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupingView.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupingView.html","hash":"aeoSrPW6ssJy2sXWi8m7Eg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridJsonReader.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridJsonReader.html","hash":"qS9QPQLoPR4JyUKs/pwMhg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorViewActionOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorViewActionOptions.html","hash":"J9EeD2cBnLpuuElghnpZaw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.html","hash":"xXSKKAdkQdN25S2rweQLuA=="}},"is_incremental":false,"version":""},{"type":"Toc","source_relative_path":"api/toc.yml","output":{".html":{"relative_path":"api/toc.html","hash":"fm76ouxoot9O5d/4PTBY7A=="}},"is_incremental":false,"version":""},{"type":"Toc","source_relative_path":"toc.md","output":{".html":{"relative_path":"toc.html","hash":"bCdyK2WT2qY0TtY1Lh84RA=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"index.md","output":{".html":{"relative_path":"index.html","hash":"TRhCoZZKIz4hqrduDomYlg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.html","hash":"49BEXq938N3EJRLGKgIsPA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.html","hash":"CZC/yk2YBuqR0Ih/2uI1ig=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.html","hash":"SoR8LfX+5UehgI9Fsas0iw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.html","hash":"ghuutfX5LzYGZsDx8RsvYQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.html","hash":"AtD3WqAU+QNyNL9ZTSENsA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.html","hash":"5+gwf3mVY5DHh1W1kk1eeA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.html","hash":"6p7LHnOdoz+IGpnRhpmLkg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnSummaryTypes.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnSummaryTypes.html","hash":"TXhwfONCgnlKoDgGd2z3Lw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridNavigatorPagers.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridNavigatorPagers.html","hash":"4P0Tj6DUBFnyDxLqRshHwg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnRules.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnRules.html","hash":"9MuROWBsJES6Ob0NCbee9A=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnSearchOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnSearchOptions.html","hash":"CTRGp6UzSeCBVvlMzsYeoQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorOptions.html","hash":"DsehhiCncMa20K/yRkGDtQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorActionOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorActionOptions.html","hash":"XtHaIwCJo/lTKHMNCXUiuw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.html","hash":"9OwqBhOkegyjKoKMSIgs1g=="}},"is_incremental":false,"version":""},{"type":"Resource","source_relative_path":"resources/ico/favicon.ico","output":{"resource":{"relative_path":"resources/ico/favicon.ico"}},"is_incremental":false,"version":""},{"type":"Resource","source_relative_path":"resources/svg/logo.svg","output":{"resource":{"relative_path":"resources/svg/logo.svg"}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.html","hash":"3Vq/CC1cjXJ1vGa+r35B0Q=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnFormatterAttribute.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnFormatterAttribute.html","hash":"NOXvoeKczgqtChqsRzZglQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.JqGridOptions-1.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.JqGridOptions-1.html","hash":"DUjWOhscf+nIy9EO+OAMBg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Formatter.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Formatter.html","hash":"ykPjKMGCQaCbgzS0p1j2WQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.KeyboardNavigation.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.KeyboardNavigation.html","hash":"aQp2E9oS6iL44W6BfO+prA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridCellEditingSubmitModes.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridCellEditingSubmitModes.html","hash":"Dx5JLHulzDYeW6GhhR3vsg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridFormButtonIconPositions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridFormButtonIconPositions.html","hash":"f8aMb9Gw7o0AEjLOQ/indg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnEditOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnEditOptions.html","hash":"+6mZEInetVR+EAf/4vDi9Q=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnElementOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnElementOptions.html","hash":"NQP/nu+TkpnTGGZsZLPOiw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridParametersNames.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridParametersNames.html","hash":"hDeL5EHDhsluxYLc13glBw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.IJqGridNavigatorPageableFormActionOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.IJqGridNavigatorPageableFormActionOptions.html","hash":"24LtMks+JPX865Pf3NYlUg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.yml","output":{".html":{"relative_path":"api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.html","hash":"Ki6ASeGJvvI8sbLixyYV3A=="}},"is_incremental":false,"version":""}],"version_info":{}}
+{
+  "homepages": [],
+  "source_base_path": "D:/GitHub/Lib.AspNetCore.Mvc.JqGrid/DocFx.AspNetCore.Mvc.JqGrid",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JqGridJsonResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JqGridJsonResult.html",
+          "hash": "H2y1x0Y1OpyKkNfVtUt65g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.html",
+          "hash": "C54foPktEa5WGLQgzst3jg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.JqGridCellUpdateRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.JqGridCellUpdateRequest.html",
+          "hash": "hETtrQTfAZL2Bo/HdttvQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.JqGridRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.JqGridRequest.html",
+          "hash": "Lt530akiL26kxQ9TSDiiXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.html",
+          "hash": "BHoZFwfiyYCqIV8io3W3eQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.html",
+          "hash": "KAju2lR2DK45YxMp2L+vZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.html",
+          "hash": "UwxaANt00Hc4cbH+QopZ0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.html",
+          "hash": "zQUEPq0kAZVeorluQm8JpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.html",
+          "hash": "YigdGq3rmwtS4TKvd1GGNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.html",
+          "hash": "hemnIuD9Qj9XCGtmlp5+3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridResponse.html",
+          "hash": "yCDzOFlPC9lQ18Ga+O7GDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.html",
+          "hash": "Qwc7yr42SVAD3xaNLGW+vQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.html",
+          "hash": "3u1V0j0MU6U0rU7La+SNng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.html",
+          "hash": "344BlpTLKKLrvH2cu6gPBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.html",
+          "hash": "X1KhMY4BX+bzxU1dQNREeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnFormatterAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnFormatterAttribute.html",
+          "hash": "KzJQ4i7TCVuObbADFM8FLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnLayoutAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnLayoutAttribute.html",
+          "hash": "V2nfEBkbQTV9Gbve9V2mrw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.html",
+          "hash": "OubCM4Wfs78W9x1Xzl1xVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSortableAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSortableAttribute.html",
+          "hash": "BFF67zSbWszKglPYRIXV9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSummaryAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSummaryAttribute.html",
+          "hash": "7d3nI8R1+nMhPeC5DJMX8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.html",
+          "hash": "1tEQTmQIZMjfg1e+eBLJmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html",
+          "hash": "JnwJB/+WZVUpQ3ejIqapFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel.JqGridActionsColumnOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel.JqGridActionsColumnOptions.html",
+          "hash": "G1QrPLR2ieyy7GKfyaiIrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel.html",
+          "hash": "0JdL7Shdw9D+zBSjCTjTow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.IJqGridStronglyTypedOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.IJqGridStronglyTypedOptions.html",
+          "hash": "ny12eJ/dLH4zj4QLuSBzuA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.JqGridOptions-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.JqGridOptions-1.html",
+          "hash": "BunFctudy2ZH72IxoOJiRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid.JqGridSubgridModel-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid.JqGridSubgridModel-1.html",
+          "hash": "+EZ2GpF38qM943btmHWnTA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid.html",
+          "hash": "HCGguMV0++JGiaCgDSH0jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.html",
+          "hash": "0MfF5ceW4tCcUnsGiH1AVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.html",
+          "hash": "AoUCAxNL/ypnuOm2jLinig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Editing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Editing.html",
+          "hash": "A1TC8ts9TiRDD452AA1+Pw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Formatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Formatter.html",
+          "hash": "6omAWKBT1+48CQsyRwXWWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.html",
+          "hash": "xFEk8kOE55AXz0EBZ1/mYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Rules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Rules.html",
+          "hash": "oRQ/Rc46QlNp314tS1hXUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Searching.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Searching.html",
+          "hash": "ZSTG0wCBTKqVRc/Cv+qQXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Sorting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Sorting.html",
+          "hash": "bf/YXjvgsBRD5b9o5vfkHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.html",
+          "hash": "Cs/2QkR7h8sIk8ExzrE9eA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Filter.Toolbar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Filter.Toolbar.html",
+          "hash": "HZlkWl2IdawAI7yanN8gEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Filter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Filter.html",
+          "hash": "8bEfujFy2Ab3v+yTMDNebw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.GroupingView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.GroupingView.html",
+          "hash": "Dq7o0TXMvEDiX3Kn06Xk7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.KeyboardNavigation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.KeyboardNavigation.html",
+          "hash": "TG3+dD5dSaoHqBBz2RDMAg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.html",
+          "hash": "4jzPiLyIyQngki/Dr0dQYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Request.html",
+          "hash": "/iBrXF1zlywjQDR5UPzenQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Response.html",
+          "hash": "2HcIk3LKJxp3WijXisnjWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.html",
+          "hash": "4R06B8XdI2ttXUhS2VdCPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridPredefinedFormatters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridPredefinedFormatters.html",
+          "hash": "l9u8W+ez5aJ6KlhC9l7MsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.html",
+          "hash": "m4uJxuAKltYNRZUBDxewOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridAlignments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridAlignments.html",
+          "hash": "YLBR9pzWJLJb1Kpw+LZKdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridCellEditingSubmitModes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridCellEditingSubmitModes.html",
+          "hash": "iVsWTX6MfWInEpT/ptgiWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnEditTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnEditTypes.html",
+          "hash": "ALDFMKUcPqdw4ySjXwaucA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnSearchTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnSearchTypes.html",
+          "hash": "QHqy4klYmyAqFn4Dxybq8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnSummaryTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnSummaryTypes.html",
+          "hash": "qPZIk4ldv1JGuBbzf1FT3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridCompatibilityModes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridCompatibilityModes.html",
+          "hash": "PRsP8QiJ/JooMaTSszxyYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDataTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDataTypes.html",
+          "hash": "/XypWJADw1yWclpVpV73Lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDataTypesExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDataTypesExtensions.html",
+          "hash": "IGjKLqJ3N1hSrXo+4Fs6eA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDynamicScrollingModes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDynamicScrollingModes.html",
+          "hash": "q4oxA3n+bv2j+kxhj33oAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridFormButtonIconPositions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridFormButtonIconPositions.html",
+          "hash": "5jUI6xuCsKnFF6Q1EbXKLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridMethodTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridMethodTypes.html",
+          "hash": "yUtlFJ7Jwz26q6D+0CKqWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridNavigatorPagers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridNavigatorPagers.html",
+          "hash": "1od/23+D9A3NDfytOWb3Ww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridNewRowPositions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridNewRowPositions.html",
+          "hash": "loHdDnc2l/JdxGX9ydMbZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridRefreshModes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridRefreshModes.html",
+          "hash": "qHd6s0lYgpG7GqlPKIYQ9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSearchGroupingOperators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSearchGroupingOperators.html",
+          "hash": "1a2gtFaBAGJeiDnyU15Khg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSearchOperators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSearchOperators.html",
+          "hash": "p4BzsaknmCptLa8ATyfpXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSortTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSortTypes.html",
+          "hash": "l4t3AvE6ZYtVd+qlZS8fDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSortingOrders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSortingOrders.html",
+          "hash": "Vzn/oWNN0J6jJpOG7Ofb1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridTreeGridModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridTreeGridModels.html",
+          "hash": "FMT7Z/eWMv8p+gGZ0yb3ZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.html",
+          "hash": "Y0TG85ZnhsZuluAIzPhiMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnDataEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnDataEvent.html",
+          "hash": "Mr+vE/Hr1qktkjUQkPrvDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnEditOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnEditOptions.html",
+          "hash": "AOnjeMonJWegQ3tHvw+8qA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnElementOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnElementOptions.html",
+          "hash": "ZQwTWU16xDEJW7mnqGqp/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnFormOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnFormOptions.html",
+          "hash": "KDiMdfxwefeQvCk4iU2gLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnFormatterOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnFormatterOptions.html",
+          "hash": "DZvNl4UPk6dFki4BcOEg0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnInlineEditingOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnInlineEditingOptions.html",
+          "hash": "lWQUvXjEtgM+o85cSWjipg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html",
+          "hash": "UGV6MYoqy0Ed3WC3DGhuVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnRules.html",
+          "hash": "b7IWYBmmTN+cYSJyVRMBdw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnSearchOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnSearchOptions.html",
+          "hash": "7i78LcLf5l9bjlJ9iTn2wA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.html",
+          "hash": "jchXFrjY4M7hSIt2PyRCQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridFilterOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridFilterOptions.html",
+          "hash": "CjzgIscQ3cFPmCc2jjzteA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridFilterToolbarOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridFilterToolbarOptions.html",
+          "hash": "HHYJFlkLB6tonNwMGMfHFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupHeader.html",
+          "hash": "jblYyf2IwWpG05vDHb7FLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupingView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupingView.html",
+          "hash": "CACuRoBiK7jFFIKd+fr/DA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridJsonReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridJsonReader.html",
+          "hash": "5bMEycVILCcc2CEPGdK8pA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridJsonRecordsReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridJsonRecordsReader.html",
+          "hash": "ocxEI6OpBHN/CUPfPiiPDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html",
+          "hash": "6LWqKFX3BjSWkXqcEAuG1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridParametersNames.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridParametersNames.html",
+          "hash": "oaJh3ncuxBU2rt4ER8ezOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.IJqGridNavigatorPageableFormActionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.IJqGridNavigatorPageableFormActionOptions.html",
+          "hash": "AFL2lUCzgLRX4QVHIci0bg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridFormButtonIcon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridFormButtonIcon.html",
+          "hash": "2+iYv/PCS/wi2sEAsH3YgA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridFormKeyboardNavigation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridFormKeyboardNavigation.html",
+          "hash": "gK5KPT2psMN7KQQnzyTibA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorActionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorActionOptions.html",
+          "hash": "AmslKxB80eLbLOUScQ/ShA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorAddActionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorAddActionOptions.html",
+          "hash": "1Ty8NxT7dRZKny0sb2y0Nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorOptions.html",
+          "hash": "i5OpOy3P+Kd8TB4hUjy70g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorActionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorActionOptions.html",
+          "hash": "TxT/AWCnqblb8DKT+4LCjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html",
+          "hash": "MAfcFiqP5FuoJZ0mIwoFnw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorCustomElementOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorCustomElementOptions.html",
+          "hash": "ugr+zBVjfCAfihKDYdCDsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorDeleteActionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorDeleteActionOptions.html",
+          "hash": "svoYJ7uee9Zp/w49QdkQ9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorEditActionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorEditActionOptions.html",
+          "hash": "Zo3R7uwl11t7p1Xop4rd1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorFormActionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorFormActionOptions.html",
+          "hash": "8FEe1KiwguNYRUlmYadLsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorModifyActionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorModifyActionOptions.html",
+          "hash": "GIdDsyPODjgGSEi5eHVmdw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.html",
+          "hash": "k8CheInvXfeVKcFQG4Jf7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptionsBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptionsBase.html",
+          "hash": "ZLeZZG0pJ1TCbNDkCoV0vA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSearchActionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSearchActionOptions.html",
+          "hash": "H4U+qA3fQc0n/kiOYnNRCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.html",
+          "hash": "3pAHaHRPD4N9DEbRLIvhKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorViewActionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorViewActionOptions.html",
+          "hash": "8Qp2kRMO8/lnZutJqBT0TA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.html",
+          "hash": "xtedCa7+OVxu8ttQXKXwUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.JqGridSubgridColumnModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.JqGridSubgridColumnModel.html",
+          "hash": "Yfczr/AdDWmivN2O4HOTgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.JqGridSubgridModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.JqGridSubgridModel.html",
+          "hash": "G+OJ3BtLMWJosVYy3dqMjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.html",
+          "hash": "aNh9A1ibmJ5g5/FUZGZkEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.html",
+          "hash": "JhJ5bTa3K4oC2/8H5Z+Lqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilter.html",
+          "hash": "aYqv0V9Pgjp05ssjWpPXig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters.html",
+          "hash": "ZM4Ua7cXAxv8L5ezhbm/Iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.html",
+          "hash": "np+DndVzKL2NuuJ17KRA9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "EFv53W267gYuC0U3AQnziQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "ClnGE0aFQYESNwqkZlDk+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/ico/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "resources/ico/favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/svg/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "resources/svg/logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "WSB6vYU8VqEFXe+y1j5MHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
