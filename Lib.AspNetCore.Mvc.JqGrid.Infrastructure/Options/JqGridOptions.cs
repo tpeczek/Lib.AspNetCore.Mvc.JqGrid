@@ -165,6 +165,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public JqGridParametersNames ParametersNames { get; set; }
 
         /// <summary>
+        /// Gets or sets the additional data which will be added to the request.
+        /// </summary>
+        public object PostData { get; set; }
+
+        /// <summary>
+        /// Gets or sets the JavaScript which will dynamically generate the additional data which will be added to the request (this property takes precedence over PostData).
+        /// </summary>
+        public string PostDataScript { get; set; }
+
+        /// <summary>
         /// Gets or sets an array to construct a select box element in the pager in which user can change the number of the visible rows.
         /// </summary>
         public IList<int> RowsList { get; set; }

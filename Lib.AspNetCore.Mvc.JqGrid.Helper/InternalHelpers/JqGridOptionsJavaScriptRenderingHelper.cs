@@ -20,6 +20,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendDataSource(options, asSubgrid)
                 .AppendGrouping(options)
                 .AppendParametersNames(options.ParametersNames)
+                .AppendPostData(options)
                 .AppendJsonReader(options.JsonReader)
                 .AppendPager(options, asSubgrid)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.TOP_PAGER, options.TopPager, JqGridOptionsDefaults.TopPager)
@@ -158,6 +159,20 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.PAGES_COUNT, parametersNames.PagesCount)
                     .AppendJavaScriptObjectStringField(JqGridOptionsNames.ParametersNames.TOTAL_ROWS, parametersNames.TotalRows, JqGridOptionsDefaults.Request.TotalRows)
                     .AppendJavaScriptObjectFieldClosing();
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendPostData(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            if (!String.IsNullOrWhiteSpace(options.PostDataScript))
+            {
+                javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.POST_DATA, options.PostDataScript);
+            }
+            else if (options.PostData != null)
+            {
+                javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.POST_DATA, options.PostData);
             }
 
             return javaScriptBuilder;
