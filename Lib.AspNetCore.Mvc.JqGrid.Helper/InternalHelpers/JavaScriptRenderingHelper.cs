@@ -233,11 +233,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder;
         }
 
-        internal static StringBuilder AppendJavaScriptObjectObjectField(this StringBuilder javaScriptBuilder, string fieldName, object fieldValue)
+        internal static StringBuilder AppendJavaScriptObjectObjectField(this StringBuilder javaScriptBuilder, string fieldName, object fieldValue, params JsonConverter[] converters)
         {
             if (fieldValue != null)
             {
-                javaScriptBuilder.AppendJavaScriptObjectFunctionField(fieldName, JsonConvert.SerializeObject(fieldValue, Formatting.None));
+                javaScriptBuilder.AppendJavaScriptObjectFunctionField(fieldName, JsonConvert.SerializeObject(fieldValue, Formatting.None, converters));
             }
 
             return javaScriptBuilder;

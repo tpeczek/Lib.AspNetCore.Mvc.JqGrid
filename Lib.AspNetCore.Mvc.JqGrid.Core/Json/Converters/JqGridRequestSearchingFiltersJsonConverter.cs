@@ -1,9 +1,9 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
-using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
+﻿using System;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Linq;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
+using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
 {
@@ -13,6 +13,14 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
     internal sealed class JqGridRequestSearchingFiltersJsonConverter : JsonConverter
     {
         #region Fields
+        private const string GROUPING_OPERATOR_FIELD_NAME = "groupOp";
+        private const string FILTERS_FIELD_NAME = "rules";
+        private const string GROUP_FIELD_NAME = "groups";
+
+        private const string SEARCHING_NAME_FIELD_NAME = "field";
+        private const string SEARCHING_OPERATOR_FIELD_NAME = "op";
+        private const string SEARCHING_VALUE_FIELD_NAME = "data";
+
         private Type _jqGridRequestSearchingFiltersType = typeof(JqGridSearchingFilters);
         #endregion
 
@@ -30,7 +38,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
         /// </summary>
         public override bool CanWrite
         {
-            get { return false; }
+            get { return true; }
         }
         #endregion
 
@@ -68,25 +76,30 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            JqGridSearchingFilters jqGridRequestSearchingFilters = value as JqGridSearchingFilters;
+
+            if (!(jqGridRequestSearchingFilters is null))
+            {
+                WriteJqGridRequestSearchingFilters(writer, jqGridRequestSearchingFilters);
+            }
         }
 
         private static JqGridSearchingFilters ReadJqGridRequestSearchingFilters(JToken filtersToken)
         {
             JqGridSearchingFilters jqGridRequestSearchingFilters = new JqGridSearchingFilters();
 
-            jqGridRequestSearchingFilters.GroupingOperator = ReadEnum<JqGridSearchGroupingOperators>(filtersToken, "groupOp", JqGridSearchGroupingOperators.And);
-            if ((filtersToken["rules"] != null) && (filtersToken["rules"].Type == JTokenType.Array))
+            jqGridRequestSearchingFilters.GroupingOperator = ReadEnum(filtersToken, GROUPING_OPERATOR_FIELD_NAME, JqGridSearchGroupingOperators.And);
+            if ((filtersToken[FILTERS_FIELD_NAME] != null) && (filtersToken[FILTERS_FIELD_NAME].Type == JTokenType.Array))
             {
-                foreach(JToken filterToken in filtersToken["rules"].ToList())
+                foreach(JToken filterToken in filtersToken[FILTERS_FIELD_NAME].ToList())
                 {
                     jqGridRequestSearchingFilters.Filters.Add(ReadJqGridRequestSearchingFilter(filterToken));
                 }
             }
 
-            if ((filtersToken["groups"] != null) && (filtersToken["groups"].Type == JTokenType.Array))
+            if ((filtersToken[GROUP_FIELD_NAME] != null) && (filtersToken[GROUP_FIELD_NAME].Type == JTokenType.Array))
             {
-                foreach (JToken groupToken in filtersToken["groups"].ToList())
+                foreach (JToken groupToken in filtersToken[GROUP_FIELD_NAME].ToList())
                 {
                     jqGridRequestSearchingFilters.Groups.Add(ReadJqGridRequestSearchingFilters(groupToken));
                 }
@@ -99,9 +112,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
         {
             JqGridSearchingFilter jqGridRequestSearchingFilter = new JqGridSearchingFilter();
 
-            jqGridRequestSearchingFilter.SearchingName = ReadString(jqGridRequestSearchingFilterToken, "field");
-            jqGridRequestSearchingFilter.SearchingOperator = ReadEnum(jqGridRequestSearchingFilterToken, "op", JqGridSearchOperators.Eq);
-            jqGridRequestSearchingFilter.SearchingValue = ReadString(jqGridRequestSearchingFilterToken, "data");
+            jqGridRequestSearchingFilter.SearchingName = ReadString(jqGridRequestSearchingFilterToken, SEARCHING_NAME_FIELD_NAME);
+            jqGridRequestSearchingFilter.SearchingOperator = ReadEnum(jqGridRequestSearchingFilterToken, SEARCHING_OPERATOR_FIELD_NAME, JqGridSearchOperators.Eq);
+            jqGridRequestSearchingFilter.SearchingValue = ReadString(jqGridRequestSearchingFilterToken, SEARCHING_VALUE_FIELD_NAME);
 
             return jqGridRequestSearchingFilter;
         }
@@ -129,6 +142,54 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
             {
                 return defaultValue;
             }
+        }
+
+        private void WriteJqGridRequestSearchingFilters(JsonWriter writer, JqGridSearchingFilters jqGridRequestSearchingFilters)
+        {
+            writer.WriteStartObject();
+
+            writer.WritePropertyName(GROUPING_OPERATOR_FIELD_NAME);
+            writer.WriteValue(jqGridRequestSearchingFilters.GroupingOperator.ToString().ToUpperInvariant());
+
+            if ((jqGridRequestSearchingFilters.Filters != null) && (jqGridRequestSearchingFilters.Filters.Count > 0))
+            {
+                writer.WritePropertyName(FILTERS_FIELD_NAME);
+                writer.WriteStartArray();
+                foreach (JqGridSearchingFilter jqGridRequestSearchingFilter in jqGridRequestSearchingFilters.Filters)
+                {
+                    WriteJqGridRequestSearchingFilter(writer, jqGridRequestSearchingFilter);
+                }
+                writer.WriteEndArray();
+            }
+
+            if ((jqGridRequestSearchingFilters.Groups != null) && (jqGridRequestSearchingFilters.Groups.Count > 0))
+            {
+                writer.WritePropertyName(GROUP_FIELD_NAME);
+                writer.WriteStartArray();
+                foreach (JqGridSearchingFilters innerSearchingFilters in jqGridRequestSearchingFilters.Groups)
+                {
+                    WriteJqGridRequestSearchingFilters(writer, jqGridRequestSearchingFilters);
+                }
+                writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+        }
+
+        private void WriteJqGridRequestSearchingFilter(JsonWriter writer, JqGridSearchingFilter jqGridRequestSearchingFilter)
+        {
+            writer.WriteStartObject();
+
+            writer.WritePropertyName(SEARCHING_NAME_FIELD_NAME);
+            writer.WriteValue(jqGridRequestSearchingFilter.SearchingName);
+
+            writer.WritePropertyName(SEARCHING_OPERATOR_FIELD_NAME);
+            writer.WriteValue(jqGridRequestSearchingFilter.SearchingOperator.ToString().ToLowerInvariant());
+
+            writer.WritePropertyName(SEARCHING_VALUE_FIELD_NAME);
+            writer.WriteValue(jqGridRequestSearchingFilter.SearchingValue);
+
+            writer.WriteEndObject();
         }
         #endregion
     }

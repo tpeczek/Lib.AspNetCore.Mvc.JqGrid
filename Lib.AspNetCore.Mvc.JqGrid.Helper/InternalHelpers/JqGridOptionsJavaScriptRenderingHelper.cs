@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using Lib.AspNetCore.Mvc.JqGrid.Core.Request;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
@@ -172,7 +173,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
             else if (options.PostData != null)
             {
-                javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.POST_DATA, options.PostData);
+                javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.POST_DATA, options.PostData, new JqGridRequestSearchingFiltersJsonConverter());
             }
 
             return javaScriptBuilder;
