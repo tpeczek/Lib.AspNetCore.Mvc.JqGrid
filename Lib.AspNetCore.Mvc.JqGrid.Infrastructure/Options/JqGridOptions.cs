@@ -175,6 +175,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public string PostDataScript { get; set; }
 
         /// <summary>
+        /// Gets or sets the value indicating if the first request to the server should perform search.
+        /// </summary>
+        public bool RequestInitialServerSearching { get; set; }
+
+        /// <summary>
         /// Gets or sets an array to construct a select box element in the pager in which user can change the number of the visible rows.
         /// </summary>
         public IList<int> RowsList { get; set; }
@@ -301,6 +306,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             Navigator = null;
             Pager = JqGridOptionsDefaults.Pager;
             ParametersNames = null;
+            RequestInitialServerSearching = JqGridOptionsDefaults.RequestInitialServerSearching;
             RowsList = null;
             RowsNumber = JqGridOptionsDefaults.RowsNumber;
             SortingName = null;

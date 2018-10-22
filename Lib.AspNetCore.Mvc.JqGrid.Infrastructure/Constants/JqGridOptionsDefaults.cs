@@ -1082,6 +1082,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         public const bool FooterEnabled = false;
 
         /// <summary>
+        /// The value indicating if the first request to the server should perform search.
+        /// </summary>
+        public const bool RequestInitialServerSearching = false;
+
+        /// <summary>
         /// The default height of the grid (100%).
         /// </summary>
         public const string Height = "100%";

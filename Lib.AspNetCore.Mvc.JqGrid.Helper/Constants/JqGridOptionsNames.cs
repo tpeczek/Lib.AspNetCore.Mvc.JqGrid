@@ -23,6 +23,7 @@
         internal const string METHOD_TYPE = "mtype";
         internal const string PAGER = "pager";
         internal const string PARAMETERS_NAMES = "prmNames";
+        internal const string REQUEST_INITIAL_SERVER_SEARCHING = "search";
         internal const string POST_DATA = "postData";
         internal const string ROWS_LIST = "rowList";
         internal const string ROWS_NUMBER = "rowNum";

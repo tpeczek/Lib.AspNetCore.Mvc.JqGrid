@@ -30,6 +30,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendDynamicScrolling(options)
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.SORTING_NAME, options.SortingName)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.SORTING_ORDER, options.SortingOrder, JqGridOptionsDefaults.SortingOrder)
+                .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.REQUEST_INITIAL_SERVER_SEARCHING, options.RequestInitialServerSearching, JqGridOptionsDefaults.RequestInitialServerSearching)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.FOOTER_ENABLED, options.FooterEnabled, JqGridOptionsDefaults.FooterEnabled)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.USER_DATA_ON_FOOTER, options.UserDataOnFooter, JqGridOptionsDefaults.UserDataOnFooter)
                 .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.HEIGHT, options.Height);
