@@ -1,3 +1,8 @@
+## Lib.AspNetCore.Mvc.JqGrid.Helper 1.3.0 & 2.1.0
+### Additions and Changes
+- Added support for post data
+- Added support for sorting on initial request
+
 ## Lib.AspNetCore.Mvc.JqGrid.Helper 1.2.1 & 2.0.1
 ### Bug Fixes
 - Fix for scenario when only SubGridRowExpanded and SubGridEnabled is set

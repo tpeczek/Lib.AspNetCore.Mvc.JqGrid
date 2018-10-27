@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Strongly typed jqGrid helper for ASP.NET Core.</Description>
-    <Copyright>Copyright © 2016 - 2017 Tomasz Pęczek</Copyright>
-    <VersionPrefix>2.0.1</VersionPrefix>
+    <Copyright>Copyright © 2016 - 2018 Tomasz Pęczek</Copyright>
+    <VersionPrefix>2.1.0</VersionPrefix>
     <Authors>Tomasz Pęczek</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Lib.AspNetCore.Mvc.JqGrid.Helper</AssemblyName>
@@ -28,8 +28,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
-    <!--<PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Infrastructure" Version="2.0.0" />
-    <PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Core" Version="2.0.0" />
-    <PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.DataAnnotations" Version="2.0.0" />-->
+    <!--<PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Infrastructure" Version="2.1.0" />
+    <PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Core" Version="2.1.0" />
+    <PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.DataAnnotations" Version="2.1.0" />-->
   </ItemGroup>
 </Project>

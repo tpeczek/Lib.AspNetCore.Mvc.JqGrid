@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Core server side support for jqGrid in ASP.NET Core.</Description>
-    <Copyright>Copyright © 2016 - 2017 Tomasz Pęczek</Copyright>
-    <VersionPrefix>1.1.0</VersionPrefix>
+    <Copyright>Copyright © 2016 - 2018 Tomasz Pęczek</Copyright>
+    <VersionPrefix>1.3.0</VersionPrefix>
     <Authors>Tomasz Pęczek</Authors>
     <TargetFrameworks>net451;netstandard1.6</TargetFrameworks>
     <AssemblyName>Lib.AspNetCore.Mvc.JqGrid.Core</AssemblyName>
@@ -36,6 +36,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="1.0.0" />
-    <!--<PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Infrastructure" Version="1.1.0" />-->
+    <!--<PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Infrastructure" Version="1.3.0" />-->
   </ItemGroup>
 </Project>

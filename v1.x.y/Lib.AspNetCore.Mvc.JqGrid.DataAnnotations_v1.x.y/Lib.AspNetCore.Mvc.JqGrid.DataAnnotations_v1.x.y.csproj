@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Custom data annotations which allow for providing additional metadata when working with strongly typed jqGrid helper for ASP.NET Core.</Description>
-    <Copyright>Copyright © 2016 - 2017 Tomasz Pęczek</Copyright>
-    <VersionPrefix>1.1.0</VersionPrefix>
+    <Copyright>Copyright © 2016 - 2018 Tomasz Pęczek</Copyright>
+    <VersionPrefix>1.3.0</VersionPrefix>
     <Authors>Tomasz Pęczek</Authors>
     <TargetFrameworks>net451;netstandard1.6</TargetFrameworks>
     <AssemblyName>Lib.AspNetCore.Mvc.JqGrid.DataAnnotations</AssemblyName>
@@ -32,6 +32,6 @@
     <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Infrastructure_v1.x.y\Lib.AspNetCore.Mvc.JqGrid.Infrastructure_v1.x.y.csproj" />
   </ItemGroup>
   <!--<ItemGroup>
-    <PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Infrastructure" Version="1.1.0" />
+    <PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Infrastructure" Version="1.3.0" />
   </ItemGroup>-->
 </Project>

@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Common infrastructure for jqGrid support in ASP.NET Core.</Description>
-    <Copyright>Copyright © 2016 - 2017 Tomasz Pęczek</Copyright>
-    <VersionPrefix>1.2.0</VersionPrefix>
+    <Copyright>Copyright © 2016 - 2018 Tomasz Pęczek</Copyright>
+    <VersionPrefix>1.3.0</VersionPrefix>
     <Authors>Tomasz Pęczek</Authors>
     <TargetFrameworks>net451;netstandard1.6</TargetFrameworks>
     <AssemblyName>Lib.AspNetCore.Mvc.JqGrid.Infrastructure</AssemblyName>
