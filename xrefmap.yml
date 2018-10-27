@@ -25,6 +25,24 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Core.Json.JqGridJsonResult.#ctor
   fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Json.JqGridJsonResult.JqGridJsonResult
   nameWithType: JqGridJsonResult.JqGridJsonResult
+- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions
+  name: JsonExtensions
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.html
+  commentId: T:Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions
+  nameWithType: JsonExtensions
+- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.ToJson(Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters)
+  name: ToJson(JqGridSearchingFilters)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.html#Lib_AspNetCore_Mvc_JqGrid_Core_Json_JsonExtensions_ToJson_Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Searching_JqGridSearchingFilters_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.ToJson(Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.ToJson(Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters)
+  nameWithType: JsonExtensions.ToJson(JqGridSearchingFilters)
+- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.ToJson*
+  name: ToJson
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.html#Lib_AspNetCore_Mvc_JqGrid_Core_Json_JsonExtensions_ToJson_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.ToJson
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.ToJson
+  nameWithType: JsonExtensions.ToJson
 - uid: Lib.AspNetCore.Mvc.JqGrid.Core.Request
   name: Lib.AspNetCore.Mvc.JqGrid.Core.Request
   href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.html
@@ -199,11 +217,11 @@ references:
   commentId: T:Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder
   fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder
   nameWithType: JqGridCellUpdateRequestModelBinder
-- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.BindModelAsync(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext)
+- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.BindModelAsync(ModelBindingContext)
   name: BindModelAsync(ModelBindingContext)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.html#Lib_AspNetCore_Mvc_JqGrid_Core_Request_ModelBinders_JqGridCellUpdateRequestModelBinder_BindModelAsync_Microsoft_AspNetCore_Mvc_ModelBinding_ModelBindingContext_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.BindModelAsync(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.BindModelAsync(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.html#Lib_AspNetCore_Mvc_JqGrid_Core_Request_ModelBinders_JqGridCellUpdateRequestModelBinder_BindModelAsync_ModelBindingContext_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.BindModelAsync(ModelBindingContext)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.BindModelAsync(ModelBindingContext)
   nameWithType: JqGridCellUpdateRequestModelBinder.BindModelAsync(ModelBindingContext)
 - uid: Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.BindModelAsync*
   name: BindModelAsync
@@ -235,13 +253,13 @@ references:
   commentId: T:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord
   fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord
   nameWithType: JqGridAdjacencyTreeRecord
-- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.#ctor(System.String,System.Collections.Generic.IList{System.Object},System.Int32,System.String)
+- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.#ctor(System.String,IList{System.Object},System.Int32,System.String)
   name: JqGridAdjacencyTreeRecord(String, IList<Object>, Int32, String)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.html#Lib_AspNetCore_Mvc_JqGrid_Core_Response_JqGridAdjacencyTreeRecord__ctor_System_String_System_Collections_Generic_IList_System_Object__System_Int32_System_String_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.#ctor(System.String,System.Collections.Generic.IList{System.Object},System.Int32,System.String)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.html#Lib_AspNetCore_Mvc_JqGrid_Core_Response_JqGridAdjacencyTreeRecord__ctor_System_String_IList_System_Object__System_Int32_System_String_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.#ctor(System.String,IList{System.Object},System.Int32,System.String)
   name.vb: JqGridAdjacencyTreeRecord(String, IList(Of Object), Int32, String)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.JqGridAdjacencyTreeRecord(System.String, System.Collections.Generic.IList<System.Object>, System.Int32, System.String)
-  fullName.vb: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.JqGridAdjacencyTreeRecord(System.String, System.Collections.Generic.IList(Of System.Object), System.Int32, System.String)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.JqGridAdjacencyTreeRecord(System.String, IList<System.Object>, System.Int32, System.String)
+  fullName.vb: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.JqGridAdjacencyTreeRecord(System.String, IList(Of System.Object), System.Int32, System.String)
   nameWithType: JqGridAdjacencyTreeRecord.JqGridAdjacencyTreeRecord(String, IList<Object>, Int32, String)
   nameWithType.vb: JqGridAdjacencyTreeRecord.JqGridAdjacencyTreeRecord(String, IList(Of Object), Int32, String)
 - uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.#ctor(System.String,System.Object,System.Int32,System.String)
@@ -274,13 +292,13 @@ references:
   commentId: T:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord
   fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord
   nameWithType: JqGridNestedSetTreeRecord
-- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.#ctor(System.String,System.Collections.Generic.IList{System.Object},System.Int32,System.Int32,System.Int32)
+- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.#ctor(System.String,IList{System.Object},System.Int32,System.Int32,System.Int32)
   name: JqGridNestedSetTreeRecord(String, IList<Object>, Int32, Int32, Int32)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.html#Lib_AspNetCore_Mvc_JqGrid_Core_Response_JqGridNestedSetTreeRecord__ctor_System_String_System_Collections_Generic_IList_System_Object__System_Int32_System_Int32_System_Int32_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.#ctor(System.String,System.Collections.Generic.IList{System.Object},System.Int32,System.Int32,System.Int32)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.html#Lib_AspNetCore_Mvc_JqGrid_Core_Response_JqGridNestedSetTreeRecord__ctor_System_String_IList_System_Object__System_Int32_System_Int32_System_Int32_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.#ctor(System.String,IList{System.Object},System.Int32,System.Int32,System.Int32)
   name.vb: JqGridNestedSetTreeRecord(String, IList(Of Object), Int32, Int32, Int32)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.JqGridNestedSetTreeRecord(System.String, System.Collections.Generic.IList<System.Object>, System.Int32, System.Int32, System.Int32)
-  fullName.vb: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.JqGridNestedSetTreeRecord(System.String, System.Collections.Generic.IList(Of System.Object), System.Int32, System.Int32, System.Int32)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.JqGridNestedSetTreeRecord(System.String, IList<System.Object>, System.Int32, System.Int32, System.Int32)
+  fullName.vb: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.JqGridNestedSetTreeRecord(System.String, IList(Of System.Object), System.Int32, System.Int32, System.Int32)
   nameWithType: JqGridNestedSetTreeRecord.JqGridNestedSetTreeRecord(String, IList<Object>, Int32, Int32, Int32)
   nameWithType.vb: JqGridNestedSetTreeRecord.JqGridNestedSetTreeRecord(String, IList(Of Object), Int32, Int32, Int32)
 - uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.#ctor(System.String,System.Object,System.Int32,System.Int32,System.Int32)
@@ -325,13 +343,13 @@ references:
   commentId: T:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord
   fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord
   nameWithType: JqGridRecord
-- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.#ctor(System.String,System.Collections.Generic.IList{System.Object})
+- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.#ctor(System.String,IList{System.Object})
   name: JqGridRecord(String, IList<Object>)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.html#Lib_AspNetCore_Mvc_JqGrid_Core_Response_JqGridRecord__ctor_System_String_System_Collections_Generic_IList_System_Object__
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.#ctor(System.String,System.Collections.Generic.IList{System.Object})
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.html#Lib_AspNetCore_Mvc_JqGrid_Core_Response_JqGridRecord__ctor_System_String_IList_System_Object__
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.#ctor(System.String,IList{System.Object})
   name.vb: JqGridRecord(String, IList(Of Object))
-  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.JqGridRecord(System.String, System.Collections.Generic.IList<System.Object>)
-  fullName.vb: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.JqGridRecord(System.String, System.Collections.Generic.IList(Of System.Object))
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.JqGridRecord(System.String, IList<System.Object>)
+  fullName.vb: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.JqGridRecord(System.String, IList(Of System.Object))
   nameWithType: JqGridRecord.JqGridRecord(String, IList<Object>)
   nameWithType.vb: JqGridRecord.JqGridRecord(String, IList(Of Object))
 - uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.#ctor(System.String,System.Object)
@@ -502,13 +520,13 @@ references:
   commentId: T:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord
   fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord
   nameWithType: JqGridTreeRecord
-- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.#ctor(System.String,System.Collections.Generic.IList{System.Object},System.Int32)
+- uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.#ctor(System.String,IList{System.Object},System.Int32)
   name: JqGridTreeRecord(String, IList<Object>, Int32)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.html#Lib_AspNetCore_Mvc_JqGrid_Core_Response_JqGridTreeRecord__ctor_System_String_System_Collections_Generic_IList_System_Object__System_Int32_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.#ctor(System.String,System.Collections.Generic.IList{System.Object},System.Int32)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.html#Lib_AspNetCore_Mvc_JqGrid_Core_Response_JqGridTreeRecord__ctor_System_String_IList_System_Object__System_Int32_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.#ctor(System.String,IList{System.Object},System.Int32)
   name.vb: JqGridTreeRecord(String, IList(Of Object), Int32)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.JqGridTreeRecord(System.String, System.Collections.Generic.IList<System.Object>, System.Int32)
-  fullName.vb: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.JqGridTreeRecord(System.String, System.Collections.Generic.IList(Of System.Object), System.Int32)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.JqGridTreeRecord(System.String, IList<System.Object>, System.Int32)
+  fullName.vb: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.JqGridTreeRecord(System.String, IList(Of System.Object), System.Int32)
   nameWithType: JqGridTreeRecord.JqGridTreeRecord(String, IList<Object>, Int32)
   nameWithType.vb: JqGridTreeRecord.JqGridTreeRecord(String, IList(Of Object), Int32)
 - uid: Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.#ctor(System.String,System.Object,System.Int32)
@@ -595,11 +613,11 @@ references:
   commentId: M:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.#ctor(System.String,System.String)
   fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.JqGridColumnEditableAttribute(System.String, System.String)
   nameWithType: JqGridColumnEditableAttribute.JqGridColumnEditableAttribute(String, String)
-- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.#ctor(System.Type,System.String)
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.#ctor(Type,System.String)
   name: JqGridColumnEditableAttribute(Type, String)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnEditableAttribute__ctor_System_Type_System_String_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.#ctor(System.Type,System.String)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.JqGridColumnEditableAttribute(System.Type, System.String)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnEditableAttribute__ctor_Type_System_String_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.#ctor(Type,System.String)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.JqGridColumnEditableAttribute(Type, System.String)
   nameWithType: JqGridColumnEditableAttribute.JqGridColumnEditableAttribute(Type, String)
 - uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.#ctor*
   name: JqGridColumnEditableAttribute
@@ -1297,11 +1315,11 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.SetDataRoute
   fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.SetDataRoute
   nameWithType: JqGridColumnElementAttribute.SetDataRoute
-- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.SetValueDictionary(System.Type,System.String)
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.SetValueDictionary(Type,System.String)
   name: SetValueDictionary(Type, String)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnElementAttribute_SetValueDictionary_System_Type_System_String_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.SetValueDictionary(System.Type,System.String)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.SetValueDictionary(System.Type, System.String)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnElementAttribute_SetValueDictionary_Type_System_String_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.SetValueDictionary(Type,System.String)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.SetValueDictionary(Type, System.String)
   nameWithType: JqGridColumnElementAttribute.SetValueDictionary(Type, String)
 - uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.SetValueDictionary*
   name: SetValueDictionary
@@ -1903,11 +1921,11 @@ references:
   commentId: M:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.#ctor(System.String,System.String)
   fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.JqGridColumnSearchableAttribute(System.String, System.String)
   nameWithType: JqGridColumnSearchableAttribute.JqGridColumnSearchableAttribute(String, String)
-- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.#ctor(System.Type,System.String)
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.#ctor(Type,System.String)
   name: JqGridColumnSearchableAttribute(Type, String)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnSearchableAttribute__ctor_System_Type_System_String_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.#ctor(System.Type,System.String)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.JqGridColumnSearchableAttribute(System.Type, System.String)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnSearchableAttribute__ctor_Type_System_String_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.#ctor(Type,System.String)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.JqGridColumnSearchableAttribute(Type, System.String)
   nameWithType: JqGridColumnSearchableAttribute.JqGridColumnSearchableAttribute(Type, String)
 - uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.#ctor*
   name: JqGridColumnSearchableAttribute
@@ -2155,11 +2173,11 @@ references:
   commentId: T:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions
   fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions
   nameWithType: HtmlHelperJqGridExtensions
-- uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridHtml(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
+- uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridHtml(IHtmlHelper,JqGridOptions)
   name: JqGridHtml(IHtmlHelper, JqGridOptions)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html#Lib_AspNetCore_Mvc_JqGrid_Helper_HtmlHelperJqGridExtensions_JqGridHtml_Microsoft_AspNetCore_Mvc_Rendering_IHtmlHelper_Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridHtml(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridHtml(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper, Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html#Lib_AspNetCore_Mvc_JqGrid_Helper_HtmlHelperJqGridExtensions_JqGridHtml_IHtmlHelper_JqGridOptions_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridHtml(IHtmlHelper,JqGridOptions)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridHtml(IHtmlHelper, JqGridOptions)
   nameWithType: HtmlHelperJqGridExtensions.JqGridHtml(IHtmlHelper, JqGridOptions)
 - uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridHtml*
   name: JqGridHtml
@@ -2167,11 +2185,11 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridHtml
   fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridHtml
   nameWithType: HtmlHelperJqGridExtensions.JqGridHtml
-- uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridJavaScript(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
+- uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridJavaScript(IHtmlHelper,JqGridOptions)
   name: JqGridJavaScript(IHtmlHelper, JqGridOptions)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html#Lib_AspNetCore_Mvc_JqGrid_Helper_HtmlHelperJqGridExtensions_JqGridJavaScript_Microsoft_AspNetCore_Mvc_Rendering_IHtmlHelper_Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridJavaScript(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridJavaScript(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper, Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html#Lib_AspNetCore_Mvc_JqGrid_Helper_HtmlHelperJqGridExtensions_JqGridJavaScript_IHtmlHelper_JqGridOptions_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridJavaScript(IHtmlHelper,JqGridOptions)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridJavaScript(IHtmlHelper, JqGridOptions)
   nameWithType: HtmlHelperJqGridExtensions.JqGridJavaScript(IHtmlHelper, JqGridOptions)
 - uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridJavaScript*
   name: JqGridJavaScript
@@ -2179,11 +2197,11 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridJavaScript
   fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridJavaScript
   nameWithType: HtmlHelperJqGridExtensions.JqGridJavaScript
-- uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridPagerHtml(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
+- uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridPagerHtml(IHtmlHelper,JqGridOptions)
   name: JqGridPagerHtml(IHtmlHelper, JqGridOptions)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html#Lib_AspNetCore_Mvc_JqGrid_Helper_HtmlHelperJqGridExtensions_JqGridPagerHtml_Microsoft_AspNetCore_Mvc_Rendering_IHtmlHelper_Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridPagerHtml(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridPagerHtml(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper, Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html#Lib_AspNetCore_Mvc_JqGrid_Helper_HtmlHelperJqGridExtensions_JqGridPagerHtml_IHtmlHelper_JqGridOptions_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridPagerHtml(IHtmlHelper,JqGridOptions)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridPagerHtml(IHtmlHelper, JqGridOptions)
   nameWithType: HtmlHelperJqGridExtensions.JqGridPagerHtml(IHtmlHelper, JqGridOptions)
 - uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridPagerHtml*
   name: JqGridPagerHtml
@@ -2191,11 +2209,11 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridPagerHtml
   fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridPagerHtml
   nameWithType: HtmlHelperJqGridExtensions.JqGridPagerHtml
-- uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridTableHtml(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
+- uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridTableHtml(IHtmlHelper,JqGridOptions)
   name: JqGridTableHtml(IHtmlHelper, JqGridOptions)
-  href: api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html#Lib_AspNetCore_Mvc_JqGrid_Helper_HtmlHelperJqGridExtensions_JqGridTableHtml_Microsoft_AspNetCore_Mvc_Rendering_IHtmlHelper_Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_
-  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridTableHtml(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
-  fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridTableHtml(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper, Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions)
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html#Lib_AspNetCore_Mvc_JqGrid_Helper_HtmlHelperJqGridExtensions_JqGridTableHtml_IHtmlHelper_JqGridOptions_
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridTableHtml(IHtmlHelper,JqGridOptions)
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridTableHtml(IHtmlHelper, JqGridOptions)
   nameWithType: HtmlHelperJqGridExtensions.JqGridTableHtml(IHtmlHelper, JqGridOptions)
 - uid: Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.JqGridTableHtml*
   name: JqGridTableHtml
@@ -3595,6 +3613,12 @@ references:
   commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Request.TotalRows
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Request.TotalRows
   nameWithType: JqGridOptionsDefaults.Request.TotalRows
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.RequestInitialServerSearching
+  name: RequestInitialServerSearching
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_RequestInitialServerSearching
+  commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.RequestInitialServerSearching
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.RequestInitialServerSearching
+  nameWithType: JqGridOptionsDefaults.RequestInitialServerSearching
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Response
   name: JqGridOptionsDefaults.Response
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Response.html
@@ -7027,6 +7051,42 @@ references:
   commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.ParametersNames
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.ParametersNames
   nameWithType: JqGridOptions.ParametersNames
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostData
+  name: PostData
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_PostData
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostData
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostData
+  nameWithType: JqGridOptions.PostData
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostData*
+  name: PostData
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_PostData_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostData
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostData
+  nameWithType: JqGridOptions.PostData
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostDataScript
+  name: PostDataScript
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_PostDataScript
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostDataScript
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostDataScript
+  nameWithType: JqGridOptions.PostDataScript
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostDataScript*
+  name: PostDataScript
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_PostDataScript_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostDataScript
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostDataScript
+  nameWithType: JqGridOptions.PostDataScript
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RequestInitialServerSearching
+  name: RequestInitialServerSearching
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_RequestInitialServerSearching
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RequestInitialServerSearching
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RequestInitialServerSearching
+  nameWithType: JqGridOptions.RequestInitialServerSearching
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RequestInitialServerSearching*
+  name: RequestInitialServerSearching
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_RequestInitialServerSearching_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RequestInitialServerSearching
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RequestInitialServerSearching
+  nameWithType: JqGridOptions.RequestInitialServerSearching
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RowsList
   name: RowsList
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_RowsList

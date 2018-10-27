@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum JqGridDynamicScrollingModes
+    <title>Class JsonExtensions
    | Lib.AspNetCore.Mvc.JqGrid </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum JqGridDynamicScrollingModes
+    <meta name="title" content="Class JsonExtensions
    | Lib.AspNetCore.Mvc.JqGrid ">
     <meta name="generator" content="docfx 2.29.1.0">
     
@@ -60,47 +60,70 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDynamicScrollingModes">
+            <article class="content wrap" id="_content" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions">
   
   
-  <h1 id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Enums_JqGridDynamicScrollingModes" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDynamicScrollingModes" class="text-break">Enum JqGridDynamicScrollingModes
+  <h1 id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_JsonExtensions" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions" class="text-break">Class JsonExtensions
   </h1>
-  <div class="markdown level0 summary"><p>Defines available modes for jqGrid dynamic scrolling</p>
+  <div class="markdown level0 summary"><p>Provides support for converting some of jqGrid specific types to JSON.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.html">Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums</a></h6>
-  <h6><strong>Assembly</strong>: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.dll</h6>
-  <h5 id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Enums_JqGridDynamicScrollingModes_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum JqGridDynamicScrollingModes : int</code></pre>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">JsonExtensions</span></div>
   </div>
-  <h3 id="fields">Fields
+  <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Core.Json.html">Lib.AspNetCore.Mvc.JqGrid.Core.Json</a></h6>
+  <h6><strong>Assembly</strong>: Lib.AspNetCore.Mvc.JqGrid.Core.dll</h6>
+  <h5 id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_JsonExtensions_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class JsonExtensions : object</code></pre>
+  </div>
+  <h3 id="methods">Methods
   </h3>
+  <a id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_JsonExtensions_ToJson_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.ToJson*"></a>
+  <h4 id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_JsonExtensions_ToJson_Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Searching_JqGridSearchingFilters_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.ToJson(Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters)">ToJson(JqGridSearchingFilters)</h4>
+  <div class="markdown level1 summary"><p>Converts class which represents jqGrid filters to JSON</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToJson(this JqGridSearchingFilters jqGridSearchingFilters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
+        <th>Type</th>
         <th>Name</th>
         <th>Description</th>
       </tr>
-    <thead>
+    </thead>
     <tbody>
       <tr>
-        <td id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Enums_JqGridDynamicScrollingModes_Disabled">Disabled</td>
-        <td><p>Dynamic scrolling disabled.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Enums_JqGridDynamicScrollingModes_HoldAllRows">HoldAllRows</td>
-        <td><p>Dynamic scrolling enabled, the grid will hold all items requested.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Enums_JqGridDynamicScrollingModes_HoldVisibleRows">HoldVisibleRows</td>
-        <td><p>Dynamic scrolling enabled, the grid will hold only visible rows.</p>
+        <td><a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters.html">JqGridSearchingFilters</a></td>
+        <td><span class="parametername">jqGridSearchingFilters</span></td>
+        <td><p>The jqGrid filters.</p>
 </td>
       </tr>
     </tbody>
-  </thead></thead></table>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The JSON.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
         </div>

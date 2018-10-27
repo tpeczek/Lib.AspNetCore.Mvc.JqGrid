@@ -72,37 +72,12 @@
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">JqGridOptions</span></div>
-      <div class="level2"><a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Helper.Options.JqGridOptions-1.html">JqGridOptions&lt;TModel&gt;</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.html">Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options</a></h6>
   <h6><strong>Assembly</strong>: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.dll</h6>
   <h5 id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class JqGridOptions</code></pre>
+    <pre><code class="lang-csharp hljs">public class JqGridOptions : object</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -250,7 +225,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html">JqGridColumnModel</a>&gt;</td>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html">JqGridColumnModel</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -274,7 +249,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -514,7 +489,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;&gt;</td>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">KeyValuePair</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -562,7 +537,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupHeader.html">JqGridGroupHeader</a>&gt;</td>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupHeader.html">JqGridGroupHeader</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -831,6 +806,78 @@
       </tr>
     </tbody>
   </table>
+  <a id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_PostData_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostData*"></a>
+  <h4 id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_PostData" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostData">PostData</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the additional data which will be added to the request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object PostData { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_PostDataScript_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostDataScript*"></a>
+  <h4 id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_PostDataScript" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.PostDataScript">PostDataScript</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the JavaScript which will dynamically generate the additional data which will be added to the request (this property takes precedence over PostData).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PostDataScript { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_RequestInitialServerSearching_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RequestInitialServerSearching*"></a>
+  <h4 id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_RequestInitialServerSearching" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RequestInitialServerSearching">RequestInitialServerSearching</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value indicating if the first request to the server should perform search.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RequestInitialServerSearching { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_RowsList_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RowsList*"></a>
   <h4 id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_RowsList" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.RowsList">RowsList</h4>
   <div class="markdown level1 summary"><p>Gets or sets an array to construct a select box element in the pager in which user can change the number of the visible rows.</p>
@@ -850,7 +897,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="xref">IList</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1322,22 +1369,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>The column name or model haven&apos;t been provided. </p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_InsertColumn_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.InsertColumn*"></a>
   <h4 id="Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_InsertColumn_System_Int32_System_String_Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_ColumnModel_JqGridColumnModel_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.InsertColumn(System.Int32,System.String,Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel)">InsertColumn(Int32, String, JqGridColumnModel)</h4>
   <div class="markdown level1 summary"><p>Inserts column to options.</p>
@@ -1373,22 +1404,6 @@
         <td><a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html">JqGridColumnModel</a></td>
         <td><span class="parametername">columnModel</span></td>
         <td><p>The column model.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>The column name or model haven&apos;t been provided. </p>
 </td>
       </tr>
     </tbody>
