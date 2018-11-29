@@ -19,6 +19,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.EDITITNG_URL, options.EditingUrl)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.DATA_TYPE, options.DataType, JqGridOptionsDefaults.DataType)
                 .AppendDataSource(options, asSubgrid)
+                .AppendIconSet(options)
                 .AppendGrouping(options)
                 .AppendParametersNames(options.ParametersNames)
                 .AppendPostData(options)
@@ -94,6 +95,59 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 }
 
                 javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.METHOD_TYPE, options.MethodType, JqGridOptionsDefaults.MethodType);
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendIconSet(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            if (options.IconSet != JqGridOptionsDefaults.IconSet)
+            {
+                if (options.CompatibilityMode == JqGridCompatibilityModes.JqGrid)
+                {
+                    throw new NotSupportedException("Different icon sets than jQuery UI are supported only in Free jqGrid and Guriddo JqGrid.");
+                }
+
+                switch (options.IconSet)
+                {
+                    case JqGridIconSets.FontAwesome:
+                        javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.ICON_SET, "fontAwesome");
+                        break;
+                    case JqGridIconSets.FontAwesome5:
+                        if (options.CompatibilityMode == JqGridCompatibilityModes.FreeJqGrid)
+                        {
+                            javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.ICON_SET, "fontAwesome5");
+                        }
+                        else
+                        {
+                            throw new NotSupportedException("The Font Awesome 5 icon set is supported only in Free jqGrid.");
+                        }
+                        break;
+                    case JqGridIconSets.Octicons:
+                    case JqGridIconSets.Iconic:
+                        if (options.CompatibilityMode == JqGridCompatibilityModes.GuriddoJqGrid)
+                        {
+                            javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.ICON_SET, options.IconSet.ToString());
+                        }
+                        else
+                        {
+                            throw new NotSupportedException($"The {options.IconSet} icon set is supported only in Guriddo JqGrid.");
+                        }
+                        break;
+                    case JqGridIconSets.Glyph:
+                        if (options.CompatibilityMode == JqGridCompatibilityModes.FreeJqGrid)
+                        {
+                            javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.ICON_SET, options.IconSet);
+                        }
+                        else
+                        {
+                            throw new NotSupportedException("The Glyph icon set is supported only in Free jqGrid.");
+                        }
+                        break;
+                    default:
+                        throw new NotSupportedException("Not supported icon set value.");
+                }
             }
 
             return javaScriptBuilder;

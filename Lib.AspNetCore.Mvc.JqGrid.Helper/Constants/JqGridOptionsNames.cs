@@ -19,6 +19,7 @@
         internal const string HEIGHT = "height";
         internal const string GROUPING_ENABLED = "grouping";
         internal const string GROUPING_VIEW = "groupingView";
+        internal const string ICON_SET = "iconSet";
         internal const string JSON_READER = "jsonReader";
         internal const string METHOD_TYPE = "mtype";
         internal const string PAGER = "pager";

@@ -135,6 +135,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public int? Height { get; set; }
 
         /// <summary>
+        /// Gets or sets the icon set of the grid.
+        /// </summary>
+        public JqGridIconSets IconSet { get; set; }
+
+        /// <summary>
         /// Gets or sets the JSON reader for the grid.
         /// </summary>
         public JqGridJsonReader JsonReader { get; set; }
@@ -301,6 +306,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
             GroupingEnabled = JqGridOptionsDefaults.GroupingEnabled;
             GroupingView = null;
             Height = null;
+            IconSet = JqGridOptionsDefaults.IconSet;
             JsonReader = null;
             MethodType = JqGridOptionsDefaults.MethodType;
             Navigator = null;
