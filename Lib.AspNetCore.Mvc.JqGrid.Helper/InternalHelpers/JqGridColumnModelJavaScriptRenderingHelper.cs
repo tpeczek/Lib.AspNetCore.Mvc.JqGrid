@@ -18,6 +18,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         private const string JQUERY_UI_BUTTON_FORMATTER_END = ");},0);return '<button id=\"' + options.rowId + '_JQueryUIButton\" />';}";
 
         private const string DATE_DATA_INIT = "function(element){element.type = 'date';}";
+        private const string DATE_TIME_LOCAL_DATA_INIT = "function(element){element.type = 'datetime-local';}";
         private const string JQUERY_UI_AUTOCOMPLETE_DATA_INIT_START = "function(element){setTimeout(function(){$(element).autocomplete(";
         private const string JQUERY_UI_AUTOCOMPLETE_DATA_INIT_END = ");},0);}";
 
@@ -118,7 +119,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             if (columnModel.Editable)
             {
                 bool isJQueryUIElement = (columnModel.EditType == JqGridColumnEditTypes.JQueryUIAutocomplete) || (columnModel.EditType == JqGridColumnEditTypes.JQueryUIDatepicker) || (columnModel.EditType == JqGridColumnEditTypes.JQueryUISpinner);
-                bool isNativeElement = (columnModel.EditType == JqGridColumnEditTypes.Date);
+                bool isNativeElement = (columnModel.EditType == JqGridColumnEditTypes.Date) || (columnModel.EditType == JqGridColumnEditTypes.DateTimeLocal);
 
                 if (!isJQueryUIElement && !isNativeElement)
                 {
@@ -151,6 +152,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                         case JqGridColumnEditTypes.Date:
                             javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DATA_INIT, DATE_DATA_INIT);
                             break;
+                        case JqGridColumnEditTypes.DateTimeLocal:
+                            javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DATA_INIT, DATE_TIME_LOCAL_DATA_INIT);
+                            break;
                         case JqGridColumnEditTypes.JQueryUIAutocomplete:
                             javaScriptBuilder.AppendColumnModelJQueryUIAutocompleteDataInit(columnModel.EditOptions);
                             break;
@@ -180,7 +184,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             if (columnModel.Searchable)
             {
                 bool isJQueryUIElement = (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUIAutocomplete) || (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUIDatepicker) || (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUISpinner);
-                bool isNativeElement = (columnModel.SearchType == JqGridColumnSearchTypes.Date);
+                bool isNativeElement = (columnModel.SearchType == JqGridColumnSearchTypes.Date) || (columnModel.SearchType == JqGridColumnSearchTypes.DateTimeLocal);
                 if (!isJQueryUIElement && !isNativeElement)
                 {
                     javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.ColumnModel.SEARCH_TYPE, columnModel.SearchType, JqGridOptionsDefaults.ColumnModel.SearchType);
@@ -198,6 +202,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     {
                         case JqGridColumnSearchTypes.Date:
                             javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DATA_INIT, DATE_DATA_INIT);
+                            break;
+                        case JqGridColumnSearchTypes.DateTimeLocal:
+                            javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DATA_INIT, DATE_TIME_LOCAL_DATA_INIT);
                             break;
                         case JqGridColumnSearchTypes.JQueryUIAutocomplete:
                             javaScriptBuilder.AppendColumnModelJQueryUIAutocompleteDataInit(columnModel.SearchOptions);

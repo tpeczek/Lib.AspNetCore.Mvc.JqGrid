@@ -42,6 +42,10 @@
         /// </summary>
         Date,
         /// <summary>
+        /// Input element of type datetime-local.
+        /// </summary>
+        DateTimeLocal,
+        /// <summary>
         /// Custom editable element
         /// </summary>
         Custom,

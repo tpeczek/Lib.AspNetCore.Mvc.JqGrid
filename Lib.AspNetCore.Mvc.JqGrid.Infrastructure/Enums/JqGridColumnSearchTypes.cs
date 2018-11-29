@@ -14,6 +14,10 @@
         /// </summary>
         Date,
         /// <summary>
+        /// Input element of type datetime-local.
+        /// </summary>
+        DateTimeLocal,
+        /// <summary>
         /// Select element
         /// </summary>
         Select,
