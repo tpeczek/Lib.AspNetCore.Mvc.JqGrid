@@ -19,6 +19,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.EDITITNG_URL, options.EditingUrl)
                 .AppendJavaScriptObjectEnumField(JqGridOptionsNames.DATA_TYPE, options.DataType, JqGridOptionsDefaults.DataType)
                 .AppendDataSource(options, asSubgrid)
+                .AppendStyling(options)
                 .AppendIconSet(options)
                 .AppendGrouping(options)
                 .AppendParametersNames(options.ParametersNames)
@@ -95,6 +96,28 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 }
 
                 javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.METHOD_TYPE, options.MethodType, JqGridOptionsDefaults.MethodType);
+            }
+
+            return javaScriptBuilder;
+        }
+
+        private static StringBuilder AppendStyling(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        {
+            if (options.Styling != JqGridOptionsDefaults.Styling)
+            {
+                if (options.CompatibilityMode == JqGridCompatibilityModes.JqGrid)
+                {
+                    throw new NotSupportedException("Different stylings than jQuery UI are supported only in Free jqGrid and Guriddo JqGrid.");
+                }
+
+                if (options.CompatibilityMode == JqGridCompatibilityModes.FreeJqGrid)
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.FREE_JQGRID_STYLING, options.Styling);
+                }
+                else if (options.CompatibilityMode == JqGridCompatibilityModes.GuriddoJqGrid)
+                {
+                    javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.GURIDDO_JQGRID_STYLING, options.Styling.ToString());
+                }
             }
 
             return javaScriptBuilder;

@@ -1092,6 +1092,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
         public const string Height = "100%";
 
         /// <summary>
+        /// The default styling.
+        /// </summary>
+        public const JqGridStylings Styling = JqGridStylings.JQueryUI;
+
+        /// <summary>
         /// The default icon set.
         /// </summary>
         public const JqGridIconSets IconSet = JqGridIconSets.JQueryUI;
