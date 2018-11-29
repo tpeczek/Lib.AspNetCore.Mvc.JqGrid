@@ -10,6 +10,10 @@
         /// </summary>
         Text,
         /// <summary>
+        /// Input element of type date.
+        /// </summary>
+        Date,
+        /// <summary>
         /// Select element
         /// </summary>
         Select,

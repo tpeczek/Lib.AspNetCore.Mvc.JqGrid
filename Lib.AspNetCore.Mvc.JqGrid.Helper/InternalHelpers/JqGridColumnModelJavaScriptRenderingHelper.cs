@@ -17,6 +17,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         private const string JQUERY_UI_BUTTON_FORMATTER_ON_CLICK = ").click({0}";
         private const string JQUERY_UI_BUTTON_FORMATTER_END = ");},0);return '<button id=\"' + options.rowId + '_JQueryUIButton\" />';}";
 
+        private const string DATE_DATA_INIT = "function(element){element.type = 'date';}";
         private const string JQUERY_UI_AUTOCOMPLETE_DATA_INIT_START = "function(element){setTimeout(function(){$(element).autocomplete(";
         private const string JQUERY_UI_AUTOCOMPLETE_DATA_INIT_END = ");},0);}";
 
@@ -117,12 +118,14 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             if (columnModel.Editable)
             {
                 bool isJQueryUIElement = (columnModel.EditType == JqGridColumnEditTypes.JQueryUIAutocomplete) || (columnModel.EditType == JqGridColumnEditTypes.JQueryUIDatepicker) || (columnModel.EditType == JqGridColumnEditTypes.JQueryUISpinner);
-                if (!isJQueryUIElement)
+                bool isNativeElement = (columnModel.EditType == JqGridColumnEditTypes.Date);
+
+                if (!isJQueryUIElement && !isNativeElement)
                 {
                     javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.ColumnModel.EDIT_TYPE, columnModel.EditType, JqGridOptionsDefaults.ColumnModel.EditType);
                 }
 
-                if ((columnModel.EditOptions != null) && (isJQueryUIElement || !columnModel.EditOptions.AreDefault()))
+                if ((columnModel.EditOptions != null) && (isJQueryUIElement || isNativeElement || !columnModel.EditOptions.AreDefault()))
                 {
                     javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.ColumnModel.EDIT_OPTIONS)
                         .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Editing.CUSTOM_ELEMENT, columnModel.EditOptions.CustomElementFunction)
@@ -145,6 +148,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
                     switch (columnModel.EditType)
                     {
+                        case JqGridColumnEditTypes.Date:
+                            javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DATA_INIT, DATE_DATA_INIT);
+                            break;
                         case JqGridColumnEditTypes.JQueryUIAutocomplete:
                             javaScriptBuilder.AppendColumnModelJQueryUIAutocompleteDataInit(columnModel.EditOptions);
                             break;
@@ -174,12 +180,13 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             if (columnModel.Searchable)
             {
                 bool isJQueryUIElement = (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUIAutocomplete) || (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUIDatepicker) || (columnModel.SearchType == JqGridColumnSearchTypes.JQueryUISpinner);
-                if (!isJQueryUIElement)
+                bool isNativeElement = (columnModel.SearchType == JqGridColumnSearchTypes.Date);
+                if (!isJQueryUIElement && !isNativeElement)
                 {
                     javaScriptBuilder.AppendJavaScriptObjectEnumField(JqGridOptionsNames.ColumnModel.SEARCH_TYPE, columnModel.SearchType, JqGridOptionsDefaults.ColumnModel.SearchType);
                 }
 
-                if ((columnModel.SearchOptions != null) && (isJQueryUIElement || !columnModel.SearchOptions.AreDefault()))
+                if ((columnModel.SearchOptions != null) && (isJQueryUIElement || isNativeElement || !columnModel.SearchOptions.AreDefault()))
                 {
                     javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.ColumnModel.SEARCH_OPTIONS)
                         .AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Searching.HTML_ATTRIBUTES, columnModel.SearchOptions.HtmlAttributes)
@@ -189,6 +196,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
                     switch(columnModel.SearchType)
                     {
+                        case JqGridColumnSearchTypes.Date:
+                            javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DATA_INIT, DATE_DATA_INIT);
+                            break;
                         case JqGridColumnSearchTypes.JQueryUIAutocomplete:
                             javaScriptBuilder.AppendColumnModelJQueryUIAutocompleteDataInit(columnModel.SearchOptions);
                             break;

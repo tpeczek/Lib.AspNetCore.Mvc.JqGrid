@@ -38,6 +38,10 @@
         /// </summary>
         File,
         /// <summary>
+        /// Input element of type date.
+        /// </summary>
+        Date,
+        /// <summary>
         /// Custom editable element
         /// </summary>
         Custom,
