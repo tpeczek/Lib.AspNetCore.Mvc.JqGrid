@@ -1,3 +1,10 @@
+## Lib.AspNetCore.Mvc.JqGrid.Helper 1.4.0 & 2.2.0
+### Additions and Changes
+- Added support for icon sets
+- Added support for stylings
+- Added support for input elements of type date as search and edit fields types
+- Added support for input elements of type datetime-local as search and edit fields types
+
 ## Lib.AspNetCore.Mvc.JqGrid.Helper 1.3.0 & 2.1.0
 ### Additions and Changes
 - Added support for post data

@@ -20,7 +20,10 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="docfx.console" Version="2.29.1" />
+    <PackageReference Include="docfx.console" Version="2.40.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.All" />
   </ItemGroup>
 </Project>
