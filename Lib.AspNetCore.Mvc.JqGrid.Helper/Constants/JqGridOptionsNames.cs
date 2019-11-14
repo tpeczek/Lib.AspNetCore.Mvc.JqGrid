@@ -17,13 +17,16 @@
         internal const string EXPAND_COLUMN_CLICK = "ExpandColClick";
         internal const string FOOTER_ENABLED = "footerrow";
         internal const string HEIGHT = "height";
+        internal const string GRID_COMPLETE = "gridComplete";
         internal const string GROUPING_ENABLED = "grouping";
         internal const string GROUPING_VIEW = "groupingView";
         internal const string FREE_JQGRID_STYLING = "guiStyle";
         internal const string GURIDDO_JQGRID_STYLING = "styleUI";
         internal const string ICON_SET = "iconSet";
         internal const string JSON_READER = "jsonReader";
+        internal const string LOAD_COMPLETE = "loadComplete";
         internal const string METHOD_TYPE = "mtype";
+        internal const string ON_SELECT_ROW = "onSelectRow";
         internal const string PAGER = "pager";
         internal const string PARAMETERS_NAMES = "prmNames";
         internal const string REQUEST_INITIAL_SERVER_SEARCHING = "search";

@@ -1,4 +1,3 @@
-using System;
 using System.Text;
 using Xunit;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;

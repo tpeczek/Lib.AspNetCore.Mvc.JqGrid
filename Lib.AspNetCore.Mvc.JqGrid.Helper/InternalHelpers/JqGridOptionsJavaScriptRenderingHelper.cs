@@ -35,7 +35,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.REQUEST_INITIAL_SERVER_SEARCHING, options.RequestInitialServerSearching, JqGridOptionsDefaults.RequestInitialServerSearching)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.FOOTER_ENABLED, options.FooterEnabled, JqGridOptionsDefaults.FooterEnabled)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.USER_DATA_ON_FOOTER, options.UserDataOnFooter, JqGridOptionsDefaults.UserDataOnFooter)
-                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.HEIGHT, options.Height);
+                .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.HEIGHT, options.Height)
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ON_SELECT_ROW, options.OnSelectRow)
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.GRID_COMPLETE, options.GridComplete)
+                .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.LOAD_COMPLETE, options.LoadComplete);
 
             if (!options.Height.HasValue)
             {

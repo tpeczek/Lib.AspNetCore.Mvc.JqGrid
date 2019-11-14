@@ -110,6 +110,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public bool FooterEnabled { get; set; }
 
         /// <summary>
+        /// Gets or sets the function for event which is raised after all the data is loaded into the grid and all other processes are complete.
+        /// </summary>
+        public string GridComplete { get; set; }
+
+        /// <summary>
         /// Gets or sets the grouping headers.
         /// </summary>
         public IEnumerable<JqGridGroupHeader> GroupHeaders { get; set; }
@@ -150,6 +155,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         public JqGridJsonReader JsonReader { get; set; }
 
         /// <summary>
+        /// Gets or sets the function for event which is raised immediately after every server request.
+        /// </summary>
+        public string LoadComplete { get; set; }
+
+        /// <summary>
         /// Gets or sets the type of request to make (default JqGridMethodTypes.Get).
         /// </summary>
         public JqGridMethodTypes MethodType { get; set; }
@@ -163,6 +173,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options
         /// Gets or sets the navigator options.
         /// </summary>
         public JqGridNavigatorOptions Navigator { get; set; }
+
+        /// <summary>
+        /// Gets or sets the function for event which is raised immediately after row was clicked.
+        /// </summary>
+        public string OnSelectRow { get; set; }
 
         /// <summary>
         /// Gets or sets if grid should use a pager bar to navigate through the records (default: false).
