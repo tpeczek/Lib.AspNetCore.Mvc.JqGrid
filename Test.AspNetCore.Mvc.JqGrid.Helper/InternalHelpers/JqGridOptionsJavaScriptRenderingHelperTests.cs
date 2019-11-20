@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 using Xunit;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
@@ -33,7 +31,7 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         }
 
         [Fact]
-        public void AppendOptions_GridCompleteIsNotNull_ScriptContainGridCompleteOption()
+        public void AppendOptions_GridCompleteIsNotNull_ScriptContainsGridCompleteOption()
         {
             StringBuilder javaScriptBuilder = new StringBuilder();
             JqGridOptions options = new JqGridOptions(SOME_GRID_ID)
@@ -58,7 +56,7 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         }
 
         [Fact]
-        public void AppendOptions_LoadCompleteIsNotNull_ScriptContainLoadCompleteOption()
+        public void AppendOptions_LoadCompleteIsNotNull_ScriptContainsLoadCompleteOption()
         {
             StringBuilder javaScriptBuilder = new StringBuilder();
             JqGridOptions options = new JqGridOptions(SOME_GRID_ID)
@@ -83,7 +81,7 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         }
 
         [Fact]
-        public void AppendOptions_OnSelectRowIsNotNull_ScriptContainOnSelectRowOption()
+        public void AppendOptions_OnSelectRowIsNotNull_ScriptContainsOnSelectRowOption()
         {
             StringBuilder javaScriptBuilder = new StringBuilder();
             JqGridOptions options = new JqGridOptions(SOME_GRID_ID)

@@ -66,6 +66,8 @@
             internal const string HIDDEN = "hidden";
             internal const string INDEX = "index";
             internal const string INITIAL_SORTING_ORDER = "firstsortorder";
+            internal const string JSON_MAP = "jsonmap";
+            internal const string KEY = "key";
             internal const string RESIZABLE = "resizable";
             internal const string SEARCHABLE = "search";
             internal const string SEARCH_TYPE = "stype";
@@ -77,6 +79,7 @@
             internal const string SUMMARY_TEMPLATE = "summaryTpl";
             internal const string TITLE = "title";
             internal const string WIDTH = "width";
+            internal const string XML_MAP = "xmlmap";
             internal const string VIEWABLE = "viewable";
             internal const string FORMATTER = "formatter";
             internal const string UNFORMATTER = "unformat";

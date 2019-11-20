@@ -96,6 +96,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         public JqGridSortingOrders InitialSortingOrder { get; set; }
 
         /// <summary>
+        /// Gets or sets the JSON mapping for the column in the incoming JSON string.
+        /// </summary>
+        public string JsonMapping { get; set; }
+
+        /// <summary>
+        /// Defines if this column value should be used as unique row id (in case there is no id from the server). 
+        /// </summary>
+        public bool Key { get; set; }
+
+        /// <summary>
         /// Gets the unique name for the column.
         /// </summary>
         public string Name { get; private set; }
@@ -171,6 +181,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
         public int Width { get; set; }
 
         /// <summary>
+        /// Gets or sets the XML mapping for the column in the incomming XML file.
+        /// </summary>
+        public string XmlMapping { get; set; }
+
+        /// <summary>
         /// Gets or sets the value which defines if the column should appear in view form.
         /// </summary>
         public bool Viewable { get; set; }
@@ -202,6 +217,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
             Hidden = JqGridOptionsDefaults.ColumnModel.Hidden;
             Index = String.Empty;
             InitialSortingOrder = JqGridOptionsDefaults.ColumnModel.Sorting.InitialOrder;
+            JsonMapping = null;
+            Key = JqGridOptionsDefaults.ColumnModel.Key;
             Resizable = JqGridOptionsDefaults.ColumnModel.Resizable;
             Searchable = JqGridOptionsDefaults.ColumnModel.Searchable;
             SearchOptions = null;
@@ -216,6 +233,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel
             Title = JqGridOptionsDefaults.ColumnModel.Title;
             UnFormatter = String.Empty;
             Width = JqGridOptionsDefaults.ColumnModel.Width;
+            XmlMapping = null;
             Viewable = JqGridOptionsDefaults.ColumnModel.Viewable;
         }
         #endregion

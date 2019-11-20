@@ -87,6 +87,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             JqGridColumnSearchableAttribute jqGridColumnSearchableAttribute = null;
             JqGridColumnEditableAttribute jqGridColumnEditableAttribute = null;
             JqGridColumnSummaryAttribute jqGridColumnSummaryAttribute = null;
+            JqGridColumnMappingAttribute jqGridColumnMappingAttribute = null;
 
             foreach (Attribute customAttribute in columnMetadata.ContainerType.GetProperty(columnMetadata.PropertyName).GetCustomAttributes(true))
             {
@@ -99,6 +100,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 jqGridColumnSearchableAttribute = (customAttribute as JqGridColumnSearchableAttribute) ?? jqGridColumnSearchableAttribute;
                 jqGridColumnEditableAttribute = (customAttribute as JqGridColumnEditableAttribute) ?? jqGridColumnEditableAttribute;
                 jqGridColumnSummaryAttribute = (customAttribute as JqGridColumnSummaryAttribute) ?? jqGridColumnSummaryAttribute;
+                jqGridColumnMappingAttribute = (customAttribute as JqGridColumnMappingAttribute) ?? jqGridColumnMappingAttribute;
             }
 
             if (timeStampAttribute != null)
@@ -115,6 +117,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel = SetEditOptions(columnModel, urlHelper, columnMetadata.ModelType, jqGridColumnEditableAttribute, rangeAttribute, requiredAttribute);
                 columnModel = SetDatePickerDateFormatFromFormatter(columnModel, jqGridColumnFormatterAttribute);
                 columnModel = SetSummaryOptions(columnModel, jqGridColumnSummaryAttribute);
+                columnModel = SetMappingOptions(columnModel, jqGridColumnMappingAttribute);
             }
 
             return columnModel;
@@ -275,6 +278,18 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 columnModel.SummaryType = jqGridColumnSummaryAttribute.Type;
                 columnModel.SummaryTemplate = jqGridColumnSummaryAttribute.Template;
                 columnModel.SummaryFunction = jqGridColumnSummaryAttribute.Function;
+            }
+
+            return columnModel;
+        }
+
+        private static JqGridColumnModel SetMappingOptions(JqGridColumnModel columnModel, JqGridColumnMappingAttribute jqGridColumnMappingAttribute)
+        {
+            if (jqGridColumnMappingAttribute != null)
+            {
+                columnModel.JsonMapping = jqGridColumnMappingAttribute.JsonMapping;
+                columnModel.Key = jqGridColumnMappingAttribute.Key;
+                columnModel.XmlMapping = jqGridColumnMappingAttribute.XmlMapping;
             }
 
             return columnModel;

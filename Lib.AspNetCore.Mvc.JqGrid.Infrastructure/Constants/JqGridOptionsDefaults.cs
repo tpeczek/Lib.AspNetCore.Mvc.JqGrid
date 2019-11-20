@@ -478,6 +478,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants
             public const bool Hidden = false;
 
             /// <summary>
+            /// The value which defines if column value should be used as unique row id (in case there is no id from the server). 
+            /// </summary>
+            public const bool Key = false;
+
+            /// <summary>
             /// The value which defines if column can be resized.
             /// </summary>
             public const bool Resizable = true;
