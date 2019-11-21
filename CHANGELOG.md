@@ -1,3 +1,8 @@
+## Lib.AspNetCore.Mvc.JqGrid.Helper 1.5.0 & 2.3.0
+### Additions and Changes
+- Added support for gridComplete, loadComplete, and onSelectRow events
+- Added support for column mappings
+
 ## Lib.AspNetCore.Mvc.JqGrid.Helper 1.4.0 & 2.2.0
 ### Additions and Changes
 - Added support for icon sets
