@@ -2034,6 +2034,64 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnLayoutAttribute.Width
   nameWithType: JqGridColumnLayoutAttribute.Width
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute
+  name: JqGridColumnMappingAttribute
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.html
+  commentId: T:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute
+  nameWithType: JqGridColumnMappingAttribute
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.#ctor
+  name: JqGridColumnMappingAttribute()
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnMappingAttribute__ctor
+  commentId: M:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.#ctor
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.JqGridColumnMappingAttribute()
+  nameWithType: JqGridColumnMappingAttribute.JqGridColumnMappingAttribute()
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.#ctor*
+  name: JqGridColumnMappingAttribute
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnMappingAttribute__ctor_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.#ctor
+  isSpec: "True"
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.JqGridColumnMappingAttribute
+  nameWithType: JqGridColumnMappingAttribute.JqGridColumnMappingAttribute
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.JsonMapping
+  name: JsonMapping
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnMappingAttribute_JsonMapping
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.JsonMapping
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.JsonMapping
+  nameWithType: JqGridColumnMappingAttribute.JsonMapping
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.JsonMapping*
+  name: JsonMapping
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnMappingAttribute_JsonMapping_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.JsonMapping
+  isSpec: "True"
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.JsonMapping
+  nameWithType: JqGridColumnMappingAttribute.JsonMapping
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.Key
+  name: Key
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnMappingAttribute_Key
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.Key
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.Key
+  nameWithType: JqGridColumnMappingAttribute.Key
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.Key*
+  name: Key
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnMappingAttribute_Key_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.Key
+  isSpec: "True"
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.Key
+  nameWithType: JqGridColumnMappingAttribute.Key
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.XmlMapping
+  name: XmlMapping
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnMappingAttribute_XmlMapping
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.XmlMapping
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.XmlMapping
+  nameWithType: JqGridColumnMappingAttribute.XmlMapping
+- uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.XmlMapping*
+  name: XmlMapping
+  href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.html#Lib_AspNetCore_Mvc_JqGrid_DataAnnotations_JqGridColumnMappingAttribute_XmlMapping_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.XmlMapping
+  isSpec: "True"
+  fullName: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.XmlMapping
+  nameWithType: JqGridColumnMappingAttribute.XmlMapping
 - uid: Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute
   name: JqGridColumnSearchableAttribute
   href: api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.html
@@ -2912,6 +2970,12 @@ references:
   commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.SpinnerUpIcon
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.SpinnerUpIcon
   nameWithType: JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.SpinnerUpIcon
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Key
+  name: Key
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_ColumnModel_Key
+  commentId: F:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Key
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Key
+  nameWithType: JqGridOptionsDefaults.ColumnModel.Key
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Resizable
   name: Resizable
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Constants_JqGridOptionsDefaults_ColumnModel_Resizable
@@ -6081,6 +6145,32 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.InitialSortingOrder
   nameWithType: JqGridColumnModel.InitialSortingOrder
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.JsonMapping
+  name: JsonMapping
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_ColumnModel_JqGridColumnModel_JsonMapping
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.JsonMapping
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.JsonMapping
+  nameWithType: JqGridColumnModel.JsonMapping
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.JsonMapping*
+  name: JsonMapping
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_ColumnModel_JqGridColumnModel_JsonMapping_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.JsonMapping
+  isSpec: "True"
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.JsonMapping
+  nameWithType: JqGridColumnModel.JsonMapping
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.Key
+  name: Key
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_ColumnModel_JqGridColumnModel_Key
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.Key
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.Key
+  nameWithType: JqGridColumnModel.Key
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.Key*
+  name: Key
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_ColumnModel_JqGridColumnModel_Key_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.Key
+  isSpec: "True"
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.Key
+  nameWithType: JqGridColumnModel.Key
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.Name
   name: Name
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_ColumnModel_JqGridColumnModel_Name
@@ -6289,6 +6379,19 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.Width
   nameWithType: JqGridColumnModel.Width
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.XmlMapping
+  name: XmlMapping
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_ColumnModel_JqGridColumnModel_XmlMapping
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.XmlMapping
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.XmlMapping
+  nameWithType: JqGridColumnModel.XmlMapping
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.XmlMapping*
+  name: XmlMapping
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_ColumnModel_JqGridColumnModel_XmlMapping_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.XmlMapping
+  isSpec: "True"
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.XmlMapping
+  nameWithType: JqGridColumnModel.XmlMapping
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnRules
   name: JqGridColumnRules
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnRules.html
@@ -7370,6 +7473,19 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.FooterEnabled
   nameWithType: JqGridOptions.FooterEnabled
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.GridComplete
+  name: GridComplete
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_GridComplete
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.GridComplete
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.GridComplete
+  nameWithType: JqGridOptions.GridComplete
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.GridComplete*
+  name: GridComplete
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_GridComplete_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.GridComplete
+  isSpec: "True"
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.GridComplete
+  nameWithType: JqGridOptions.GridComplete
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.GroupHeaders
   name: GroupHeaders
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_GroupHeaders
@@ -7500,6 +7616,19 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.JsonReader
   nameWithType: JqGridOptions.JsonReader
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.LoadComplete
+  name: LoadComplete
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_LoadComplete
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.LoadComplete
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.LoadComplete
+  nameWithType: JqGridOptions.LoadComplete
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.LoadComplete*
+  name: LoadComplete
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_LoadComplete_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.LoadComplete
+  isSpec: "True"
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.LoadComplete
+  nameWithType: JqGridOptions.LoadComplete
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.MethodType
   name: MethodType
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_MethodType
@@ -7526,6 +7655,19 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.Navigator
   nameWithType: JqGridOptions.Navigator
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.OnSelectRow
+  name: OnSelectRow
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_OnSelectRow
+  commentId: P:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.OnSelectRow
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.OnSelectRow
+  nameWithType: JqGridOptions.OnSelectRow
+- uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.OnSelectRow*
+  name: OnSelectRow
+  href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_OnSelectRow_
+  commentId: Overload:Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.OnSelectRow
+  isSpec: "True"
+  fullName: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.OnSelectRow
+  nameWithType: JqGridOptions.OnSelectRow
 - uid: Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.Pager
   name: Pager
   href: api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html#Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Options_JqGridOptions_Pager
