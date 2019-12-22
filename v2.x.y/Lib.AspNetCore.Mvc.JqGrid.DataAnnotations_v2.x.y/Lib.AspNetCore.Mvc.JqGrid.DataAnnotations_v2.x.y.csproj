@@ -2,14 +2,14 @@
   <PropertyGroup>
     <Description>Custom data annotations which allow for providing additional metadata when working with strongly typed jqGrid helper for ASP.NET Core.</Description>
     <Copyright>Copyright © 2016 - 2019 Tomasz Pęczek</Copyright>
-    <VersionPrefix>1.5.0</VersionPrefix>
+    <VersionPrefix>2.3.0</VersionPrefix>
     <Authors>Tomasz Pęczek</Authors>
-    <TargetFrameworks>net451;netstandard1.6</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Lib.AspNetCore.Mvc.JqGrid.DataAnnotations</AssemblyName>
     <PackageId>Lib.AspNetCore.Mvc.JqGrid.DataAnnotations</PackageId>
     <PackageTags>aspnetcore;aspnetcoremvc;jqgrid</PackageTags>
     <PackageProjectUrl>https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid</RepositoryUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -29,9 +29,6 @@
     <Compile Remove="..\..\Lib.AspNetCore.Mvc.JqGrid.DataAnnotations\bin\**" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Infrastructure_v1.x.y\Lib.AspNetCore.Mvc.JqGrid.Infrastructure_v1.x.y.csproj" />
+    <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Infrastructure_v2.x.y\Lib.AspNetCore.Mvc.JqGrid.Infrastructure_v2.x.y.csproj" />
   </ItemGroup>
-  <!--<ItemGroup>
-    <PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Infrastructure" Version="1.4.0" />
-  </ItemGroup>-->
 </Project>

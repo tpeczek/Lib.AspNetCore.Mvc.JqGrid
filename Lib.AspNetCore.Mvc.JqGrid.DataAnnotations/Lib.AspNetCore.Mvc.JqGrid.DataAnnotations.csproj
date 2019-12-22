@@ -9,7 +9,7 @@
     <PackageId>Lib.AspNetCore.Mvc.JqGrid.DataAnnotations</PackageId>
     <PackageTags>aspnetcore;aspnetcoremvc;jqgrid</PackageTags>
     <PackageProjectUrl>https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid</RepositoryUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -22,7 +22,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Infrastructure\Lib.AspNetCore.Mvc.JqGrid.Infrastructure.csproj" />
   </ItemGroup>
-  <!--<ItemGroup>
-    <PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Infrastructure" Version="2.2.0" />
-  </ItemGroup>-->
 </Project>

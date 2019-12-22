@@ -9,7 +9,7 @@
     <PackageId>Lib.AspNetCore.Mvc.JqGrid.Helper</PackageId>
     <PackageTags>aspnetcore;aspnetcoremvc;jqgrid</PackageTags>
     <PackageProjectUrl>https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid</RepositoryUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -28,8 +28,5 @@
     <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
-    <!--<PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Infrastructure" Version="2.2.0" />
-    <PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.Core" Version="2.2.0" />
-    <PackageReference Include="Lib.AspNetCore.Mvc.JqGrid.DataAnnotations" Version="2.2.0" />-->
   </ItemGroup>
 </Project>

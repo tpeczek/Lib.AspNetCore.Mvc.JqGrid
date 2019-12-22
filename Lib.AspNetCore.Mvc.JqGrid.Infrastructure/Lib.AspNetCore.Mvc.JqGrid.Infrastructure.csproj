@@ -9,7 +9,7 @@
     <PackageId>Lib.AspNetCore.Mvc.JqGrid.Infrastructure</PackageId>
     <PackageTags>aspnetcore;aspnetcoremvc;jqgrid</PackageTags>
     <PackageProjectUrl>https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/tpeczek/Lib.AspNetCore.Mvc.JqGrid</RepositoryUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
