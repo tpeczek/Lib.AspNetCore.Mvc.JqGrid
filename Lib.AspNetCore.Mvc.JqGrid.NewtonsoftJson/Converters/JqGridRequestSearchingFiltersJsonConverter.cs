@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
 
-namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters
+namespace Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson.Converters
 {
     /// <summary>
     /// Converts JqGridRequestSearchingFilters from JSON. 

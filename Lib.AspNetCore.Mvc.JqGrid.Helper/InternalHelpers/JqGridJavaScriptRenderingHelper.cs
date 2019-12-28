@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
@@ -19,18 +20,18 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return asSubgrid? ((pager == JqGridNavigatorPagers.Standard) ? JqGridSubgridJavaScriptRenderingHelper.SUBGRID_PAGER_ID : JqGridSubgridJavaScriptRenderingHelper.SUBGRID_TOP_PAGER_ID) : String.Format("'#{0}'", options.GetJqGridPagerId(pager));
         }
 
-        internal static StringBuilder AppendJqGridScript(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
+        internal static StringBuilder AppendJqGridScript(this StringBuilder javaScriptBuilder, JqGridOptions options, IJqGridJsonService jqGridJsonService, bool asSubgrid)
         {
             javaScriptBuilder.Append(".jqGrid({").AppendLine()
                .AppendJavaScriptObjectStringArrayField(JqGridOptionsNames.COLUMNS_NAMES_FIELD, options.ColumnsNames)
-               .AppendColumnsModels(options, asSubgrid)
-               .AppendOptions(options, asSubgrid)
+               .AppendColumnsModels(options, jqGridJsonService, asSubgrid)
+               .AppendOptions(options, jqGridJsonService, asSubgrid)
                .AppendJavaScriptObjectClosing()
                .AppendHeaderGrouping(options)
                .AppendFooterData(options)
                .AppendFilterToolbar(options.FilterToolbar)
-               .AppendNavigator(options, asSubgrid)
-               .AppendInlineNavigator(options, asSubgrid)
+               .AppendNavigator(options, jqGridJsonService, asSubgrid)
+               .AppendInlineNavigator(options, jqGridJsonService, asSubgrid)
                .AppendLine(");");
 
             return javaScriptBuilder;

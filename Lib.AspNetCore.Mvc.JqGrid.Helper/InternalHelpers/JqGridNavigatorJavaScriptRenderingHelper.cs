@@ -6,6 +6,7 @@ using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
@@ -19,19 +20,19 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         #endregion
 
         #region Extension Methods
-        internal static StringBuilder AppendInlineNavigator(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
+        internal static StringBuilder AppendInlineNavigator(this StringBuilder javaScriptBuilder, JqGridOptions options, IJqGridJsonService jqGridJsonService, bool asSubgrid)
         {
             if (options.InlineNavigator != null)
             {
                 javaScriptBuilder.AppendLine(")")
                     .AppendFormat(".jqGrid('inlineNav',{0}", options.GetJqGridPagerSelector(options.Navigator.Pager, asSubgrid))
-                    .AppendInlineNavigatorOptions(options.InlineNavigator);
+                    .AppendInlineNavigatorOptions(options.InlineNavigator, jqGridJsonService);
             }
 
             return javaScriptBuilder;
         }
 
-        internal static StringBuilder AppendInlineNavigatorOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorOptions inlineNavigatorOptions)
+        internal static StringBuilder AppendInlineNavigatorOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorOptions inlineNavigatorOptions, IJqGridJsonService jqGridJsonService)
         {
             if ((inlineNavigatorOptions != null) && !inlineNavigatorOptions.AreDefault())
             {
@@ -46,15 +47,15 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.CANCEL_ICON, inlineNavigatorOptions.CancelIcon, JqGridOptionsDefaults.Navigator.CancelIcon)
                     .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.CANCEL_TEXT, inlineNavigatorOptions.CancelText)
                     .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.CANCEL_TITLE, inlineNavigatorOptions.CancelToolTip, JqGridOptionsDefaults.Navigator.CancelToolTip)
-                    .AppendInlineNavigatorActionOptions(JqGridOptionsNames.Navigator.EDIT_PARAMETERS, inlineNavigatorOptions.ActionOptions)
-                    .AppendInlineNavigatorAddActionOptions(inlineNavigatorOptions.AddActionOptions)
+                    .AppendInlineNavigatorActionOptions(JqGridOptionsNames.Navigator.EDIT_PARAMETERS, inlineNavigatorOptions.ActionOptions, jqGridJsonService)
+                    .AppendInlineNavigatorAddActionOptions(inlineNavigatorOptions.AddActionOptions, jqGridJsonService)
                     .AppendJavaScriptObjectClosing();
             }
 
             return javaScriptBuilder;
         }
 
-        internal static StringBuilder AppendInlineNavigatorActionOptions(this StringBuilder javaScriptBuilder, string fieldName, JqGridInlineNavigatorActionOptions inlineNavigatorActionOptions)
+        internal static StringBuilder AppendInlineNavigatorActionOptions(this StringBuilder javaScriptBuilder, string fieldName, JqGridInlineNavigatorActionOptions inlineNavigatorActionOptions, IJqGridJsonService jqGridJsonService)
         {
             if ((inlineNavigatorActionOptions != null) && !inlineNavigatorActionOptions.AreDefault())
             {
@@ -63,7 +64,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     javaScriptBuilder.AppendJavaScriptObjectFieldOpening(fieldName);
                 }
 
-                javaScriptBuilder.AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.InlineNavigator.EXTRA_PARAM, inlineNavigatorActionOptions.ExtraParamScript, inlineNavigatorActionOptions.ExtraParam)
+                javaScriptBuilder.AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.InlineNavigator.EXTRA_PARAM, inlineNavigatorActionOptions.ExtraParamScript, inlineNavigatorActionOptions.ExtraParam, jqGridJsonService)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.InlineNavigator.KEYS, inlineNavigatorActionOptions.Keys, JqGridOptionsDefaults.Navigator.InlineActionKeys)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.ON_EDIT_FUNCTION, inlineNavigatorActionOptions.OnEditFunction)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.InlineNavigator.SUCCESS_FUNCTION, inlineNavigatorActionOptions.SuccessFunction)
@@ -83,24 +84,24 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder;
         }
 
-        internal static StringBuilder AppendInlineNavigatorAddActionOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorAddActionOptions inlineNavigatorAddActionOptions)
+        internal static StringBuilder AppendInlineNavigatorAddActionOptions(this StringBuilder javaScriptBuilder, JqGridInlineNavigatorAddActionOptions inlineNavigatorAddActionOptions, IJqGridJsonService jqGridJsonService)
         {
             if ((inlineNavigatorAddActionOptions != null) && !inlineNavigatorAddActionOptions.AreDefault())
             {
                 javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.Navigator.ADD_PARAMETERS)
                     .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.ROW_ID, inlineNavigatorAddActionOptions.RowId, JqGridOptionsDefaults.Navigator.NewRowId)
-                    .AppendJavaScriptObjectObjectField(JqGridOptionsNames.Navigator.INIT_DATA, inlineNavigatorAddActionOptions.InitData)
+                    .AppendJavaScriptObjectObjectField(JqGridOptionsNames.Navigator.INIT_DATA, inlineNavigatorAddActionOptions.InitData, jqGridJsonService)
                     .AppendJavaScriptObjectEnumField(JqGridOptionsNames.Navigator.POSITION, inlineNavigatorAddActionOptions.NewRowPosition, JqGridOptionsDefaults.Navigator.NewRowPosition)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.USE_DEFAULT_VALUES, inlineNavigatorAddActionOptions.UseDefaultValues, JqGridOptionsDefaults.Navigator.UseDefaultValues)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.Navigator.USE_FORMATTER, inlineNavigatorAddActionOptions.UseFormatter, JqGridOptionsDefaults.Navigator.UseFormatter)
-                    .AppendInlineNavigatorActionOptions(JqGridOptionsNames.Navigator.ADD_ROW_PARAMETERS, inlineNavigatorAddActionOptions)
+                    .AppendInlineNavigatorActionOptions(JqGridOptionsNames.Navigator.ADD_ROW_PARAMETERS, inlineNavigatorAddActionOptions, jqGridJsonService)
                     .AppendJavaScriptObjectFieldClosing();
             }
 
             return javaScriptBuilder;
         }
 
-        internal static StringBuilder AppendNavigator(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
+        internal static StringBuilder AppendNavigator(this StringBuilder javaScriptBuilder, JqGridOptions options, IJqGridJsonService jqGridJsonService, bool asSubgrid)
         {
             if (options.Navigator != null)
             {
@@ -109,9 +110,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 javaScriptBuilder.AppendLine(")")
                     .AppendFormat(".jqGrid('navGrid',{0}", jqGridPagerSelector)
                     .AppendNavigatorOptions(options.Navigator)
-                    .AppendNavigatorEditActionOptions(null, options.Navigator.EditOptions)
-                    .AppendNavigatorEditActionOptions(null, options.Navigator.AddOptions)
-                    .AppendNavigatorDeleteActionOptions(null, options.Navigator.DeleteOptions)
+                    .AppendNavigatorEditActionOptions(null, options.Navigator.EditOptions, jqGridJsonService)
+                    .AppendNavigatorEditActionOptions(null, options.Navigator.AddOptions, jqGridJsonService)
+                    .AppendNavigatorDeleteActionOptions(null, options.Navigator.DeleteOptions, jqGridJsonService)
                     .AppendNavigatorSearchActionOptions(options.Navigator.SearchOptions)
                     .AppendNavigatorViewActionOptions(options.Navigator.ViewOptions)
                     .AppendNavigatorLeadingCustomElements(jqGridPagerSelector, options.Navigator.LeadingCustomElements)
@@ -173,7 +174,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.Navigator.EDIT_TITLE, navigatorOptions.EditToolTip, JqGridOptionsDefaults.Navigator.EditToolTip);
         }
 
-        internal static StringBuilder AppendNavigatorEditActionOptions(this StringBuilder javaScriptBuilder, string fieldName, JqGridNavigatorEditActionOptions navigatorEditActionOptions)
+        internal static StringBuilder AppendNavigatorEditActionOptions(this StringBuilder javaScriptBuilder, string fieldName, JqGridNavigatorEditActionOptions navigatorEditActionOptions, IJqGridJsonService jqGridJsonService)
         {
             if ((navigatorEditActionOptions != null) && !navigatorEditActionOptions.AreDefault())
             {
@@ -196,8 +197,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
                 javaScriptBuilder.AppendNavigatorModifyActionOptions(navigatorEditActionOptions)
                     .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.WIDTH, navigatorEditActionOptions.Width, JqGridOptionsDefaults.Navigator.EditActionWidth)
-                    .AppendJavaScriptObjectObjectField(JqGridOptionsNames.Navigator.AJAX_EDIT_OPTIONS, navigatorEditActionOptions.AjaxOptions)
-                    .AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.Navigator.EDIT_EXTRA_DATA, navigatorEditActionOptions.ExtraDataScript, navigatorEditActionOptions.ExtraData)
+                    .AppendJavaScriptObjectObjectField(JqGridOptionsNames.Navigator.AJAX_EDIT_OPTIONS, navigatorEditActionOptions.AjaxOptions, jqGridJsonService)
+                    .AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.Navigator.EDIT_EXTRA_DATA, navigatorEditActionOptions.ExtraDataScript, navigatorEditActionOptions.ExtraData, jqGridJsonService)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.SERIALIZE_EDIT_DATA, navigatorEditActionOptions.SerializeData)
                     .AppendJavaScriptObjectEnumField(JqGridOptionsNames.Navigator.ADDED_ROW_POSITION, navigatorEditActionOptions.AddedRowPosition, JqGridOptionsDefaults.Navigator.AddedRowPosition)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.AFTER_CLICK_PG_BUTTONS, navigatorEditActionOptions.AfterClickPgButtons)
@@ -233,7 +234,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder;
         }
 
-        internal static StringBuilder AppendNavigatorDeleteActionOptions(this StringBuilder javaScriptBuilder, string fieldName, JqGridNavigatorDeleteActionOptions navigatorDeleteActionOptions)
+        internal static StringBuilder AppendNavigatorDeleteActionOptions(this StringBuilder javaScriptBuilder, string fieldName, JqGridNavigatorDeleteActionOptions navigatorDeleteActionOptions, IJqGridJsonService jqGridJsonService)
         {
             if ((navigatorDeleteActionOptions != null) && !navigatorDeleteActionOptions.AreDefault())
             {
@@ -248,8 +249,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 
                 javaScriptBuilder.AppendNavigatorModifyActionOptions(navigatorDeleteActionOptions)
                     .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.Navigator.WIDTH, navigatorDeleteActionOptions.Width, JqGridOptionsDefaults.Navigator.DeleteActionWidth)
-                    .AppendJavaScriptObjectObjectField(JqGridOptionsNames.Navigator.AJAX_DELETE_OPTIONS, navigatorDeleteActionOptions.AjaxOptions)
-                    .AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.Navigator.DELETE_EXTRA_DATA, navigatorDeleteActionOptions.ExtraDataScript, navigatorDeleteActionOptions.ExtraData)
+                    .AppendJavaScriptObjectObjectField(JqGridOptionsNames.Navigator.AJAX_DELETE_OPTIONS, navigatorDeleteActionOptions.AjaxOptions, jqGridJsonService)
+                    .AppendJavaScriptObjectScriptOrObjectField(JqGridOptionsNames.Navigator.DELETE_EXTRA_DATA, navigatorDeleteActionOptions.ExtraDataScript, navigatorDeleteActionOptions.ExtraData, jqGridJsonService)
                     .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.Navigator.SERIALIZE_DELETE_DATA, navigatorDeleteActionOptions.SerializeData)
                     .AppendFormButtonIcon(JqGridOptionsNames.Navigator.DELETE_ICON, navigatorDeleteActionOptions.DeleteButtonIcon, JqGridFormButtonIcon.DeleteIcon)
                     .AppendFormButtonIcon(JqGridOptionsNames.Navigator.CANCEL_ICON, navigatorDeleteActionOptions.CancelButtonIcon, JqGridFormButtonIcon.CancelIcon);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
@@ -16,12 +17,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         #endregion
 
         #region Extension Methods
-        internal static StringBuilder AppendSubgrid(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        internal static StringBuilder AppendSubgrid(this StringBuilder javaScriptBuilder, JqGridOptions options, IJqGridJsonService jqGridJsonService)
         {
             if (options.SubgridEnabled && (options.SubgridOptions != null))
             {
                 javaScriptBuilder.AppendCoreSubgridOptions(options)
-                    .AppendSubgridAsGridRowExpanded(options);
+                    .AppendSubgridAsGridRowExpanded(options, jqGridJsonService);
             }
             else if (options.SubgridEnabled && !String.IsNullOrWhiteSpace(options.SubgridUrl) && (options.SubgridModel != null))
             {
@@ -59,7 +60,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder;
         }
 
-        private static StringBuilder AppendSubgridAsGridRowExpanded(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        private static StringBuilder AppendSubgridAsGridRowExpanded(this StringBuilder javaScriptBuilder, JqGridOptions options, IJqGridJsonService jqGridJsonService)
         {
             javaScriptBuilder.AppendFormat("{0}: function (subgridId, rowId) {{", JqGridOptionsNames.SUBGRID_ROW_EXPANDED)
                 .Append("var $subgridContainer = jQuery('#' + subgridId);")
@@ -73,7 +74,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
 
             javaScriptBuilder.Append(SUBGRID_VARIABLE)
-                .AppendJqGridScript(options.SubgridOptions, true)
+                .AppendJqGridScript(options.SubgridOptions, jqGridJsonService, true)
                 .Append("},");
 
             return javaScriptBuilder;

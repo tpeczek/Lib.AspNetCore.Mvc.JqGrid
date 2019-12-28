@@ -1,8 +1,10 @@
 ﻿using System.Text;
 using Xunit;
+using Moq;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
 
 namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
@@ -23,11 +25,13 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         [Fact]
         public void AppendColumnsModels_JsonMappingIsNull_ScriptDoesNotContainJsonMapOption()
         {
+            IJqGridJsonService jqGridJsonServiceStub = new Mock<IJqGridJsonService>().Object;
+
             StringBuilder javaScriptBuilder = new StringBuilder();
             JqGridOptions options = new JqGridOptions(SOME_GRID_ID);
             options.AddColumn(SOME_COLUMN_NAME, new JqGridColumnModel(SOME_COLUMN_NAME));
 
-            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, false);
+            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, jqGridJsonServiceStub, false);
 
             Assert.DoesNotContain(JSON_MAP_OPTION, javaScriptBuilder.ToString());
         }
@@ -35,6 +39,8 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         [Fact]
         public void AppendOptions_JsonMappingIsNotNull_ScriptContainsJsonMapOption()
         {
+            IJqGridJsonService jqGridJsonServiceStub = new Mock<IJqGridJsonService>().Object;
+
             StringBuilder javaScriptBuilder = new StringBuilder();
             JqGridOptions options = new JqGridOptions(SOME_GRID_ID);
             options.AddColumn(SOME_COLUMN_NAME, new JqGridColumnModel(SOME_COLUMN_NAME)
@@ -42,7 +48,7 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 JsonMapping = SOME_JSON_MAP
             });
 
-            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, false);
+            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, jqGridJsonServiceStub, false);
 
             Assert.Contains($"{JSON_MAP_OPTION}'{SOME_JSON_MAP}'", javaScriptBuilder.ToString());
         }
@@ -50,11 +56,13 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         [Fact]
         public void AppendColumnsModels_KeyIsFalse_ScriptDoesNotContainKeyOption()
         {
+            IJqGridJsonService jqGridJsonServiceStub = new Mock<IJqGridJsonService>().Object;
+
             StringBuilder javaScriptBuilder = new StringBuilder();
             JqGridOptions options = new JqGridOptions(SOME_GRID_ID);
             options.AddColumn(SOME_COLUMN_NAME, new JqGridColumnModel(SOME_COLUMN_NAME));
 
-            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, false);
+            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, jqGridJsonServiceStub, false);
 
             Assert.DoesNotContain(KEY_OPTION, javaScriptBuilder.ToString());
         }
@@ -62,6 +70,8 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         [Fact]
         public void AppendOptions_KeyIsTrue_ScriptContainsKeyOption()
         {
+            IJqGridJsonService jqGridJsonServiceStub = new Mock<IJqGridJsonService>().Object;
+
             StringBuilder javaScriptBuilder = new StringBuilder();
             JqGridOptions options = new JqGridOptions(SOME_GRID_ID);
             options.AddColumn(SOME_COLUMN_NAME, new JqGridColumnModel(SOME_COLUMN_NAME)
@@ -69,7 +79,7 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 Key = true
             });
 
-            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, false);
+            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, jqGridJsonServiceStub, false);
 
             Assert.Contains($"{KEY_OPTION}true", javaScriptBuilder.ToString());
         }
@@ -77,11 +87,13 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         [Fact]
         public void AppendColumnsModels_XmlMappingIsNull_ScriptDoesNotContainXmlMapOption()
         {
+            IJqGridJsonService jqGridJsonServiceStub = new Mock<IJqGridJsonService>().Object;
+
             StringBuilder javaScriptBuilder = new StringBuilder();
             JqGridOptions options = new JqGridOptions(SOME_GRID_ID);
             options.AddColumn(SOME_COLUMN_NAME, new JqGridColumnModel(SOME_COLUMN_NAME));
 
-            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, false);
+            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, jqGridJsonServiceStub, false);
 
             Assert.DoesNotContain(XML_MAP_OPTION, javaScriptBuilder.ToString());
         }
@@ -89,6 +101,8 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         [Fact]
         public void AppendOptions_XmlMappingIsNotNull_ScriptContainsXmlMapOption()
         {
+            IJqGridJsonService jqGridJsonServiceStub = new Mock<IJqGridJsonService>().Object;
+
             StringBuilder javaScriptBuilder = new StringBuilder();
             JqGridOptions options = new JqGridOptions(SOME_GRID_ID);
             options.AddColumn(SOME_COLUMN_NAME, new JqGridColumnModel(SOME_COLUMN_NAME)
@@ -96,7 +110,7 @@ namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 XmlMapping = SOME_XML_MAP
             });
 
-            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, false);
+            javaScriptBuilder = javaScriptBuilder.AppendColumnsModels(options, jqGridJsonServiceStub, false);
 
             Assert.Contains($"{XML_MAP_OPTION}'{SOME_XML_MAP}'", javaScriptBuilder.ToString());
         }

@@ -48,7 +48,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
         {
             Id = id;
             Value = value;
-            Values = GetValuesAsList();
+            Values = GetValueAsList();
         }
         #endregion
 
@@ -57,7 +57,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
         /// Returns the object stored in value property as dictionary.
         /// </summary>
         /// <returns></returns>
-        internal IDictionary<string, object> GetValueAsDictionary()
+        public IDictionary<string, object> GetValueAsDictionary()
         {
             IDictionary<string, object> valueAsDictionary = new Dictionary<string, object>();
 
@@ -72,7 +72,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Response
             return valueAsDictionary;
         }
 
-        private List<object> GetValuesAsList()
+        private List<object> GetValueAsList()
         {
             List<object> values = new List<object>();
 

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Globalization;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Internal;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Helpers;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
 {
@@ -55,7 +52,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 bindingContext.Result = ModelBindingResult.Failed();
             }
 
-            return CompatibilityHelper.CompletedTask;
+            return Task.CompletedTask;
         }
 
         private bool BindCellProperties(JqGridCellUpdateRequest model, ModelBindingContext bindingContext, string cellName, Type cellType)
