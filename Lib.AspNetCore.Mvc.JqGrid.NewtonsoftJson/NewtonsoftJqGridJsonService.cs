@@ -1,15 +1,18 @@
 ﻿using System.Linq;
 using Newtonsoft.Json;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
-using Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson.Converters;
+using Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson.Serialization;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson
 {
-    internal class NewtonsoftJqGridJsonSerializer: IJqGridJsonService
+    internal class NewtonsoftJqGridJsonService: IJqGridJsonService
     {
-        private JqGridRequestSearchingFiltersJsonConverter _jqGridRequestSearchingFiltersJsonConverter = new JqGridRequestSearchingFiltersJsonConverter();
+        #region Fields
+        private readonly JqGridRequestSearchingFiltersJsonConverter _jqGridRequestSearchingFiltersJsonConverter = new JqGridRequestSearchingFiltersJsonConverter();
+        #endregion
 
+        #region Methods
         public string SerializeObject(object value)
         {
             return JsonConvert.SerializeObject(value, Formatting.None);
@@ -49,5 +52,6 @@ namespace Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson
 
             return jsonSerializerSettings;
         }
+        #endregion
     }
 }

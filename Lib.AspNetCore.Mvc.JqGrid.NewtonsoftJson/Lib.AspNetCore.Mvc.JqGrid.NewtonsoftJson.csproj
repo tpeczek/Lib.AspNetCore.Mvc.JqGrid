@@ -23,7 +23,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Core\Lib.AspNetCore.Mvc.JqGrid.Core.csproj" />
     <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Infrastructure\Lib.AspNetCore.Mvc.JqGrid.Infrastructure.csproj" />
+    <ProjectReference Include="..\Lib.AspNetCore.Mvc.JqGrid.Core\Lib.AspNetCore.Mvc.JqGrid.Core.csproj" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 using Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson;
 
 namespace Microsoft.AspNetCore.Builder
@@ -31,7 +31,7 @@ namespace Microsoft.AspNetCore.Builder
                 services.Remove(jqGridJsonServiceDescriptor);
             }
 
-            services.TryAddSingleton<IJqGridJsonService, NewtonsoftJqGridJsonSerializer>();
+            services.TryAddSingleton<IJqGridJsonService, NewtonsoftJqGridJsonService>();
 
             return services;
         }

@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 
 namespace Microsoft.AspNetCore.Builder
 {
@@ -15,6 +17,8 @@ namespace Microsoft.AspNetCore.Builder
         /// <returns>The collection of service descriptors.</returns>
         public static IServiceCollection AddJqGrid(this IServiceCollection services)
         {
+            services.TryAddSingleton<IJqGridJsonService, JqGridJsonService>();
+
             return services;
         }
         #endregion

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.DependencyInjection;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;

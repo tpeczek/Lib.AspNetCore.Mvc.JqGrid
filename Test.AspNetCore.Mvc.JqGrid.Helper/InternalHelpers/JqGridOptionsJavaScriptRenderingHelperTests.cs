@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using Xunit;
 using Moq;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
 

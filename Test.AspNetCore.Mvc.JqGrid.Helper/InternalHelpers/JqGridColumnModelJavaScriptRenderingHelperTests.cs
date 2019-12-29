@@ -4,7 +4,7 @@ using Moq;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 
 namespace Test.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {

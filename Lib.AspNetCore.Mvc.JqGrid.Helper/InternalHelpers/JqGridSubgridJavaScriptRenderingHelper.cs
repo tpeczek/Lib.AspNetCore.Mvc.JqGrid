@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;

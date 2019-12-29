@@ -1,7 +1,6 @@
-﻿using Lib.AspNetCore.Mvc.JqGrid.Core.Results;
-using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
+﻿using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
 
-namespace Lib.AspNetCore.Mvc.JqGrid.Core.Services
+namespace Lib.AspNetCore.Mvc.JqGrid.Core.Json
 {
     /// <summary>
     /// Service which provides JSON serialization capabilities for JqGrid needs.
@@ -37,10 +36,10 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Services
         JqGridSearchingFilters DeserializeJqGridSearchingFilters(string jqGridSearchingFilters);
 
         /// <summary>
-        /// Gets the serializer settings for <see cref="JqGridJsonResult"/>.
+        /// Gets the serializer settings for JqGridJsonResult.
         /// </summary>
         /// <param name="serializerSettings">The serializer settings to be extended (can be null).</param>
-        /// <returns>The serializer settings for <see cref="JqGridJsonResult"/>.</returns>
+        /// <returns>The serializer settings for JqGridJsonResult.</returns>
         object GetJqGridJsonResultSerializerSettings(object serializerSettings);
     }
 }

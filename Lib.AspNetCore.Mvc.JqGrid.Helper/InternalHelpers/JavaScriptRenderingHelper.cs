@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Globalization;
 using System.Collections.Generic;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Services;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
