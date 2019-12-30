@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IJqGridJsonService
+   | Lib.AspNetCore.Mvc.JqGrid </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IJqGridJsonService
+   | Lib.AspNetCore.Mvc.JqGrid ">
+    <meta name="generator" content="docfx 2.40.4.0">
+    
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/svg/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-12">
+            <article class="content wrap" id="_content" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService">
+  
+  
+  <h1 id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService" class="text-break">Interface IJqGridJsonService
+  </h1>
+  <div class="markdown level0 summary"><p>Service which provides JSON serialization capabilities for JqGrid needs.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Core.Json.html">Lib.AspNetCore.Mvc.JqGrid.Core.Json</a></h6>
+  <h6><strong>Assembly</strong>: Lib.AspNetCore.Mvc.JqGrid.Core.dll</h6>
+  <h5 id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IJqGridJsonService</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_DeserializeJqGridSearchingFilters_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.DeserializeJqGridSearchingFilters*"></a>
+  <h4 id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_DeserializeJqGridSearchingFilters_System_String_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.DeserializeJqGridSearchingFilters(System.String)">DeserializeJqGridSearchingFilters(String)</h4>
+  <div class="markdown level1 summary"><p>Deserializes JSON which represents jqGrid filters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">JqGridSearchingFilters DeserializeJqGridSearchingFilters(string jqGridSearchingFilters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jqGridSearchingFilters</span></td>
+        <td><p>The jqGrid filters JSON.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters.html">JqGridSearchingFilters</a></td>
+        <td><p>The <a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters.html">JqGridSearchingFilters</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_GetJqGridJsonResultSerializerSettings_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.GetJqGridJsonResultSerializerSettings*"></a>
+  <h4 id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_GetJqGridJsonResultSerializerSettings_System_Object_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.GetJqGridJsonResultSerializerSettings(System.Object)">GetJqGridJsonResultSerializerSettings(Object)</h4>
+  <div class="markdown level1 summary"><p>Gets the serializer settings for JqGridJsonResult.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object GetJqGridJsonResultSerializerSettings(object serializerSettings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">serializerSettings</span></td>
+        <td><p>The serializer settings to be extended (can be null).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The serializer settings for JqGridJsonResult.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_SerializeJqGridObject_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.SerializeJqGridObject*"></a>
+  <h4 id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_SerializeJqGridObject_System_Object_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.SerializeJqGridObject(System.Object)">SerializeJqGridObject(Object)</h4>
+  <div class="markdown level1 summary"><p>Serializes the specified object to a JSON string with dedicated handling of jqGrid specific types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string SerializeJqGridObject(object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The object to serialize.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A JSON string representation of the object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_SerializeJqGridSearchingFilters_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.SerializeJqGridSearchingFilters*"></a>
+  <h4 id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_SerializeJqGridSearchingFilters_Lib_AspNetCore_Mvc_JqGrid_Infrastructure_Searching_JqGridSearchingFilters_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.SerializeJqGridSearchingFilters(Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters)">SerializeJqGridSearchingFilters(JqGridSearchingFilters)</h4>
+  <div class="markdown level1 summary"><p>Serializes class which represents jqGrid filters to JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string SerializeJqGridSearchingFilters(JqGridSearchingFilters jqGridSearchingFilters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters.html">JqGridSearchingFilters</a></td>
+        <td><span class="parametername">jqGridSearchingFilters</span></td>
+        <td><p>The <a class="xref" href="Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters.html">JqGridSearchingFilters</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The jqGrid filters JSON.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_SerializeObject_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.SerializeObject*"></a>
+  <h4 id="Lib_AspNetCore_Mvc_JqGrid_Core_Json_IJqGridJsonService_SerializeObject_System_Object_" data-uid="Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.SerializeObject(System.Object)">SerializeObject(Object)</h4>
+  <div class="markdown level1 summary"><p>Serializes the specified object to a JSON string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string SerializeObject(object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The object to serialize.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A JSON string representation of the object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2016 - 2019 Tomasz Pęczek
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

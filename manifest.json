@@ -5,11 +5,11 @@
   "files": [
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JqGridJsonResult.yml",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonElement.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JqGridJsonResult.html",
-          "hash": "j0t5ubezRTGO8Ov8HczmDA=="
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonElement.html",
+          "hash": "gqhJeyqbe1Cde09bDmtOFw=="
         }
       },
       "is_incremental": false,
@@ -17,11 +17,59 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.yml",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JsonExtensions.html",
-          "hash": "sSNO8E7uBqREaW/Rt8LPvw=="
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonService.html",
+          "hash": "nUjL8Vsc+bJoaX+5++zwKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.IJqGridJsonWriter.html",
+          "hash": "QjhQCFa2TBCKCLaSOILnRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JqGridJsonElementType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.JqGridJsonElementType.html",
+          "hash": "RLZHf8eXgRMPZAmjUg9yvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.Serialization.JqGridJsonConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.Serialization.JqGridJsonConverter.html",
+          "hash": "/vSmWnchbt7jnbkPXcHFow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.Serialization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.Serialization.html",
+          "hash": "cDlZEgSQbOaYFH2yv3DXyw=="
         }
       },
       "is_incremental": false,
@@ -33,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Json.html",
-          "hash": "U7herri05z05aOQpBOSKng=="
+          "hash": "sxIZ0xc4LXo+LuXntdpuIA=="
         }
       },
       "is_incremental": false,
@@ -45,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.JqGridCellUpdateRequest.html",
-          "hash": "D+Fx6BB94w8UfIwASQ8T/g=="
+          "hash": "Wm9DuJgG7ljXIz5wM3H5dQ=="
         }
       },
       "is_incremental": false,
@@ -57,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.JqGridRequest.html",
-          "hash": "U3oOcEyyWXwM0C9J2mM2kw=="
+          "hash": "bghpowo05LEtKJxmuBJRUg=="
         }
       },
       "is_incremental": false,
@@ -69,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders.JqGridCellUpdateRequestModelBinder.html",
-          "hash": "76qYqmK0oow/aKWFmblybQ=="
+          "hash": "kczWMzlr3AQuo2gLEyP1Ig=="
         }
       },
       "is_incremental": false,
@@ -105,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridAdjacencyTreeRecord.html",
-          "hash": "FvYJ49J2aBhRIoexuhl6dQ=="
+          "hash": "q7048Q3z0vfntn3X8BJjIw=="
         }
       },
       "is_incremental": false,
@@ -117,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridNestedSetTreeRecord.html",
-          "hash": "4t5aoxTohbHSa5hSFRltUQ=="
+          "hash": "+NFIEV6mPif0LrXORC/8wA=="
         }
       },
       "is_incremental": false,
@@ -129,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridRecord.html",
-          "hash": "ECkT7m/UtMWfeyIKVILUmg=="
+          "hash": "xkxJviAYceoJ+47VZJ96Tw=="
         }
       },
       "is_incremental": false,
@@ -141,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridResponse.html",
-          "hash": "PhFVrYwaNyIizLtbDo4hNA=="
+          "hash": "C348njTrTj3MYi8HkhgLDg=="
         }
       },
       "is_incremental": false,
@@ -153,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Response.JqGridTreeRecord.html",
-          "hash": "YcZfIPqudXQ0AlVODa3Fvw=="
+          "hash": "ixEXF0DkPRNLW0fK7SlIYA=="
         }
       },
       "is_incremental": false,
@@ -173,11 +221,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Results.JqGridJsonResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Results.JqGridJsonResult.html",
+          "hash": "YzAUFS6IMTCq5dXU6EPdrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Results.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Core.Results.html",
+          "hash": "TlFmSDWV4lfKOOdEBz0xfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.yml",
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnEditableAttribute.html",
-          "hash": "op4GdvvsHP5c0FFrAQp1jw=="
+          "hash": "80a5XCxghl3mIHwph/gbwQ=="
         }
       },
       "is_incremental": false,
@@ -189,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnElementAttribute.html",
-          "hash": "TeQqSblfBEVaUZl/hGEsqQ=="
+          "hash": "f6S6cEOjc2XgnfdtXTVlsg=="
         }
       },
       "is_incremental": false,
@@ -201,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnFormatterAttribute.html",
-          "hash": "W0ObGcjeFXoHkJGn1bnKUg=="
+          "hash": "q0A8X6xVBDKjZIKIxpkvDw=="
         }
       },
       "is_incremental": false,
@@ -213,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnLayoutAttribute.html",
-          "hash": "g1kByxDT+z9BzCNQp4MNsw=="
+          "hash": "VB32g6AIbgq2TdHuyhRTjA=="
         }
       },
       "is_incremental": false,
@@ -225,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnMappingAttribute.html",
-          "hash": "WdM/RduighIRZq6jZGpuEQ=="
+          "hash": "lQChRl2RFdb8TJUvrjpQWQ=="
         }
       },
       "is_incremental": false,
@@ -237,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSearchableAttribute.html",
-          "hash": "H9qOi3q9LYp2audxBIFOHA=="
+          "hash": "dW7k34E6LD6Yj16TNPWzdA=="
         }
       },
       "is_incremental": false,
@@ -249,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSortableAttribute.html",
-          "hash": "rfWQSKsm69iCe6pjMPBgfg=="
+          "hash": "a9nTKFEQ7EKz8TqtY18MLQ=="
         }
       },
       "is_incremental": false,
@@ -261,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.JqGridColumnSummaryAttribute.html",
-          "hash": "gxrA+sF5MEq8zoRWiMoRaQ=="
+          "hash": "uEjiD/BSXbxyRZUNCKio4g=="
         }
       },
       "is_incremental": false,
@@ -285,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.HtmlHelperJqGridExtensions.html",
-          "hash": "LLEL/8Ifqf6ZoboDMaZVXg=="
+          "hash": "Y+w1onAWgUPiBgL9E1qczA=="
         }
       },
       "is_incremental": false,
@@ -297,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.ColumnModel.JqGridActionsColumnOptions.html",
-          "hash": "LYA7A7+T6OBfcpFI/QIgwQ=="
+          "hash": "H27ArYqRQneFyCdiygR8nQ=="
         }
       },
       "is_incremental": false,
@@ -321,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.IJqGridStronglyTypedOptions.html",
-          "hash": "oKmLn9RYupBXkGE5PdMaBw=="
+          "hash": "BTwq9OfZO8s6EMn2DKRM2w=="
         }
       },
       "is_incremental": false,
@@ -333,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.JqGridOptions-1.html",
-          "hash": "jG8rP7DVx3wkGTVCtXrMlA=="
+          "hash": "tKTS6waidWccg/ceiX5Qxw=="
         }
       },
       "is_incremental": false,
@@ -345,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Helper.Options.Subgrid.JqGridSubgridModel-1.html",
-          "hash": "i5kc9oWfBM67+BwpabrKqQ=="
+          "hash": "ai/5vcO2kBImSF1Lf3UkQg=="
         }
       },
       "is_incremental": false,
@@ -393,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Editing.html",
-          "hash": "yV+xK67Ps2ODj7wPkFhEpA=="
+          "hash": "w6oD94Q0fATu54P42TyQig=="
         }
       },
       "is_incremental": false,
@@ -405,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Formatter.html",
-          "hash": "ixxXFizHs++RGvEhamqGHQ=="
+          "hash": "8LbujyZxmKuGP+WCQclIEg=="
         }
       },
       "is_incremental": false,
@@ -417,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.JQueryUIWidgets.html",
-          "hash": "VFNuqu+HeNKiJZd4N11HpQ=="
+          "hash": "vAnfeCOep18BRAYqDiIoDg=="
         }
       },
       "is_incremental": false,
@@ -429,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Rules.html",
-          "hash": "uyEJjzcMl30U8mBuvrQpAw=="
+          "hash": "+MFYC9Z65GCi5895O/3Luw=="
         }
       },
       "is_incremental": false,
@@ -441,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Searching.html",
-          "hash": "FGD4VtFot1V+lObPMzKEuQ=="
+          "hash": "+ltVTgcee6ocjCfFxyh4lg=="
         }
       },
       "is_incremental": false,
@@ -453,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.Sorting.html",
-          "hash": "ykuN0MjOkRNEmAI1G+Gkow=="
+          "hash": "/h2qsM5ZilUEY/0Ze5Gdxw=="
         }
       },
       "is_incremental": false,
@@ -465,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.ColumnModel.html",
-          "hash": "8rJfcDMJb/s8T9yAuwr4sA=="
+          "hash": "m9Y5B54INPobcGp7tAG7RQ=="
         }
       },
       "is_incremental": false,
@@ -477,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Filter.Toolbar.html",
-          "hash": "e6o/1SP1B3N6FjtJeSpV0g=="
+          "hash": "dS2pmwFHJFI5bsVtPa4Wuw=="
         }
       },
       "is_incremental": false,
@@ -489,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Filter.html",
-          "hash": "Y15TomMdF5q/DddyMONPVw=="
+          "hash": "5UQ6LAtaiYIIA8t/CkcgEg=="
         }
       },
       "is_incremental": false,
@@ -501,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.GroupingView.html",
-          "hash": "G9eCwEr2cQOd8cq9RiMong=="
+          "hash": "I53i4+41yuuailvlpk7xeQ=="
         }
       },
       "is_incremental": false,
@@ -513,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.KeyboardNavigation.html",
-          "hash": "uga4FxqowRuFLyrKYq7C8Q=="
+          "hash": "Tha6eEn2RxBd1LNeZ8sThw=="
         }
       },
       "is_incremental": false,
@@ -525,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Navigator.html",
-          "hash": "uiJ2fIDDTh22HUZ+0qS2Cw=="
+          "hash": "qjZ3oZkpX3QAGGuFstAGUg=="
         }
       },
       "is_incremental": false,
@@ -537,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Request.html",
-          "hash": "jDMztbzfxs8drQ4YmPSgaQ=="
+          "hash": "X0Cnwwq++u2iY7Qz/TWgPA=="
         }
       },
       "is_incremental": false,
@@ -549,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.Response.html",
-          "hash": "GU0BWm8gzJBb8SOsbhE/Eg=="
+          "hash": "OkmPwamENI89uVKfYQd1aw=="
         }
       },
       "is_incremental": false,
@@ -561,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridOptionsDefaults.html",
-          "hash": "f6h9CkgJQADCDFBZSE4b0g=="
+          "hash": "iSfRmEF92SJQoXWEb+iCHA=="
         }
       },
       "is_incremental": false,
@@ -573,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants.JqGridPredefinedFormatters.html",
-          "hash": "K1SZjmP/oG6HPy3T8TN6Bw=="
+          "hash": "QQSTsAqw3hil07gkIop5iA=="
         }
       },
       "is_incremental": false,
@@ -597,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridAlignments.html",
-          "hash": "D9Xmps1StDpt0gWFV3QGOw=="
+          "hash": "tZCbxNWRWZanTSc32Q8O8g=="
         }
       },
       "is_incremental": false,
@@ -609,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridCellEditingSubmitModes.html",
-          "hash": "nQwlNqQfuZw1jkVcpWiUpQ=="
+          "hash": "oeDsA6jVMTFuzJPf4eHGdQ=="
         }
       },
       "is_incremental": false,
@@ -621,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnEditTypes.html",
-          "hash": "rnvMgmM+KR6ykUxPB2NuNw=="
+          "hash": "XVL2b74l4rKHZlEgnWz7GQ=="
         }
       },
       "is_incremental": false,
@@ -633,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnSearchTypes.html",
-          "hash": "+16yhTvqwjWdzsWfW95EAg=="
+          "hash": "94yO/6LvyiVi92eMpXL2IQ=="
         }
       },
       "is_incremental": false,
@@ -645,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridColumnSummaryTypes.html",
-          "hash": "pBIo9MQemjlJtz+I55/VQw=="
+          "hash": "dy07hJL2xjWtuQ6jUZX8+A=="
         }
       },
       "is_incremental": false,
@@ -657,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridCompatibilityModes.html",
-          "hash": "nqBNE+gdAP2naTen9QPTlA=="
+          "hash": "ca9GSe+Z59Gd4fWK1kxGWA=="
         }
       },
       "is_incremental": false,
@@ -669,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDataTypes.html",
-          "hash": "K855x/V7ORQM2Xmcf24yOQ=="
+          "hash": "30fL98wzMF3T06fIccG02w=="
         }
       },
       "is_incremental": false,
@@ -681,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDataTypesExtensions.html",
-          "hash": "CU+pgCBEUROhCQttvZOTdA=="
+          "hash": "sEb3izeNu3/zmxCOIV5ZaQ=="
         }
       },
       "is_incremental": false,
@@ -693,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridDynamicScrollingModes.html",
-          "hash": "hY5QFrMP6723z+5E91yuSg=="
+          "hash": "w6ah+TkXfDLxvk9IRUjqcA=="
         }
       },
       "is_incremental": false,
@@ -705,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridFormButtonIconPositions.html",
-          "hash": "hYzH+BcKuAA1F8gNP7ZVzQ=="
+          "hash": "SX/mYYYKtzwGm42ZAAz2JA=="
         }
       },
       "is_incremental": false,
@@ -717,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridIconSets.html",
-          "hash": "+K3tq5GRu6JHDmn0SS0G9g=="
+          "hash": "NaPUKu3BfZTkxiBW8PcOXw=="
         }
       },
       "is_incremental": false,
@@ -729,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridMethodTypes.html",
-          "hash": "XmQivkFGyP/9As00zv3/3A=="
+          "hash": "k7upAfg4CnhCX6JY50YItg=="
         }
       },
       "is_incremental": false,
@@ -741,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridNavigatorPagers.html",
-          "hash": "NC17lM/fXWL7I123xp+RcA=="
+          "hash": "4oi5a4oAl+nwa7B9sVfpYA=="
         }
       },
       "is_incremental": false,
@@ -753,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridNewRowPositions.html",
-          "hash": "ZbVcmXEohnqTleQafvWb1g=="
+          "hash": "m0kTbUhJUe9v/vA6pzsfCQ=="
         }
       },
       "is_incremental": false,
@@ -765,7 +837,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridRefreshModes.html",
-          "hash": "WQc97hV+wgSQkuujBpsDfQ=="
+          "hash": "UxUji9U52+a106zHs/bcTA=="
         }
       },
       "is_incremental": false,
@@ -777,7 +849,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSearchGroupingOperators.html",
-          "hash": "pipTUlhN5pJcxW/VFv5rPg=="
+          "hash": "5/vqLa1XIvbEQGK3IqHxzg=="
         }
       },
       "is_incremental": false,
@@ -789,7 +861,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSearchOperators.html",
-          "hash": "tWFna6cxqAcWTg7ycihZSA=="
+          "hash": "SYMEQ6mC1yXqolXOVHKeyQ=="
         }
       },
       "is_incremental": false,
@@ -801,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSortTypes.html",
-          "hash": "x6l4q/BIiH56m648t8IJng=="
+          "hash": "S6Wf6iGuUya1Qi1BAZdbaA=="
         }
       },
       "is_incremental": false,
@@ -813,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridSortingOrders.html",
-          "hash": "gu2Box8UunyP4wbXSgj5Dg=="
+          "hash": "g7l6R2o5Zgd7E4XWTbJHAw=="
         }
       },
       "is_incremental": false,
@@ -825,7 +897,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridStylings.html",
-          "hash": "3/JZDXXx8kPfM5EqjjH95Q=="
+          "hash": "7mVLa3nWOGVKnMRTEi6csQ=="
         }
       },
       "is_incremental": false,
@@ -837,7 +909,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums.JqGridTreeGridModels.html",
-          "hash": "aV2enBAM0NaMpK7UvGa/3w=="
+          "hash": "bZsndPWR3H8DpnON1e+ANw=="
         }
       },
       "is_incremental": false,
@@ -861,7 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnDataEvent.html",
-          "hash": "Poj9BYt9iRZtXz8N6NGj/A=="
+          "hash": "8PEmK2lfB3pdlCt4FRSJFg=="
         }
       },
       "is_incremental": false,
@@ -873,7 +945,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnEditOptions.html",
-          "hash": "hkvN7dL2SjbMxOHJXZF0QQ=="
+          "hash": "U0YDFhOCg6mh44YwDdOLjA=="
         }
       },
       "is_incremental": false,
@@ -885,7 +957,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnElementOptions.html",
-          "hash": "m+aY5Y/tCMS4bC7DRhEcWA=="
+          "hash": "M+l059KdqvnoJBERiTPyRg=="
         }
       },
       "is_incremental": false,
@@ -897,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnFormOptions.html",
-          "hash": "YlkDBIJdgtCtHe5iEHPOEQ=="
+          "hash": "Z9l9E0zV9nrUTDs8lmAKYg=="
         }
       },
       "is_incremental": false,
@@ -909,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnFormatterOptions.html",
-          "hash": "JouL2vgSGGrHJ+f0pno6hA=="
+          "hash": "0pUc77PIaiVCm20Tf5mVuA=="
         }
       },
       "is_incremental": false,
@@ -921,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnInlineEditingOptions.html",
-          "hash": "NYBoUMLpK1Ij/V1f2C/i/Q=="
+          "hash": "NgXHshiKGAI86cUTbGGNrw=="
         }
       },
       "is_incremental": false,
@@ -933,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnModel.html",
-          "hash": "E1MxTN9QI0fv7jRv/svjng=="
+          "hash": "6kHXMQ7+d846YmxrSlu1AA=="
         }
       },
       "is_incremental": false,
@@ -945,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnRules.html",
-          "hash": "C0YpwxlP1HK/qo5cxF1q7g=="
+          "hash": "9WWiAyFQ+LDq9lMd5VHJXw=="
         }
       },
       "is_incremental": false,
@@ -957,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.ColumnModel.JqGridColumnSearchOptions.html",
-          "hash": "4twbedjaKDtwkaF/bMDe6g=="
+          "hash": "Ygoe59vuayOBGrRm2Yjw+w=="
         }
       },
       "is_incremental": false,
@@ -981,7 +1053,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridFilterOptions.html",
-          "hash": "yIxfqmfXKzz0YyCA3i5G9w=="
+          "hash": "LBBPFsx0fxdoidV4AtcfPA=="
         }
       },
       "is_incremental": false,
@@ -993,7 +1065,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridFilterToolbarOptions.html",
-          "hash": "plJexsAOhi2Or0NgfKOoCg=="
+          "hash": "yiRWFOo2v9eT1JOuxQgI1A=="
         }
       },
       "is_incremental": false,
@@ -1005,7 +1077,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupHeader.html",
-          "hash": "U/tEekKme1zKJziFFhTinA=="
+          "hash": "vULlt+kSf6peGlwk2QIHDw=="
         }
       },
       "is_incremental": false,
@@ -1017,7 +1089,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridGroupingView.html",
-          "hash": "mjdEmAVzJDG+YpQTbkf+wA=="
+          "hash": "LP/wtL3G91tZMNadk6eCJg=="
         }
       },
       "is_incremental": false,
@@ -1029,7 +1101,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridJsonReader.html",
-          "hash": "aCybnIuEuWqqrT5O++fZWw=="
+          "hash": "4yDNQMXqTrM1xvBHmLZrOw=="
         }
       },
       "is_incremental": false,
@@ -1041,7 +1113,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridJsonRecordsReader.html",
-          "hash": "fzrR2l57yusQ2aYo7d8djA=="
+          "hash": "AjX7roGLvlDwWm5KZ20Miw=="
         }
       },
       "is_incremental": false,
@@ -1053,7 +1125,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridOptions.html",
-          "hash": "ZWH0aPpUCrOTmKwpL2gq5w=="
+          "hash": "BjQpXGq4uTSXS1cyiM+s4g=="
         }
       },
       "is_incremental": false,
@@ -1065,7 +1137,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.JqGridParametersNames.html",
-          "hash": "HsRCUFYYkAT43CXGB/OhGQ=="
+          "hash": "of3/rU/WS1ekgKxWnzDzcA=="
         }
       },
       "is_incremental": false,
@@ -1089,7 +1161,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridFormButtonIcon.html",
-          "hash": "GoO2+wkdhKBmMQV15/vCpA=="
+          "hash": "kDS4H3nX0Kf/S2KRtuiogA=="
         }
       },
       "is_incremental": false,
@@ -1101,7 +1173,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridFormKeyboardNavigation.html",
-          "hash": "iefV5LPH+CrfksZ0o0628A=="
+          "hash": "vpiYf1G0Ka0rFXGmsDk1kg=="
         }
       },
       "is_incremental": false,
@@ -1113,7 +1185,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorActionOptions.html",
-          "hash": "0sAJxVAl1PPVp3oFwaIf+w=="
+          "hash": "vCTbtnwIigopMwwd+6y3EQ=="
         }
       },
       "is_incremental": false,
@@ -1125,7 +1197,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorAddActionOptions.html",
-          "hash": "pU7RYfdCcIPaypx1d8IuzA=="
+          "hash": "CrTDWCWI57Z0zopZp50eUw=="
         }
       },
       "is_incremental": false,
@@ -1137,7 +1209,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridInlineNavigatorOptions.html",
-          "hash": "y/H+YtH5IaHFq96gxFoCUA=="
+          "hash": "9lhRpWd9Vxi/aAfKaMWe4A=="
         }
       },
       "is_incremental": false,
@@ -1149,7 +1221,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorActionOptions.html",
-          "hash": "D2YYaHzd7KrJqb8bhowp/Q=="
+          "hash": "p4D2EjfzyzWqaNV2ulBKyw=="
         }
       },
       "is_incremental": false,
@@ -1161,7 +1233,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorButtonOptions.html",
-          "hash": "YBIt4eVCIhe30uEJ4qUiwg=="
+          "hash": "JX7m84uy1Vg1pGJxmedCog=="
         }
       },
       "is_incremental": false,
@@ -1173,7 +1245,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorCustomElementOptions.html",
-          "hash": "0OG0UYx9eTHf56gs0LHX0g=="
+          "hash": "yo1SGJNuvdqPrEQx1d9yww=="
         }
       },
       "is_incremental": false,
@@ -1185,7 +1257,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorDeleteActionOptions.html",
-          "hash": "HnmsP7CR3ssTCqUrXxU3uA=="
+          "hash": "vLK5iNKeVzCEb0ZORsQg6g=="
         }
       },
       "is_incremental": false,
@@ -1197,7 +1269,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorEditActionOptions.html",
-          "hash": "as0MiqQNe2QvdGO/KwX7Fw=="
+          "hash": "OcckmZ56tSLau+h2v7NQiw=="
         }
       },
       "is_incremental": false,
@@ -1209,7 +1281,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorFormActionOptions.html",
-          "hash": "+sOC7APPIf4rKebB+TOSgQ=="
+          "hash": "QTjQZgPxlFsIyWPOLY0Bgw=="
         }
       },
       "is_incremental": false,
@@ -1221,7 +1293,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorModifyActionOptions.html",
-          "hash": "OVWworeebgjQr13kxVy1Ew=="
+          "hash": "IxyXv+UbduXvXNZ0fovYEw=="
         }
       },
       "is_incremental": false,
@@ -1233,7 +1305,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptions.html",
-          "hash": "0S4bG58ipQ9+3ND5BAZGiw=="
+          "hash": "TbdvhM2InIhe02Q1sfGfsw=="
         }
       },
       "is_incremental": false,
@@ -1245,7 +1317,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorOptionsBase.html",
-          "hash": "fnEZqJMjYo+SvSr/M8ByOg=="
+          "hash": "iF3fJ5BTJ/2ycQ17J1/mVg=="
         }
       },
       "is_incremental": false,
@@ -1257,7 +1329,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSearchActionOptions.html",
-          "hash": "ooYO1lDS3bs0sQn90CYYsw=="
+          "hash": "4h4qcerMid5/yOnKIG8mew=="
         }
       },
       "is_incremental": false,
@@ -1269,7 +1341,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorSeparatorOptions.html",
-          "hash": "cC5u2h6y0udR2h7LTsb2NQ=="
+          "hash": "EbPD/4oO6iN0TUe0VmVD3g=="
         }
       },
       "is_incremental": false,
@@ -1281,7 +1353,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Navigator.JqGridNavigatorViewActionOptions.html",
-          "hash": "uxgkKrott+hY/f0crNGwlA=="
+          "hash": "kMVsgAfesLODprMsxgpWuA=="
         }
       },
       "is_incremental": false,
@@ -1305,7 +1377,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.JqGridSubgridColumnModel.html",
-          "hash": "QLVFvTw7w9V6sPYkKE73aw=="
+          "hash": "qttGJ60+DFEIvKJtlsZkMQ=="
         }
       },
       "is_incremental": false,
@@ -1317,7 +1389,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options.Subgrid.JqGridSubgridModel.html",
-          "hash": "oq4ytPS2OlNS1s5/UZvdyQ=="
+          "hash": "RveUd+cmrW18XMmVFBUHrg=="
         }
       },
       "is_incremental": false,
@@ -1353,7 +1425,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilter.html",
-          "hash": "uL3dqA7YVQ5tuuZLsFmpzQ=="
+          "hash": "cJmLBR4wwcAWxC2JmLS2yw=="
         }
       },
       "is_incremental": false,
@@ -1365,7 +1437,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching.JqGridSearchingFilters.html",
-          "hash": "uWgv/U9WyjsPjdq3QcVHGw=="
+          "hash": "mv6j90T+gU7UmiDEipZuFA=="
         }
       },
       "is_incremental": false,
@@ -1384,12 +1456,48 @@
       "version": ""
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.JqGridServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.JqGridServiceCollectionExtensions.html",
+          "hash": "dUXe/NBK42aZLh5sjBeGIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.NewtonsoftJqGridServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.NewtonsoftJqGridServiceCollectionExtensions.html",
+          "hash": "UQg7lJwgRwv+qhpl0tsIJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.html",
+          "hash": "J9w2njpgZeRcI/1kNYo7LA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "HvcVCAsnKeuAXVbnenCARg=="
+          "hash": "j9FFKSgqVTabe1wSrz2Oaw=="
         }
       },
       "is_incremental": false,
@@ -1401,7 +1509,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "ed8vgPtQkWHexHcQ9DUQoA=="
+          "hash": "S1YyHHBXiKHw7T5bQjuO9g=="
         }
       },
       "is_incremental": false,

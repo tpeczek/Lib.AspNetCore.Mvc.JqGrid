@@ -61,6 +61,42 @@
 </code></pre><p>But you can also install only the needed packages if you don&#39;t require the full functionality.</p>
 <pre><code>PM&gt; Install-Package Lib.AspNetCore.Mvc.JqGrid.Core
 </code></pre><pre><code>PM&gt; Install-Package Lib.AspNetCore.Mvc.JqGrid.DataAnnotations
+</code></pre><h3 id="jsonnet-support">Json.NET support</h3>
+<p>Since ASP.NET Core 3.0, Json.NET is no longer the default JSON framework. The default is now System.Text.Json. The same is the case for Lib.AspNetCore.Mvc.JqGrid.</p>
+<p>If yur application requires Newtonsoft.Json-specific features and uses Newtonsoft.Json integration, you need to enable it for Lib.AspNetCore.Mvc.JqGrid as well.</p>
+<p>To use Json.NET with Lib.AspNetCore.Mvc.JqGrid:</p>
+<ul>
+<li>Add a package reference to Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson.</li>
+</ul>
+<pre><code>&lt;Project Sdk=&quot;Microsoft.NET.Sdk.Web&quot;&gt;
+  ...
+  &lt;ItemGroup&gt;
+    ...
+    &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Mvc.NewtonsoftJson&quot; Version=&quot;3.0.0&quot; /&gt;
+    &lt;PackageReference Include=&quot;Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson&quot; Version=&quot;3.0.0&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  ...
+&lt;/Project&gt;
+</code></pre><ul>
+<li>Update <code>Startup.ConfigureServices</code> to call <code>AddNewtonsoftJqGrid</code>.</li>
+</ul>
+<pre><code>public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+        services.AddControllersWithViews();
+                .AddNewtonsoftJson();
+
+        services.AddJqGrid();
+                .AddNewtonsoftJqGrid();
+
+        ...
+    }
+
+    ...
+}
 </code></pre><h2 id="demos">Demos</h2>
 <p>The demo project is available on <a href="https://github.com/tpeczek/Demo.AspNetCore.JqGrid">GitHub</a>.</p>
 <h2 id="donating">Donating</h2>
