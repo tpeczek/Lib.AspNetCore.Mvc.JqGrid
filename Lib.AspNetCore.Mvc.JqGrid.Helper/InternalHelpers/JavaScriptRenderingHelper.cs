@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System;
 using System.Linq;
 using System.Text;
+using System.Globalization;
+using System.Collections.Generic;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
 {
@@ -46,11 +46,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder.AppendFormat("{0},", value);
         }
 
-        internal static StringBuilder AppendJavaScriptArrayObjectValue(this StringBuilder javaScriptBuilder, object value)
+        internal static StringBuilder AppendJavaScriptArrayObjectValue(this StringBuilder javaScriptBuilder, object value, IJqGridJsonService jqGridJsonService)
         {
             if (value != null)
             {
-                javaScriptBuilder.AppendJavaScriptArrayFunctionValue(JsonConvert.SerializeObject(value, Formatting.None));
+                javaScriptBuilder.AppendJavaScriptArrayFunctionValue(jqGridJsonService.SerializeObject(value));
             }
 
             return javaScriptBuilder;
@@ -233,28 +233,38 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder;
         }
 
-        internal static StringBuilder AppendJavaScriptObjectObjectField(this StringBuilder javaScriptBuilder, string fieldName, object fieldValue, params JsonConverter[] converters)
+        internal static StringBuilder AppendJavaScriptObjectObjectField(this StringBuilder javaScriptBuilder, string fieldName, object fieldValue, IJqGridJsonService jqGridJsonService)
         {
             if (fieldValue != null)
             {
-                javaScriptBuilder.AppendJavaScriptObjectFunctionField(fieldName, JsonConvert.SerializeObject(fieldValue, Formatting.None, converters));
+                javaScriptBuilder.AppendJavaScriptObjectFunctionField(fieldName, jqGridJsonService.SerializeObject(fieldValue));
             }
 
             return javaScriptBuilder;
         }
 
-        internal static StringBuilder AppendJavaScriptObjectObjectPropertiesFields(this StringBuilder javaScriptBuilder, object fieldValue)
+        internal static StringBuilder AppendJavaScriptObjectJqGridObjectField(this StringBuilder javaScriptBuilder, string fieldName, object fieldValue, IJqGridJsonService jqGridJsonService)
         {
             if (fieldValue != null)
             {
-                string serializedFieldValue = JsonConvert.SerializeObject(fieldValue, Formatting.None);
+                javaScriptBuilder.AppendJavaScriptObjectFunctionField(fieldName, jqGridJsonService.SerializeJqGridObject(fieldValue));
+            }
+
+            return javaScriptBuilder;
+        }
+
+        internal static StringBuilder AppendJavaScriptObjectObjectPropertiesFields(this StringBuilder javaScriptBuilder, object fieldValue, IJqGridJsonService jqGridJsonService)
+        {
+            if (fieldValue != null)
+            {
+                string serializedFieldValue = jqGridJsonService.SerializeObject(fieldValue);
                 javaScriptBuilder.Append(serializedFieldValue.Substring(1, serializedFieldValue.Length - 2)).Append(",");
             }
 
             return javaScriptBuilder;
         }
 
-        internal static StringBuilder AppendJavaScriptObjectScriptOrObjectField(this StringBuilder javaScriptBuilder, string fieldName, string fieldScript, object fieldValue)
+        internal static StringBuilder AppendJavaScriptObjectScriptOrObjectField(this StringBuilder javaScriptBuilder, string fieldName, string fieldScript, object fieldValue, IJqGridJsonService jqGridJsonService)
         {
             if (!String.IsNullOrWhiteSpace(fieldScript))
             {
@@ -262,7 +272,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
             else if (fieldValue != null)
             {
-                javaScriptBuilder.AppendJavaScriptObjectObjectField(fieldName, fieldValue);
+                javaScriptBuilder.AppendJavaScriptObjectObjectField(fieldName, fieldValue, jqGridJsonService);
             }
 
             return javaScriptBuilder;

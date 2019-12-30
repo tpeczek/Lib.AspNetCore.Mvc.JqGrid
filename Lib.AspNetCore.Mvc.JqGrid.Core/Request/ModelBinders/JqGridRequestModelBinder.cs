@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Reflection;
+using System.Collections;
+using System.ComponentModel;
 using System.Globalization;
 using System.Threading.Tasks;
+using System.Runtime.ExceptionServices;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Internal;
-using Newtonsoft.Json;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Helpers;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters;
+using Microsoft.Extensions.DependencyInjection;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Searching;
 
@@ -21,6 +23,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
         private const string SEARCH_NAME_BINDING_KEY = "searchField";
         private const string SEARCH_VALUE_BINDING_KEY = "searchString";
         private const string SEARCH_OPERATOR_BINDING_KEY = "searchOper";
+
+        private static readonly Type INT32_TYPE = typeof(Int32);
+        private static readonly Type BOOLEAN_TYPE = typeof(Boolean);
         #endregion
 
         #region Methods
@@ -52,14 +57,14 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 bindingContext.Result = ModelBindingResult.Failed();
             }
 
-            return CompatibilityHelper.CompletedTask;
+            return Task.CompletedTask;
         }
 
         private JqGridRequest BindPagingProperties(JqGridRequest model, ModelBindingContext bindingContext)
         {
             if (!String.IsNullOrWhiteSpace(JqGridRequest.ParametersNames.PageIndex))
             {
-                model.PageIndex = ModelBindingHelper.ConvertTo<int>(bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.PageIndex).FirstValue, CultureInfo.InvariantCulture) - 1;
+                model.PageIndex = ConvertToInt32(bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.PageIndex).FirstValue) - 1;
             }
             else
             {
@@ -72,13 +77,13 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 ValueProviderResult pagesCountValueResult = bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.PagesCount);
                 if (pagesCountValueResult != ValueProviderResult.None)
                 {
-                    model.PagesCount = ModelBindingHelper.ConvertTo<int>(pagesCountValueResult.FirstValue, CultureInfo.InvariantCulture);
+                    model.PagesCount = ConvertToInt32(pagesCountValueResult.FirstValue);
                 }
             }
 
             if (!String.IsNullOrWhiteSpace(JqGridRequest.ParametersNames.RecordsCount))
             {
-                model.RecordsCount = ModelBindingHelper.ConvertTo<int>(bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.RecordsCount).FirstValue, CultureInfo.InvariantCulture);
+                model.RecordsCount = ConvertToInt32(bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.RecordsCount).FirstValue);
             }
 
             return model;
@@ -118,7 +123,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 ValueProviderResult searchingValueResult = bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.Searching);
                 if (searchingValueResult != ValueProviderResult.None)
                 {
-                    model.Searching = ModelBindingHelper.ConvertTo<bool>(searchingValueResult.FirstValue, CultureInfo.InvariantCulture);
+                    model.Searching = ConvertToBoolean(searchingValueResult.FirstValue);
                 }
             }
 
@@ -130,10 +135,9 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 ValueProviderResult searchingFiltersValueResult = bindingContext.ValueProvider.GetValue(SEARCH_FILTERS_BINDING_KEY);
                 if ((searchingFiltersValueResult != ValueProviderResult.None) && !String.IsNullOrWhiteSpace(searchingFiltersValueResult.FirstValue))
                 {
-                    JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings();
-                    jsonSerializerSettings.Converters.Add(new JqGridRequestSearchingFiltersJsonConverter());
+                    IJqGridJsonService jqGridJsonService = bindingContext.HttpContext.RequestServices.GetRequiredService<IJqGridJsonService>();
 
-                    model.SearchingFilters = JsonConvert.DeserializeObject<JqGridSearchingFilters>(searchingFiltersValueResult.FirstValue, jsonSerializerSettings);
+                    model.SearchingFilters = jqGridJsonService.DeserializeJqGridSearchingFilters(searchingFiltersValueResult.FirstValue);
                 }
                 else
                 {
@@ -151,6 +155,142 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
             }
 
             return model;
+        }
+
+        public static int ConvertToInt32(object value)
+        {
+            if (value == null)
+            {
+                return (Int32)Activator.CreateInstance(INT32_TYPE);
+
+            }
+
+            if (INT32_TYPE.IsAssignableFrom(value.GetType()))
+            {
+                return (Int32)value;
+            }
+
+            object converted = UnwrapPossibleArrayType(value, INT32_TYPE);
+
+            return (converted == null) ? default(Int32) : (Int32)converted;
+        }
+
+        public static bool ConvertToBoolean(object value)
+        {
+            if (value == null)
+            {
+                return (Boolean)Activator.CreateInstance(BOOLEAN_TYPE);
+
+            }
+
+            if (BOOLEAN_TYPE.IsAssignableFrom(value.GetType()))
+            {
+                return (Boolean)value;
+            }
+
+            object converted = UnwrapPossibleArrayType(value, BOOLEAN_TYPE);
+
+            return (converted == null) ? default(Boolean) : (Boolean)converted;
+        }
+
+        private static object UnwrapPossibleArrayType(object value, Type destinationType)
+        {
+            var valueAsArray = value as Array;
+            if (destinationType.IsArray)
+            {
+                var destinationElementType = destinationType.GetElementType();
+                if (valueAsArray != null)
+                {
+                    var converted = (IList)Array.CreateInstance(destinationElementType, valueAsArray.Length);
+                    for (var i = 0; i < valueAsArray.Length; i++)
+                    {
+                        converted[i] = ConvertSimpleType(valueAsArray.GetValue(i), destinationElementType);
+                    }
+                    return converted;
+                }
+                else
+                {
+                    var element = ConvertSimpleType(value, destinationElementType);
+                    var converted = (IList)Array.CreateInstance(destinationElementType, 1);
+                    converted[0] = element;
+                    return converted;
+                }
+            }
+            else if (valueAsArray != null)
+            {
+                if (valueAsArray.Length > 0)
+                {
+                    value = valueAsArray.GetValue(0);
+                    return ConvertSimpleType(value, destinationType);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            return ConvertSimpleType(value, destinationType);
+        }
+
+        private static object ConvertSimpleType(object value, Type destinationType)
+        {
+            if (value == null || destinationType.IsAssignableFrom(value.GetType()))
+            {
+                return value;
+            }
+
+            if (value is string valueAsString && string.IsNullOrWhiteSpace(valueAsString))
+            {
+                return null;
+            }
+
+            var converter = TypeDescriptor.GetConverter(destinationType);
+            var canConvertFrom = converter.CanConvertFrom(value.GetType());
+            if (!canConvertFrom)
+            {
+                converter = TypeDescriptor.GetConverter(value.GetType());
+            }
+            if (!(canConvertFrom || converter.CanConvertTo(destinationType)))
+            {
+                if (destinationType.GetTypeInfo().IsEnum &&
+                    (value is int ||
+                    value is uint ||
+                    value is long ||
+                    value is ulong ||
+                    value is short ||
+                    value is ushort ||
+                    value is byte ||
+                    value is sbyte))
+                {
+                    return Enum.ToObject(destinationType, value);
+                }
+
+                throw new InvalidOperationException();
+            }
+
+            try
+            {
+                return canConvertFrom
+                    ? converter.ConvertFrom(null, CultureInfo.InvariantCulture, value)
+                    : converter.ConvertTo(null, CultureInfo.InvariantCulture, value, destinationType);
+            }
+            catch (FormatException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException == null)
+                {
+                    throw;
+                }
+                else
+                {
+                    ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
+
+                    throw;
+                }
+            }
         }
         #endregion
     }

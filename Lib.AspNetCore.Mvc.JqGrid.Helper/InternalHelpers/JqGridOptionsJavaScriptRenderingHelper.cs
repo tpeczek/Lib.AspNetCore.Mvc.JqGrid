@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 using Lib.AspNetCore.Mvc.JqGrid.Core.Request;
-using Lib.AspNetCore.Mvc.JqGrid.Core.Json.Converters;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
@@ -12,7 +12,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
     internal static class JqGridOptionsJavaScriptRenderingHelper
     {
         #region Extension Methods
-        internal static StringBuilder AppendOptions(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
+        internal static StringBuilder AppendOptions(this StringBuilder javaScriptBuilder, JqGridOptions options, IJqGridJsonService jqGridJsonService, bool asSubgrid)
         {
             javaScriptBuilder.AppendJavaScriptObjectStringField(JqGridOptionsNames.CAPTION, options.Caption)
                 .AppendCellEditing(options)
@@ -23,11 +23,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 .AppendIconSet(options)
                 .AppendGrouping(options)
                 .AppendParametersNames(options.ParametersNames)
-                .AppendPostData(options)
+                .AppendPostData(options, jqGridJsonService)
                 .AppendJsonReader(options.JsonReader)
                 .AppendPager(options, asSubgrid)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.TOP_PAGER, options.TopPager, JqGridOptionsDefaults.TopPager)
-                .AppendSubgrid(options)
+                .AppendSubgrid(options, jqGridJsonService)
                 .AppendTreeGrid(options)
                 .AppendDynamicScrolling(options)
                 .AppendJavaScriptObjectStringField(JqGridOptionsNames.SORTING_NAME, options.SortingName)
@@ -246,7 +246,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder;
         }
 
-        private static StringBuilder AppendPostData(this StringBuilder javaScriptBuilder, JqGridOptions options)
+        private static StringBuilder AppendPostData(this StringBuilder javaScriptBuilder, JqGridOptions options, IJqGridJsonService jqGridJsonService)
         {
             if (!String.IsNullOrWhiteSpace(options.PostDataScript))
             {
@@ -254,7 +254,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             }
             else if (options.PostData != null)
             {
-                javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.POST_DATA, options.PostData, new JqGridRequestSearchingFiltersJsonConverter());
+                javaScriptBuilder.AppendJavaScriptObjectJqGridObjectField(JqGridOptionsNames.POST_DATA, options.PostData, jqGridJsonService);
             }
 
             return javaScriptBuilder;

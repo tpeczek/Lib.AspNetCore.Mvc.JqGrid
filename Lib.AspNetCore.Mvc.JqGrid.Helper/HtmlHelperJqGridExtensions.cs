@@ -3,6 +3,8 @@ using System.Text;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.DependencyInjection;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Options;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers;
@@ -63,13 +65,15 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper
         {
             ValidateJqGridConstraints(options);
 
-            IUrlHelperFactory urlHelperFactory = (IUrlHelperFactory)htmlHelper.ViewContext.HttpContext.RequestServices.GetService(typeof(IUrlHelperFactory));
+            IUrlHelperFactory urlHelperFactory = htmlHelper.ViewContext.HttpContext.RequestServices.GetRequiredService<IUrlHelperFactory>();
+            IJqGridJsonService jqGridJsonService = htmlHelper.ViewContext.HttpContext.RequestServices.GetRequiredService<IJqGridJsonService>();
+
             options.ApplyModelMetadata(htmlHelper.MetadataProvider, urlHelperFactory.GetUrlHelper(htmlHelper.ViewContext));
 
             StringBuilder javaScriptBuilder = new StringBuilder();
 
             javaScriptBuilder.AppendFormat("$('#{0}')", options.Id)
-                .AppendJqGridScript(options, false);
+                .AppendJqGridScript(options, jqGridJsonService, false);
 
             return new HtmlString(javaScriptBuilder.ToString());
         }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
-using System.Collections;
 using System.Collections.Generic;
+using Lib.AspNetCore.Mvc.JqGrid.Core.Json;
 using Lib.AspNetCore.Mvc.JqGrid.Helper.Constants;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Enums;
 using Lib.AspNetCore.Mvc.JqGrid.Infrastructure.Constants;
@@ -58,7 +58,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         #endregion
 
         #region Extension Methods
-        internal static StringBuilder AppendColumnsModels(this StringBuilder javaScriptBuilder, JqGridOptions options, bool asSubgrid)
+        internal static StringBuilder AppendColumnsModels(this StringBuilder javaScriptBuilder, JqGridOptions options, IJqGridJsonService jqGridJsonService, bool asSubgrid)
         {
             javaScriptBuilder.AppendJavaScriptArrayFieldOpening(JqGridOptionsNames.COLUMNS_MODEL_FIELD);
 
@@ -80,11 +80,11 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     .AppendJavaScriptObjectIntegerField(JqGridOptionsNames.ColumnModel.WIDTH, columnModel.Width, JqGridOptionsDefaults.ColumnModel.Width)
                     .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.XML_MAP, columnModel.XmlMapping)
                     .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.VIEWABLE, columnModel.Viewable, JqGridOptionsDefaults.ColumnModel.Viewable)
-                    .AppendColumnModelEditOptions(columnModel, options, asSubgrid)
-                    .AppendColumnModelSearchOptions(columnModel, options, asSubgrid)
+                    .AppendColumnModelEditOptions(columnModel, options, jqGridJsonService, asSubgrid)
+                    .AppendColumnModelSearchOptions(columnModel, options, jqGridJsonService, asSubgrid)
                     .AppendColumnModelSortOptions(columnModel)
                     .AppendColumnModelSummaryOptions(columnModel, options)
-                    .AppendColumnModelFormatter(columnModel);
+                    .AppendColumnModelFormatter(columnModel, jqGridJsonService);
 
                 javaScriptBuilder.AppendJavaScriptObjectFieldClosing();
             }
@@ -115,7 +115,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
         #endregion
 
         #region Private Methods
-        private static StringBuilder AppendColumnModelEditOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel, JqGridOptions options, bool asSubgrid)
+        private static StringBuilder AppendColumnModelEditOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel, JqGridOptions options, IJqGridJsonService jqGridJsonService, bool asSubgrid)
         {
             javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.EDITABLE, columnModel.Editable, JqGridOptionsDefaults.ColumnModel.Editable);
 
@@ -142,12 +142,12 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                     }
                     else if (columnModel.EditOptions.PostData != null)
                     {
-                        javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Editing.POST_DATA, columnModel.EditOptions.PostData);
+                        javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Editing.POST_DATA, columnModel.EditOptions.PostData, jqGridJsonService);
                     }
 
                     if ((columnModel.EditOptions.HtmlAttributes != null) && (columnModel.EditOptions.HtmlAttributes.Count > 0))
                     {
-                        javaScriptBuilder.AppendJavaScriptObjectObjectPropertiesFields(columnModel.EditOptions.HtmlAttributes);
+                        javaScriptBuilder.AppendJavaScriptObjectObjectPropertiesFields(columnModel.EditOptions.HtmlAttributes, jqGridJsonService);
                     }
 
                     switch (columnModel.EditType)
@@ -169,7 +169,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                             break;
                     }
 
-                    javaScriptBuilder.AppendColumnModelElementOptions(columnModel.EditOptions, isJQueryUIElement)
+                    javaScriptBuilder.AppendColumnModelElementOptions(columnModel.EditOptions, isJQueryUIElement, jqGridJsonService)
                         .AppendJavaScriptObjectFieldClosing();
                 }
 
@@ -180,7 +180,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder;
         }
 
-        private static StringBuilder AppendColumnModelSearchOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel, JqGridOptions options, bool asSubgrid)
+        private static StringBuilder AppendColumnModelSearchOptions(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel, JqGridOptions options, IJqGridJsonService jqGridJsonService, bool asSubgrid)
         {
             javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.SEARCHABLE, columnModel.Searchable, JqGridOptionsDefaults.ColumnModel.Searchable);
             
@@ -196,7 +196,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 if ((columnModel.SearchOptions != null) && (isJQueryUIElement || isNativeElement || !columnModel.SearchOptions.AreDefault()))
                 {
                     javaScriptBuilder.AppendJavaScriptObjectFieldOpening(JqGridOptionsNames.ColumnModel.SEARCH_OPTIONS)
-                        .AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Searching.HTML_ATTRIBUTES, columnModel.SearchOptions.HtmlAttributes)
+                        .AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Searching.HTML_ATTRIBUTES, columnModel.SearchOptions.HtmlAttributes, jqGridJsonService)
                         .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Searching.CLEAR_SEARCH, columnModel.SearchOptions.ClearSearch, JqGridOptionsDefaults.ColumnModel.Searching.ClearSearch)
                         .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Searching.SEARCH_HIDDEN, columnModel.SearchOptions.SearchHidden, JqGridOptionsDefaults.ColumnModel.Searching.SearchHidden)
                         .AppendSearchOperators(columnModel.SearchOptions.SearchOperators);
@@ -220,7 +220,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                             break;
                     }
 
-                    javaScriptBuilder.AppendColumnModelElementOptions(columnModel.SearchOptions, isJQueryUIElement)
+                    javaScriptBuilder.AppendColumnModelElementOptions(columnModel.SearchOptions, isJQueryUIElement, jqGridJsonService)
                         .AppendJavaScriptObjectFieldClosing();
                 }
 
@@ -362,7 +362,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DATA_INIT, jQueryUISpinnerDataInitBuilder.ToString());
         }
 
-        private static StringBuilder AppendColumnModelElementOptions(this StringBuilder javaScriptBuilder, JqGridColumnElementOptions elementOptions, bool isJQueryUIElement)
+        private static StringBuilder AppendColumnModelElementOptions(this StringBuilder javaScriptBuilder, JqGridColumnElementOptions elementOptions, bool isJQueryUIElement, IJqGridJsonService jqGridJsonService)
         {
             if ((elementOptions.DataEvents != null) && (elementOptions.DataEvents.Count > 0))
             {
@@ -371,7 +371,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 {
                     javaScriptBuilder.AppendJavaScriptObjectOpening()
                         .AppendJavaScriptObjectStringField(JqGridOptionsNames.ColumnModel.Element.DataEvent.TYPE, dataEvent.Type)
-                        .AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Element.DataEvent.DATA, dataEvent.Data)
+                        .AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Element.DataEvent.DATA, dataEvent.Data, jqGridJsonService)
                         .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.Element.DataEvent.FUNCTION, dataEvent.Function)
                         .AppendJavaScriptObjectClosing();
                 }
@@ -393,7 +393,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 }
                 else if (elementOptions.ValueDictionary != null)
                 {
-                    javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Element.VALUE, elementOptions.ValueDictionary);
+                    javaScriptBuilder.AppendJavaScriptObjectObjectField(JqGridOptionsNames.ColumnModel.Element.VALUE, elementOptions.ValueDictionary, jqGridJsonService);
                 }
             }
             
@@ -446,7 +446,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder;
         }
 
-        private static StringBuilder AppendColumnModelFormatter(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel)
+        private static StringBuilder AppendColumnModelFormatter(this StringBuilder javaScriptBuilder, JqGridColumnModel columnModel, IJqGridJsonService jqGridJsonService)
         {
             if (!String.IsNullOrWhiteSpace(columnModel.Formatter))
             {
@@ -457,7 +457,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                 else
                 {
                     javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.FORMATTER, columnModel.Formatter)
-                        .AppendColumnModelFormatterOptions(columnModel.Formatter, columnModel.FormatterOptions)
+                        .AppendColumnModelFormatterOptions(columnModel.Formatter, columnModel.FormatterOptions, jqGridJsonService)
                         .AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.UNFORMATTER, columnModel.UnFormatter);
                 }
             }
@@ -497,7 +497,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder.AppendJavaScriptObjectFunctionField(JqGridOptionsNames.ColumnModel.FORMATTER, jQueryUIButtonFormatterBuilder.ToString());
         }
 
-        private static StringBuilder AppendColumnModelFormatterOptions(this StringBuilder javaScriptBuilder, string formatter, JqGridColumnFormatterOptions formatterOptions)
+        private static StringBuilder AppendColumnModelFormatterOptions(this StringBuilder javaScriptBuilder, string formatter, JqGridColumnFormatterOptions formatterOptions, IJqGridJsonService jqGridJsonService)
         {
             if ((formatterOptions != null) && !formatterOptions.AreDefault(formatter))
             {
@@ -527,7 +527,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
                         javaScriptBuilder.AppendColumnModelCheckBoxFormatterOptions(formatterOptions);
                         break;
                     case JqGridPredefinedFormatters.Actions:
-                        javaScriptBuilder.AppendColumnModelActionsFormatterOptions(formatterOptions);
+                        javaScriptBuilder.AppendColumnModelActionsFormatterOptions(formatterOptions, jqGridJsonService);
                         break;
                 }
 
@@ -586,7 +586,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             return javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Formatter.DISABLED, formatterOptions.Disabled);
         }
 
-        private static StringBuilder AppendColumnModelActionsFormatterOptions(this StringBuilder javaScriptBuilder, JqGridColumnFormatterOptions formatterOptions)
+        private static StringBuilder AppendColumnModelActionsFormatterOptions(this StringBuilder javaScriptBuilder, JqGridColumnFormatterOptions formatterOptions, IJqGridJsonService jqGridJsonService)
         {
             javaScriptBuilder.AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Formatter.KEYS, formatterOptions.Keys, JqGridOptionsDefaults.ColumnModel.Formatter.Keys)
                 .AppendJavaScriptObjectBooleanField(JqGridOptionsNames.ColumnModel.Formatter.EDIT_BUTTON, formatterOptions.EditButton, JqGridOptionsDefaults.ColumnModel.Formatter.EditButton)
@@ -597,17 +597,17 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Helper.InternalHelpers
             {
                 if (formatterOptions.UseFormEditing)
                 {
-                    javaScriptBuilder.AppendNavigatorEditActionOptions(JqGridOptionsNames.ColumnModel.Formatter.EDIT_OPTIONS, formatterOptions.FormEditingOptions);
+                    javaScriptBuilder.AppendNavigatorEditActionOptions(JqGridOptionsNames.ColumnModel.Formatter.EDIT_OPTIONS, formatterOptions.FormEditingOptions, jqGridJsonService);
                 }
                 else
                 {
-                    javaScriptBuilder.AppendInlineNavigatorActionOptions(null, formatterOptions.InlineEditingOptions);
+                    javaScriptBuilder.AppendInlineNavigatorActionOptions(null, formatterOptions.InlineEditingOptions, jqGridJsonService);
                 }
             }
 
             if (formatterOptions.DeleteButton)
             {
-                javaScriptBuilder.AppendNavigatorDeleteActionOptions(JqGridOptionsNames.ColumnModel.Formatter.DELETE_OPTIONS, formatterOptions.DeleteOptions);
+                javaScriptBuilder.AppendNavigatorDeleteActionOptions(JqGridOptionsNames.ColumnModel.Formatter.DELETE_OPTIONS, formatterOptions.DeleteOptions, jqGridJsonService);
             }
 
             return javaScriptBuilder;

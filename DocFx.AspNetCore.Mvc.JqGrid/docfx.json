@@ -7,7 +7,8 @@
             "Lib.AspNetCore.Mvc.JqGrid.Infrastructure/Lib.AspNetCore.Mvc.JqGrid.Infrastructure.csproj",
             "Lib.AspNetCore.Mvc.JqGrid.Core/Lib.AspNetCore.Mvc.JqGrid.Core.csproj",
             "Lib.AspNetCore.Mvc.JqGrid.DataAnnotations/Lib.AspNetCore.Mvc.JqGrid.DataAnnotations.csproj",
-            "Lib.AspNetCore.Mvc.JqGrid.Helper/Lib.AspNetCore.Mvc.JqGrid.Helper.csproj"
+            "Lib.AspNetCore.Mvc.JqGrid.Helper/Lib.AspNetCore.Mvc.JqGrid.Helper.csproj",
+            "Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson/Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson.csproj"
           ],
           "exclude": [ "**/bin/**", "**/obj/**" ],
           "src": ".."
@@ -15,7 +16,7 @@
       ],
       "dest": "api",
       "properties": {
-        "TargetFramework": "netstandard2.0"
+        "TargetFramework": "netcoreapp3.0"
       }
     }
   ],
