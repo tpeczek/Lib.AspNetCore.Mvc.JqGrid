@@ -1,3 +1,10 @@
+## Lib.AspNetCore.Mvc.JqGrid.Helper 3.0.0
+### Additions and Changes
+- Moved JsonResult from Lib.AspNetCore.Mvc.JqGrid.Core.Json to Lib.AspNetCore.Mvc.JqGrid.Core.Results
+- Upgraded to ASP.NET Core 3.0.0
+- Rewritten default JSON features implementation to System.Text.Json
+- Provided Newtonsoft.Json based JSON features as a separated package (Lib.AspNetCore.Mvc.JqGrid.NewtonsoftJson)
+
 ## Lib.AspNetCore.Mvc.JqGrid.Helper 1.5.0 & 2.3.0
 ### Additions and Changes
 - Added support for gridComplete, loadComplete, and onSelectRow events
