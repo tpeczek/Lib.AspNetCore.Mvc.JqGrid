@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Server side support for jqGrid in ASP.NET Core that uses Newtonsoft.Json.</Description>
-    <Copyright>Copyright © 2020 - 2023 Tomasz Pęczek</Copyright>
+    <Copyright>Copyright © 2020 - 2024 Tomasz Pęczek</Copyright>
     <VersionPrefix>3.0.0</VersionPrefix>
     <Authors>Tomasz Pęczek</Authors>
     <TargetFramework>netcoreapp3.0</TargetFramework>

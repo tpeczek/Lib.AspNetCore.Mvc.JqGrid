@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Custom data annotations which allow for providing additional metadata when working with strongly typed jqGrid helper for ASP.NET Core.</Description>
-    <Copyright>Copyright © 2016 - 2023 Tomasz Pęczek</Copyright>
+    <Copyright>Copyright © 2016 - 2024 Tomasz Pęczek</Copyright>
     <VersionPrefix>3.0.0</VersionPrefix>
     <Authors>Tomasz Pęczek</Authors>
     <TargetFramework>netcoreapp3.0</TargetFramework>
